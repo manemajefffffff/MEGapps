@@ -101,8 +101,12 @@
 		19EDF03B2727CE7300AF54A7 /* MEGapps */ = {
 			isa = PBXGroup;
 			children = (
-				19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */,
-				19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */,
+				19EDF0942727D79B00AF54A7 /* Common */,
+				19EDF0922727D78B00AF54A7 /* Services */,
+				19EDF0752727D05600AF54A7 /* ModuleWishlist */,
+				19EDF0722727D02D00AF54A7 /* ModuleSavings */,
+				19EDF0702727CFDC00AF54A7 /* ModuleOtherBudget */,
+				19EDF06F2727CFD400AF54A7 /* Model */,
 				19EDF0402727CE7300AF54A7 /* ViewController.swift */,
 				19EDF0422727CE7300AF54A7 /* Main.storyboard */,
 				19EDF0482727CE7400AF54A7 /* Assets.xcassets */,
@@ -130,6 +134,178 @@
 			path = MEGappsUITests;
 			sourceTree = "<group>";
 		};
+		19EDF06F2727CFD400AF54A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		19EDF0702727CFDC00AF54A7 /* ModuleOtherBudget */ = {
+			isa = PBXGroup;
+			children = (
+				19EDF0732727D03300AF54A7 /* BudgetAdd */,
+				19EDF0742727D03D00AF54A7 /* BudgetList */,
+			);
+			path = ModuleOtherBudget;
+			sourceTree = "<group>";
+		};
+		19EDF0722727D02D00AF54A7 /* ModuleSavings */ = {
+			isa = PBXGroup;
+			children = (
+				19EDF0862727D45600AF54A7 /* SavingList */,
+				19EDF0852727D3D900AF54A7 /* SavingsDetail */,
+				19EDF0772727D06F00AF54A7 /* SavingsHistory */,
+				19EDF0762727D05F00AF54A7 /* SavingsAdd */,
+			);
+			path = ModuleSavings;
+			sourceTree = "<group>";
+		};
+		19EDF0732727D03300AF54A7 /* BudgetAdd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BudgetAdd;
+			sourceTree = "<group>";
+		};
+		19EDF0742727D03D00AF54A7 /* BudgetList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BudgetList;
+			sourceTree = "<group>";
+		};
+		19EDF0752727D05600AF54A7 /* ModuleWishlist */ = {
+			isa = PBXGroup;
+			children = (
+				19EDF08A2727D48700AF54A7 /* WishlistDetail */,
+				19EDF0892727D47D00AF54A7 /* Purchase */,
+				19EDF0882727D47600AF54A7 /* WishList */,
+			);
+			path = ModuleWishlist;
+			sourceTree = "<group>";
+		};
+		19EDF0762727D05F00AF54A7 /* SavingsAdd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SavingsAdd;
+			sourceTree = "<group>";
+		};
+		19EDF0772727D06F00AF54A7 /* SavingsHistory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SavingsHistory;
+			sourceTree = "<group>";
+		};
+		19EDF0852727D3D900AF54A7 /* SavingsDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SavingsDetail;
+			sourceTree = "<group>";
+		};
+		19EDF0862727D45600AF54A7 /* SavingList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SavingList;
+			sourceTree = "<group>";
+		};
+		19EDF0882727D47600AF54A7 /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WishList;
+			sourceTree = "<group>";
+		};
+		19EDF0892727D47D00AF54A7 /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				19EDF0912727D77A00AF54A7 /* PurchaseOverview */,
+				19EDF08F2727D70700AF54A7 /* PurchaseOtherBudgetAllocation */,
+				19EDF08E2727D6C900AF54A7 /* PurchaseProduct */,
+				19EDF08D2727D6BC00AF54A7 /* PurchaseSameItem */,
+				19EDF08C2727D6B200AF54A7 /* PurchaseCategory */,
+				19EDF08B2727D6A200AF54A7 /* PurchaseAdd */,
+			);
+			path = Purchase;
+			sourceTree = "<group>";
+		};
+		19EDF08A2727D48700AF54A7 /* WishlistDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WishlistDetail;
+			sourceTree = "<group>";
+		};
+		19EDF08B2727D6A200AF54A7 /* PurchaseAdd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PurchaseAdd;
+			sourceTree = "<group>";
+		};
+		19EDF08C2727D6B200AF54A7 /* PurchaseCategory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PurchaseCategory;
+			sourceTree = "<group>";
+		};
+		19EDF08D2727D6BC00AF54A7 /* PurchaseSameItem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PurchaseSameItem;
+			sourceTree = "<group>";
+		};
+		19EDF08E2727D6C900AF54A7 /* PurchaseProduct */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PurchaseProduct;
+			sourceTree = "<group>";
+		};
+		19EDF08F2727D70700AF54A7 /* PurchaseOtherBudgetAllocation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PurchaseOtherBudgetAllocation;
+			sourceTree = "<group>";
+		};
+		19EDF0912727D77A00AF54A7 /* PurchaseOverview */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PurchaseOverview;
+			sourceTree = "<group>";
+		};
+		19EDF0922727D78B00AF54A7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				19EDF0932727D79200AF54A7 /* CoreData */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		19EDF0932727D79200AF54A7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		19EDF0942727D79B00AF54A7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */,
+				19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +316,7 @@
 				19EDF0352727CE7300AF54A7 /* Sources */,
 				19EDF0362727CE7300AF54A7 /* Frameworks */,
 				19EDF0372727CE7300AF54A7 /* Resources */,
+				19EDF0952727D7BC00AF54A7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -255,6 +432,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19EDF0952727D7BC00AF54A7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		19EDF0352727CE7300AF54A7 /* Sources */ = {
@@ -443,6 +640,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 282R274LXF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -470,6 +668,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 282R274LXF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
