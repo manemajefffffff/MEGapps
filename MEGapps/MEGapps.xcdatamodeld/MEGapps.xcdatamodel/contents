@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Budget" representedClassName="Budget" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="trItemBudget" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TrItemBudget" inverseName="budget" inverseEntity="TrItemBudget"/>
+    </entity>
+    <entity name="Items" representedClassName="Items" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isPrioritize" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="purchasedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="reason" optional="YES" attributeType="String"/>
+        <attribute name="startSavingDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <relationship name="transactionItemBudget" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TrItemBudget" inverseName="items" inverseEntity="TrItemBudget"/>
+    </entity>
+    <entity name="SavingsHistory" representedClassName="SavingsHistory" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="wordings" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="TrItemBudget" representedClassName="TrItemBudget" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="budget" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Budget" inverseName="trItemBudget" inverseEntity="Budget"/>
+        <relationship name="items" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Items" inverseName="transactionItemBudget" inverseEntity="Items"/>
+    </entity>
+    <elements>
+        <element name="SavingsHistory" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Budget" positionX="-54" positionY="18" width="128" height="89"/>
+        <element name="Items" positionX="-36" positionY="45" width="128" height="209"/>
+        <element name="TrItemBudget" positionX="-18" positionY="126" width="128" height="104"/>
+    </elements>
 </model>
