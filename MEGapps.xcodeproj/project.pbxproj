@@ -17,6 +17,9 @@
 		19EDF0572727CE7400AF54A7 /* MEGappsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0562727CE7400AF54A7 /* MEGappsTests.swift */; };
 		19EDF0612727CE7400AF54A7 /* MEGappsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0602727CE7400AF54A7 /* MEGappsUITests.swift */; };
 		19EDF0632727CE7400AF54A7 /* MEGappsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0622727CE7400AF54A7 /* MEGappsUITestsLaunchTests.swift */; };
+		19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0A627283E1400AF54A7 /* Savings.storyboard */; };
+		19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0A927283E3400AF54A7 /* Wishlist.storyboard */; };
+		19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0AB27283E5500AF54A7 /* OtherBudget.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		19EDF05C2727CE7400AF54A7 /* MEGappsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MEGappsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EDF0602727CE7400AF54A7 /* MEGappsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEGappsUITests.swift; sourceTree = "<group>"; };
 		19EDF0622727CE7400AF54A7 /* MEGappsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEGappsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		19EDF0A727283E1400AF54A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MEGapps/Base.lproj/Savings.storyboard; sourceTree = "<group>"; };
+		19EDF0A927283E3400AF54A7 /* Wishlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
+		19EDF0AC27283E5500AF54A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MEGapps/Base.lproj/OtherBudget.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,7 @@
 		19EDF0742727D03D00AF54A7 /* BudgetList */ = {
 			isa = PBXGroup;
 			children = (
+				19EDF0AB27283E5500AF54A7 /* OtherBudget.storyboard */,
 			);
 			path = BudgetList;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 		19EDF0862727D45600AF54A7 /* SavingList */ = {
 			isa = PBXGroup;
 			children = (
+				19EDF0A627283E1400AF54A7 /* Savings.storyboard */,
 			);
 			path = SavingList;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 		19EDF0882727D47600AF54A7 /* WishList */ = {
 			isa = PBXGroup;
 			children = (
+				19EDF0A927283E3400AF54A7 /* Wishlist.storyboard */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -411,8 +420,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */,
+				19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */,
 				19EDF04C2727CE7400AF54A7 /* LaunchScreen.storyboard in Resources */,
 				19EDF0492727CE7400AF54A7 /* Assets.xcassets in Resources */,
+				19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */,
 				19EDF0442727CE7300AF54A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +524,22 @@
 				19EDF04B2727CE7400AF54A7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		19EDF0A627283E1400AF54A7 /* Savings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19EDF0A727283E1400AF54A7 /* Base */,
+			);
+			name = Savings.storyboard;
+			sourceTree = "<group>";
+		};
+		19EDF0AB27283E5500AF54A7 /* OtherBudget.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19EDF0AC27283E5500AF54A7 /* Base */,
+			);
+			name = OtherBudget.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
