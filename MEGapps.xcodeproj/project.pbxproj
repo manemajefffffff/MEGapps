@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07D094FA2728458100DD0716 /* HobbySavingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D094F92728458100DD0716 /* HobbySavingsCellView.swift */; };
+		07D094FC2728459A00DD0716 /* HobbySavingsCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D094FB2728459A00DD0716 /* HobbySavingsCellView.xib */; };
+		07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D094FD27285A6200DD0716 /* SavingsViewController.swift */; };
 		19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */; };
 		19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */; };
 		19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0402727CE7300AF54A7 /* ViewController.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07D094F92728458100DD0716 /* HobbySavingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbySavingsCellView.swift; sourceTree = "<group>"; };
+		07D094FB2728459A00DD0716 /* HobbySavingsCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HobbySavingsCellView.xib; sourceTree = "<group>"; };
+		07D094FD27285A6200DD0716 /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
 		19EDF0392727CE7300AF54A7 /* MEGapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MEGapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07D094F22728438300DD0716 /* HobbySavingsCell */ = {
+			isa = PBXGroup;
+			children = (
+				07D094F92728458100DD0716 /* HobbySavingsCellView.swift */,
+				07D094FB2728459A00DD0716 /* HobbySavingsCellView.xib */,
+			);
+			path = HobbySavingsCell;
+			sourceTree = "<group>";
+		};
 		19EDF0302727CE7300AF54A7 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				19EDF0A627283E1400AF54A7 /* Savings.storyboard */,
+				07D094FD27285A6200DD0716 /* SavingsViewController.swift */,
 			);
 			path = SavingList;
 			sourceTree = "<group>";
@@ -309,6 +325,7 @@
 		19EDF0942727D79B00AF54A7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				07D094F22728438300DD0716 /* HobbySavingsCell */,
 				19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */,
 				19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */,
 			);
@@ -423,6 +440,7 @@
 				19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */,
 				19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */,
 				19EDF04C2727CE7400AF54A7 /* LaunchScreen.storyboard in Resources */,
+				07D094FC2728459A00DD0716 /* HobbySavingsCellView.xib in Resources */,
 				19EDF0492727CE7400AF54A7 /* Assets.xcassets in Resources */,
 				19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */,
 				19EDF0442727CE7300AF54A7 /* Main.storyboard in Resources */,
@@ -470,8 +488,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
+				07D094FA2728458100DD0716 /* HobbySavingsCellView.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
 				19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */,
 			);
