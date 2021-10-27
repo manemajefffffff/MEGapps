@@ -112,6 +112,7 @@
                 <outlet property="itemNameLbl" destination="6mW-bA-5j8" id="bRZ-9C-dYU"/>
                 <outlet property="statusIconImg" destination="agt-cZ-7io" id="Qj3-Tn-GLV"/>
                 <outlet property="waitingEndDateLbl" destination="5qe-tH-HRb" id="NcB-lt-Gov"/>
+                <outlet property="wishlistContainerView" destination="j9p-w4-8IT" id="3tr-Gl-Izv"/>
             </connections>
             <point key="canvasLocation" x="138.40579710144928" y="127.90178571428571"/>
         </tableViewCell>
