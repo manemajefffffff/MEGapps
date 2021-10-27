@@ -10,7 +10,9 @@ import UIKit
 class WishListViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var wishlistTableView: UITableView!
-
+    // MARK: - ViewModel
+    private let wishListViewModel = WishListViewModel()
+    // MARK: - State
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +22,9 @@ class WishListViewController: UIViewController {
     // MARK: - Function
     func registerNib() {
         wishlistTableView.register(UINib.init(nibName: "WishlistTableViewCell", bundle: nil), forCellReuseIdentifier: "wishlistTableViewCell")
+    }
+    // MARK: - IBAction
+    @IBAction func addNewWishlist(_ sender: Any) {
     }
 }
 // MARK: - TableView
