@@ -11,6 +11,7 @@ class SavingsViewController: UIViewController {
 
 //MARK: - Outlets
     @IBOutlet weak var viewHobbySavingsCell: HobbySavingsCellView!
+    @IBOutlet weak var viewSavingsBudgetCellView1: SavingsBudgetCellView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078A1B952729112700813423 /* OtherBudgetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A1B942729112700813423 /* OtherBudgetCellView.swift */; };
+		078A1B972729113000813423 /* OtherBudgetCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078A1B962729113000813423 /* OtherBudgetCellView.xib */; };
+		078A1B9B2729124500813423 /* SavingsBudgetCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078A1B9A2729124500813423 /* SavingsBudgetCellView.xib */; };
+		078A1B9D2729124D00813423 /* SavingsBudgetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A1B9C2729124D00813423 /* SavingsBudgetCellView.swift */; };
 		07D094FA2728458100DD0716 /* HobbySavingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D094F92728458100DD0716 /* HobbySavingsCellView.swift */; };
 		07D094FC2728459A00DD0716 /* HobbySavingsCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D094FB2728459A00DD0716 /* HobbySavingsCellView.xib */; };
 		07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D094FD27285A6200DD0716 /* SavingsViewController.swift */; };
@@ -43,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		078A1B942729112700813423 /* OtherBudgetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetCellView.swift; sourceTree = "<group>"; };
+		078A1B962729113000813423 /* OtherBudgetCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherBudgetCellView.xib; sourceTree = "<group>"; };
+		078A1B9A2729124500813423 /* SavingsBudgetCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsBudgetCellView.xib; sourceTree = "<group>"; };
+		078A1B9C2729124D00813423 /* SavingsBudgetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsBudgetCellView.swift; sourceTree = "<group>"; };
 		07D094F92728458100DD0716 /* HobbySavingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbySavingsCellView.swift; sourceTree = "<group>"; };
 		07D094FB2728459A00DD0716 /* HobbySavingsCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HobbySavingsCellView.xib; sourceTree = "<group>"; };
 		07D094FD27285A6200DD0716 /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +98,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		078A1B922729100800813423 /* OtherBudgetCell */ = {
+			isa = PBXGroup;
+			children = (
+				078A1B942729112700813423 /* OtherBudgetCellView.swift */,
+				078A1B962729113000813423 /* OtherBudgetCellView.xib */,
+			);
+			path = OtherBudgetCell;
+			sourceTree = "<group>";
+		};
+		078A1B93272910EF00813423 /* SavingsBudgetCell */ = {
+			isa = PBXGroup;
+			children = (
+				078A1B9A2729124500813423 /* SavingsBudgetCellView.xib */,
+				078A1B9C2729124D00813423 /* SavingsBudgetCellView.swift */,
+			);
+			path = SavingsBudgetCell;
+			sourceTree = "<group>";
+		};
 		07D094F22728438300DD0716 /* HobbySavingsCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,10 +200,10 @@
 		19EDF0722727D02D00AF54A7 /* ModuleSavings */ = {
 			isa = PBXGroup;
 			children = (
-				19EDF0862727D45600AF54A7 /* SavingList */,
+				19EDF0762727D05F00AF54A7 /* SavingsAdd */,
 				19EDF0852727D3D900AF54A7 /* SavingsDetail */,
 				19EDF0772727D06F00AF54A7 /* SavingsHistory */,
-				19EDF0762727D05F00AF54A7 /* SavingsAdd */,
+				19EDF0862727D45600AF54A7 /* SavingList */,
 			);
 			path = ModuleSavings;
 			sourceTree = "<group>";
@@ -211,7 +237,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = SavingsAdd;
+			name = SavingsAdd;
+			path = SavingsHistory/SavingsAdd;
 			sourceTree = "<group>";
 		};
 		19EDF0772727D06F00AF54A7 /* SavingsHistory */ = {
@@ -325,6 +352,8 @@
 		19EDF0942727D79B00AF54A7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				078A1B93272910EF00813423 /* SavingsBudgetCell */,
+				078A1B922729100800813423 /* OtherBudgetCell */,
 				07D094F22728438300DD0716 /* HobbySavingsCell */,
 				19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */,
 				19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */,
@@ -437,8 +466,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078A1B972729113000813423 /* OtherBudgetCellView.xib in Resources */,
 				19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */,
 				19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */,
+				078A1B9B2729124500813423 /* SavingsBudgetCellView.xib in Resources */,
 				19EDF04C2727CE7400AF54A7 /* LaunchScreen.storyboard in Resources */,
 				07D094FC2728459A00DD0716 /* HobbySavingsCellView.xib in Resources */,
 				19EDF0492727CE7400AF54A7 /* Assets.xcassets in Resources */,
@@ -491,9 +522,11 @@
 				07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
+				078A1B952729112700813423 /* OtherBudgetCellView.swift in Sources */,
 				07D094FA2728458100DD0716 /* HobbySavingsCellView.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
 				19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */,
+				078A1B9D2729124D00813423 /* SavingsBudgetCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
