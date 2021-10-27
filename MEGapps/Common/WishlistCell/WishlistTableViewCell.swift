@@ -7,16 +7,15 @@
 
 import UIKit
 
-@IBDesignable class WishlistTableViewCell: UITableViewCell {
+class WishlistTableViewCell: UITableViewCell {
     // MARK: - IBOutlet
     @IBOutlet weak var statusIconImg: UIImageView!
     @IBOutlet weak var itemNameLbl: UILabel!
     @IBOutlet weak var waitingEndDateLbl: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        setupUI()
+//        setupUI()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
