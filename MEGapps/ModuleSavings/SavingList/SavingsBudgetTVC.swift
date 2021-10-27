@@ -1,5 +1,5 @@
 //
-//  SavingsBudgetTableViewCell.swift
+//  SavingsBudgetTVC.swift
 //  MEGapps
 //
 //  Created by William Giovanni Kambuno on 27/10/21.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-class SavingsBudgetTableViewCell: UITableViewCell {
+class SavingsBudgetTVC: UITableViewCell {
 
 //MARK: - Outlets
+    @IBOutlet weak var viewSavingsBudget: UIView!
     @IBOutlet weak var imageStar: UIImageView!
     @IBOutlet weak var imageChevronRight: UIImageView!
     @IBOutlet weak var labelProductName: UILabel!
     @IBOutlet weak var labelProductPrice: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,5 +26,5 @@ class SavingsBudgetTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }
