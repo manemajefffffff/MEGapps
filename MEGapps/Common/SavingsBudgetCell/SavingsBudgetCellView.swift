@@ -38,7 +38,6 @@ final class SavingsBudgetCellView: UIView {
     private func configureView() {
         guard let view = self.loadViewFromNib(nibName: "SavingsBudgetCellView") else {return}
         view.frame = self.bounds
-        view.layer.cornerRadius = 16.0 // View Rounded
         self.addSubview(view)
     }
     

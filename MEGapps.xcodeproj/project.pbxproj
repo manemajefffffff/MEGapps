@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07545F7727296B95002E422A /* SavingsBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07545F7527296B95002E422A /* SavingsBudgetTableViewCell.swift */; };
+		07545F7827296B95002E422A /* SavingsBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07545F7627296B95002E422A /* SavingsBudgetTableViewCell.xib */; };
+		07545F7B27296BAB002E422A /* OtherBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */; };
+		07545F7C27296BAB002E422A /* OtherBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */; };
 		078A1B952729112700813423 /* OtherBudgetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A1B942729112700813423 /* OtherBudgetCellView.swift */; };
 		078A1B972729113000813423 /* OtherBudgetCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078A1B962729113000813423 /* OtherBudgetCellView.xib */; };
 		078A1B9B2729124500813423 /* SavingsBudgetCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078A1B9A2729124500813423 /* SavingsBudgetCellView.xib */; };
@@ -47,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07545F7527296B95002E422A /* SavingsBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsBudgetTableViewCell.swift; sourceTree = "<group>"; };
+		07545F7627296B95002E422A /* SavingsBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsBudgetTableViewCell.xib; sourceTree = "<group>"; };
+		07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetTableViewCell.swift; sourceTree = "<group>"; };
+		07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherBudgetTableViewCell.xib; sourceTree = "<group>"; };
 		078A1B942729112700813423 /* OtherBudgetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetCellView.swift; sourceTree = "<group>"; };
 		078A1B962729113000813423 /* OtherBudgetCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherBudgetCellView.xib; sourceTree = "<group>"; };
 		078A1B9A2729124500813423 /* SavingsBudgetCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsBudgetCellView.xib; sourceTree = "<group>"; };
@@ -103,6 +111,8 @@
 			children = (
 				078A1B942729112700813423 /* OtherBudgetCellView.swift */,
 				078A1B962729113000813423 /* OtherBudgetCellView.xib */,
+				07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */,
+				07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */,
 			);
 			path = OtherBudgetCell;
 			sourceTree = "<group>";
@@ -112,6 +122,8 @@
 			children = (
 				078A1B9A2729124500813423 /* SavingsBudgetCellView.xib */,
 				078A1B9C2729124D00813423 /* SavingsBudgetCellView.swift */,
+				07545F7527296B95002E422A /* SavingsBudgetTableViewCell.swift */,
+				07545F7627296B95002E422A /* SavingsBudgetTableViewCell.xib */,
 			);
 			path = SavingsBudgetCell;
 			sourceTree = "<group>";
@@ -466,10 +478,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07545F7827296B95002E422A /* SavingsBudgetTableViewCell.xib in Resources */,
 				078A1B972729113000813423 /* OtherBudgetCellView.xib in Resources */,
 				19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */,
 				19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */,
 				078A1B9B2729124500813423 /* SavingsBudgetCellView.xib in Resources */,
+				07545F7C27296BAB002E422A /* OtherBudgetTableViewCell.xib in Resources */,
 				19EDF04C2727CE7400AF54A7 /* LaunchScreen.storyboard in Resources */,
 				07D094FC2728459A00DD0716 /* HobbySavingsCellView.xib in Resources */,
 				19EDF0492727CE7400AF54A7 /* Assets.xcassets in Resources */,
@@ -525,6 +539,8 @@
 				078A1B952729112700813423 /* OtherBudgetCellView.swift in Sources */,
 				07D094FA2728458100DD0716 /* HobbySavingsCellView.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
+				07545F7727296B95002E422A /* SavingsBudgetTableViewCell.swift in Sources */,
+				07545F7B27296BAB002E422A /* OtherBudgetTableViewCell.swift in Sources */,
 				19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */,
 				078A1B9D2729124D00813423 /* SavingsBudgetCellView.swift in Sources */,
 			);
