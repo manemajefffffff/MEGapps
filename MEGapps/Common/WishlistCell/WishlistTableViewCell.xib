@@ -10,51 +10,76 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="wishlistTableViewCell" id="KGk-i7-Jjw" customClass="WishlistTableViewCell" customModule="MEGapps" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="115"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="wishlistTableViewCell" rowHeight="136" id="KGk-i7-Jjw" customClass="WishlistTableViewCell" customModule="MEGapps" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="135"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="343" height="115"/>
+                <rect key="frame" x="0.0" y="0.0" width="343" height="135"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="agt-cZ-7io">
-                        <rect key="frame" x="21" y="21.5" width="20" height="19"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9p-w4-8IT">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="115"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting End:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUV-cX-ReO">
+                                <rect key="frame" x="20" y="50" width="88" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mW-bA-5j8">
+                                <rect key="frame" x="45" y="18" width="262" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="jK1-Hg-fgC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="agt-cZ-7io">
+                                <rect key="frame" x="20" y="20.5" width="20" height="19"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xju-6z-uPt">
+                                <rect key="frame" x="315" y="49.5" width="20" height="16.5"/>
+                                <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="9SQ-vs-ZZa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qe-tH-HRb">
+                                <rect key="frame" x="20" y="74" width="287" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="LightMossGreen"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="X2n-XE-ncz"/>
+                            <constraint firstItem="xju-6z-uPt" firstAttribute="trailing" secondItem="j9p-w4-8IT" secondAttribute="trailingMargin" id="0Le-kx-g9G"/>
+                            <constraint firstItem="5qe-tH-HRb" firstAttribute="trailing" secondItem="6mW-bA-5j8" secondAttribute="trailing" id="3B1-dW-b3z"/>
+                            <constraint firstAttribute="trailing" secondItem="6mW-bA-5j8" secondAttribute="trailing" constant="36" id="Ebd-1g-Vii"/>
+                            <constraint firstItem="6mW-bA-5j8" firstAttribute="centerY" secondItem="agt-cZ-7io" secondAttribute="centerY" id="OVC-Rh-jWs"/>
+                            <constraint firstItem="bUV-cX-ReO" firstAttribute="leading" secondItem="agt-cZ-7io" secondAttribute="leading" id="Sbh-Ve-SoM"/>
+                            <constraint firstItem="xju-6z-uPt" firstAttribute="centerY" secondItem="j9p-w4-8IT" secondAttribute="centerY" id="UtY-GL-zqa"/>
+                            <constraint firstItem="6mW-bA-5j8" firstAttribute="leading" secondItem="agt-cZ-7io" secondAttribute="trailing" constant="5" id="du9-EV-f6G"/>
+                            <constraint firstItem="5qe-tH-HRb" firstAttribute="top" secondItem="bUV-cX-ReO" secondAttribute="bottom" constant="6" id="mLV-fu-aTp"/>
+                            <constraint firstItem="agt-cZ-7io" firstAttribute="top" secondItem="j9p-w4-8IT" secondAttribute="top" constant="20" id="nQi-K4-Syb"/>
+                            <constraint firstItem="agt-cZ-7io" firstAttribute="leading" secondItem="j9p-w4-8IT" secondAttribute="leading" constant="20" id="ohE-sw-tMf"/>
+                            <constraint firstItem="bUV-cX-ReO" firstAttribute="top" secondItem="6mW-bA-5j8" secondAttribute="bottom" constant="8" id="pV9-vG-pq9"/>
+                            <constraint firstItem="5qe-tH-HRb" firstAttribute="leading" secondItem="bUV-cX-ReO" secondAttribute="leading" id="rXy-Td-OCh"/>
                         </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mW-bA-5j8">
-                        <rect key="frame" x="46" y="19" width="277" height="24"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting End:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUV-cX-ReO">
-                        <rect key="frame" x="21" y="51" width="88" height="18"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qe-tH-HRb">
-                        <rect key="frame" x="21" y="77" width="302" height="21"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
-                <color key="backgroundColor" name="LightMossGreen"/>
                 <constraints>
-                    <constraint firstItem="5qe-tH-HRb" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="2C5-Ic-tBf"/>
-                    <constraint firstItem="bUV-cX-ReO" firstAttribute="leading" secondItem="agt-cZ-7io" secondAttribute="leading" id="2sR-uj-d1k"/>
-                    <constraint firstItem="6mW-bA-5j8" firstAttribute="leading" secondItem="agt-cZ-7io" secondAttribute="trailing" constant="5" id="4xi-67-u8g"/>
-                    <constraint firstItem="5qe-tH-HRb" firstAttribute="leading" secondItem="bUV-cX-ReO" secondAttribute="leading" id="50b-8d-TMS"/>
-                    <constraint firstItem="agt-cZ-7io" firstAttribute="centerY" secondItem="6mW-bA-5j8" secondAttribute="centerY" id="5Wx-yY-FlB"/>
-                    <constraint firstItem="5qe-tH-HRb" firstAttribute="top" secondItem="bUV-cX-ReO" secondAttribute="bottom" constant="8" id="J5n-aQ-8Db"/>
-                    <constraint firstItem="agt-cZ-7io" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="SaV-Xh-3bh"/>
-                    <constraint firstItem="agt-cZ-7io" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="21" id="WUq-OC-gvm"/>
-                    <constraint firstItem="bUV-cX-ReO" firstAttribute="top" secondItem="6mW-bA-5j8" secondAttribute="bottom" constant="8" id="f6c-No-uSL"/>
-                    <constraint firstAttribute="trailing" secondItem="6mW-bA-5j8" secondAttribute="trailing" constant="20" id="h9W-7N-AjS"/>
+                    <constraint firstItem="j9p-w4-8IT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TJR-UL-ZaQ"/>
+                    <constraint firstItem="j9p-w4-8IT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VGj-FR-sXH"/>
+                    <constraint firstAttribute="trailing" secondItem="j9p-w4-8IT" secondAttribute="trailing" id="VHO-Kp-xrF"/>
+                    <constraint firstAttribute="bottom" secondItem="j9p-w4-8IT" secondAttribute="bottom" constant="20" id="waT-7V-Muj"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>
                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -88,10 +113,11 @@
                 <outlet property="statusIconImg" destination="agt-cZ-7io" id="Qj3-Tn-GLV"/>
                 <outlet property="waitingEndDateLbl" destination="5qe-tH-HRb" id="NcB-lt-Gov"/>
             </connections>
-            <point key="canvasLocation" x="138.40579710144928" y="134.26339285714286"/>
+            <point key="canvasLocation" x="138.40579710144928" y="127.90178571428571"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <namedColor name="LightMossGreen">
             <color red="0.72500002384185791" green="0.86299997568130493" blue="0.70099997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -15,7 +15,6 @@ class WishlistTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        setupUI()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -27,9 +26,4 @@ class WishlistTableViewCell: UITableViewCell {
         waitingEndDateLbl.text = "Date"
         statusIconImg.image = UIImage(systemName: "clock")
     }
-    // MARK: - UI Function
-    func setupUI() {
-        self.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-    }
-
 }
