@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,18 +44,18 @@
                     <buttonConfiguration key="configuration" style="plain" image="clock.arrow.circlepath" catalog="system"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ns2-L9-btJ">
-                    <rect key="frame" x="192" y="97" width="135" height="30"/>
+                    <rect key="frame" x="177" y="92" width="150" height="35"/>
                     <color key="backgroundColor" name="Blond"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="135" id="lNC-C1-lfB"/>
-                        <constraint firstAttribute="height" constant="30" id="xei-ZW-Amu"/>
+                        <constraint firstAttribute="width" constant="150" id="lNC-C1-lfB"/>
+                        <constraint firstAttribute="height" constant="35" id="xei-ZW-Amu"/>
                     </constraints>
                     <color key="tintColor" name="OuterSpaceColor"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title=" Add Amount"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhA-Ma-349">
-                    <rect key="frame" x="173" y="57" width="17" height="17"/>
+                    <rect key="frame" x="178" y="57" width="17" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="emk-fr-A0G"/>
                         <constraint firstAttribute="width" constant="17" id="mbW-9W-BLx"/>
@@ -75,7 +75,7 @@
                 <constraint firstItem="4GB-hD-XnX" firstAttribute="top" secondItem="Qqg-LU-zjP" secondAttribute="bottom" constant="5" id="TN6-LS-IRo"/>
                 <constraint firstAttribute="trailing" secondItem="ns2-L9-btJ" secondAttribute="trailing" constant="16" id="cnF-F3-5oa"/>
                 <constraint firstItem="Qqg-LU-zjP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="ekQ-cq-zDi"/>
-                <constraint firstItem="ZhA-Ma-349" firstAttribute="leading" secondItem="4GB-hD-XnX" secondAttribute="trailing" constant="10" id="kHQ-ky-BzR"/>
+                <constraint firstItem="ZhA-Ma-349" firstAttribute="leading" secondItem="4GB-hD-XnX" secondAttribute="trailing" constant="15" id="kHQ-ky-BzR"/>
                 <constraint firstItem="4GB-hD-XnX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="zd6-nG-JFT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

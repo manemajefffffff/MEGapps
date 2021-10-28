@@ -13,6 +13,8 @@ class SavingsViewController: UIViewController {
     @IBOutlet weak var viewHobbySavingsCell: HobbySavingsCellView!
     @IBOutlet weak var tableViewSavingsBudget: UITableView!
     
+    var name = ["one", "two", "three"]
+    var price = ["123", "456", "789"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,8 @@ class SavingsViewController: UIViewController {
         TV.delegate = self
         TV.dataSource = self
         
+        TV.register(UINib.init(nibName: "SavingsBudgetTableViewCell", bundle: nil), forCellReuseIdentifier: "SavingsBudgetCell")
+        
         TV.separatorStyle = .none
         TV.showsVerticalScrollIndicator = false
     }
@@ -55,7 +59,7 @@ class SavingsViewController: UIViewController {
 extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 95
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,20 +68,22 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableViewSavingsBudget.dequeueReusableCell(withIdentifier: "SavingsBudgetCell") as? SavingsBudgetTVC else {
+        guard let cell = tableViewSavingsBudget.dequeueReusableCell(withIdentifier: "SavingsBudgetCell") as? SavingsBudgetTableViewCell else {
             fatalError("cell not found!")
         }
-        //let Product = Items[indexPath.row] //get product coredata
+        let productName = name[indexPath.row] //get product coredata
+        let productPrice = price[indexPath.row] //get product coredata
         
-        //cell.labelProductName.text = Product.name //get Product Name
-        //cell.labelProductPrice.text = Product.price //get Product Price
         
-        cell.viewSavingsBudget.layer.cornerRadius = 16.0 // View Rounded; Modify this to match
-        cell.viewSavingsBudget.layer.shadowColor = UIColor.black.cgColor // View DropShadow
-        cell.viewSavingsBudget.layer.shadowRadius = 4.0
-        cell.viewSavingsBudget.layer.shadowOpacity = 0.8
-        cell.viewSavingsBudget.layer.shadowOffset = CGSize(width: 0, height: 4)
-        cell.viewSavingsBudget.layer.masksToBounds = false
+        cell.labelProductName.text = productName //get Product Name
+        cell.labelProductPrice.text = productPrice //get Product Price
+        
+        cell.viewSavingsBudgetCell.layer.cornerRadius = 16.0 // View Rounded; Modify this to match
+        cell.viewSavingsBudgetCell.layer.shadowColor = UIColor.black.cgColor // View DropShadow
+        cell.viewSavingsBudgetCell.layer.shadowRadius = 2.0
+        cell.viewSavingsBudgetCell.layer.shadowOpacity = 0.4
+        cell.viewSavingsBudgetCell.layer.shadowOffset = CGSize(width: 0, height: 3)
+        cell.viewSavingsBudgetCell.layer.masksToBounds = false
         
         return cell
     }

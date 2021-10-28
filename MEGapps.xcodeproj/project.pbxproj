@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0722B3DD2729809400BEFD17 /* SavingsBudgetTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0722B3DC2729809400BEFD17 /* SavingsBudgetTVC.swift */; };
+		0751401B272AEDF300984C4F /* SavingsBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07514019272AEDF300984C4F /* SavingsBudgetTableViewCell.swift */; };
+		0751401C272AEDF300984C4F /* SavingsBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0751401A272AEDF300984C4F /* SavingsBudgetTableViewCell.xib */; };
 		07545F7B27296BAB002E422A /* OtherBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */; };
 		07545F7C27296BAB002E422A /* OtherBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */; };
 		078A1B952729112700813423 /* OtherBudgetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A1B942729112700813423 /* OtherBudgetCellView.swift */; };
@@ -48,7 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0722B3DC2729809400BEFD17 /* SavingsBudgetTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsBudgetTVC.swift; sourceTree = "<group>"; };
+		07514019272AEDF300984C4F /* SavingsBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsBudgetTableViewCell.swift; sourceTree = "<group>"; };
+		0751401A272AEDF300984C4F /* SavingsBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsBudgetTableViewCell.xib; sourceTree = "<group>"; };
 		07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetTableViewCell.swift; sourceTree = "<group>"; };
 		07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherBudgetTableViewCell.xib; sourceTree = "<group>"; };
 		078A1B942729112700813423 /* OtherBudgetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetCellView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07514018272AEDC000984C4F /* SavingsBudgetCell */ = {
+			isa = PBXGroup;
+			children = (
+				07514019272AEDF300984C4F /* SavingsBudgetTableViewCell.swift */,
+				0751401A272AEDF300984C4F /* SavingsBudgetTableViewCell.xib */,
+			);
+			path = SavingsBudgetCell;
+			sourceTree = "<group>";
+		};
 		078A1B922729100800813423 /* OtherBudgetCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,7 +266,6 @@
 			children = (
 				19EDF0A627283E1400AF54A7 /* Savings.storyboard */,
 				07D094FD27285A6200DD0716 /* SavingsViewController.swift */,
-				0722B3DC2729809400BEFD17 /* SavingsBudgetTVC.swift */,
 			);
 			path = SavingList;
 			sourceTree = "<group>";
@@ -348,6 +358,7 @@
 		19EDF0942727D79B00AF54A7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				07514018272AEDC000984C4F /* SavingsBudgetCell */,
 				078A1B922729100800813423 /* OtherBudgetCell */,
 				07D094F22728438300DD0716 /* HobbySavingsCell */,
 				19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */,
@@ -461,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0751401C272AEDF300984C4F /* SavingsBudgetTableViewCell.xib in Resources */,
 				078A1B972729113000813423 /* OtherBudgetCellView.xib in Resources */,
 				19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */,
 				19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */,
@@ -514,7 +526,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0722B3DD2729809400BEFD17 /* SavingsBudgetTVC.swift in Sources */,
 				07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
@@ -522,6 +533,7 @@
 				07D094FA2728458100DD0716 /* HobbySavingsCellView.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
 				07545F7B27296BAB002E422A /* OtherBudgetTableViewCell.swift in Sources */,
+				0751401B272AEDF300984C4F /* SavingsBudgetTableViewCell.swift in Sources */,
 				19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

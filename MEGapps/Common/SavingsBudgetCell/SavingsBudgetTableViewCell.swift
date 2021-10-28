@@ -1,18 +1,17 @@
 //
-//  SavingsBudgetTVC.swift
+//  SavingsBudgetTableViewCell.swift
 //  MEGapps
 //
-//  Created by William Giovanni Kambuno on 27/10/21.
+//  Created by William Giovanni Kambuno on 28/10/21.
 //
 
 import UIKit
 
-class SavingsBudgetTVC: UITableViewCell {
-
+class SavingsBudgetTableViewCell: UITableViewCell {
+    
 //MARK: - Outlets
-    @IBOutlet weak var viewSavingsBudget: UIView!
+    @IBOutlet weak var viewSavingsBudgetCell: UIView!
     @IBOutlet weak var imageStar: UIImageView!
-    @IBOutlet weak var imageChevronRight: UIImageView!
     @IBOutlet weak var labelProductName: UILabel!
     @IBOutlet weak var labelProductPrice: UILabel!
     
@@ -26,5 +25,5 @@ class SavingsBudgetTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
