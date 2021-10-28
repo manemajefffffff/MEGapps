@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SavingsViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dt1-ag-hAo">
-                                <rect key="frame" x="20" y="368" width="374" height="474"/>
+                                <rect key="frame" x="20" y="368" width="374" height="425"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SavingsBudgetCell " rowHeight="80" id="zns-SH-yGa" customClass="SavingsBudgetTableViewCell" customModule="MEGapps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="80"/>
@@ -129,8 +129,13 @@
                             <constraint firstItem="IXq-O2-Uoh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yWL-so-yjR"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="zsT-Xz-5cj"/>
                     <navigationItem key="navigationItem" id="oxE-D4-rtC"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableViewSavingsBudget" destination="Dt1-ag-hAo" id="aOK-iJ-3Yy"/>
+                        <outlet property="viewHobbySavingsCell" destination="KFZ-cg-evT" id="o6f-XR-IQa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
