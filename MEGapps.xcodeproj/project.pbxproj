@@ -150,6 +150,16 @@
 			sourceTree = "<group>";
 		};
 		078A1B922729100800813423 /* OtherBudgetCell */ = {
+            isa = PBXGroup;
+            children = (
+                078A1B942729112700813423 /* OtherBudgetCellView.swift */,
+                078A1B962729113000813423 /* OtherBudgetCellView.xib */,
+                07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */,
+                07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */,
+            );
+            path = OtherBudgetCell;
+            sourceTree = "<group>";
+        };
 		034FD4CC272A9C350060F7F4 /* BudgetAllocationTableView */ = {
 			isa = PBXGroup;
 			children = (
