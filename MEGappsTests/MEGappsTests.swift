@@ -9,13 +9,20 @@ import XCTest
 @testable import MEGapps
 
 class MEGappsTests: XCTestCase {
-
+    var pav: PurchaseAddView!
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        let storyboard = UIStoryboard(name: "PurchaseAdd", bundle: nil)
+        pav = storyboard.instantiateViewController(withIdentifier: "PurchaseAddView") as? PurchaseAddView
+        pav.loadViewIfNeeded()
+        
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        pav = nil
     }
 
     func testExample() throws {
