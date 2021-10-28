@@ -20,12 +20,11 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setupUI()
+        //setupUI()
     }
     
     // MARK: - Functions
@@ -47,6 +46,23 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
 // MARK: - Table View
 
 extension PurchaseCategoryView {
+    
+    //func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        //let shadowView = UIView()
+//        let gradient = CAGradientLayer()
+//        gradient.frame.size = CGSize(width: tableView.bounds.width - 40, height: 15)
+//        let stopColor = UIColor.gray.cgColor
+//        let startColor = UIColor.white.cgColor
+//
+//        gradient.shadowOpacity = 0.1
+//        gradient.colors = [stopColor,startColor]
+//
+//        gradient.locations = [0.0,0.8]
+//        shadowView.layer.addSublayer(gradient)
+        
+          //return shadowView
+    //}
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }

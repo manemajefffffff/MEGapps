@@ -16,15 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rig-bc-2nV">
-                                <rect key="frame" x="0.0" y="60" width="414" height="352"/>
-                                <color key="backgroundColor" name="Blond"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rig-bc-2nV">
+                                <rect key="frame" x="16" y="60" width="382" height="217"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="217" id="0dy-rC-xc4"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" id="yX6-R0-2P6">
-                                        <rect key="frame" x="20" y="49.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="382" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yX6-R0-2P6" id="QpC-Ha-V9d">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epm-lm-O1S">
@@ -38,6 +40,20 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="400" height="400"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="9ET-zM-SeQ"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="9lL-jF-HP8"/>
@@ -47,10 +63,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="Blond"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rig-bc-2nV" secondAttribute="trailing" id="JWP-Ib-vM8"/>
-                            <constraint firstItem="rig-bc-2nV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="LJW-8D-03D"/>
-                            <constraint firstItem="rig-bc-2nV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="RIY-ZY-NH3"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rig-bc-2nV" secondAttribute="bottom" constant="450" id="XM9-Bu-AyT"/>
+                            <constraint firstItem="rig-bc-2nV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="aUF-iL-diJ"/>
+                            <constraint firstItem="rig-bc-2nV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="p29-BK-GXA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rig-bc-2nV" secondAttribute="trailing" constant="16" id="pWf-yT-4ti"/>
                         </constraints>
                     </view>
                     <connections>
@@ -59,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6" y="40"/>
+            <point key="canvasLocation" x="5.7971014492753632" y="39.508928571428569"/>
         </scene>
     </scenes>
     <resources>
