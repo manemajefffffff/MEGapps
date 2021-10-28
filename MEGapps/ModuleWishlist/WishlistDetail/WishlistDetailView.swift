@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class WishlistDetailView: UIView {
+class WishlistDetailView: UIView { /*
     private var viewModel: WishlistDetailViewModel
     private var viewController: WishlistDetailViewController
 
@@ -256,5 +256,5 @@ class WishlistDetailView: UIView {
 
     @objc func deleteWishlistAction() {
         self.viewController.showDeleteAlert()
-    }
+    } */
 }

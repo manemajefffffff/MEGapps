@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WishlistDetailViewController: UIViewController {
+class WishlistDetailViewController: UIViewController { /*
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,6 @@ class WishlistDetailViewController: UIViewController {
         self.present(alert, animated: true, completion: {
             print("completion block")
         })
-    }
+    } */
 
 }
