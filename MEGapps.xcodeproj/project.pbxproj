@@ -19,6 +19,15 @@
 		19A773682728406300219AE7 /* WishlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A773662728406300219AE7 /* WishlistTableViewCell.swift */; };
 		19A773692728406300219AE7 /* WishlistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A773672728406300219AE7 /* WishlistTableViewCell.xib */; };
 		19A7736C2728411000219AE7 /* UICustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7736B2728411000219AE7 /* UICustom.swift */; };
+		0751401B272AEDF300984C4F /* SavingsBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07514019272AEDF300984C4F /* SavingsBudgetTableViewCell.swift */; };
+		0751401C272AEDF300984C4F /* SavingsBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0751401A272AEDF300984C4F /* SavingsBudgetTableViewCell.xib */; };
+		07545F7B27296BAB002E422A /* OtherBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */; };
+		07545F7C27296BAB002E422A /* OtherBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */; };
+		078A1B952729112700813423 /* OtherBudgetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A1B942729112700813423 /* OtherBudgetCellView.swift */; };
+		078A1B972729113000813423 /* OtherBudgetCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078A1B962729113000813423 /* OtherBudgetCellView.xib */; };
+		07D094FA2728458100DD0716 /* HobbySavingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D094F92728458100DD0716 /* HobbySavingsCellView.swift */; };
+		07D094FC2728459A00DD0716 /* HobbySavingsCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D094FB2728459A00DD0716 /* HobbySavingsCellView.xib */; };
+		07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D094FD27285A6200DD0716 /* SavingsViewController.swift */; };
 		19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */; };
 		19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */; };
 		19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0402727CE7300AF54A7 /* ViewController.swift */; };
@@ -71,6 +80,15 @@
 		19A773662728406300219AE7 /* WishlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewCell.swift; sourceTree = "<group>"; };
 		19A773672728406300219AE7 /* WishlistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishlistTableViewCell.xib; sourceTree = "<group>"; };
 		19A7736B2728411000219AE7 /* UICustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustom.swift; sourceTree = "<group>"; };
+		07514019272AEDF300984C4F /* SavingsBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsBudgetTableViewCell.swift; sourceTree = "<group>"; };
+		0751401A272AEDF300984C4F /* SavingsBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsBudgetTableViewCell.xib; sourceTree = "<group>"; };
+		07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetTableViewCell.swift; sourceTree = "<group>"; };
+		07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherBudgetTableViewCell.xib; sourceTree = "<group>"; };
+		078A1B942729112700813423 /* OtherBudgetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetCellView.swift; sourceTree = "<group>"; };
+		078A1B962729113000813423 /* OtherBudgetCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherBudgetCellView.xib; sourceTree = "<group>"; };
+		07D094F92728458100DD0716 /* HobbySavingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbySavingsCellView.swift; sourceTree = "<group>"; };
+		07D094FB2728459A00DD0716 /* HobbySavingsCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HobbySavingsCellView.xib; sourceTree = "<group>"; };
+		07D094FD27285A6200DD0716 /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
 		19EDF0392727CE7300AF54A7 /* MEGapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MEGapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +140,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07514018272AEDC000984C4F /* SavingsBudgetCell */ = {
+			isa = PBXGroup;
+			children = (
+				07514019272AEDF300984C4F /* SavingsBudgetTableViewCell.swift */,
+				0751401A272AEDF300984C4F /* SavingsBudgetTableViewCell.xib */,
+			);
+			path = SavingsBudgetCell;
+			sourceTree = "<group>";
+		};
+		078A1B922729100800813423 /* OtherBudgetCell */ = {
 		034FD4CC272A9C350060F7F4 /* BudgetAllocationTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				19EDF0A627283E1400AF54A7 /* Savings.storyboard */,
+				07D094FD27285A6200DD0716 /* SavingsViewController.swift */,
 			);
 			path = SavingList;
 			sourceTree = "<group>";
@@ -397,6 +426,9 @@
 		19EDF0942727D79B00AF54A7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				07514018272AEDC000984C4F /* SavingsBudgetCell */,
+				078A1B922729100800813423 /* OtherBudgetCell */,
+				07D094F22728438300DD0716 /* HobbySavingsCell */,
 				034FD4CC272A9C350060F7F4 /* BudgetAllocationTableView */,
 				19A7736A2728410000219AE7 /* UICustom */,
 				19A773652728401600219AE7 /* WishlistCell */,
@@ -511,6 +543,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0751401C272AEDF300984C4F /* SavingsBudgetTableViewCell.xib in Resources */,
+				078A1B972729113000813423 /* OtherBudgetCellView.xib in Resources */,
 				19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */,
 				F9E596762728FDF200F37B9A /* PurchaseAdd.storyboard in Resources */,
 				19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */,
@@ -568,6 +602,7 @@
 			files = (
 				19A773682728406300219AE7 /* WishlistTableViewCell.swift in Sources */,
 				193D48FF2728EFC300F46C30 /* WishListViewController.swift in Sources */,
+				07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
 				034FD4C7272A92800060F7F4 /* PurchaseOrderViewController.swift in Sources */,
@@ -584,6 +619,8 @@
 				193D4906272923B100F46C30 /* WishListViewModel.swift in Sources */,
 				C63E3343272A89C500A08D06 /* WishlistDetailViewModel.swift in Sources */,
 				19A7736C2728411000219AE7 /* UICustom.swift in Sources */,
+				07545F7B27296BAB002E422A /* OtherBudgetTableViewCell.swift in Sources */,
+				0751401B272AEDF300984C4F /* SavingsBudgetTableViewCell.swift in Sources */,
 				19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
