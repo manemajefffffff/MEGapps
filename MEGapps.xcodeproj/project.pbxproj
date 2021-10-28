@@ -129,6 +129,8 @@
 				034FD4CE272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib */,
 			);
 			path = BudgetAllocationTableView;
+			sourceTree = "<group>";
+		};
 		193D49072729249F00F46C30 /* WishListCellModel */ = {
 			isa = PBXGroup;
 			children = (
