@@ -15,17 +15,6 @@
                     <view key="view" contentMode="scaleToFill" id="XZi-8s-ARS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIu-bS-YUE">
-                                <rect key="frame" x="164" y="433" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="jJ5-LI-V4D" kind="show" id="zeV-Jb-9ln"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="oLd-EN-IiA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -34,16 +23,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7lY-BM-GD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1388" y="716"/>
-        </scene>
-        <!--PurchaseAdd-->
-        <scene sceneID="QIe-rl-Ime">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PurchaseAdd" id="jJ5-LI-V4D" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ZV5-z7-dEE"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uav-CZ-EbI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2121" y="719"/>
         </scene>
     </scenes>
     <resources>
