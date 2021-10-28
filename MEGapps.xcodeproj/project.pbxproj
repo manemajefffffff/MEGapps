@@ -26,6 +26,9 @@
 		19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0A627283E1400AF54A7 /* Savings.storyboard */; };
 		19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0A927283E3400AF54A7 /* Wishlist.storyboard */; };
 		19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0AB27283E5500AF54A7 /* OtherBudget.storyboard */; };
+		C63E3342272A89C500A08D06 /* WishlistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E333F272A89C500A08D06 /* WishlistDetailViewController.swift */; };
+		C63E3343272A89C500A08D06 /* WishlistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E3340272A89C500A08D06 /* WishlistDetailViewModel.swift */; };
+		C63E3344272A89C500A08D06 /* WishlistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E3341272A89C500A08D06 /* WishlistDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		19EDF0A727283E1400AF54A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MEGapps/Base.lproj/Savings.storyboard; sourceTree = "<group>"; };
 		19EDF0A927283E3400AF54A7 /* Wishlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
 		19EDF0AC27283E5500AF54A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MEGapps/Base.lproj/OtherBudget.storyboard; sourceTree = "<group>"; };
+		C63E333F272A89C500A08D06 /* WishlistDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailViewController.swift; sourceTree = "<group>"; };
+		C63E3340272A89C500A08D06 /* WishlistDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailViewModel.swift; sourceTree = "<group>"; };
+		C63E3341272A89C500A08D06 /* WishlistDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +291,9 @@
 		19EDF08A2727D48700AF54A7 /* WishlistDetail */ = {
 			isa = PBXGroup;
 			children = (
+				C63E3341272A89C500A08D06 /* WishlistDetailView.swift */,
+				C63E333F272A89C500A08D06 /* WishlistDetailViewController.swift */,
+				C63E3340272A89C500A08D06 /* WishlistDetailViewModel.swift */,
 			);
 			path = WishlistDetail;
 			sourceTree = "<group>";
@@ -517,9 +526,12 @@
 				193D48FF2728EFC300F46C30 /* WishListViewController.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
+				C63E3344272A89C500A08D06 /* WishlistDetailView.swift in Sources */,
 				193D4909272924B200F46C30 /* WishListCellModel.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
+				C63E3342272A89C500A08D06 /* WishlistDetailViewController.swift in Sources */,
 				193D4906272923B100F46C30 /* WishListViewModel.swift in Sources */,
+				C63E3343272A89C500A08D06 /* WishlistDetailViewModel.swift in Sources */,
 				19A7736C2728411000219AE7 /* UICustom.swift in Sources */,
 				19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */,
 			);
