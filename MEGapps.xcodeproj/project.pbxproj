@@ -20,6 +20,8 @@
 		19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0A627283E1400AF54A7 /* Savings.storyboard */; };
 		19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0A927283E3400AF54A7 /* Wishlist.storyboard */; };
 		19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0AB27283E5500AF54A7 /* OtherBudget.storyboard */; };
+		F9681CB9272A21C500941894 /* PurchaseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CB8272A21C500941894 /* PurchaseAddView.swift */; };
+		F9E596762728FDF200F37B9A /* PurchaseAdd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E596752728FDF200F37B9A /* PurchaseAdd.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		19EDF0A727283E1400AF54A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MEGapps/Base.lproj/Savings.storyboard; sourceTree = "<group>"; };
 		19EDF0A927283E3400AF54A7 /* Wishlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
 		19EDF0AC27283E5500AF54A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MEGapps/Base.lproj/OtherBudget.storyboard; sourceTree = "<group>"; };
+		F9681CB8272A21C500941894 /* PurchaseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAddView.swift; sourceTree = SOURCE_ROOT; };
+		F9E596752728FDF200F37B9A /* PurchaseAdd.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseAdd.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +256,8 @@
 		19EDF08B2727D6A200AF54A7 /* PurchaseAdd */ = {
 			isa = PBXGroup;
 			children = (
+				F9E596752728FDF200F37B9A /* PurchaseAdd.storyboard */,
+				F9681CB8272A21C500941894 /* PurchaseAddView.swift */,
 			);
 			path = PurchaseAdd;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */,
+				F9E596762728FDF200F37B9A /* PurchaseAdd.storyboard in Resources */,
 				19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */,
 				19EDF04C2727CE7400AF54A7 /* LaunchScreen.storyboard in Resources */,
 				19EDF0492727CE7400AF54A7 /* Assets.xcassets in Resources */,
@@ -472,6 +479,7 @@
 			files = (
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
+				F9681CB9272A21C500941894 /* PurchaseAddView.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
 				19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */,
 			);
@@ -668,7 +676,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 282R274LXF;
+				DEVELOPMENT_TEAM = KBSYTU5GMJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -696,7 +704,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 282R274LXF;
+				DEVELOPMENT_TEAM = KBSYTU5GMJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
