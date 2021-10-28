@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034FD4C7272A92800060F7F4 /* PurchaseOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FD4C6272A92800060F7F4 /* PurchaseOrderViewController.swift */; };
+		034FD4C9272A92920060F7F4 /* PurchaseOverview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034FD4C8272A92920060F7F4 /* PurchaseOverview.storyboard */; };
+		034FD4CB272A936E0060F7F4 /* ProductInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */; };
+		034FD4CF272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FD4CD272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift */; };
+		034FD4D0272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034FD4CE272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib */; };
 		19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */; };
 		19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */; };
 		19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0402727CE7300AF54A7 /* ViewController.swift */; };
@@ -40,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		034FD4C6272A92800060F7F4 /* PurchaseOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrderViewController.swift; sourceTree = "<group>"; };
+		034FD4C8272A92920060F7F4 /* PurchaseOverview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseOverview.storyboard; sourceTree = "<group>"; };
+		034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationTableViewController.swift; sourceTree = "<group>"; };
+		034FD4CD272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAllocationTableViewCell.swift; sourceTree = "<group>"; };
+		034FD4CE272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetAllocationTableViewCell.xib; sourceTree = "<group>"; };
 		19EDF0392727CE7300AF54A7 /* MEGapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MEGapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		034FD4CC272A9C350060F7F4 /* BudgetAllocationTableView */ = {
+			isa = PBXGroup;
+			children = (
+				034FD4CD272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift */,
+				034FD4CE272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib */,
+			);
+			path = BudgetAllocationTableView;
+			sourceTree = "<group>";
+		};
 		19EDF0302727CE7300AF54A7 = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +265,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = WishlistDetail;
+			name = WishlistDetail;
+			path = ../Services/WishlistDetail;
 			sourceTree = "<group>";
 		};
 		19EDF08B2727D6A200AF54A7 /* PurchaseAdd */ = {
@@ -281,12 +301,16 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = PurchaseOtherBudgetAllocation;
+			name = PurchaseOtherBudgetAllocation;
+			path = PurchaseSameItem/PurchaseOtherBudgetAllocation;
 			sourceTree = "<group>";
 		};
 		19EDF0912727D77A00AF54A7 /* PurchaseOverview */ = {
 			isa = PBXGroup;
 			children = (
+				034FD4C6272A92800060F7F4 /* PurchaseOrderViewController.swift */,
+				034FD4C8272A92920060F7F4 /* PurchaseOverview.storyboard */,
+				034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */,
 			);
 			path = PurchaseOverview;
 			sourceTree = "<group>";
@@ -309,6 +333,7 @@
 		19EDF0942727D79B00AF54A7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				034FD4CC272A9C350060F7F4 /* BudgetAllocationTableView */,
 				19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */,
 				19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */,
 			);
@@ -422,6 +447,8 @@
 			files = (
 				19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */,
 				19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */,
+				034FD4D0272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib in Resources */,
+				034FD4C9272A92920060F7F4 /* PurchaseOverview.storyboard in Resources */,
 				19EDF04C2727CE7400AF54A7 /* LaunchScreen.storyboard in Resources */,
 				19EDF0492727CE7400AF54A7 /* Assets.xcassets in Resources */,
 				19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */,
@@ -472,7 +499,10 @@
 			files = (
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
+				034FD4C7272A92800060F7F4 /* PurchaseOrderViewController.swift in Sources */,
+				034FD4CF272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
+				034FD4CB272A936E0060F7F4 /* ProductInformationTableViewController.swift in Sources */,
 				19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
