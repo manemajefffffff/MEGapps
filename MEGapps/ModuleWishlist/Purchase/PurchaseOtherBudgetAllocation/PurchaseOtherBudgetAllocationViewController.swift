@@ -14,6 +14,7 @@ class PurchaseOtherBudgetAllocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNib()
+        registerGesture()
     }
     // MARK: - Function
     private func registerNib() {
@@ -32,11 +33,18 @@ class PurchaseOtherBudgetAllocationViewController: UIViewController {
         self.view.addSubview(containerView)
         containerView.addSubview(otherBudgetAllocationTableView)
     }
+    private func registerGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 extension PurchaseOtherBudgetAllocationViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
