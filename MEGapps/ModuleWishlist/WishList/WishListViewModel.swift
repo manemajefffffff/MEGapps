@@ -8,9 +8,9 @@
 import Foundation
 
 public struct WishListViewModel {
-    func prepareForWishListCell() {
-        //get the coredata from here
-        
-        //modify the data
+    let bundle: Bundle
+    
+    init(bundle: Bundle = Bundle.main) {
+        self.bundle = bundle
     }
 }
