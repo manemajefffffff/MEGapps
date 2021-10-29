@@ -42,6 +42,7 @@
 		19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0AB27283E5500AF54A7 /* OtherBudget.storyboard */; };
 		C63E3342272A89C500A08D06 /* WishlistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E333F272A89C500A08D06 /* WishlistDetailViewController.swift */; };
 		C63E3343272A89C500A08D06 /* WishlistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E3340272A89C500A08D06 /* WishlistDetailViewModel.swift */; };
+		C6974C3F272BABF6007EA0C7 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C3E272BABF6007EA0C7 /* ViewExtension.swift */; };
 		F9681CB9272A21C500941894 /* PurchaseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CB8272A21C500941894 /* PurchaseAddView.swift */; };
 		F9681CBF272AAD4000941894 /* PurchaseCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */; };
 		F9681CC1272AADD100941894 /* PurchaseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */; };
@@ -107,6 +108,7 @@
 		C63E333F272A89C500A08D06 /* WishlistDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailViewController.swift; sourceTree = "<group>"; };
 		C63E3340272A89C500A08D06 /* WishlistDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailViewModel.swift; sourceTree = "<group>"; };
 		C63E3341272A89C500A08D06 /* WishlistDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailView.swift; sourceTree = "<group>"; };
+		C6974C3E272BABF6007EA0C7 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		F9681CB8272A21C500941894 /* PurchaseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAddView.swift; sourceTree = SOURCE_ROOT; };
 		F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = PurchaseCategory.storyboard; path = MEGapps/ModuleWishlist/WishList/PurchaseCategory.storyboard; sourceTree = SOURCE_ROOT; };
 		F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryView.swift; path = MEGapps/ModuleWishlist/WishList/PurchaseCategoryView.swift; sourceTree = SOURCE_ROOT; };
@@ -224,6 +226,7 @@
 		19EDF03B2727CE7300AF54A7 /* MEGapps */ = {
 			isa = PBXGroup;
 			children = (
+				C6974C3D272BABF6007EA0C7 /* Extension */,
 				19EDF0942727D79B00AF54A7 /* Common */,
 				19EDF0922727D78B00AF54A7 /* Services */,
 				19EDF0752727D05600AF54A7 /* ModuleWishlist */,
@@ -454,6 +457,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		C6974C3D272BABF6007EA0C7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C6974C3E272BABF6007EA0C7 /* ViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -623,6 +634,7 @@
 				193D48FF2728EFC300F46C30 /* WishListViewController.swift in Sources */,
 				07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
+				C6974C3F272BABF6007EA0C7 /* ViewExtension.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
 				034FD4C7272A92800060F7F4 /* PurchaseOrderViewController.swift in Sources */,
 				034FD4D6272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift in Sources */,
