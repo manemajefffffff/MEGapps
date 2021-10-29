@@ -31,7 +31,7 @@ class PurchaseSameItemViewController: UIViewController {
         
         TV.register(UINib.init(nibName: "PurchaseSameItemTableViewCell", bundle: nil), forCellReuseIdentifier: "PurchaseSameItemCell")
         
-        TV.separatorStyle = .none
+        TV.separatorStyle = .singleLine
         TV.showsVerticalScrollIndicator = false
     }
 

@@ -12,7 +12,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PurchaseSameItemCell" id="KGk-i7-Jjw" customClass="PurchaseSameItemTableViewCell" customModule="MEGapps" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="PurchaseSameItemTableViewCell" customModule="MEGapps" customModuleProvider="target">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -41,7 +41,7 @@
                 <outlet property="labelProductDeadline" destination="4Rd-sa-p1G" id="c4l-GJ-Tzj"/>
                 <outlet property="labelProductName" destination="r47-Qm-ICj" id="2Vn-8L-iLQ"/>
             </connections>
-            <point key="canvasLocation" x="139" y="140"/>
+            <point key="canvasLocation" x="138.40579710144928" y="139.95535714285714"/>
         </tableViewCell>
     </objects>
 </document>
