@@ -8,25 +8,24 @@
 import UIKit
 
 class BudgetAllocationTableView: UITableView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
     override func awakeFromNib() {
         dropShadow()
+        removeHeaderSection()
     }
     
-    func dropShadow() {
+    // MARK: - UI modification function
+    private func dropShadow() {
         self.layer.masksToBounds = true
         self.layer.shadowColor = UIColor.black.withAlphaComponent(0.4).cgColor // any value you want
         self.layer.shadowOpacity = 0.3 // any value you want
         self.layer.shadowRadius = 2 // any value you want
         self.layer.shadowOffset = .init(width: 0, height: 3) // any value you want
+    }
+    
+    private func removeHeaderSection() {
+        var frame = CGRect.zero
+        frame.size.height = .leastNormalMagnitude
+        self.tableHeaderView = UIView(frame: frame)
     }
 
 }
