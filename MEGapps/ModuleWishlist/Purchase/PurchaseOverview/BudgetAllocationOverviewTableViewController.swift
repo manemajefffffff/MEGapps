@@ -7,36 +7,48 @@
 
 import UIKit
 
-class BudgetAllocationOverviewTableViewController: UITableViewController {
+protocol BudgetAllocationTVCProtocol: AnyObject {
+    func changeHeight(baHeight: CGFloat)
+}
 
+class BudgetAllocationOverviewTableViewController: UITableViewController {
+    
+    weak var delegate: BudgetAllocationTVCProtocol? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        registerNib()
+    }
+    
+    func registerNib() {
+        self.tableView.register(UINib.init(nibName: "BudgetAllocationTableViewCell", bundle: nil), forCellReuseIdentifier: "BudgetAllocationTableViewCell")
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.updateViewConstraints()
+        delegate?.changeHeight(baHeight: self.tableView.contentSize.height)
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 3
     }
 
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BudgetAllocationTableViewCell", for: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
