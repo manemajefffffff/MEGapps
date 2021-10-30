@@ -1,13 +1,13 @@
 //
-//  WishListViewModel.swift
+//  PurchaseOtherBudgetAllocationViewModel.swift
 //  MEGapps
 //
-//  Created by Arya Ilham on 27/10/21.
+//  Created by Arya Ilham on 29/10/21.
 //
 
 import Foundation
 
-public struct WishListViewModel {
+class PurchaseOtherBudgetAllocationViewModel {
     let bundle: Bundle
     
     init(bundle: Bundle = Bundle.main) {
