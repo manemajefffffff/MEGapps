@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,6 +15,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="GcI-J7-skV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="backgroundColor" name="BabyPowder"/>
                         <sections>
                             <tableViewSection id="Ido-a0-TiU">
@@ -38,6 +40,11 @@
                                                 <constraint firstItem="uDt-bd-9sF" firstAttribute="top" secondItem="FOo-SK-OIe" secondAttribute="top" id="Uhr-As-DYy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="productPrice" id="xnO-ZB-vaZ">
                                         <rect key="frame" x="20" y="62" width="374" height="44"/>
@@ -74,8 +81,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Category 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fiu-CI-Rmv">
-                                                    <rect key="frame" x="254.5" y="12" width="82" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Collection Items" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fiu-CI-Rmv">
+                                                    <rect key="frame" x="214" y="12" width="122.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,7 +91,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productDeadline" textLabel="H70-W3-iCe" style="IBUITableViewCellStyleDefault" id="GlV-lg-s4f">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productDeadline" textLabel="H70-W3-iCe" detailTextLabel="smR-dJ-N29" style="IBUITableViewCellStyleValue1" id="GlV-lg-s4f">
                                         <rect key="frame" x="20" y="150" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GlV-lg-s4f" id="Go6-EV-33J">
@@ -92,7 +99,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Product Deadline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H70-W3-iCe">
-                                                    <rect key="frame" x="20" y="0.0" width="316.5" height="44"/>
+                                                    <rect key="frame" x="20" y="12" width="131.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="smR-dJ-N29">
+                                                    <rect key="frame" x="300.5" y="12" width="36" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -110,7 +124,7 @@
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="wQb-ZM-5Kn">
                                                     <rect key="frame" x="16" y="0.0" width="342" height="340"/>
-                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" name="NavigationItemsGreen"/>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -127,11 +141,34 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VQZ-j9-Qxh" id="VAL-Ti-F4d">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="132"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDB-Oh-9hV">
+                                                    <rect key="frame" x="16" y="9" width="342" height="114"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CDB-Oh-9hV" firstAttribute="top" secondItem="VAL-Ti-F4d" secondAttribute="top" constant="9" id="10w-rk-S5X"/>
+                                                <constraint firstAttribute="trailing" secondItem="CDB-Oh-9hV" secondAttribute="trailing" constant="16" id="FWA-UY-cKE"/>
+                                                <constraint firstItem="CDB-Oh-9hV" firstAttribute="leading" secondItem="VAL-Ti-F4d" secondAttribute="leading" constant="16" id="e0X-Ca-mxf"/>
+                                                <constraint firstAttribute="bottom" secondItem="CDB-Oh-9hV" secondAttribute="bottom" constant="9" id="yLr-7H-pAB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="LaterActionGreen"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="E9B-3b-zFB" id="ej1-hh-cCN"/>
                             <outlet property="delegate" destination="E9B-3b-zFB" id="gEz-LK-4MS"/>
@@ -139,13 +176,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Purchase" id="RH4-0b-nlL">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="nnQ-7i-EJh">
-                            <color key="tintColor" name="LightMossGreen"/>
+                            <color key="tintColor" name="NavigationItemsGreen"/>
                             <connections>
                                 <action selector="dismissPage:" destination="E9B-3b-zFB" id="TwY-lU-ndt"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="pf2-DY-gIj">
-                            <color key="tintColor" name="OuterSpaceColor"/>
+                            <color key="tintColor" name="DebitAmountGreen"/>
+                            <connections>
+                                <action selector="moveToCategoryPage:" destination="E9B-3b-zFB" id="y3P-2s-9uz"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -153,6 +193,7 @@
                         <outlet property="deadlineDatePicker" destination="wQb-ZM-5Kn" id="V1J-WW-4e2"/>
                         <outlet property="itemNameTextField" destination="uDt-bd-9sF" id="g4q-1H-1wq"/>
                         <outlet property="itemPriceTextField" destination="J91-qc-fV1" id="MWZ-gY-gC0"/>
+                        <outlet property="reasonTextView" destination="CDB-Oh-9hV" id="GBs-tf-pKl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXL-qK-ziH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -179,14 +220,22 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="DebitAmountGreen">
+            <color red="0.25400000810623169" green="0.47200000286102295" blue="0.21400000154972076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         <namedColor name="BabyPowder">
             <color red="0.99500000476837158" green="1" blue="0.97899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="LightMossGreen">
-            <color red="0.72500002384185791" green="0.86299997568130493" blue="0.70099997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="LaterActionGreen">
+            <color red="0.23100000619888306" green="0.2720000147819519" blue="0.23299999535083771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="OuterSpaceColor">
-            <color red="0.18000000715255737" green="0.24099999666213989" blue="0.22200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="NavigationItemsGreen">
+            <color red="0.29600000381469727" green="0.54699999094009399" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
