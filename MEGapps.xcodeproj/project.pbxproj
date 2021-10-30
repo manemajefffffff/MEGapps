@@ -16,6 +16,10 @@
 		0751401B272AEDF300984C4F /* SavingsBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07514019272AEDF300984C4F /* SavingsBudgetTableViewCell.swift */; };
 		0751401C272AEDF300984C4F /* SavingsBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0751401A272AEDF300984C4F /* SavingsBudgetTableViewCell.xib */; };
 		07545F7B27296BAB002E422A /* OtherBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */; };
+		076669F5272C3D8700C02B20 /* PurchaseSameItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076669F4272C3D8700C02B20 /* PurchaseSameItemViewController.swift */; };
+		076669F7272C3D9800C02B20 /* PurchaseSameItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076669F6272C3D9800C02B20 /* PurchaseSameItem.storyboard */; };
+		076669FB272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076669F9272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift */; };
+		076669FC272C411F00C02B20 /* PurchaseSameItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076669FA272C411F00C02B20 /* PurchaseSameItemTableViewCell.xib */; };
 		078A1B972729113000813423 /* OtherBudgetCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078A1B962729113000813423 /* OtherBudgetCellView.xib */; };
 		078A67DC272B08E800B60DF5 /* WishlistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E3341272A89C500A08D06 /* WishlistDetailView.swift */; };
 		078A67DD272B0ACA00B60DF5 /* HobbySavingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D094F92728458100DD0716 /* HobbySavingsCellView.swift */; };
@@ -83,6 +87,10 @@
 		0751401A272AEDF300984C4F /* SavingsBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsBudgetTableViewCell.xib; sourceTree = "<group>"; };
 		07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetTableViewCell.swift; sourceTree = "<group>"; };
 		07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherBudgetTableViewCell.xib; sourceTree = "<group>"; };
+		076669F4272C3D8700C02B20 /* PurchaseSameItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSameItemViewController.swift; sourceTree = "<group>"; };
+		076669F6272C3D9800C02B20 /* PurchaseSameItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseSameItem.storyboard; sourceTree = "<group>"; };
+		076669F9272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSameItemTableViewCell.swift; sourceTree = "<group>"; };
+		076669FA272C411F00C02B20 /* PurchaseSameItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseSameItemTableViewCell.xib; sourceTree = "<group>"; };
 		078A1B942729112700813423 /* OtherBudgetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetCellView.swift; sourceTree = "<group>"; };
 		078A1B962729113000813423 /* OtherBudgetCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherBudgetCellView.xib; sourceTree = "<group>"; };
 		07D094F92728458100DD0716 /* HobbySavingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbySavingsCellView.swift; sourceTree = "<group>"; };
@@ -168,6 +176,15 @@
 				0751401A272AEDF300984C4F /* SavingsBudgetTableViewCell.xib */,
 			);
 			path = SavingsBudgetCell;
+			sourceTree = "<group>";
+		};
+		076669F8272C40E400C02B20 /* PurchaseSameItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				076669F9272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift */,
+				076669FA272C411F00C02B20 /* PurchaseSameItemTableViewCell.xib */,
+			);
+			path = PurchaseSameItemCell;
 			sourceTree = "<group>";
 		};
 		078A1B922729100800813423 /* OtherBudgetCell */ = {
@@ -433,6 +450,8 @@
 		19EDF08D2727D6BC00AF54A7 /* PurchaseSameItem */ = {
 			isa = PBXGroup;
 			children = (
+				076669F4272C3D8700C02B20 /* PurchaseSameItemViewController.swift */,
+				076669F6272C3D9800C02B20 /* PurchaseSameItem.storyboard */,
 			);
 			path = PurchaseSameItem;
 			sourceTree = "<group>";
@@ -485,6 +504,7 @@
 		19EDF0942727D79B00AF54A7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				076669F8272C40E400C02B20 /* PurchaseSameItemCell */,
 				190EA09C272B8A8500479D32 /* PurchaseAllocateBudgetCell */,
 				07514018272AEDC000984C4F /* SavingsBudgetCell */,
 				078A1B922729100800813423 /* OtherBudgetCell */,
@@ -608,6 +628,7 @@
 				19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */,
 				078A67DE272B0C2D00B60DF5 /* HobbySavingsCellView.xib in Resources */,
 				F9E596762728FDF200F37B9A /* PurchaseAdd.storyboard in Resources */,
+				076669F7272C3D9800C02B20 /* PurchaseSameItem.storyboard in Resources */,
 				19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */,
 				034FD4D0272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib in Resources */,
 				190EA0A0272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.xib in Resources */,
@@ -619,6 +640,7 @@
 				190EA0A2272B8F5300479D32 /* PurchaseOtherBudgetAllocation.storyboard in Resources */,
 				19EDF0442727CE7300AF54A7 /* Main.storyboard in Resources */,
 				19A773692728406300219AE7 /* WishlistTableViewCell.xib in Resources */,
+				076669FC272C411F00C02B20 /* PurchaseSameItemTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +688,8 @@
 				078A67DD272B0ACA00B60DF5 /* HobbySavingsCellView.swift in Sources */,
 				078A67DC272B08E800B60DF5 /* WishlistDetailView.swift in Sources */,
 				19A773682728406300219AE7 /* WishlistTableViewCell.swift in Sources */,
+				076669FB272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift in Sources */,
+				076669F5272C3D8700C02B20 /* PurchaseSameItemViewController.swift in Sources */,
 				193D48FF2728EFC300F46C30 /* WishListViewController.swift in Sources */,
 				07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
