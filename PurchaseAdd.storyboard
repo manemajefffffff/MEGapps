@@ -222,6 +222,7 @@
     <resources>
         <namedColor name="DebitAmountGreen">
             <color red="0.25400000810623169" green="0.47200000286102295" blue="0.21400000154972076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="BabyPowder">
             <color red="0.99500000476837158" green="1" blue="0.97899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
