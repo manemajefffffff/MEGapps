@@ -14,7 +14,6 @@ class BudgetAllocationTableViewCell: UITableViewCell {
     @IBOutlet weak var budgetUsedAmt: UILabel!
     @IBOutlet weak var budgetLeftAmt: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
