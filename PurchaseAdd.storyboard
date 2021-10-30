@@ -16,6 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BabyPowder"/>
                         <sections>
                             <tableViewSection id="Ido-a0-TiU">
                                 <cells>
@@ -221,6 +222,8 @@
     <resources>
         <namedColor name="DebitAmountGreen">
             <color red="0.25400000810623169" green="0.47200000286102295" blue="0.21400000154972076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BabyPowder">
+            <color red="0.99500000476837158" green="1" blue="0.97899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LaterActionGreen">
             <color red="0.23100000619888306" green="0.2720000147819519" blue="0.23299999535083771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

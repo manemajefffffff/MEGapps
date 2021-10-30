@@ -7,16 +7,30 @@
 
 import UIKit
 
+protocol ProductInformationTVCProtocol: AnyObject {
+    func changepiHeight(piHeight: CGFloat)
+}
+
 class ProductInformationTableViewController: UITableViewController {
+    
+    weak var delegate: ProductInformationTVCProtocol? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        var frame = CGRect.zero
+//            frame.size.height = .leastNormalMagnitude
+//        self.tableView.tableFooterView = UIView(frame: frame)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.updateViewConstraints()
+        delegate?.changepiHeight(piHeight: self.tableView.contentSize.height)
     }
 
     // MARK: - Table view data source
@@ -25,6 +39,14 @@ class ProductInformationTableViewController: UITableViewController {
 //        // #warning Incomplete implementation, return the number of sections
 //        return 0
 //    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

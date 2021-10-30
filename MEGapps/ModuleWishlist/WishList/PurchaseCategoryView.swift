@@ -12,7 +12,7 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
     
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet var tableHeight: NSLayoutConstraint!
     
     // MARK: - Variables
     let categories = ["Technologies", "Travelling", "Scuba Diving", "Gaming", "Fashion"]
@@ -20,25 +20,31 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        //setupUI()
+    override func viewWillLayoutSubviews() {
+        super.updateViewConstraints()
+        self.tableHeight?.constant = self.tableView.contentSize.height
     }
     
     // MARK: - Functions
     
     func setupUI() {
-        //for table view border
-        tableView.layer.cornerRadius = 5
-        tableView.layer.cornerRadius = 5
-        let shadowPath = UIBezierPath(roundedRect: tableView.bounds, cornerRadius: 5)
-        tableView.layer.masksToBounds = false
-        tableView.layer.shadowColor = UIColor.red.cgColor
-        tableView.layer.shadowOffset = CGSize(width: 0.5, height: 1)
-        tableView.layer.shadowOpacity = 0.25
-        tableView.layer.shadowPath = shadowPath.cgPath
+        tableView.layer.borderColor = UIColor.white.cgColor
+        tableView.layer.borderWidth = 1.0
+
+        let containerView: UIView = UIView(frame: self.tableView.frame)
+        containerView.backgroundColor = UIColor.clear
+        containerView.layer.shadowColor = UIColor.lightGray.cgColor
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        containerView.layer.shadowOpacity = 0.5
+        containerView.layer.shadowRadius = 2
+
+        tableView.layer.cornerRadius = 10
+        tableView.layer.masksToBounds = true
+        self.view.addSubview(containerView)
+        containerView.addSubview(tableView)
     }
     
 }
@@ -47,24 +53,8 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
 
 extension PurchaseCategoryView {
     
-    //func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        //let shadowView = UIView()
-//        let gradient = CAGradientLayer()
-//        gradient.frame.size = CGSize(width: tableView.bounds.width - 40, height: 15)
-//        let stopColor = UIColor.gray.cgColor
-//        let startColor = UIColor.white.cgColor
-//
-//        gradient.shadowOpacity = 0.1
-//        gradient.colors = [stopColor,startColor]
-//
-//        gradient.locations = [0.0,0.8]
-//        shadowView.layer.addSublayer(gradient)
-        
-          //return shadowView
-    //}
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
