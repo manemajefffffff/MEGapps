@@ -21,38 +21,61 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ry-oX-gG6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="735"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
                                         <subviews>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STg-z1-hm3">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="280" id="CXR-cO-QAC"/>
-                                                </constraints>
-                                                <connections>
-                                                    <segue destination="kCK-nT-PCu" kind="embed" id="e2t-lO-Jzi"/>
-                                                </connections>
-                                            </containerView>
                                             <containerView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bDB-Bm-fHU">
-                                                <rect key="frame" x="0.0" y="285" width="414" height="201"/>
+                                                <rect key="frame" x="0.0" y="273" width="414" height="200"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="201" id="3aX-uI-jzu"/>
+                                                    <constraint firstAttribute="height" constant="200" id="3aX-uI-jzu"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="kxn-zF-e2s" kind="embed" identifier="allocToPurchase" id="mE7-Oe-mZe"/>
                                                 </connections>
                                             </containerView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STg-z1-hm3">
+                                                <rect key="frame" x="20" y="0.0" width="374" height="257"/>
+                                                <color key="backgroundColor" name="BabyPowder"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="257" id="CXR-cO-QAC"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="kCK-nT-PCu" kind="embed" id="e2t-lO-Jzi"/>
+                                                </connections>
+                                            </containerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget Allocation Used:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dV-B7-QJ9">
+                                                <rect key="frame" x="20" y="273" width="166" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="Jg8-7Z-hKt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" name="BabyPowder"/>
                                         <constraints>
-                                            <constraint firstItem="STg-z1-hm3" firstAttribute="leading" secondItem="2Ry-oX-gG6" secondAttribute="leading" id="9Ox-Mb-9Ov"/>
+                                            <constraint firstItem="STg-z1-hm3" firstAttribute="leading" secondItem="2Ry-oX-gG6" secondAttribute="leading" constant="20" id="9Ox-Mb-9Ov"/>
                                             <constraint firstAttribute="trailing" secondItem="bDB-Bm-fHU" secondAttribute="trailing" id="ACz-SU-6uH"/>
-                                            <constraint firstItem="bDB-Bm-fHU" firstAttribute="top" secondItem="STg-z1-hm3" secondAttribute="bottom" constant="5" id="Chg-JF-DGT"/>
+                                            <constraint firstItem="8dV-B7-QJ9" firstAttribute="top" secondItem="STg-z1-hm3" secondAttribute="bottom" constant="16" id="Chg-JF-DGT"/>
                                             <constraint firstItem="bDB-Bm-fHU" firstAttribute="leading" secondItem="2Ry-oX-gG6" secondAttribute="leading" id="OKl-PK-0L3"/>
+                                            <constraint firstItem="8dV-B7-QJ9" firstAttribute="leading" secondItem="2Ry-oX-gG6" secondAttribute="leading" constant="20" id="OW6-Xt-mkL"/>
                                             <constraint firstAttribute="bottom" secondItem="bDB-Bm-fHU" secondAttribute="bottom" constant="249" id="YVY-iH-3IH"/>
                                             <constraint firstItem="bDB-Bm-fHU" firstAttribute="centerX" secondItem="2Ry-oX-gG6" secondAttribute="centerX" id="e2m-g5-aow"/>
-                                            <constraint firstAttribute="trailing" secondItem="STg-z1-hm3" secondAttribute="trailing" id="jFk-K6-tEb"/>
+                                            <constraint firstAttribute="trailing" secondItem="STg-z1-hm3" secondAttribute="trailing" constant="20" id="jFk-K6-tEb"/>
                                             <constraint firstItem="STg-z1-hm3" firstAttribute="centerX" secondItem="2Ry-oX-gG6" secondAttribute="centerX" id="jY2-E8-ZkT"/>
                                             <constraint firstItem="STg-z1-hm3" firstAttribute="top" secondItem="2Ry-oX-gG6" secondAttribute="top" id="m1a-2n-bMt"/>
+                                            <constraint firstItem="bDB-Bm-fHU" firstAttribute="top" secondItem="STg-z1-hm3" secondAttribute="bottom" constant="16" id="vBf-32-taF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -65,13 +88,13 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <viewLayoutGuide key="safeArea" id="cfn-5M-BLi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hTi-FR-3HS" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ABz-EX-iC5"/>
-                            <constraint firstItem="hTi-FR-3HS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="INM-5t-afc"/>
-                            <constraint firstItem="hTi-FR-3HS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="N5i-FP-r1Y"/>
-                            <constraint firstItem="hTi-FR-3HS" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="v4B-Tm-7ar"/>
+                            <constraint firstItem="hTi-FR-3HS" firstAttribute="bottom" secondItem="cfn-5M-BLi" secondAttribute="bottom" id="ABz-EX-iC5"/>
+                            <constraint firstItem="hTi-FR-3HS" firstAttribute="leading" secondItem="cfn-5M-BLi" secondAttribute="leading" id="INM-5t-afc"/>
+                            <constraint firstItem="hTi-FR-3HS" firstAttribute="top" secondItem="cfn-5M-BLi" secondAttribute="top" id="N5i-FP-r1Y"/>
+                            <constraint firstItem="hTi-FR-3HS" firstAttribute="trailing" secondItem="cfn-5M-BLi" secondAttribute="trailing" id="v4B-Tm-7ar"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Purchase Overview" id="sZm-ab-aBG">
@@ -79,6 +102,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="allocBudgUiView" destination="bDB-Bm-fHU" id="SHj-38-CRg"/>
+                        <outlet property="productInfoHeight" destination="CXR-cO-QAC" id="9W4-Ho-OnM"/>
+                        <outlet property="productInfoUiView" destination="STg-z1-hm3" id="Oyf-zm-NT5"/>
                         <outlet property="viewHeight" destination="3aX-uI-jzu" id="T81-nS-drZ"/>
                     </connections>
                 </viewController>
@@ -91,7 +116,7 @@
             <objects>
                 <tableViewController id="kxn-zF-e2s" customClass="BudgetAllocationOverviewTableViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="229" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="n5Q-xm-dL7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="201"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="BabyPowder"/>
                         <prototypes>
@@ -119,16 +144,15 @@
         <scene sceneID="gm1-g4-4Ic">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="kCK-nT-PCu" customClass="ProductInformationTableViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="Hyy-SZ-AHr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="Hyy-SZ-AHr">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="257"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="BabyPowder"/>
                         <color key="sectionIndexBackgroundColor" name="BabyPowder"/>
                         <sections>
-                            <tableViewSection id="YyF-cQ-hD6">
+                            <tableViewSection id="TLl-Xb-SEd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="53K-kG-iQx">
-                                        <rect key="frame" x="20" y="18" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="53K-kG-iQx" id="W0C-e3-xUT">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -145,7 +169,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Fqa-j7-pv1">
-                                        <rect key="frame" x="20" y="61.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="88" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fqa-j7-pv1" id="4co-hO-4qD">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -162,7 +186,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="fnt-de-tpc">
-                                        <rect key="frame" x="20" y="105" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="131.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fnt-de-tpc" id="Dqo-zh-miZ">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -186,7 +210,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oU8-E5-3ks">
-                                        <rect key="frame" x="20" y="148.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="175" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oU8-E5-3ks" id="mBY-jo-paw">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -210,7 +234,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="YZn-pm-EyC">
-                                        <rect key="frame" x="20" y="192" width="374" height="80"/>
+                                        <rect key="frame" x="0.0" y="218.5" width="374" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YZn-pm-EyC" id="iVD-ce-EDV">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
@@ -250,6 +274,9 @@
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                 <color key="value" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="kCK-nT-PCu" id="89x-Uw-wi5"/>
@@ -260,7 +287,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I5a-x8-72S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1819" y="-360"/>
+            <point key="canvasLocation" x="1818.840579710145" y="-360.26785714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BzB-Rg-3Cr">
