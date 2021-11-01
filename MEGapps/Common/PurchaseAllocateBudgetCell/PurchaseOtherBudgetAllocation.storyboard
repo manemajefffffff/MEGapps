@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Other Budgets-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController title="Other Budgets" id="Y6W-OH-hqX" customClass="PurchaseOtherBudgetAllocationViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ce1-ch-3L8" userLabel="Insufficient amount" customClass="InsufficientAmountView" customModule="MEGapps" customModuleProvider="target">
+                                <rect key="frame" x="16" y="65" width="382" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insufficient Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr5-rL-ymh">
+                                        <rect key="frame" x="11" y="11" width="146.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 1.250.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WI-EE-XwN" userLabel="Money left">
+                                        <rect key="frame" x="11" y="35.5" width="152.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <color key="textColor" name="CreditAmountRed"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Fr5-rL-ymh" firstAttribute="top" secondItem="ce1-ch-3L8" secondAttribute="top" constant="11" id="BCu-o0-Hed"/>
+                                    <constraint firstAttribute="height" constant="75" id="FxW-07-Qyv"/>
+                                    <constraint firstItem="Fr5-rL-ymh" firstAttribute="leading" secondItem="ce1-ch-3L8" secondAttribute="leading" constant="11" id="QFp-Rb-tlv"/>
+                                    <constraint firstItem="7WI-EE-XwN" firstAttribute="top" secondItem="Fr5-rL-ymh" secondAttribute="bottom" constant="5" id="TjA-vZ-Gno"/>
+                                    <constraint firstItem="7WI-EE-XwN" firstAttribute="leading" secondItem="Fr5-rL-ymh" secondAttribute="leading" id="jYf-3a-bBy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="88" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e19-rM-Anj" customClass="BudgetAllocationTableView" customModule="MEGapps" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="220.5" width="414" height="641.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="0VL-tX-GU1"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="b1l-Sy-L5X"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the amount of budget you want to use to cover the insufficient amount, you can allocate more than one budget." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAv-8J-PSZ">
+                                <rect key="frame" x="16" y="154" width="382" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="BabyPowder"/>
+                        <constraints>
+                            <constraint firstItem="GAv-8J-PSZ" firstAttribute="trailing" secondItem="ce1-ch-3L8" secondAttribute="trailing" id="76k-47-byZ"/>
+                            <constraint firstItem="e19-rM-Anj" firstAttribute="top" secondItem="GAv-8J-PSZ" secondAttribute="bottom" constant="16" id="96T-e5-7GR"/>
+                            <constraint firstItem="ce1-ch-3L8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="21" id="CyS-8m-DT2"/>
+                            <constraint firstItem="e19-rM-Anj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZUZ-Ak-leO"/>
+                            <constraint firstItem="GAv-8J-PSZ" firstAttribute="leading" secondItem="ce1-ch-3L8" secondAttribute="leading" id="ZhO-Qe-ju5"/>
+                            <constraint firstItem="e19-rM-Anj" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="eTj-ho-k8g"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="e19-rM-Anj" secondAttribute="trailing" id="oCB-Jp-pYE"/>
+                            <constraint firstItem="GAv-8J-PSZ" firstAttribute="top" secondItem="ce1-ch-3L8" secondAttribute="bottom" constant="14" id="oPb-Xa-psW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ce1-ch-3L8" secondAttribute="trailing" constant="16" id="ySi-pb-Yn4"/>
+                            <constraint firstItem="ce1-ch-3L8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="zyB-qd-ga7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Okr-Dm-6UN"/>
+                    <connections>
+                        <outlet property="otherBudgetAllocationTableView" destination="e19-rM-Anj" id="uMB-pY-4f4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BabyPowder">
+            <color red="0.99500000476837158" green="1" blue="0.97899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CreditAmountRed">
+            <color red="0.79600000381469727" green="0.29399999976158142" blue="0.29499998688697815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
