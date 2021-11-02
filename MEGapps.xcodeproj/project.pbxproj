@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030881062730E4FD00EF8F4A /* AddEditBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030881052730E4FD00EF8F4A /* AddEditBudgetViewController.swift */; };
+		030881082730E52700EF8F4A /* AddEditBudget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030881072730E52700EF8F4A /* AddEditBudget.storyboard */; };
 		034FD4C7272A92800060F7F4 /* PurchaseOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FD4C6272A92800060F7F4 /* PurchaseOrderViewController.swift */; };
 		034FD4C9272A92920060F7F4 /* PurchaseOverview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034FD4C8272A92920060F7F4 /* PurchaseOverview.storyboard */; };
 		034FD4CB272A936E0060F7F4 /* ProductInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */; };
@@ -85,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030881052730E4FD00EF8F4A /* AddEditBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddEditBudgetViewController.swift; path = MEGapps/ModuleOtherBudget/AddEditBudgetViewController.swift; sourceTree = SOURCE_ROOT; };
+		030881072730E52700EF8F4A /* AddEditBudget.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = AddEditBudget.storyboard; path = MEGapps/ModuleOtherBudget/AddEditBudget.storyboard; sourceTree = SOURCE_ROOT; };
 		034FD4C6272A92800060F7F4 /* PurchaseOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrderViewController.swift; sourceTree = "<group>"; };
 		034FD4C8272A92920060F7F4 /* PurchaseOverview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseOverview.storyboard; sourceTree = "<group>"; };
 		034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationTableViewController.swift; sourceTree = "<group>"; };
@@ -362,6 +366,8 @@
 		19EDF0732727D03300AF54A7 /* BudgetAdd */ = {
 			isa = PBXGroup;
 			children = (
+				030881052730E4FD00EF8F4A /* AddEditBudgetViewController.swift */,
+				030881072730E52700EF8F4A /* AddEditBudget.storyboard */,
 			);
 			path = BudgetAdd;
 			sourceTree = "<group>";
@@ -667,6 +673,7 @@
 				034FD4C9272A92920060F7F4 /* PurchaseOverview.storyboard in Resources */,
 				19EDF04C2727CE7400AF54A7 /* LaunchScreen.storyboard in Resources */,
 				F9681CBF272AAD4000941894 /* PurchaseCategory.storyboard in Resources */,
+				030881082730E52700EF8F4A /* AddEditBudget.storyboard in Resources */,
 				19EDF0492727CE7400AF54A7 /* Assets.xcassets in Resources */,
 				19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */,
 				190EA0A2272B8F5300479D32 /* PurchaseOtherBudgetAllocation.storyboard in Resources */,
@@ -738,6 +745,7 @@
 				1942C9C7272C4BB400E76586 /* BudgetAllocationTableView.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
 				1942C9C9272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift in Sources */,
+				030881062730E4FD00EF8F4A /* AddEditBudgetViewController.swift in Sources */,
 				034FD4CB272A936E0060F7F4 /* ProductInformationTableViewController.swift in Sources */,
 				193D4909272924B200F46C30 /* WishListCellModel.swift in Sources */,
 				F9681CC1272AADD100941894 /* PurchaseCategoryView.swift in Sources */,
@@ -954,7 +962,7 @@
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = OtherBudget;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -982,7 +990,7 @@
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = OtherBudget;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
