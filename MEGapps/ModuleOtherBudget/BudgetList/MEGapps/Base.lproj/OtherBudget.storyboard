@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="1388" y="716"/>
         </scene>
-        <!--PurchaseAdd-->
+        <!--AddEditBudget-->
         <scene sceneID="UMa-nF-Sag">
             <objects>
-                <viewControllerPlaceholder storyboardName="PurchaseAdd" id="NZR-Ty-4yG" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="AddEditBudget" id="NZR-Ty-4yG" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="F7q-V9-RSo"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eO7-rY-7Jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
