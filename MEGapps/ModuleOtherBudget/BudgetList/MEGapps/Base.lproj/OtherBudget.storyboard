@@ -70,6 +70,8 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FA-ml-ghQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
         <!--SavingsAdd-->
         <scene sceneID="UMa-nF-Sag">
             <objects>
