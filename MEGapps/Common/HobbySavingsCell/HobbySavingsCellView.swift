@@ -11,14 +11,13 @@ import UIKit
 final class HobbySavingsCellView: UIView {
 
 //MARK: - Outlets
-    
-    
     @IBOutlet weak var labelHobbySavings: UILabel!
     @IBOutlet weak var labelSavingsAmount: UILabel!
     @IBOutlet weak var buttonHistory: UIButton!
     @IBOutlet weak var buttonEye: UIButton!
     @IBOutlet weak var buttonAddAmount: UIButton!
     
+//MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureView()
@@ -29,8 +28,8 @@ final class HobbySavingsCellView: UIView {
         self.configureView()
     }
     
-//MARK: - Load Custom UIView NIB
-    func loadViewFromNib(nibName: String) -> UIView? {
+//MARK: - Functions
+    func loadViewFromNib(nibName: String) -> UIView? {// Load Custom UIView NIB
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
@@ -39,7 +38,7 @@ final class HobbySavingsCellView: UIView {
     private func configureView() {
         guard let view = self.loadViewFromNib(nibName: "HobbySavingsCellView") else {return}
         view.frame = self.bounds
-        view.layer.cornerRadius = 16.0 // View Rounded?
+        view.layer.cornerRadius = 16.0 // View Rounded
         self.addSubview(view)
         self.buttonAddAmount.layer.cornerRadius = 16.0 // Button Rounded
     }
