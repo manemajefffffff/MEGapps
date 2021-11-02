@@ -19,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-1K-1Df">
                                 <rect key="frame" x="20" y="140" width="374" height="722"/>
-                                <color key="backgroundColor" name="BabyPowder"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="nes-sL-vOo" id="hv2-Ab-jdx"/>
                                     <outlet property="delegate" destination="nes-sL-vOo" id="MSm-oQ-ITh"/>
@@ -27,7 +27,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kp5-HN-bve"/>
-                        <color key="backgroundColor" name="BabyPowder"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wFn-1K-1Df" firstAttribute="top" secondItem="Kp5-HN-bve" secondAttribute="top" id="juB-BZ-5g5"/>
                             <constraint firstItem="wFn-1K-1Df" firstAttribute="leading" secondItem="Kp5-HN-bve" secondAttribute="leading" constant="20" id="lXa-wN-hej"/>
@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" title="Wishlist" largeTitleDisplayMode="always" id="oxZ-fb-gPX">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="sX8-T2-12X">
                             <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="large"/>
-                            <color key="tintColor" name="NavigationItemsGreen"/>
+                            <color key="tintColor" name="PrimaryHSgradient"/>
                             <connections>
                                 <action selector="addNewWishlist:" destination="nes-sL-vOo" id="HmD-hN-Z3I"/>
                             </connections>
@@ -77,11 +77,11 @@
     </scenes>
     <resources>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
-        <namedColor name="BabyPowder">
-            <color red="0.99500000476837158" green="1" blue="0.97899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.9649999737739563" green="0.96100002527236938" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="NavigationItemsGreen">
-            <color red="0.29600000381469727" green="0.54699999094009399" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="PrimaryHSgradient">
+            <color red="0.31799998879432678" green="0.38400000333786011" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
