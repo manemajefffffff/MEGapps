@@ -1,137 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K9u-Yd-sUP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K9u-Yd-sUP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Edit Budget View Controller-->
-        <scene sceneID="s0d-6b-0kx">
-            <objects>
-                <viewController id="Y6W-OH-hqX" customClass="AddEditBudgetViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Budget Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XRO-np-3Fg">
-                                <rect key="frame" x="20" y="72" width="374" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="ooO-sQ-alg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.0" height="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Budget Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vC0-f8-fq6">
-                                <rect key="frame" x="20" y="132" width="374" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="mCw-RT-Myv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.0" height="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the new Allocation information for allocations you want to use for purchase." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjU-lN-cEX">
-                                <rect key="frame" x="20" y="192" width="374" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1G-ei-NP1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                                <color key="backgroundColor" name="BackgroundColor"/>
-                                <color key="barTintColor" name="BackgroundColor"/>
-                                <items>
-                                    <navigationItem title="Add Other Budget" id="iLw-CA-eqi">
-                                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="6P5-GC-Dp9">
-                                            <color key="tintColor" name="PrimaryHSgradient"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg0-Cs-5wB">
-                                <rect key="frame" x="20" y="256" width="374" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="Hqd-Yn-TgI"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Save Budget">
-                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
-                                    <color key="baseForegroundColor" name="PureWhite"/>
-                                    <color key="baseBackgroundColor" name="PrimaryHSgradient"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rww-nG-f5x">
-                                <rect key="frame" x="20" y="313" width="374" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="KdK-Sm-b9H"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Delete Budget">
-                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" name="LightSalmonPink"/>
-                                </buttonConfiguration>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" name="BackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="B1G-ei-NP1" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ABF-6I-rJT"/>
-                            <constraint firstItem="tjU-lN-cEX" firstAttribute="top" secondItem="vC0-f8-fq6" secondAttribute="bottom" constant="16" id="Dcb-gY-Qnc"/>
-                            <constraint firstAttribute="trailing" secondItem="tjU-lN-cEX" secondAttribute="trailing" constant="20" id="EEY-Vk-MDl"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XRO-np-3Fg" secondAttribute="trailing" constant="20" id="GQe-cp-9QD"/>
-                            <constraint firstItem="rww-nG-f5x" firstAttribute="top" secondItem="xg0-Cs-5wB" secondAttribute="bottom" constant="8" id="JmD-6s-IT9"/>
-                            <constraint firstItem="vC0-f8-fq6" firstAttribute="top" secondItem="XRO-np-3Fg" secondAttribute="bottom" constant="16" id="Rjs-Td-KrF"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rww-nG-f5x" secondAttribute="trailing" constant="20" id="ZQM-Sl-Yw3"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vC0-f8-fq6" secondAttribute="trailing" constant="20" id="bKh-49-4Fa"/>
-                            <constraint firstItem="XRO-np-3Fg" firstAttribute="top" secondItem="B1G-ei-NP1" secondAttribute="bottom" constant="16" id="chd-9v-MEe"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xg0-Cs-5wB" secondAttribute="trailing" constant="20" id="dhc-4d-SWO"/>
-                            <constraint firstItem="xg0-Cs-5wB" firstAttribute="top" secondItem="tjU-lN-cEX" secondAttribute="bottom" constant="28" id="g22-Dg-zqb"/>
-                            <constraint firstItem="B1G-ei-NP1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kp6-gk-fSu"/>
-                            <constraint firstItem="rww-nG-f5x" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="nMq-Kr-Epv"/>
-                            <constraint firstItem="xg0-Cs-5wB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ntH-ul-blc"/>
-                            <constraint firstItem="tjU-lN-cEX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="rIe-2k-jtU"/>
-                            <constraint firstItem="XRO-np-3Fg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="yDM-Bl-NcA"/>
-                            <constraint firstItem="B1G-ei-NP1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yPG-EX-qrm"/>
-                            <constraint firstItem="vC0-f8-fq6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="z4K-4a-xH9"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="t8Z-8w-jiH"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="106.47321428571428"/>
-        </scene>
         <!--Add Other Budget-->
         <scene sceneID="c5z-uA-KbQ">
             <objects>
@@ -151,15 +27,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.0" height="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Budget Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dnn-tH-JUh">
@@ -172,15 +39,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.0" height="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
@@ -236,30 +94,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Other Budget" id="Oh6-Lp-uJg">
-                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="8o3-nj-phG"/>
+                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="8o3-nj-phG">
+                            <color key="tintColor" name="PrimaryHSgradient"/>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="budgetAmtTF" destination="dnn-tH-JUh" id="5ct-ew-qfS"/>
+                        <outlet property="budgetNameTF" destination="the-vZ-gkT" id="t82-dy-qcN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ez0-de-E6M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3853.6231884057975" y="145.3125"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="z8B-aY-EhC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qJE-0a-W7s" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7in-h8-m5Y">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Y6W-OH-hqX" kind="presentation" identifier="addEditOtherBudgetSegue" id="UZ8-2W-Avs"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SPR-KY-wYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="96" y="106"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h0Z-9W-EkJ">
