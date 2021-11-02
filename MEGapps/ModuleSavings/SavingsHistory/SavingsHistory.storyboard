@@ -42,7 +42,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Savings History" id="Nvi-kn-QR4">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="1HT-hC-V2F"/>
+                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="1HT-hC-V2F">
+                            <color key="tintColor" name="PrimaryHSgradient"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableViewSavingsHistory" destination="1fG-tc-u9t" id="wQR-vI-SwD"/>
@@ -78,6 +80,9 @@
         </namedColor>
         <namedColor name="LightMossGreen">
             <color red="0.72156862745098038" green="0.86274509803921573" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryHSgradient">
+            <color red="0.31799998879432678" green="0.38400000333786011" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

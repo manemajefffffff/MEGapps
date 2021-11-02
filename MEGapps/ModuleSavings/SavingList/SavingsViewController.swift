@@ -13,9 +13,11 @@ class SavingsViewController: UIViewController {
     @IBOutlet weak var viewHobbySavingsCell: HobbySavingsCellView!
     @IBOutlet weak var tableViewSavingsBudget: UITableView!
     
+//MARK: - Variables
     var name = ["one", "two", "three"]
     var price = ["123", "456", "789"]
     
+//MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,7 @@ class SavingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+//MARK: - Functions
     func prepCustomView(view: UIView) {
         view.layer.shadowColor = UIColor.black.cgColor // View DropShadow
         view.layer.shadowRadius = 4.0
@@ -56,6 +59,7 @@ class SavingsViewController: UIViewController {
 
 }
 
+//MARK: - TableView Extension
 extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
