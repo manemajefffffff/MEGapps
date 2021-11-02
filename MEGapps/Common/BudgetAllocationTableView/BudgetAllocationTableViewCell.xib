@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -103,9 +103,14 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="budgetAmount" destination="eM3-yb-IR2" id="fIp-0m-HYe"/>
+                <outlet property="budgetAmountRp" destination="rPf-w6-UQa" id="hNf-nh-D5h"/>
                 <outlet property="budgetLeftAmt" destination="Mgd-w8-iVf" id="Riy-Ua-Mz9"/>
+                <outlet property="budgetLeftLabel" destination="Rqn-kY-xdy" id="okX-CK-nI6"/>
+                <outlet property="budgetLeftRp" destination="Dyh-A9-6Au" id="Rip-LV-UcP"/>
                 <outlet property="budgetName" destination="3G2-43-bcG" id="DbJ-ES-EeA"/>
                 <outlet property="budgetUsedAmt" destination="xag-o0-enW" id="dey-Rf-nk4"/>
+                <outlet property="budgetUsedLabel" destination="iut-Yc-HAH" id="Bjr-W4-AGn"/>
+                <outlet property="budgetUsedRp" destination="vah-de-Qrl" id="GMm-cb-xtM"/>
             </connections>
             <point key="canvasLocation" x="131.15942028985509" y="146.98660714285714"/>
         </tableViewCell>
