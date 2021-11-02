@@ -7,6 +7,6 @@
 
 import Foundation
 
-public struct WishListCellModel {
-    
+public struct WishListModel {
+    let data: [Items]
 }

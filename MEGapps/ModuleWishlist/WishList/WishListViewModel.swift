@@ -7,10 +7,21 @@
 
 import Foundation
 
-public struct WishListViewModel {
-    let bundle: Bundle
+class WishListViewModel: NSObject {
     
-    init(bundle: Bundle = Bundle.main) {
-        self.bundle = bundle
+    private var dataFromCoreData: WishListModel? {
+        didSet {
+            self.bindWishListViewModeltoController()
+        }
+    }
+    
+    var bindWishListViewModeltoController: (() -> Void) = {}
+    
+    override init() {
+        super.init()
+    }
+    
+    private func fetchData() {
+        
     }
 }
