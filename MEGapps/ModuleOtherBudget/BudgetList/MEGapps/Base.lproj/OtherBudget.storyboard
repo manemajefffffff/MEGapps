@@ -50,10 +50,6 @@
             </objects>
             <point key="canvasLocation" x="2297.1014492753625" y="715.84821428571422"/>
         </scene>
-        <!--AddEditBudget-->
-        <scene sceneID="UMa-nF-Sag">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddEditBudget" id="NZR-Ty-4yG" sceneMemberID="viewController">
         <!--Item-->
         <scene sceneID="kUl-50-Doz">
             <objects>
