@@ -64,6 +64,8 @@
 		F9681CB9272A21C500941894 /* PurchaseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CB8272A21C500941894 /* PurchaseAddView.swift */; };
 		F9681CBF272AAD4000941894 /* PurchaseCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */; };
 		F9681CC1272AADD100941894 /* PurchaseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */; };
+		F9838B912730EF130038D041 /* OtherBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9838B902730EF130038D041 /* OtherBudgetViewController.swift */; };
+		F9838B922730FE7F0038D041 /* OtherBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */; };
 		F9E596762728FDF200F37B9A /* PurchaseAdd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E596752728FDF200F37B9A /* PurchaseAdd.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +150,7 @@
 		F9681CB8272A21C500941894 /* PurchaseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAddView.swift; sourceTree = SOURCE_ROOT; };
 		F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = PurchaseCategory.storyboard; path = MEGapps/ModuleWishlist/WishList/PurchaseCategory.storyboard; sourceTree = SOURCE_ROOT; };
 		F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryView.swift; path = MEGapps/ModuleWishlist/WishList/PurchaseCategoryView.swift; sourceTree = SOURCE_ROOT; };
+		F9838B902730EF130038D041 /* OtherBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetViewController.swift; sourceTree = "<group>"; };
 		F9E596752728FDF200F37B9A /* PurchaseAdd.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseAdd.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -370,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				19EDF0AB27283E5500AF54A7 /* OtherBudget.storyboard */,
+				F9838B902730EF130038D041 /* OtherBudgetViewController.swift */,
 			);
 			path = BudgetList;
 			sourceTree = "<group>";
@@ -670,6 +674,7 @@
 				19EDF0492727CE7400AF54A7 /* Assets.xcassets in Resources */,
 				19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */,
 				190EA0A2272B8F5300479D32 /* PurchaseOtherBudgetAllocation.storyboard in Resources */,
+				F9838B922730FE7F0038D041 /* OtherBudgetTableViewCell.xib in Resources */,
 				19EDF0442727CE7300AF54A7 /* Main.storyboard in Resources */,
 				19A773692728406300219AE7 /* WishlistTableViewCell.xib in Resources */,
 				076669FC272C411F00C02B20 /* PurchaseSameItemTableViewCell.xib in Resources */,
@@ -720,6 +725,7 @@
 				078A67DD272B0ACA00B60DF5 /* HobbySavingsCellView.swift in Sources */,
 				078A67DC272B08E800B60DF5 /* WishlistDetailView.swift in Sources */,
 				19A773682728406300219AE7 /* WishlistTableViewCell.swift in Sources */,
+				F9838B912730EF130038D041 /* OtherBudgetViewController.swift in Sources */,
 				076669FB272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift in Sources */,
 				076669F5272C3D8700C02B20 /* PurchaseSameItemViewController.swift in Sources */,
 				193D48FF2728EFC300F46C30 /* WishListViewController.swift in Sources */,
