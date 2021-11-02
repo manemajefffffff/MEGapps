@@ -66,6 +66,13 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FA-ml-ghQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+        <!--SavingsAdd-->
+        <scene sceneID="UMa-nF-Sag">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SavingsAdd" id="NZR-Ty-4yG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="F7q-V9-RSo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eO7-rY-7Jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1386.9565217391305" y="715.84821428571422"/>
         </scene>

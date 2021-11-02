@@ -13,6 +13,10 @@
 		034FD4CF272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FD4CD272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift */; };
 		034FD4D0272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034FD4CE272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib */; };
 		034FD4D6272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FD4D5272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift */; };
+		0710ACF62730F4DA00F8DFA7 /* SavingsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710ACF42730F4DA00F8DFA7 /* SavingsHistoryViewController.swift */; };
+		0710ACF92730F55200F8DFA7 /* SavingsHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0710ACF82730F55200F8DFA7 /* SavingsHistory.storyboard */; };
+		0710ACFD2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710ACFB2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift */; };
+		0710ACFE2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0710ACFC2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.xib */; };
 		0751401B272AEDF300984C4F /* SavingsBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07514019272AEDF300984C4F /* SavingsBudgetTableViewCell.swift */; };
 		0751401C272AEDF300984C4F /* SavingsBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0751401A272AEDF300984C4F /* SavingsBudgetTableViewCell.xib */; };
 		07545F7B27296BAB002E422A /* OtherBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */; };
@@ -66,6 +70,8 @@
 		F9681CC1272AADD100941894 /* PurchaseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */; };
 		F9838B912730EF130038D041 /* OtherBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9838B902730EF130038D041 /* OtherBudgetViewController.swift */; };
 		F9838B922730FE7F0038D041 /* OtherBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */; };
+		F9838B8D2730D47E0038D041 /* SavingsAdd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9838B8C2730D47E0038D041 /* SavingsAdd.storyboard */; };
+		F9838B8F2730D48D0038D041 /* SavingsAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9838B8E2730D48D0038D041 /* SavingsAddViewController.swift */; };
 		F9E596762728FDF200F37B9A /* PurchaseAdd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E596752728FDF200F37B9A /* PurchaseAdd.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +99,10 @@
 		034FD4CD272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAllocationTableViewCell.swift; sourceTree = "<group>"; };
 		034FD4CE272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetAllocationTableViewCell.xib; sourceTree = "<group>"; };
 		034FD4D5272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAllocationOverviewTableViewController.swift; sourceTree = "<group>"; };
+		0710ACF42730F4DA00F8DFA7 /* SavingsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryViewController.swift; sourceTree = "<group>"; };
+		0710ACF82730F55200F8DFA7 /* SavingsHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavingsHistory.storyboard; sourceTree = "<group>"; };
+		0710ACFB2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		0710ACFC2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		07514019272AEDF300984C4F /* SavingsBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsBudgetTableViewCell.swift; sourceTree = "<group>"; };
 		0751401A272AEDF300984C4F /* SavingsBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsBudgetTableViewCell.xib; sourceTree = "<group>"; };
 		07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +161,8 @@
 		F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = PurchaseCategory.storyboard; path = MEGapps/ModuleWishlist/WishList/PurchaseCategory.storyboard; sourceTree = SOURCE_ROOT; };
 		F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryView.swift; path = MEGapps/ModuleWishlist/WishList/PurchaseCategoryView.swift; sourceTree = SOURCE_ROOT; };
 		F9838B902730EF130038D041 /* OtherBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetViewController.swift; sourceTree = "<group>"; };
+		F9838B8C2730D47E0038D041 /* SavingsAdd.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = SavingsAdd.storyboard; path = MEGapps/Common/UICustom/SavingsAdd.storyboard; sourceTree = SOURCE_ROOT; };
+		F9838B8E2730D48D0038D041 /* SavingsAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SavingsAddViewController.swift; path = MEGapps/Common/UICustom/SavingsAddViewController.swift; sourceTree = SOURCE_ROOT; };
 		F9E596752728FDF200F37B9A /* PurchaseAdd.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseAdd.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -186,6 +198,15 @@
 				034FD4CE272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib */,
 			);
 			path = BudgetAllocationTableView;
+			sourceTree = "<group>";
+		};
+		0710ACFA2730F5D100F8DFA7 /* SavingsHistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				0710ACFB2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift */,
+				0710ACFC2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.xib */,
+			);
+			path = SavingsHistoryCell;
 			sourceTree = "<group>";
 		};
 		07514018272AEDC000984C4F /* SavingsBudgetCell */ = {
@@ -391,6 +412,8 @@
 		19EDF0762727D05F00AF54A7 /* SavingsAdd */ = {
 			isa = PBXGroup;
 			children = (
+				F9838B8C2730D47E0038D041 /* SavingsAdd.storyboard */,
+				F9838B8E2730D48D0038D041 /* SavingsAddViewController.swift */,
 			);
 			path = SavingsAdd;
 			sourceTree = "<group>";
@@ -398,6 +421,8 @@
 		19EDF0772727D06F00AF54A7 /* SavingsHistory */ = {
 			isa = PBXGroup;
 			children = (
+				0710ACF42730F4DA00F8DFA7 /* SavingsHistoryViewController.swift */,
+				0710ACF82730F55200F8DFA7 /* SavingsHistory.storyboard */,
 			);
 			path = SavingsHistory;
 			sourceTree = "<group>";
@@ -519,6 +544,7 @@
 		19EDF0942727D79B00AF54A7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0710ACFA2730F5D100F8DFA7 /* SavingsHistoryCell */,
 				076669F8272C40E400C02B20 /* PurchaseSameItemCell */,
 				190EA09C272B8A8500479D32 /* PurchaseAllocateBudgetCell */,
 				07514018272AEDC000984C4F /* SavingsBudgetCell */,
@@ -659,6 +685,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0710ACFE2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.xib in Resources */,
 				0751401C272AEDF300984C4F /* SavingsBudgetTableViewCell.xib in Resources */,
 				078A1B972729113000813423 /* OtherBudgetCellView.xib in Resources */,
 				19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */,
@@ -672,11 +699,13 @@
 				19EDF04C2727CE7400AF54A7 /* LaunchScreen.storyboard in Resources */,
 				F9681CBF272AAD4000941894 /* PurchaseCategory.storyboard in Resources */,
 				19EDF0492727CE7400AF54A7 /* Assets.xcassets in Resources */,
+				0710ACF92730F55200F8DFA7 /* SavingsHistory.storyboard in Resources */,
 				19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */,
 				190EA0A2272B8F5300479D32 /* PurchaseOtherBudgetAllocation.storyboard in Resources */,
 				F9838B922730FE7F0038D041 /* OtherBudgetTableViewCell.xib in Resources */,
 				19EDF0442727CE7300AF54A7 /* Main.storyboard in Resources */,
 				19A773692728406300219AE7 /* WishlistTableViewCell.xib in Resources */,
+				F9838B8D2730D47E0038D041 /* SavingsAdd.storyboard in Resources */,
 				076669FC272C411F00C02B20 /* PurchaseSameItemTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -735,9 +764,11 @@
 				C6974C4E272BFA12007EA0C7 /* CustomActionTableViewCell.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				C6974C4A272BF2EC007EA0C7 /* CustomDoubleTableViewCell.swift in Sources */,
+				0710ACFD2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift in Sources */,
 				C6974C3F272BABF6007EA0C7 /* ViewExtension.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
 				034FD4C7272A92800060F7F4 /* PurchaseOrderViewController.swift in Sources */,
+				F9838B8F2730D48D0038D041 /* SavingsAddViewController.swift in Sources */,
 				034FD4D6272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift in Sources */,
 				034FD4CF272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift in Sources */,
 				190EA09F272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.swift in Sources */,
@@ -761,6 +792,7 @@
 				07545F7B27296BAB002E422A /* OtherBudgetTableViewCell.swift in Sources */,
 				0751401B272AEDF300984C4F /* SavingsBudgetTableViewCell.swift in Sources */,
 				19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */,
+				0710ACF62730F4DA00F8DFA7 /* SavingsHistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,7 +987,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 282R274LXF;
+				DEVELOPMENT_TEAM = R8CWTPS5QZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -983,7 +1015,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 282R274LXF;
+				DEVELOPMENT_TEAM = R8CWTPS5QZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
