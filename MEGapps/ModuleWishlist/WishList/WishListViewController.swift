@@ -12,7 +12,6 @@ class WishListViewController: UIViewController {
     @IBOutlet weak var wishlistTableView: UITableView!
     // MARK: - ViewModel
     private let wishListViewModel = WishListViewModel()
-    private let delegate = WishListModel()
     // private let delegate: [Items]
     // MARK: - State
     override func viewDidLoad() {
