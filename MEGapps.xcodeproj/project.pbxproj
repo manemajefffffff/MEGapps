@@ -48,6 +48,10 @@
 		19C7BBC42730EC4900AC4499 /* SavingHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC32730EC4900AC4499 /* SavingHistoryModel.swift */; };
 		19C7BBC62730F1C000AC4499 /* TrItemBudgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC52730F1C000AC4499 /* TrItemBudgetModel.swift */; };
 		19C7BBC9273247E200AC4499 /* WishlistCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */; };
+		19C7BBC02730E70900AC4499 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBBF2730E70900AC4499 /* Items.swift */; };
+		19C7BBC22730EBA700AC4499 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC12730EBA700AC4499 /* Budget.swift */; };
+		19C7BBC42730EC4900AC4499 /* SavingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC32730EC4900AC4499 /* SavingHistory.swift */; };
+		19C7BBC62730F1C000AC4499 /* TrItemBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC52730F1C000AC4499 /* TrItemBudget.swift */; };
 		19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */; };
 		19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */; };
 		19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0402727CE7300AF54A7 /* ViewController.swift */; };
@@ -61,6 +65,7 @@
 		19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0A627283E1400AF54A7 /* Savings.storyboard */; };
 		19EDF0AA27283E3400AF54A7 /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0A927283E3400AF54A7 /* Wishlist.storyboard */; };
 		19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0AB27283E5500AF54A7 /* OtherBudget.storyboard */; };
+		19EF28242732716300D496DF /* CodingUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF28232732716300D496DF /* CodingUserInfo.swift */; };
 		C63E3342272A89C500A08D06 /* WishlistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E333F272A89C500A08D06 /* WishlistDetailViewController.swift */; };
 		C63E3343272A89C500A08D06 /* WishlistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E3340272A89C500A08D06 /* WishlistDetailViewModel.swift */; };
 		C6974C3F272BABF6007EA0C7 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C3E272BABF6007EA0C7 /* ViewExtension.swift */; };
@@ -138,6 +143,10 @@
 		19C7BBC32730EC4900AC4499 /* SavingHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistoryModel.swift; sourceTree = "<group>"; };
 		19C7BBC52730F1C000AC4499 /* TrItemBudgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrItemBudgetModel.swift; sourceTree = "<group>"; };
 		19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCoreDataManager.swift; sourceTree = "<group>"; };
+		19C7BBBF2730E70900AC4499 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		19C7BBC12730EBA700AC4499 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		19C7BBC32730EC4900AC4499 /* SavingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistory.swift; sourceTree = "<group>"; };
+		19C7BBC52730F1C000AC4499 /* TrItemBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrItemBudget.swift; sourceTree = "<group>"; };
 		19EDF0392727CE7300AF54A7 /* MEGapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MEGapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +164,7 @@
 		19EDF0A727283E1400AF54A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MEGapps/Base.lproj/Savings.storyboard; sourceTree = "<group>"; };
 		19EDF0A927283E3400AF54A7 /* Wishlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
 		19EDF0AC27283E5500AF54A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MEGapps/Base.lproj/OtherBudget.storyboard; sourceTree = "<group>"; };
+		19EF28232732716300D496DF /* CodingUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfo.swift; sourceTree = "<group>"; };
 		C63E333F272A89C500A08D06 /* WishlistDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailViewController.swift; sourceTree = "<group>"; };
 		C63E3340272A89C500A08D06 /* WishlistDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailViewModel.swift; sourceTree = "<group>"; };
 		C63E3341272A89C500A08D06 /* WishlistDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailView.swift; sourceTree = "<group>"; };
@@ -364,12 +374,10 @@
 		19EDF06F2727CFD400AF54A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				193D49072729249F00F46C30 /* WishListCellModel */,
-				C6974C4B272BF83F007EA0C7 /* DoubleClassModel.swift */,
-				19C7BBBF2730E70900AC4499 /* ItemModel.swift */,
-				19C7BBC12730EBA700AC4499 /* BudgetModel.swift */,
-				19C7BBC32730EC4900AC4499 /* SavingHistoryModel.swift */,
-				19C7BBC52730F1C000AC4499 /* TrItemBudgetModel.swift */,
+				19C7BBBF2730E70900AC4499 /* Items.swift */,
+				19C7BBC12730EBA700AC4499 /* Budget.swift */,
+				19C7BBC32730EC4900AC4499 /* SavingHistory.swift */,
+				19C7BBC52730F1C000AC4499 /* TrItemBudget.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -576,6 +584,7 @@
 			isa = PBXGroup;
 			children = (
 				C6974C3E272BABF6007EA0C7 /* ViewExtension.swift */,
+				19EF28232732716300D496DF /* CodingUserInfo.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -775,8 +784,8 @@
 				19C7BBC22730EBA700AC4499 /* BudgetModel.swift in Sources */,
 				19C7BBC9273247E200AC4499 /* WishlistCoreDataManager.swift in Sources */,
 				C6974C4E272BFA12007EA0C7 /* CustomActionTableViewCell.swift in Sources */,
+				19C7BBC22730EBA700AC4499 /* Budget.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
-				C6974C4A272BF2EC007EA0C7 /* CustomDoubleTableViewCell.swift in Sources */,
 				0710ACFD2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift in Sources */,
 				C6974C3F272BABF6007EA0C7 /* ViewExtension.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
@@ -786,10 +795,10 @@
 				034FD4CF272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift in Sources */,
 				190EA09F272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.swift in Sources */,
 				1942C9C7272C4BB400E76586 /* BudgetAllocationTableView.swift in Sources */,
-				19C7BBC02730E70900AC4499 /* ItemModel.swift in Sources */,
+				19C7BBC02730E70900AC4499 /* Items.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
-				19C7BBC62730F1C000AC4499 /* TrItemBudgetModel.swift in Sources */,
-				19C7BBC42730EC4900AC4499 /* SavingHistoryModel.swift in Sources */,
+				19C7BBC62730F1C000AC4499 /* TrItemBudget.swift in Sources */,
+				19C7BBC42730EC4900AC4499 /* SavingHistory.swift in Sources */,
 				1942C9C9272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift in Sources */,
 				030881062730E4FD00EF8F4A /* AddEditBudgetViewController.swift in Sources */,
 				034FD4CB272A936E0060F7F4 /* ProductInformationTableViewController.swift in Sources */,
@@ -799,6 +808,7 @@
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
 				C63E3342272A89C500A08D06 /* WishlistDetailViewController.swift in Sources */,
 				193D4906272923B100F46C30 /* WishListViewModel.swift in Sources */,
+				19EF28242732716300D496DF /* CodingUserInfo.swift in Sources */,
 				C6974C41272BAC67007EA0C7 /* PurchaseProductView.swift in Sources */,
 				190EA0A4272B8FBB00479D32 /* PurchaseOtherBudgetAllocationViewController.swift in Sources */,
 				C63E3343272A89C500A08D06 /* WishlistDetailViewModel.swift in Sources */,
