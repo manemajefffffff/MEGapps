@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class TrItemBudget: NSManagedObject, Codable  {
+class TrItemBudget: NSManagedObject, Codable {
     enum CodingKeys: CodingKey {
         case id
         case amount
