@@ -17,9 +17,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="374" height="229"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="otu-6l-a8L">
+                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="otu-6l-a8L">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="213"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saving Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3G2-43-bcG">
                                 <rect key="frame" x="13" y="15" width="116" height="21"/>
@@ -86,6 +85,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="213" id="Orm-sZ-BvZ"/>
+                            <constraint firstAttribute="width" constant="374" id="agr-4N-DG9"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                 <size key="value" width="0.0" height="4"/>
@@ -99,6 +102,12 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="otu-6l-a8L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7HD-QA-Pxr"/>
+                    <constraint firstAttribute="bottom" secondItem="otu-6l-a8L" secondAttribute="bottom" constant="16" id="8ru-S8-Bif"/>
+                    <constraint firstItem="otu-6l-a8L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="j5f-RM-8LZ"/>
+                    <constraint firstAttribute="trailing" secondItem="otu-6l-a8L" secondAttribute="trailing" id="tqC-n3-xHp"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
