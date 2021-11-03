@@ -66,10 +66,6 @@
 		C6974C41272BAC67007EA0C7 /* PurchaseProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C40272BAC67007EA0C7 /* PurchaseProductView.swift */; };
 		C6974C43272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C42272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift */; };
 		C6974C45272BAC87007EA0C7 /* PurchaseProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */; };
-		C6974C48272BE734007EA0C7 /* CustomSingleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C47272BE734007EA0C7 /* CustomSingleTableViewCell.swift */; };
-		C6974C4A272BF2EC007EA0C7 /* CustomDoubleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C49272BF2EC007EA0C7 /* CustomDoubleTableViewCell.swift */; };
-		C6974C4C272BF83F007EA0C7 /* DoubleClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C4B272BF83F007EA0C7 /* DoubleClassModel.swift */; };
-		C6974C4E272BFA12007EA0C7 /* CustomActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C4D272BFA12007EA0C7 /* CustomActionTableViewCell.swift */; };
 		F9681CB9272A21C500941894 /* PurchaseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CB8272A21C500941894 /* PurchaseAddView.swift */; };
 		F9681CBF272AAD4000941894 /* PurchaseCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */; };
 		F9681CC1272AADD100941894 /* PurchaseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */; };
@@ -163,10 +159,6 @@
 		C6974C40272BAC67007EA0C7 /* PurchaseProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductView.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductView.swift; sourceTree = SOURCE_ROOT; };
 		C6974C42272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductViewContoller.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductViewContoller.swift; sourceTree = SOURCE_ROOT; };
 		C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductViewModel.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductViewModel.swift; sourceTree = SOURCE_ROOT; };
-		C6974C47272BE734007EA0C7 /* CustomSingleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSingleTableViewCell.swift; sourceTree = "<group>"; };
-		C6974C49272BF2EC007EA0C7 /* CustomDoubleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDoubleTableViewCell.swift; sourceTree = "<group>"; };
-		C6974C4B272BF83F007EA0C7 /* DoubleClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleClassModel.swift; sourceTree = "<group>"; };
-		C6974C4D272BFA12007EA0C7 /* CustomActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionTableViewCell.swift; sourceTree = "<group>"; };
 		F9681CB8272A21C500941894 /* PurchaseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAddView.swift; sourceTree = SOURCE_ROOT; };
 		F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = PurchaseCategory.storyboard; path = MEGapps/ModuleWishlist/WishList/PurchaseCategory.storyboard; sourceTree = SOURCE_ROOT; };
 		F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryView.swift; path = MEGapps/ModuleWishlist/WishList/PurchaseCategoryView.swift; sourceTree = SOURCE_ROOT; };
@@ -359,6 +351,7 @@
 		19EDF06F2727CFD400AF54A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				193D49072729249F00F46C30 /* WishListCellModel */,
 				C6974C4B272BF83F007EA0C7 /* DoubleClassModel.swift */,
 				19C7BBBF2730E70900AC4499 /* ItemModel.swift */,
 				19C7BBC12730EBA700AC4499 /* BudgetModel.swift */,
@@ -580,9 +573,6 @@
 				C6974C40272BAC67007EA0C7 /* PurchaseProductView.swift */,
 				C6974C42272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift */,
 				C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */,
-				C6974C47272BE734007EA0C7 /* CustomSingleTableViewCell.swift */,
-				C6974C49272BF2EC007EA0C7 /* CustomDoubleTableViewCell.swift */,
-				C6974C4D272BFA12007EA0C7 /* CustomActionTableViewCell.swift */,
 			);
 			path = PurchaseProduct;
 			sourceTree = "<group>";
@@ -766,9 +756,9 @@
 				076669FB272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift in Sources */,
 				076669F5272C3D8700C02B20 /* PurchaseSameItemViewController.swift in Sources */,
 				193D48FF2728EFC300F46C30 /* WishListViewController.swift in Sources */,
-				C6974C4C272BF83F007EA0C7 /* DoubleClassModel.swift in Sources */,
 				C6974C43272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift in Sources */,
 				07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */,
+				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				19C7BBC22730EBA700AC4499 /* BudgetModel.swift in Sources */,
 				C6974C4E272BFA12007EA0C7 /* CustomActionTableViewCell.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
@@ -793,7 +783,6 @@
 				190EA0A7272B90B900479D32 /* InsufficientAmountView.swift in Sources */,
 				F9681CB9272A21C500941894 /* PurchaseAddView.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
-				C6974C48272BE734007EA0C7 /* CustomSingleTableViewCell.swift in Sources */,
 				C63E3342272A89C500A08D06 /* WishlistDetailViewController.swift in Sources */,
 				193D4906272923B100F46C30 /* WishListViewModel.swift in Sources */,
 				C6974C41272BAC67007EA0C7 /* PurchaseProductView.swift in Sources */,

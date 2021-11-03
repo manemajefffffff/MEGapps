@@ -27,6 +27,7 @@ class BudgetAllocationTableViewCell: UITableViewCell {
     // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // MARK: - Line
         self.lineView.layer.borderWidth = 1.0
         self.lineView.layer.borderColor = UIColor.black.cgColor
@@ -86,7 +87,8 @@ class BudgetAllocationTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             self.budgetLeftRp.topAnchor.constraint(equalTo: self.budgetLeftLabel.bottomAnchor, constant: 8),
             self.budgetLeftRp.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
-            self.budgetLeftRp.trailingAnchor.constraint(equalTo: self.budgetLeftAmt.leadingAnchor, constant: 6)
+            self.budgetLeftRp.trailingAnchor.constraint(equalTo: self.budgetLeftAmt.leadingAnchor, constant: 6),
+            self.bottomAnchor.constraint(equalTo: self.budgetLeftRp.bottomAnchor, constant: 12)
         ])
         self.budgetLeftAmt.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
