@@ -19,6 +19,8 @@ class PurchaseProductView: UIView {
     var purchaseProductDetailView: PurchaseProductDetailView
     let budgetAllocationUsedLabel = UILabel()
     var budgetAllocationUsedView: BudgetAllocationUsedView
+    let allocateOtherBudgetButton = UIButton()
+    let purchaseItemButton = UIButton()
     
     // MARK: - Lifecycle
     init(viewModel: PurchaseProductViewModel, viewController: PurchaseProductViewController) {
@@ -65,6 +67,8 @@ class PurchaseProductView: UIView {
         budgetAllocationUsedLabel.text = "Budget Allocation Used:"
         budgetAllocationUsedLabel.font = .systemFont(ofSize: 15, weight: .regular)
         self.contentView.addSubview(budgetAllocationUsedView)
+        self.contentView.addSubview(allocateOtherBudgetButton)
+        self.contentView.addSubview(purchaseItemButton)
     }
 
     func style() {
@@ -90,9 +94,37 @@ class PurchaseProductView: UIView {
         budgetAllocationUsedView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             budgetAllocationUsedView.topAnchor.constraint(equalTo: self.budgetAllocationUsedLabel.bottomAnchor, constant: 16),
-            budgetAllocationUsedView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 16),
+            budgetAllocationUsedView.bottomAnchor.constraint(equalTo: self.allocateOtherBudgetButton.topAnchor, constant: -16),
             budgetAllocationUsedView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
             budgetAllocationUsedView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20)
+        ])
+        
+        allocateOtherBudgetButton.setTitle("   Allocate Other Budget", for: .normal)
+        allocateOtherBudgetButton.setTitleColor(.systemBlue, for: .normal)
+        allocateOtherBudgetButton.backgroundColor = .systemRed
+        allocateOtherBudgetButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .regular)
+        allocateOtherBudgetButton.contentHorizontalAlignment = .left
+        allocateOtherBudgetButton.layer.cornerRadius = 10
+        allocateOtherBudgetButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            allocateOtherBudgetButton.heightAnchor.constraint(equalToConstant: 49),
+            allocateOtherBudgetButton.topAnchor.constraint(equalTo: self.budgetAllocationUsedView.bottomAnchor, constant: 16),
+            allocateOtherBudgetButton.bottomAnchor.constraint(equalTo: self.purchaseItemButton.topAnchor, constant: -16),
+            allocateOtherBudgetButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
+            allocateOtherBudgetButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20)
+        ])
+        
+        purchaseItemButton.setTitle("Purchase Item", for: .normal)
+        purchaseItemButton.backgroundColor = .systemRed
+        purchaseItemButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
+        purchaseItemButton.layer.cornerRadius = 10
+        purchaseItemButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            purchaseItemButton.heightAnchor.constraint(equalToConstant: 49),
+            purchaseItemButton.topAnchor.constraint(equalTo: self.allocateOtherBudgetButton.bottomAnchor, constant: 16),
+            purchaseItemButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -50),
+            purchaseItemButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
+            purchaseItemButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20)
         ])
     }
 }
