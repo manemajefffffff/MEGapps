@@ -9,14 +9,16 @@ import UIKit
 
 class PurchaseSameItemViewController: UIViewController {
 
-//MARK: - Outlets & Variables
+//MARK: - Outlets
     @IBOutlet weak var barButtonBack: UIBarButtonItem!
     @IBOutlet weak var barButtonNext: UIBarButtonItem!
     @IBOutlet weak var tableViewItems: UITableView!
     
+//MARK: - Variables
     var name = ["Product Ichi", "Producto es Dos", "Produccione la Tiga"]
     var deadline = ["11 - 11 - 1111", "21 - 12 - 2112", "10 - 01 - 1001"]
     
+//MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,7 @@ class PurchaseSameItemViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+//MARK: - Functions
     func prepTableView(TV: UITableView) {
         TV.delegate = self
         TV.dataSource = self
@@ -47,6 +50,7 @@ class PurchaseSameItemViewController: UIViewController {
 
 }
 
+//MARK: - TableView Extension
 extension PurchaseSameItemViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

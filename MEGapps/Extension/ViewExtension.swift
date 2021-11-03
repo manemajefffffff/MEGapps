@@ -25,6 +25,33 @@ class PaddingLabel: UILabel {
     }
 }
 
+class ContentSizedTableView: UITableView {
+    var maxHeight: CGFloat = UIScreen.main.bounds.size.height
+    
+    override func reloadData() {
+        super.reloadData()
+        self.invalidateIntrinsicContentSize()
+        self.layoutIfNeeded()
+    }
+
+    override var intrinsicContentSize: CGSize {
+        let height = min(contentSize.height, maxHeight)+(49*2)
+        return CGSize(width: contentSize.width, height: height)
+    }
+    /*
+    override var contentSize: CGSize {
+        didSet {
+            invalidateIntrinsicContentSize()
+        }
+    }
+
+    override var intrinsicContentSize: CGSize {
+        layoutIfNeeded()
+        return CGSize(width: UIView.noIntrinsicMetric, height: contentSize.height)
+    }
+     */
+}
+
 extension UIColor {
     public convenience init?(hex: String) {
         let red, green, blue, alpha: CGFloat

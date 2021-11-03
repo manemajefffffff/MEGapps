@@ -15,6 +15,7 @@ class SavingsBudgetTableViewCell: UITableViewCell {
     @IBOutlet weak var labelProductName: UILabel!
     @IBOutlet weak var labelProductPrice: UILabel!
     
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
