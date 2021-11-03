@@ -31,6 +31,10 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     func register() {
         budgetTableView.register(UINib(nibName: "OtherBudgetTableViewCell", bundle: nil), forCellReuseIdentifier: "OtherBudgetTableViewCell")
     }
+    
+    func setupU() {
+        
+    }
 }
 
 extension OtherBudgetViewController {
