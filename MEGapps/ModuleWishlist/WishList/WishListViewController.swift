@@ -41,14 +41,13 @@ class WishListViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.wishlistTableView.reloadData()
                 }
-                print("masuk")
             }
             .store(in: &anyCancellable)
     }
     
     // MARK: - IBAction
     @IBAction func addNewWishlist(_ sender: Any) {
-        wishListViewModel.addNewData()
+        
     }
 }
 
