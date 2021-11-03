@@ -61,9 +61,10 @@ class WishlistCoreDataManager {
                         )
                     )
                 }
+                completion(itemList)
             }
             catch {
-                
+                print("error when fetching data")
             }
         }
     }
