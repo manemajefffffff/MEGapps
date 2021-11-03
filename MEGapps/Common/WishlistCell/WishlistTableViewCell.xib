@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="LightMossGreen"/>
+                        <color key="backgroundColor" name="OnProgressCellColor"/>
                         <constraints>
                             <constraint firstItem="xju-6z-uPt" firstAttribute="trailing" secondItem="j9p-w4-8IT" secondAttribute="trailingMargin" id="0Le-kx-g9G"/>
                             <constraint firstItem="5qe-tH-HRb" firstAttribute="trailing" secondItem="6mW-bA-5j8" secondAttribute="trailing" id="3B1-dW-b3z"/>
@@ -120,8 +120,8 @@
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="clock" catalog="system" width="128" height="121"/>
-        <namedColor name="LightMossGreen">
-            <color red="0.72500002384185791" green="0.86299997568130493" blue="0.70099997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="OnProgressCellColor">
+            <color red="0.89800000190734863" green="0.85100001096725464" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -1,17 +1,19 @@
 //
-//  PurchaseSameItemTableViewCell.swift
+//  SavingsHistoryTableViewCell.swift
 //  MEGapps
 //
-//  Created by William Giovanni Kambuno on 29/10/21.
+//  Created by William Giovanni Kambuno on 02/11/21.
 //
 
 import UIKit
 
-class PurchaseSameItemTableViewCell: UITableViewCell {
-    
+class SavingsHistoryTableViewCell: UITableViewCell {
+
 //MARK: - Outlets
-    @IBOutlet weak var labelProductName: UILabel!
-    @IBOutlet weak var labelProductDeadline: UILabel!
+    @IBOutlet weak var viewHistorySavingsCell: UIView!
+    @IBOutlet weak var labelDateTime: UILabel!
+    @IBOutlet weak var labelAmount: UILabel!
+    @IBOutlet weak var labelDetails: UILabel!
     
 //MARK: - Lifecycle
     override func awakeFromNib() {

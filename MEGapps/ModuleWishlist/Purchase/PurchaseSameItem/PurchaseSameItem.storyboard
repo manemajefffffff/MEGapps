@@ -6,7 +6,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,6 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="roN-7h-nDR">
                                 <rect key="frame" x="20" y="104" width="374" height="758"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PurchaseSameItemCell" rowHeight="60" id="ZgA-K6-LQe" customClass="PurchaseSameItemTableViewCell" customModule="MEGapps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="60"/>
@@ -33,7 +33,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="roN-7h-nDR" secondAttribute="trailing" constant="20" id="6KU-og-P5O"/>
                             <constraint firstItem="roN-7h-nDR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="7QD-hK-Nyq"/>
@@ -44,10 +44,10 @@
                     <navigationItem key="navigationItem" title="Items in Category" id="D8f-pL-wfX">
                         <barButtonItem key="leftBarButtonItem" id="8xX-q4-fCq">
                             <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
-                            <color key="tintColor" name="NavigationItemsGreen"/>
+                            <color key="tintColor" name="PrimaryHSgradient"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="rE7-f5-qy1">
-                            <color key="tintColor" name="NavigationItemsGreen"/>
+                            <color key="tintColor" name="PrimaryHSgradient"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -81,11 +81,11 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <namedColor name="NavigationItemsGreen">
-            <color red="0.29600000381469727" green="0.54699999094009399" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.9649999737739563" green="0.96100002527236938" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="PrimaryHSgradient">
+            <color red="0.31799998879432678" green="0.38400000333786011" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
