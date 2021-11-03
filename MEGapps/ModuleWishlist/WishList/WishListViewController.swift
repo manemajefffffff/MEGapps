@@ -6,23 +6,33 @@
 //
 
 import UIKit
+import Combine
 
 class WishListViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var wishlistTableView: UITableView!
     // MARK: - ViewModel
     private let wishListViewModel = WishListViewModel()
-    // private let delegate: [Items]
+    var anyCancellable = Set<AnyCancellable>()
     // MARK: - State
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         registerNib()
     }
     // MARK: - Function
-    func registerNib() {
+    private func registerNib() {
         wishlistTableView.register(UINib.init(nibName: "WishlistTableViewCell", bundle: nil), forCellReuseIdentifier: "wishlistTableViewCell")
+    }
+    func fetchData() {
+        wishListViewModel.fetchData()
+        wishListViewModel.$items
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+                DispatchQueue.main.async {
+                    self.wishlistTableView.reloadData()
+                }
+            }
+            .store(in: &anyCancellable)
     }
     // MARK: - IBAction
     @IBAction func addNewWishlist(_ sender: Any) {

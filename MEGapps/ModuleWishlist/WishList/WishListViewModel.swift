@@ -6,22 +6,26 @@
 //
 
 import Foundation
+import Combine
 
-class WishListViewModel: NSObject {
+class WishListViewModel {
     
-    private var dataFromCoreData: WishListModel? {
-        didSet {
-            self.bindWishListViewModeltoController()
-        }
-    }
+//    private var dataFromCoreData: WishListModel? {
+//        didSet {
+//            self.bindWishListViewModeltoController()
+//        }
+//    }
     
-    var bindWishListViewModeltoController: (() -> Void) = {}
+//    var bindWishListViewModeltoController: (() -> Void) = {}
     
-    override init() {
-        super.init()
-    }
+    @Published var items = [ItemModel]()
     
-    private func fetchData() {
-        
+    private var anyCancellable = Set<AnyCancellable>()
+    
+    init() {}
+    // MARK: - Function
+    func fetchData() {
+        // pastikan kalau kosong
+        items.removeAll()
     }
 }
