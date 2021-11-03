@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Budget" representedClassName="Budget" syncable="YES" codeGenerationType="class">
+    <entity name="Budget" representedClassName=".Budget" syncable="YES" codeGenerationType="category">
         <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="trItemBudget" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TrItemBudget" inverseName="budget" inverseEntity="TrItemBudget"/>
     </entity>
-    <entity name="Items" representedClassName="Items" syncable="YES" codeGenerationType="class">
+    <entity name="Items" representedClassName=".Items" syncable="YES" codeGenerationType="category">
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -26,7 +26,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="wordings" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="TrItemBudget" representedClassName="TrItemBudget" syncable="YES" codeGenerationType="class">
+    <entity name="TrItemBudget" representedClassName=".TrItemBudget" syncable="YES" codeGenerationType="category">
         <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
