@@ -8,19 +8,22 @@
 import Foundation
 import Combine
 
-class WishListViewModel: ObservableObject {
+class WishListViewModel: NSObject {
     
     @Published var items = [Items]()
+//    var items = CurrentValueSubject<[Items], Never>([])
         
     private lazy var wishlistCDM: WishlistCoreDataManager = {return WishlistCoreDataManager() }()
-
-    init() {}
+    
+    override init() {
+        super.init()
+        fetchData()
+        print("data fetched")
+    }
     // MARK: - Function
     func fetchData() {
-        // pastikan kalau kosong
-        items.removeAll()
-        self.wishlistCDM.get { itemList in
-            self.items = itemList
+        WishlistCoreDataManager.shared.getAll { items in
+            self.items = items
         }
     }
 }
