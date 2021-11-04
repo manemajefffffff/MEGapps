@@ -35,7 +35,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Budget" largeTitleDisplayMode="always" id="Yxf-aM-ns4">
-                        <barButtonItem key="rightBarButtonItem" image="Vector-1" style="plain" id="5VN-L3-Gjx">
+                        <barButtonItem key="rightBarButtonItem" image="AddPlus" style="plain" id="5VN-L3-Gjx">
                             <color key="tintColor" name="PrimaryHSgradient"/>
                             <connections>
                                 <action selector="moveToAddBudget:" destination="Zpg-x9-fuj" id="uI5-hS-LXj"/>
@@ -71,7 +71,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Vector-1" width="28" height="28"/>
+        <image name="AddPlus" width="28" height="28"/>
         <namedColor name="BackgroundColor">
             <color red="0.9649999737739563" green="0.96100002527236938" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

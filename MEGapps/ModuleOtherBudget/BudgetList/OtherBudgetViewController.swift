@@ -24,16 +24,20 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - Actions
     @IBAction func moveToAddBudget(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "AddEditBudget", bundle: nil)
+        let addOtherBudgetVC = storyBoard.instantiateViewController(withIdentifier: "addOtherBudget")
         
+        //Half Sheet
+        if let presentationController = addOtherBudgetVC.presentationController as? UISheetPresentationController {
+            presentationController.detents = [.medium()]
+        }
+        
+        self.present(addOtherBudgetVC, animated: true)
     }
     
     // MARK: - Functions
     func register() {
         budgetTableView.register(UINib(nibName: "OtherBudgetTableViewCell", bundle: nil), forCellReuseIdentifier: "OtherBudgetTableViewCell")
-    }
-    
-    func setupU() {
-        
     }
 }
 
@@ -48,6 +52,17 @@ extension OtherBudgetViewController {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "AddEditBudget", bundle: nil)
+        let destination = storyBoard.instantiateViewController(withIdentifier: "addOtherBudget")
+        
+        if let presentationController = destination.presentationController as? UISheetPresentationController {
+            presentationController.detents = [.medium()]
+        }
+        
+        self.present(destination, animated: true)
     }
     
 }
