@@ -13,6 +13,18 @@ class WishlistTableViewCell: UITableViewCell {
     @IBOutlet weak var itemNameLbl: UILabel!
     @IBOutlet weak var waitingEndDateLbl: UILabel!
     @IBOutlet weak var wishlistContainerView: UIView!
+    
+    var newData: Items? {
+        didSet {
+            setData()
+        }
+    }
+    
+    func setData() {
+        self.itemNameLbl.text = "\(self.newData?.name ?? "Item name")"
+        self.waitingEndDateLbl.text = "\(self.newData?.createdAt ?? Date.distantPast)"
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
