@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class SavingsViewController: UIViewController {
 
 //MARK: - Outlets
@@ -23,7 +24,7 @@ class SavingsViewController: UIViewController {
 
         prepCustomView(view: viewHobbySavingsCell)
         prepTableView(TV: tableViewSavingsBudget)
-        
+        movePage()
         // Do any additional setup after loading the view.
     }
     
@@ -45,6 +46,22 @@ class SavingsViewController: UIViewController {
         
         TV.separatorStyle = .none
         TV.showsVerticalScrollIndicator = false
+    }
+    
+    func movePage() {
+        
+        viewHobbySavingsCell.historyButtonPressed = {
+            let storyBoard = UIStoryboard(name: "SavingsHistory", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "savingHistoryPage")
+            self.present(vc, animated: true)
+        }
+        
+        viewHobbySavingsCell.addButtonPressed = {
+            let storyBoard = UIStoryboard(name: "SavingsAdd", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "savingAddPage")
+            self.present(vc, animated: true)
+        }
+        
     }
 
     /*
@@ -90,5 +107,9 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.viewSavingsBudgetCell.layer.masksToBounds = false
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //move to item detail
     }
 }
