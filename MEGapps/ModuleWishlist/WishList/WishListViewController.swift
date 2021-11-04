@@ -15,10 +15,7 @@ class WishListViewController: UIViewController {
     // MARK: - ViewModel
     private let wishListViewModel = WishListViewModel()
     var anyCancellable = Set<AnyCancellable>()
-    
-    // MARK: - Data Container
-    var containerData: [Items] = []
-    
+        
     // MARK: - State
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +35,9 @@ class WishListViewController: UIViewController {
     func subscribe() {
         wishListViewModel.$items
             .receive(on: DispatchQueue.main)
-            .sink { items in
-                self.containerData = items
+            .sink { [weak self] _ in
                 DispatchQueue.main.async {
-                    self.wishlistTableView.reloadData()
+                    self?.wishlistTableView.reloadData()
                 }
             }.store(in: &anyCancellable)
     }
@@ -76,14 +72,15 @@ class WishListViewController: UIViewController {
 // MARK: - TableView
 extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return containerData.count
+        return wishListViewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = wishlistTableView.dequeueReusableCell(withIdentifier: "wishlistTableViewCell", for: indexPath) as? WishlistTableViewCell else {
             fatalError("no cell")
         }
-        cell.newData = containerData[indexPath.row]
+            cell.newData = wishListViewModel.items[indexPath.row]
+        
         return cell
     }
 }
