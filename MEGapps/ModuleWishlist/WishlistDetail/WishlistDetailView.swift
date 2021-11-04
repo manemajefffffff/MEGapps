@@ -14,6 +14,8 @@ class WishlistDetailView: UIView {
     private var viewController: WishlistDetailViewController
 
     // MARK: - Outlet
+    let scrollView = UIScrollView()
+    let contentView = UIView()
     private let itemValueLabel = UILabel()
     private let priceLabel = UILabel()
     private let priceValueLabel = UILabel()
@@ -24,7 +26,6 @@ class WishlistDetailView: UIView {
     private let reasonToBuyLabel = UILabel()
     private let reasonToBuyValueLabel = PaddingLabel()
     private let reasonToBuyValueView = UIView()
-    private let statementValueLabel = UILabel()
     private let acceptWishlistButton = UIButton()
     private let deleteWishlistButton = UIButton()
 
@@ -34,6 +35,7 @@ class WishlistDetailView: UIView {
         self.viewController = viewController
         super.init(frame: .zero)
 
+        self.setupScrollView()
         self.setup()
         self.style()
     }
@@ -43,46 +45,55 @@ class WishlistDetailView: UIView {
     }
 
     // MARK: - Function
+    func setupScrollView() {
+        self.addSubview(self.scrollView)
+        self.scrollView.addSubview(self.contentView)
+        self.scrollView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.scrollView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0),
+            self.scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            self.scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            self.scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
+        ])
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.contentView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor, constant: 0),
+            self.contentView.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 0),
+            self.contentView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: 0),
+            self.contentView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 0),
+            self.contentView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor, constant: 0)
+        ])
+    }
+
     func setup() {
-        self.addSubview(self.itemValueLabel)
-        self.addSubview(self.priceLabel)
-        self.addSubview(self.priceValueLabel)
-        self.addSubview(self.dueDateLabel)
-        self.addSubview(self.dueDateValueLabel)
-        self.addSubview(self.categoryLabel)
-        self.addSubview(self.categoryValueLabel)
-        self.addSubview(self.reasonToBuyLabel)
+        self.contentView.addSubview(self.itemValueLabel)
+        self.contentView.addSubview(self.priceLabel)
+        self.contentView.addSubview(self.priceValueLabel)
+        self.contentView.addSubview(self.dueDateLabel)
+        self.contentView.addSubview(self.dueDateValueLabel)
+        self.contentView.addSubview(self.categoryLabel)
+        self.contentView.addSubview(self.categoryValueLabel)
+        self.contentView.addSubview(self.reasonToBuyLabel)
         self.reasonToBuyValueView.addSubview(self.reasonToBuyValueLabel)
-        self.addSubview(self.reasonToBuyValueView)
-        self.addSubview(self.statementValueLabel)
-        self.addSubview(self.acceptWishlistButton)
-        self.addSubview(self.deleteWishlistButton)
+        self.contentView.addSubview(self.reasonToBuyValueView)
+        self.contentView.addSubview(self.acceptWishlistButton)
+        self.contentView.addSubview(self.deleteWishlistButton)
     }
 
     func style() {
-        self.backgroundColor = UIColor(named: "BabyPowder")
-        self.styleItem()
-        self.stylePrice()
-        self.styleDueDate()
-        self.styleCategory()
-        self.styleReasonToBuy()
-        self.styleStatement()
-        self.styleAcceptWishlistButton()
-        self.styleDeleteWishlistButton()
-    }
+        self.backgroundColor = UIColor(named: "BackgroundColor")
 
-    func styleItem() {
         self.itemValueLabel.textAlignment = .left
         self.itemValueLabel.text = "Macbook Pro 2021"
         self.itemValueLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         self.itemValueLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.itemValueLabel.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
-            self.itemValueLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 16)
+            self.itemValueLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 16),
+            self.itemValueLabel.bottomAnchor.constraint(equalTo: self.priceLabel.topAnchor, constant: -16),
+            self.itemValueLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
+            self.itemValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
         ])
-    }
 
-    func stylePrice() {
         self.priceLabel.textAlignment = .left
         self.priceLabel.text = "Price :"
         self.priceLabel.font = .systemFont(ofSize: 17, weight: .regular)
@@ -93,13 +104,16 @@ class WishlistDetailView: UIView {
         self.priceLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.priceLabel.topAnchor.constraint(equalTo: self.itemValueLabel.bottomAnchor, constant: 16),
-            self.priceLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 16),
-            self.priceValueLabel.topAnchor.constraint(equalTo: self.itemValueLabel.bottomAnchor, constant: 16),
-            self.priceValueLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -16)
-        ])
-    }
+            self.priceLabel.bottomAnchor.constraint(equalTo: self.dueDateLabel.topAnchor, constant: -16),
+            self.priceLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
+            self.priceLabel.trailingAnchor.constraint(equalTo: self.priceValueLabel.leadingAnchor, constant: -21),
 
-    func styleDueDate() {
+            self.priceValueLabel.topAnchor.constraint(equalTo: self.itemValueLabel.bottomAnchor, constant: 16),
+            self.priceValueLabel.bottomAnchor.constraint(equalTo: self.dueDateLabel.topAnchor, constant: -16),
+            self.priceValueLabel.leadingAnchor.constraint(equalTo: self.priceLabel.trailingAnchor, constant: 21),
+            self.priceValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
+        ])
+
         self.dueDateLabel.textAlignment = .left
         self.dueDateLabel.text = "Due Date :"
         self.dueDateLabel.font = .systemFont(ofSize: 17, weight: .regular)
@@ -110,13 +124,16 @@ class WishlistDetailView: UIView {
         self.dueDateLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.dueDateLabel.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 16),
-            self.dueDateLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 16),
-            self.dueDateValueLabel.topAnchor.constraint(equalTo: self.priceValueLabel.bottomAnchor, constant: 16),
-            self.dueDateValueLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -16)
-        ])
-    }
+            self.dueDateLabel.bottomAnchor.constraint(equalTo: self.categoryLabel.topAnchor, constant: -16),
+            self.dueDateLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
+            self.dueDateLabel.trailingAnchor.constraint(equalTo: self.dueDateValueLabel.leadingAnchor, constant: -21),
 
-    func styleCategory() {
+            self.dueDateValueLabel.topAnchor.constraint(equalTo: self.priceValueLabel.bottomAnchor, constant: 16),
+            self.dueDateValueLabel.bottomAnchor.constraint(equalTo: self.categoryValueLabel.topAnchor, constant: -16),
+            self.dueDateValueLabel.leadingAnchor.constraint(equalTo: self.dueDateLabel.trailingAnchor, constant: 21),
+            self.dueDateValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
+        ])
+
         self.categoryLabel.textAlignment = .left
         self.categoryLabel.text = "Category :"
         self.categoryLabel.font = .systemFont(ofSize: 17, weight: .regular)
@@ -127,13 +144,16 @@ class WishlistDetailView: UIView {
         self.categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.categoryLabel.topAnchor.constraint(equalTo: self.dueDateLabel.bottomAnchor, constant: 16),
-            self.categoryLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 16),
-            self.categoryValueLabel.topAnchor.constraint(equalTo: self.dueDateValueLabel.bottomAnchor, constant: 16),
-            self.categoryValueLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -16)
-        ])
-    }
+            self.categoryLabel.bottomAnchor.constraint(equalTo: self.reasonToBuyLabel.topAnchor, constant: -16),
+            self.categoryLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
+            self.categoryLabel.trailingAnchor.constraint(equalTo: self.categoryValueLabel.leadingAnchor, constant: -21),
 
-    func styleReasonToBuy() {
+            self.categoryValueLabel.topAnchor.constraint(equalTo: self.dueDateValueLabel.bottomAnchor, constant: 16),
+            self.categoryValueLabel.bottomAnchor.constraint(equalTo: self.reasonToBuyLabel.topAnchor, constant: -16),
+            self.categoryValueLabel.leadingAnchor.constraint(equalTo: self.categoryLabel.trailingAnchor, constant: 21),
+            self.categoryValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
+        ])
+
         self.reasonToBuyLabel.textAlignment = .left
         self.reasonToBuyLabel.text = "Reason To Buy :"
         self.reasonToBuyLabel.font = .systemFont(ofSize: 17, weight: .regular)
@@ -153,36 +173,26 @@ class WishlistDetailView: UIView {
         self.reasonToBuyLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.reasonToBuyLabel.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 16),
-            self.reasonToBuyLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 16),
+            self.reasonToBuyLabel.bottomAnchor.constraint(equalTo: self.reasonToBuyValueView.topAnchor, constant: -16),
+            self.reasonToBuyLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
+            self.reasonToBuyLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21),
+
             self.reasonToBuyValueView.heightAnchor.constraint(equalTo: self.reasonToBuyValueLabel.heightAnchor),
             self.reasonToBuyValueView.topAnchor.constraint(equalTo: self.reasonToBuyLabel.bottomAnchor, constant: 16),
-            self.reasonToBuyValueView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 16),
-            self.reasonToBuyValueView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -16),
+            self.reasonToBuyValueView.bottomAnchor.constraint(equalTo: self.acceptWishlistButton.topAnchor, constant: -16),
+            self.reasonToBuyValueView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
+            self.reasonToBuyValueView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21),
+
             self.reasonToBuyValueLabel.topAnchor.constraint(equalTo: self.reasonToBuyValueView.topAnchor, constant: 0),
             self.reasonToBuyValueLabel.bottomAnchor.constraint(equalTo: self.reasonToBuyValueView.bottomAnchor, constant: 0),
             self.reasonToBuyValueLabel.leadingAnchor.constraint(equalTo: self.reasonToBuyValueView.layoutMarginsGuide.leadingAnchor, constant: 0),
             self.reasonToBuyValueLabel.trailingAnchor.constraint(equalTo: self.reasonToBuyValueView.layoutMarginsGuide.trailingAnchor, constant: 0)
         ])
-    }
 
-    func styleStatement() {
-        self.statementValueLabel.textAlignment = NSTextAlignment.left
-        self.statementValueLabel.text = "You are going to buy a Macbook Pro 2021 at the price of Rp. 99.000.000, in the category of Technologies with the reason of Increasing Social Status.\n\n"
-        self.statementValueLabel.font = .systemFont(ofSize: 15, weight: .regular)
-        self.statementValueLabel.numberOfLines = 0
-        self.statementValueLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.statementValueLabel.topAnchor.constraint(equalTo: self.reasonToBuyValueView.bottomAnchor, constant: 16),
-            self.statementValueLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 26),
-            self.statementValueLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -26)
-        ])
-    }
-    
-    func styleAcceptWishlistButton() {
         self.acceptWishlistButton.setTitle("Accept Wishlist", for: .normal)
-        self.acceptWishlistButton.setTitleColor(UIColor(hex: "#000000FF"), for: .normal)
+        self.acceptWishlistButton.setTitleColor(UIColor(named: "PureWhite"), for: .normal)
         self.acceptWishlistButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-        self.acceptWishlistButton.backgroundColor = UIColor(hex: "#BCDF86FF")
+        self.acceptWishlistButton.backgroundColor = UIColor(named: "PrimaryHSgradient")
         self.acceptWishlistButton.layer.cornerRadius = 10
         self.acceptWishlistButton.layer.shadowColor = UIColor(hex: "#BBBBBBFF")?.cgColor
         self.acceptWishlistButton.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -191,18 +201,17 @@ class WishlistDetailView: UIView {
         self.acceptWishlistButton.addTarget(self, action: #selector(acceptWishlistAction), for: .touchUpInside)
         NSLayoutConstraint.activate([
             self.acceptWishlistButton.heightAnchor.constraint(equalToConstant: 49),
-            self.acceptWishlistButton.topAnchor.constraint(equalTo: self.statementValueLabel.bottomAnchor, constant: 77),
-            self.acceptWishlistButton.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 16),
-            self.acceptWishlistButton.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -16)
+            // self.acceptWishlistButton.topAnchor.constraint(equalTo: self.reasonToBuyValueView.bottomAnchor, constant: 77),
+            self.acceptWishlistButton.bottomAnchor.constraint(equalTo: self.deleteWishlistButton.topAnchor, constant: -12),
+            self.acceptWishlistButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 17),
+            self.acceptWishlistButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
         ])
-    }
 
-    func styleDeleteWishlistButton() {
         self.deleteWishlistButton.translatesAutoresizingMaskIntoConstraints = false
         self.deleteWishlistButton.setTitle("Delete Wishlist", for: .normal)
         self.deleteWishlistButton.setTitleColor(UIColor(hex: "#000000FF"), for: .normal)
         self.deleteWishlistButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-        self.deleteWishlistButton.backgroundColor = UIColor(hex: "#F59A9AFF")
+        self.deleteWishlistButton.backgroundColor = UIColor(named: "LightSalmonPink")
         self.deleteWishlistButton.layer.cornerRadius = 10
         self.deleteWishlistButton.layer.shadowColor = UIColor(hex: "#BBBBBBFF")?.cgColor
         self.deleteWishlistButton.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -213,8 +222,9 @@ class WishlistDetailView: UIView {
         NSLayoutConstraint.activate([
             self.deleteWishlistButton.heightAnchor.constraint(equalToConstant: 49),
             self.deleteWishlistButton.topAnchor.constraint(equalTo: self.acceptWishlistButton.bottomAnchor, constant: 12),
-            self.deleteWishlistButton.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 16),
-            self.deleteWishlistButton.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -16)
+            self.deleteWishlistButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -128),
+            self.deleteWishlistButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 17),
+            self.deleteWishlistButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
         ])
     }
 
