@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 
 class WishlistDetailView: UIView {
+    // MARK: - MVVM
     private var viewModel: WishlistDetailViewModel
     private var viewController: WishlistDetailViewController
 
+    // MARK: - Outlet
     private let itemValueLabel = UILabel()
     private let priceLabel = UILabel()
     private let priceValueLabel = UILabel()
@@ -26,6 +28,7 @@ class WishlistDetailView: UIView {
     private let acceptWishlistButton = UIButton()
     private let deleteWishlistButton = UIButton()
 
+    // MARK: - Lifecycle
     init(viewModel: WishlistDetailViewModel, viewController: WishlistDetailViewController) {
         self.viewModel = viewModel
         self.viewController = viewController
@@ -39,6 +42,7 @@ class WishlistDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Function
     func setup() {
         self.addSubview(self.itemValueLabel)
         self.addSubview(self.priceLabel)
