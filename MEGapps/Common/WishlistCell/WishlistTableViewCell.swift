@@ -22,8 +22,12 @@ class WishlistTableViewCell: UITableViewCell {
     
     func setData() {
         self.itemNameLbl.text = "\(self.newData?.name ?? "Item name")"
-        self.waitingEndDateLbl.text = "\(self.newData?.getDeadline() ?? Date.distantPast)"
         self.statusIconImg.image = self.newData?.getImage()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy"        
+        self.waitingEndDateLbl.text = dateFormatter.string(from: self.newData?.getDeadline() ?? Date.distantPast)
+
     }
     
     override func awakeFromNib() {
