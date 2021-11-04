@@ -58,7 +58,6 @@ class PurchaseProductView: UIView {
             self.contentView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 0),
             self.contentView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor, constant: 0)
         ])
-        
     }
 
     func setup() {
