@@ -44,6 +44,15 @@ class WishListViewController: UIViewController {
     
     // MARK: - IBAction
     @IBAction func addNewWishlist(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "PurchaseAdd", bundle: nil)
+        guard let storyboardWL = storyboard.instantiateViewController(withIdentifier: "purchaseAddSB") as? PurchaseAddView
+        else {
+            fatalError("VC not found")
+        }
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(storyboardWL, animated: true)
+        
+        
         // untuk dummy data
 //        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {fatalError()}
 //
