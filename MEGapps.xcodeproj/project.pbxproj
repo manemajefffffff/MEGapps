@@ -43,6 +43,11 @@
 		19A773682728406300219AE7 /* WishlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A773662728406300219AE7 /* WishlistTableViewCell.swift */; };
 		19A773692728406300219AE7 /* WishlistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A773672728406300219AE7 /* WishlistTableViewCell.xib */; };
 		19A7736C2728411000219AE7 /* UICustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7736B2728411000219AE7 /* UICustom.swift */; };
+		19C7BBC02730E70900AC4499 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBBF2730E70900AC4499 /* ItemModel.swift */; };
+		19C7BBC22730EBA700AC4499 /* BudgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC12730EBA700AC4499 /* BudgetModel.swift */; };
+		19C7BBC42730EC4900AC4499 /* SavingHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC32730EC4900AC4499 /* SavingHistoryModel.swift */; };
+		19C7BBC62730F1C000AC4499 /* TrItemBudgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC52730F1C000AC4499 /* TrItemBudgetModel.swift */; };
+		19C7BBC9273247E200AC4499 /* WishlistCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */; };
 		19C7BBC02730E70900AC4499 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBBF2730E70900AC4499 /* Items.swift */; };
 		19C7BBC22730EBA700AC4499 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC12730EBA700AC4499 /* Budget.swift */; };
 		19C7BBC42730EC4900AC4499 /* SavingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC32730EC4900AC4499 /* SavingHistory.swift */; };
@@ -127,11 +132,17 @@
 		190EA0A6272B90B900479D32 /* InsufficientAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsufficientAmountView.swift; sourceTree = "<group>"; };
 		193D48FE2728EFC300F46C30 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		193D4905272923B100F46C30 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
+		193D4908272924B200F46C30 /* WishListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListModel.swift; sourceTree = "<group>"; };
 		1942C9C6272C4BB400E76586 /* BudgetAllocationTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAllocationTableView.swift; sourceTree = "<group>"; };
 		1942C9C8272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOtherBudgetAllocationViewModel.swift; sourceTree = "<group>"; };
 		19A773662728406300219AE7 /* WishlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewCell.swift; sourceTree = "<group>"; };
 		19A773672728406300219AE7 /* WishlistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishlistTableViewCell.xib; sourceTree = "<group>"; };
 		19A7736B2728411000219AE7 /* UICustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustom.swift; sourceTree = "<group>"; };
+		19C7BBBF2730E70900AC4499 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		19C7BBC12730EBA700AC4499 /* BudgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetModel.swift; sourceTree = "<group>"; };
+		19C7BBC32730EC4900AC4499 /* SavingHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistoryModel.swift; sourceTree = "<group>"; };
+		19C7BBC52730F1C000AC4499 /* TrItemBudgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrItemBudgetModel.swift; sourceTree = "<group>"; };
+		19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCoreDataManager.swift; sourceTree = "<group>"; };
 		19C7BBBF2730E70900AC4499 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		19C7BBC12730EBA700AC4499 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		19C7BBC32730EC4900AC4499 /* SavingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistory.swift; sourceTree = "<group>"; };
@@ -293,6 +304,14 @@
 			path = UICustom;
 			sourceTree = "<group>";
 		};
+		19C7BBC7273244AA00AC4499 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				193D4908272924B200F46C30 /* WishListModel.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		19EDF0302727CE7300AF54A7 = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +319,7 @@
 				19EDF0552727CE7400AF54A7 /* MEGappsTests */,
 				19EDF05F2727CE7400AF54A7 /* MEGappsUITests */,
 				19EDF03A2727CE7300AF54A7 /* Products */,
+				19C7BBC7273244AA00AC4499 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -329,6 +349,7 @@
 				19EDF04A2727CE7400AF54A7 /* LaunchScreen.storyboard */,
 				19EDF04D2727CE7400AF54A7 /* Info.plist */,
 				19EDF0452727CE7300AF54A7 /* MEGapps.xcdatamodeld */,
+				19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */,
 			);
 			path = MEGapps;
 			sourceTree = "<group>";
@@ -760,6 +781,9 @@
 				C6974C43272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift in Sources */,
 				07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
+				19C7BBC22730EBA700AC4499 /* BudgetModel.swift in Sources */,
+				19C7BBC9273247E200AC4499 /* WishlistCoreDataManager.swift in Sources */,
+				C6974C4E272BFA12007EA0C7 /* CustomActionTableViewCell.swift in Sources */,
 				19C7BBC22730EBA700AC4499 /* Budget.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				0710ACFD2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift in Sources */,

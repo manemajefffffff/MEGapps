@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class Items: NSManagedObject, Codable {
     enum CodingKeys: CodingKey {
@@ -61,6 +62,22 @@ class Items: NSManagedObject, Codable {
         try container.encode(createdAt, forKey: .createdAt)
         try container.encode(isPrioritize, forKey: .id)
         try container.encode(transactionItemBudget as? Set<TrItemBudget>, forKey: .transactionItemBudget)
+    }
+    
+    func getDeadline() -> Date {
+        guard let deadline = Calendar.current.date(byAdding: .day, value: 1, to: createdAt!) else { return Date() }
+        return deadline
+    }
+    
+    func getImage() -> UIImage {
+        var shownImage: UIImage
+        let deadline = Calendar.current.date(byAdding: .day, value: 1, to: createdAt ?? Date())
+        if Date() < deadline! {
+            shownImage = UIImage(systemName: "clock")!
+        } else {
+            shownImage = UIImage(systemName: "checkmark.circle")!
+        }
+        return shownImage
     }
     
 }
