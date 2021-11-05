@@ -63,6 +63,9 @@
 		19EF28242732716300D496DF /* CodingUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF28232732716300D496DF /* CodingUserInfo.swift */; };
 		C63E3342272A89C500A08D06 /* WishlistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E333F272A89C500A08D06 /* WishlistDetailViewController.swift */; };
 		C63E3343272A89C500A08D06 /* WishlistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E3340272A89C500A08D06 /* WishlistDetailViewModel.swift */; };
+		C681A73B2734DDC000AD0CF4 /* PurchaseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C681A73A2734DDC000AD0CF4 /* PurchaseDetailView.swift */; };
+		C681A73D2734DDD100AD0CF4 /* PurchaseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C681A73C2734DDD100AD0CF4 /* PurchaseDetailViewModel.swift */; };
+		C681A73F2734DDE200AD0CF4 /* PurchaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C681A73E2734DDE200AD0CF4 /* PurchaseDetailViewController.swift */; };
 		C6974C3F272BABF6007EA0C7 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C3E272BABF6007EA0C7 /* ViewExtension.swift */; };
 		C6974C41272BAC67007EA0C7 /* PurchaseProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C40272BAC67007EA0C7 /* PurchaseProductView.swift */; };
 		C6974C43272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C42272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift */; };
@@ -157,6 +160,9 @@
 		C63E333F272A89C500A08D06 /* WishlistDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailViewController.swift; sourceTree = "<group>"; };
 		C63E3340272A89C500A08D06 /* WishlistDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailViewModel.swift; sourceTree = "<group>"; };
 		C63E3341272A89C500A08D06 /* WishlistDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistDetailView.swift; sourceTree = "<group>"; };
+		C681A73A2734DDC000AD0CF4 /* PurchaseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDetailView.swift; sourceTree = "<group>"; };
+		C681A73C2734DDD100AD0CF4 /* PurchaseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDetailViewModel.swift; sourceTree = "<group>"; };
+		C681A73E2734DDE200AD0CF4 /* PurchaseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDetailViewController.swift; sourceTree = "<group>"; };
 		C6974C3E272BABF6007EA0C7 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		C6974C40272BAC67007EA0C7 /* PurchaseProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductView.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductView.swift; sourceTree = SOURCE_ROOT; };
 		C6974C42272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductViewContoller.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductViewContoller.swift; sourceTree = SOURCE_ROOT; };
@@ -456,6 +462,7 @@
 		19EDF0892727D47D00AF54A7 /* Purchase */ = {
 			isa = PBXGroup;
 			children = (
+				C681A7392734DDAB00AD0CF4 /* PurchaseDetail */,
 				C6974C46272BAEE2007EA0C7 /* PurchaseProduct */,
 				19EDF0912727D77A00AF54A7 /* PurchaseOverview */,
 				19EDF08F2727D70700AF54A7 /* PurchaseOtherBudgetAllocation */,
@@ -557,6 +564,16 @@
 				19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		C681A7392734DDAB00AD0CF4 /* PurchaseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C681A73A2734DDC000AD0CF4 /* PurchaseDetailView.swift */,
+				C681A73C2734DDD100AD0CF4 /* PurchaseDetailViewModel.swift */,
+				C681A73E2734DDE200AD0CF4 /* PurchaseDetailViewController.swift */,
+			);
+			path = PurchaseDetail;
 			sourceTree = "<group>";
 		};
 		C6974C3D272BABF6007EA0C7 /* Extension */ = {
@@ -755,7 +772,9 @@
 				19A773682728406300219AE7 /* WishlistTableViewCell.swift in Sources */,
 				F9838B912730EF130038D041 /* OtherBudgetViewController.swift in Sources */,
 				076669FB272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift in Sources */,
+				C681A73F2734DDE200AD0CF4 /* PurchaseDetailViewController.swift in Sources */,
 				076669F5272C3D8700C02B20 /* PurchaseSameItemViewController.swift in Sources */,
+				C681A73D2734DDD100AD0CF4 /* PurchaseDetailViewModel.swift in Sources */,
 				193D48FF2728EFC300F46C30 /* WishListViewController.swift in Sources */,
 				C6974C43272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift in Sources */,
 				07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */,
@@ -781,6 +800,7 @@
 				F9681CC1272AADD100941894 /* PurchaseCategoryView.swift in Sources */,
 				190EA0A7272B90B900479D32 /* InsufficientAmountView.swift in Sources */,
 				F9681CB9272A21C500941894 /* PurchaseAddView.swift in Sources */,
+				C681A73B2734DDC000AD0CF4 /* PurchaseDetailView.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
 				C63E3342272A89C500A08D06 /* WishlistDetailViewController.swift in Sources */,
 				193D4906272923B100F46C30 /* WishListViewModel.swift in Sources */,
