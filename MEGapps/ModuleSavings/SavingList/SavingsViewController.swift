@@ -23,6 +23,7 @@ class SavingsViewController: UIViewController {
         super.viewDidLoad()
 
         prepCustomView(view: viewHobbySavingsCell)
+        hobbySavingsCellAmountUpdate()
         prepTableView(TV: tableViewSavingsBudget)
         movePage()
         // Do any additional setup after loading the view.
@@ -46,6 +47,10 @@ class SavingsViewController: UIViewController {
         
         TV.separatorStyle = .none
         TV.showsVerticalScrollIndicator = false
+    }
+    
+    func hobbySavingsCellAmountUpdate() {
+        //viewHobbySavingsCell.labelSavingsAmount.text = "Rp. \(SavingsHistory.amount)"// Get SavingsHistory.amount from CoreData.
     }
     
     func movePage() {
