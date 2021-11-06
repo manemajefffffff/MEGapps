@@ -9,7 +9,12 @@ import UIKit
 
 @IBDesignable
 final class HobbySavingsCellView: UIView {
-
+    
+//MARK: - Variables
+    var historyButtonPressed: (() -> ()) = {}
+    var addButtonPressed: (() -> ()) = {}
+    var isOpen: Bool = true
+    
 //MARK: - Outlets
     @IBOutlet weak var labelHobbySavings: UILabel!
     @IBOutlet weak var labelSavingsAmount: UILabel!
@@ -56,4 +61,23 @@ final class HobbySavingsCellView: UIView {
         self.labelSavingsAmount.text = title
     }
 
+    @IBAction func moveToSavingsHistory(_ sender: Any) {
+        historyButtonPressed()
+    }
+    
+    @IBAction func moveToAddAmount(_ sender: Any) {
+        addButtonPressed()
+    }
+    
+    @IBAction func hideAmount(_ sender: Any) {
+        if isOpen == true {
+            labelSavingsAmount.text = "Rp. *******"
+        } else {
+            labelSavingsAmount.text = "Rp. 999.999"
+        }
+        
+        isOpen = !isOpen
+    }
+    
+    
 }
