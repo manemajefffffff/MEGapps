@@ -70,7 +70,7 @@
                     <color key="tintColor" name="PureWhite"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain">
-                        <imageReference key="image" image="eye.fill" catalog="system" symbolScale="default"/>
+                        <imageReference key="image" image="EyeOpen-1" symbolScale="default"/>
                     </buttonConfiguration>
                     <connections>
                         <action selector="hideAmount:" destination="-1" eventType="touchUpInside" id="G9a-uB-GN7"/>
@@ -103,9 +103,9 @@
         </label>
     </objects>
     <resources>
-        <image name="clock.arrow.circlepath" catalog="system" width="128" height="110"/>
-        <image name="eye.fill" catalog="system" width="128" height="78"/>
-        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="AddPlus2" width="10" height="10"/>
+        <image name="EyeOpen-1" width="21" height="13"/>
+        <image name="Time" width="19" height="19"/>
         <namedColor name="AddAmountAndSelectedIndicator">
             <color red="1" green="0.9100000262260437" blue="0.45100000500679016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

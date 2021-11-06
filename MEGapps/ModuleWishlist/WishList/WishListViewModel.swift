@@ -6,11 +6,24 @@
 //
 
 import Foundation
+import Combine
 
-public struct WishListViewModel {
-    let bundle: Bundle
+class WishListViewModel: NSObject {
     
-    init(bundle: Bundle = Bundle.main) {
-        self.bundle = bundle
+    @Published var items = [Items]()
+//    var items = CurrentValueSubject<[Items], Never>([])
+        
+    private lazy var wishlistCDM: WishlistCoreDataManager = {return WishlistCoreDataManager() }()
+    
+    override init() {
+        super.init()
+        fetchData()
+        print("data fetched")
+    }
+    // MARK: - Function
+    func fetchData() {
+        WishlistCoreDataManager.shared.getAll { items in
+            self.items = items
+        }
     }
 }

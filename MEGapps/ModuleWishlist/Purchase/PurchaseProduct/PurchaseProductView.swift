@@ -58,14 +58,11 @@ class PurchaseProductView: UIView {
             self.contentView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 0),
             self.contentView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor, constant: 0)
         ])
-        
     }
 
     func setup() {
         self.contentView.addSubview(purchaseProductDetailView)
         self.contentView.addSubview(budgetAllocationUsedLabel)
-        budgetAllocationUsedLabel.text = "Budget Allocation Used:"
-        budgetAllocationUsedLabel.font = .systemFont(ofSize: 15, weight: .regular)
         self.contentView.addSubview(budgetAllocationUsedView)
         self.contentView.addSubview(allocateOtherBudgetButton)
         self.contentView.addSubview(purchaseItemButton)
@@ -83,6 +80,8 @@ class PurchaseProductView: UIView {
             purchaseProductDetailView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20)
         ])
         
+        budgetAllocationUsedLabel.text = "Budget Allocation Used:"
+        budgetAllocationUsedLabel.font = .systemFont(ofSize: 15, weight: .regular)
         budgetAllocationUsedLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             budgetAllocationUsedLabel.topAnchor.constraint(equalTo: self.purchaseProductDetailView.bottomAnchor, constant: 16),

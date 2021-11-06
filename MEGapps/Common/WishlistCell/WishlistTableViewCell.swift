@@ -13,6 +13,23 @@ class WishlistTableViewCell: UITableViewCell {
     @IBOutlet weak var itemNameLbl: UILabel!
     @IBOutlet weak var waitingEndDateLbl: UILabel!
     @IBOutlet weak var wishlistContainerView: UIView!
+    
+    var newData: Items? {
+        didSet {
+            setData()
+        }
+    }
+    
+    func setData() {
+        self.itemNameLbl.text = "\(self.newData?.name ?? "Item name")"
+        self.statusIconImg.image = self.newData?.getImage()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy"        
+        self.waitingEndDateLbl.text = dateFormatter.string(from: self.newData?.getDeadline() ?? Date.distantPast)
+
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
