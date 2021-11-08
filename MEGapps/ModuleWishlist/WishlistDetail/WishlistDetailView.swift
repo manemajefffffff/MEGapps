@@ -252,7 +252,7 @@ class WishlistDetailView: UIView {
         self.deleteWishlistButton.layer.shadowOffset = CGSize(width: 0, height: 4)
         self.deleteWishlistButton.layer.shadowRadius = 4.0
         self.deleteWishlistButton.layer.shadowOpacity = 0.8
-        self.acceptWishlistButton.addTarget(self, action: #selector(deleteWishlistAction), for: .touchUpInside)
+        self.deleteWishlistButton.addTarget(self, action: #selector(deleteWishlistAction), for: .touchUpInside)
         self.acceptWishlistButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.deleteWishlistButton.heightAnchor.constraint(equalToConstant: 49),
