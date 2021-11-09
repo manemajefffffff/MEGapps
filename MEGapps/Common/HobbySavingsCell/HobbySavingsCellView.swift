@@ -13,7 +13,8 @@ final class HobbySavingsCellView: UIView {
 //MARK: - Variables
     var historyButtonPressed: (() -> ()) = {}
     var addButtonPressed: (() -> ()) = {}
-    var isOpen: Bool = true
+    var isOpen: Bool = false
+    var savingAmount: Int = 0
     
 //MARK: - Outlets
     @IBOutlet weak var labelHobbySavings: UILabel!
@@ -48,17 +49,28 @@ final class HobbySavingsCellView: UIView {
         gradient.colors = [UIColor(named: "PrimaryHSgradient"), UIColor(named: "SecondaryHSgradient")]
         gradient.startPoint = CGPoint(x: 0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1, y: 0.5)
-        gradient.endPoint
+        // gradient.endPoint <-- ini apa ya?
         view.layer.insertSublayer(gradient, at: 0)
         
         view.frame = self.bounds
         view.layer.cornerRadius = 16.0// View Rounded
         self.addSubview(view)
         self.buttonAddAmount.layer.cornerRadius = 16.0// Button Rounded
+        
+        self.labelSavingsAmount.text = "Rp\(self.savingAmount)"
+        self.showAmount()
     }
     
     func configureView(title: String) {
         self.labelSavingsAmount.text = title
+    }
+    
+    func showAmount() {
+        if isOpen {
+            labelSavingsAmount.text = "Rp\(self.savingAmount)"
+        } else {
+            labelSavingsAmount.text = "Rp*******"
+        }
     }
 
     @IBAction func moveToSavingsHistory(_ sender: Any) {
@@ -70,13 +82,8 @@ final class HobbySavingsCellView: UIView {
     }
     
     @IBAction func hideAmount(_ sender: Any) {
-        if isOpen == true {
-            labelSavingsAmount.text = "Rp. *******"
-        } else {
-            labelSavingsAmount.text = "Rp. 999.999"
-        }
-        
         isOpen = !isOpen
+        self.showAmount()
     }
     
     
