@@ -13,8 +13,6 @@ class SavingsViewController: UIViewController {
     @IBOutlet weak var tableViewSavingsBudget: UITableView!
     
     // MARK: - Variables
-    var name = ["one", "two", "three"]
-    var price = ["123", "456", "789"]
     var savingAmount = 0
     var historyData = Dummy.getDummyData()
     
@@ -50,10 +48,10 @@ class SavingsViewController: UIViewController {
     
     func movePage() {
         viewHobbySavingsCell.historyButtonPressed = {
-            self.updateView()
-//            let storyBoard = UIStoryboard(name: "SavingsHistory", bundle: nil)
-//            let viewController = storyBoard.instantiateViewController(withIdentifier: "savingHistoryPage")
-//            self.present(viewController, animated: true)
+//            self.updateView()
+            let storyBoard = UIStoryboard(name: "SavingsHistory", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "savingHistoryPage")
+            self.present(viewController, animated: true)
         }
         viewHobbySavingsCell.addButtonPressed = {
             let storyBoard = UIStoryboard(name: "SavingsAdd", bundle: nil)
