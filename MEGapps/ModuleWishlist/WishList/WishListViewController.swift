@@ -52,29 +52,6 @@ class WishListViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(storyboardWL, animated: true)
         
-        
-        // untuk dummy data
-//        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {fatalError()}
-//
-//        let newData = Items(context: context)
-//        newData.id = UUID()
-//        newData.name = "gundam"
-//        newData.createdAt = Date.now
-//        newData.isPrioritize = false
-//        newData.purchasedDate = nil
-//        newData.deadline = Date.now.addingTimeInterval(864000)
-//        newData.startSavingDate = nil
-//        newData.price = 1000000
-//        newData.reason = "i want to"
-//        newData.category = "Collectibles"
-//        newData.status = "waiting"
-//        do {
-//            try context.save()
-//        } catch {
-//            fatalError()
-//        }
-//        print("cek datanya: \(containerData[0].name)")
-        
     }
 }
 
@@ -91,5 +68,12 @@ extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
             cell.newData = wishListViewModel.items[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        wishlistTableView.deselectRow(at: indexPath, animated: true)
+        let wishlistDetailVC = WishlistDetailViewController()
+        wishlistDetailVC.container = wishListViewModel.items[indexPath.row]
+        navigationController?.pushViewController(wishlistDetailVC, animated: true)
     }
 }

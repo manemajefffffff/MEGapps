@@ -6,18 +6,27 @@
 //
 
 import UIKit
+import Combine
 
 class WishlistDetailViewController: UIViewController {
+    
+    // MARK: - ViewModel
+    var viewModel = WishlistDetailViewModel()
+    // MARK: - container
+    var container: Items?
 
+    // MARK: - State
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    // MARK: - Function
     override func loadView() {
-        self.view = WishlistDetailView(viewModel: WishlistDetailViewModel(), viewController: self)
+        self.view = WishlistDetailView(viewModel: viewModel, viewController: self)
+        viewModel.wishlist = container!
     }
-
+    
     func showAcceptAlert() {
         let alert = UIAlertController(title: "Accept", message: "Please Select an Option", preferredStyle: .actionSheet)
 

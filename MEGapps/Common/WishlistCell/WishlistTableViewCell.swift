@@ -27,7 +27,6 @@ class WishlistTableViewCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM dd, yyyy"        
         self.waitingEndDateLbl.text = dateFormatter.string(from: self.newData?.getDeadline() ?? Date.distantPast)
-
     }
     
     override func awakeFromNib() {

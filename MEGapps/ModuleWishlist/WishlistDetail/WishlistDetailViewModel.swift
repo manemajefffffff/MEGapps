@@ -12,6 +12,8 @@ import UIKit
 class WishlistDetailViewModel {
     // @Published var model: //DataModel
     let bundle: Bundle
+    
+    @Published var wishlist = Items()
 
     init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
