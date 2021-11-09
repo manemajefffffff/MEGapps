@@ -72,6 +72,10 @@ final class HobbySavingsCellView: UIView {
             labelSavingsAmount.text = "Rp*******"
         }
     }
+    
+    func updateView() {
+        self.showAmount()
+    }
 
     @IBAction func moveToSavingsHistory(_ sender: Any) {
         historyButtonPressed()
