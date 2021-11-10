@@ -35,10 +35,32 @@ class WishlistCoreDataManager {
     func getAll(completion: @escaping(_ items: [Items]) -> Void) {
         let context = persistentContainer.viewContext
         do {
-            let data = try context.fetch(Items.fetchRequest())
+            let fetchRequest = Items.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "status == %@", "waiting")
+            let data = try context.fetch(fetchRequest)
             completion(data)
         } catch {
             fatalError()
         }
-    }    
+    }
+    
+    func acceptWishlist(_ items: Items) {
+        let context = persistentContainer.viewContext
+        items.status = "on_progress"
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
+    
+    func cancelWishlist(_ items: Items) {
+        let context = persistentContainer.viewContext
+        context.delete(items)
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
 }
