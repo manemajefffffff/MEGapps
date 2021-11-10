@@ -27,10 +27,8 @@ class PurchaseSameItemViewController: UIViewController {
     var productName: String = ""
     var productDeadline: String = ""
     let dateFormatter = DateFormatter()
-
     var categoryChosen: String = ""
     var numberOfItemSameCat = 0
-    //var itemsData = [Items]()
     
 //MARK: - Lifecycle
     override func viewDidLoad() {
