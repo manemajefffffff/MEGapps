@@ -31,6 +31,8 @@
 		078A67DD272B0ACA00B60DF5 /* HobbySavingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D094F92728458100DD0716 /* HobbySavingsCellView.swift */; };
 		078A67DE272B0C2D00B60DF5 /* HobbySavingsCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D094FB2728459A00DD0716 /* HobbySavingsCellView.xib */; };
 		07D094FE27285A6200DD0716 /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D094FD27285A6200DD0716 /* SavingsViewController.swift */; };
+		07D212AB273B970000BB1FD1 /* PurchaseSameItemCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D212AA273B970000BB1FD1 /* PurchaseSameItemCoreDataManager.swift */; };
+		07D212AD273B97E500BB1FD1 /* PurchaseSameItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D212AC273B97E500BB1FD1 /* PurchaseSameItemViewModel.swift */; };
 		190EA09F272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA09D272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.swift */; };
 		190EA0A0272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 190EA09E272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.xib */; };
 		190EA0A2272B8F5300479D32 /* PurchaseOtherBudgetAllocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 190EA0A1272B8F5300479D32 /* PurchaseOtherBudgetAllocation.storyboard */; };
@@ -124,6 +126,8 @@
 		07D094F92728458100DD0716 /* HobbySavingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbySavingsCellView.swift; sourceTree = "<group>"; };
 		07D094FB2728459A00DD0716 /* HobbySavingsCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HobbySavingsCellView.xib; sourceTree = "<group>"; };
 		07D094FD27285A6200DD0716 /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
+		07D212AA273B970000BB1FD1 /* PurchaseSameItemCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSameItemCoreDataManager.swift; sourceTree = "<group>"; };
+		07D212AC273B97E500BB1FD1 /* PurchaseSameItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSameItemViewModel.swift; sourceTree = "<group>"; };
 		190EA09D272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAllocateBudgetTableViewCell.swift; sourceTree = "<group>"; };
 		190EA09E272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseAllocateBudgetTableViewCell.xib; sourceTree = "<group>"; };
 		190EA0A1272B8F5300479D32 /* PurchaseOtherBudgetAllocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = PurchaseOtherBudgetAllocation.storyboard; path = MEGapps/Common/PurchaseAllocateBudgetCell/PurchaseOtherBudgetAllocation.storyboard; sourceTree = SOURCE_ROOT; };
@@ -348,6 +352,7 @@
 				19EDF04D2727CE7400AF54A7 /* Info.plist */,
 				19EDF0452727CE7300AF54A7 /* MEGapps.xcdatamodeld */,
 				19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */,
+				07D212AA273B970000BB1FD1 /* PurchaseSameItemCoreDataManager.swift */,
 			);
 			path = MEGapps;
 			sourceTree = "<group>";
@@ -519,6 +524,7 @@
 			children = (
 				076669F4272C3D8700C02B20 /* PurchaseSameItemViewController.swift */,
 				076669F6272C3D9800C02B20 /* PurchaseSameItem.storyboard */,
+				07D212AC273B97E500BB1FD1 /* PurchaseSameItemViewModel.swift */,
 			);
 			path = PurchaseSameItem;
 			sourceTree = "<group>";
@@ -801,6 +807,7 @@
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
 				034FD4C7272A92800060F7F4 /* PurchaseOrderViewController.swift in Sources */,
 				F9838B8F2730D48D0038D041 /* SavingsAddViewController.swift in Sources */,
+				07D212AD273B97E500BB1FD1 /* PurchaseSameItemViewModel.swift in Sources */,
 				034FD4D6272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift in Sources */,
 				034FD4CF272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift in Sources */,
 				190EA09F272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.swift in Sources */,
@@ -811,6 +818,7 @@
 				19C7BBC42730EC4900AC4499 /* SavingHistory.swift in Sources */,
 				1942C9C9272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift in Sources */,
 				030881062730E4FD00EF8F4A /* AddEditBudgetViewController.swift in Sources */,
+				07D212AB273B970000BB1FD1 /* PurchaseSameItemCoreDataManager.swift in Sources */,
 				034FD4CB272A936E0060F7F4 /* ProductInformationTableViewController.swift in Sources */,
 				F9681CC1272AADD100941894 /* PurchaseCategoryView.swift in Sources */,
 				190EA0A7272B90B900479D32 /* InsufficientAmountView.swift in Sources */,
