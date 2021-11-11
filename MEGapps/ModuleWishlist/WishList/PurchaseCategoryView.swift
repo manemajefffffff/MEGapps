@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Outlet
@@ -16,6 +17,7 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
     
     // MARK: - Variables
     let categories = ["Technologies", "Travelling", "Scuba Diving", "Gaming", "Fashion"]
+    var selectedCategories: String = ""
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,6 +28,10 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
     override func viewWillLayoutSubviews() {
         super.updateViewConstraints()
         self.tableHeight?.constant = self.tableView.contentSize.height
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+       
     }
     
     // MARK: - Functions
@@ -46,6 +52,12 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
         self.view.addSubview(containerView)
         containerView.addSubview(tableView)
     }
+
+    // MARK: - Actions
+    @IBAction func dismissCategory(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 }
 
@@ -71,15 +83,15 @@ extension PurchaseCategoryView {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){
-                cell.accessoryType = .checkmark
-
+            cell.accessoryType = .checkmark
+            selectedCategories = categories[indexPath.row]
+            print("selected category", selectedCategories)
         }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){
-                cell.accessoryType = .none
-
+            cell.accessoryType = .none
         }
     }
 }

@@ -8,11 +8,14 @@
 import Foundation
 import UIKit
 
-class PurchaseAddView: UITableViewController, UITextViewDelegate {
+class PurchaseAddView: UITableViewController, UITextViewDelegate{
     
     // MARK: - Variables
     let tableIdentifier = "DeadlineDatePickerTableViewCell"
     var placeholderLabel: UILabel!
+    var category: String = "Technology"
+    private let viewModel = PurchaseAddViewModel()
+    let dateFormatter = DateFormatter()
     
     // MARK: - Outlet
 
@@ -21,6 +24,8 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var deadlineDatePicker: UIDatePicker!
     @IBOutlet weak var reasonTextView: UITextView!
+    @IBOutlet weak var deadlineLabel: UILabel!
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -28,20 +33,41 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate {
         deadlineDatePicker.isHidden = true
         setupUI()
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
     // MARK: - Actions
     
     @IBAction func dismissPage(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func moveToCategoryPage(_ sender: Any) {
+        
+        checkEmptyField()
+        
+        viewModel.items?.name = itemNameTextField.text ?? "None"
+        if let price = itemPriceTextField.text {
+            viewModel.items?.price  = Int64(price) ?? 0
+        }
+        viewModel.items?.reason = reasonTextView.text
+        viewModel.items?.deadline = deadlineDatePicker.date
+        viewModel.items?.category = category
+        
+        let storyBoard = UIStoryboard(name: "PurchaseSameItem", bundle: nil)
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "purchaseSameItemPage") as? PurchaseSameItemViewController else {
+            fatalError("no view")
+        }
+        vc.purchaseAdd = viewModel
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     
     // MARK: - Functions
     
     func setupUI() {
+        
         reasonTextView.delegate = self
         placeholderLabel = UILabel()
         placeholderLabel.text = "Reason to buy"
@@ -54,29 +80,41 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate {
         
     }
     
+    func checkEmptyField(){
+        if itemNameTextField.text!.isEmpty {
+            displayAlert(userMessage: "Empty Text Field Name")
+            return
+        } else if itemPriceTextField.text!.isEmpty {
+            displayAlert(userMessage: "Empty Price Field")
+            return
+        } else if reasonTextView.text.isEmpty {
+            displayAlert(userMessage: "Empty Reason Field")
+            return
+        }
+    }
+    
+    func displayAlert(userMessage: String){
+        let myAlert = UIAlertController(title: "Warning!", message: userMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        myAlert.addAction(okAction)
+        self.present(myAlert, animated: true, completion: nil)
+    }
+    
     // MARK: - TextView Function
     func textViewDidChange(_ textView: UITextView) {
             placeholderLabel.isHidden = !textView.text.isEmpty
     }
     
+    // MARK: - PickerView
+    @IBAction func dateChanged(_ sender: Any) {
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        let date = dateFormatter.string(from: deadlineDatePicker.date)
+        deadlineLabel.text = date
+    }
+    
+    
     // MARK: - TableView Function
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        
-//        let shadowView = UIView()
-//
-//        let gradient = CAGradientLayer()
-//        gradient.frame.size = CGSize(width: tableView.bounds.width - 40, height: 15)
-//
-//        let stopColor = UIColor.gray.cgColor
-//        let startColor = UIColor.white.cgColor
-//
-//        gradient.colors = [stopColor, startColor]
-//        gradient.locations = [0.0, 0.8]
-//        gradient.opacity = 0.5
-//
-//        shadowView.layer.addSublayer(gradient)
-//
-//        return shadowView
         
         let shadowView = UIView()
         
@@ -106,8 +144,11 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let deadlineIndexPath = NSIndexPath(row: 3, section: 0)
+        let categoryIndexPath = NSIndexPath(row: 2, section: 0)
 
-        if deadlineIndexPath as IndexPath == indexPath {
+        if categoryIndexPath as IndexPath == indexPath {
+            
+        } else if deadlineIndexPath as IndexPath == indexPath {
             deadlineDatePicker.isHidden = !deadlineDatePicker.isHidden
 
             UIView.animate(withDuration: 0.3, animations: { () -> Void in
@@ -115,6 +156,7 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate {
             self.tableView.deselectRow(at: indexPath, animated: true)
             self.tableView.endUpdates()
             })
+            print("category", category)
         }
     }
     
