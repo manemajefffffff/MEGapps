@@ -18,12 +18,14 @@ class WishListViewModel: NSObject {
     override init() {
         super.init()
         fetchData()
-        print("data fetched")
     }
     // MARK: - Function
     func fetchData() {
         WishlistCoreDataManager.shared.getAll { items in
-            self.items = items
+            if self.items != items {
+                self.items = items
+                print("data refreshed")
+            }
         }
     }
 }

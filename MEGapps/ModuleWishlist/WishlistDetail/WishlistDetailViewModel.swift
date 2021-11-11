@@ -18,4 +18,12 @@ class WishlistDetailViewModel {
     init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
     }
+    
+    func acceptWishlist() {
+        WishlistCoreDataManager.shared.acceptWishlist(wishlist)
+    }
+    
+    func cancelWishlist() {
+        WishlistCoreDataManager.shared.cancelWishlist(wishlist)
+    }
 }

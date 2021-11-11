@@ -20,19 +20,24 @@ class WishListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNib()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         subscribe()
+        fetchData()
+        print("view will appear")
     }
     
     // MARK: - Function
     private func registerNib() {
         wishlistTableView.register(UINib.init(nibName: "WishlistTableViewCell", bundle: nil), forCellReuseIdentifier: "wishlistTableViewCell")
     }
-        
-    func fetchData() {
+    
+    private func fetchData() {
         wishListViewModel.fetchData()
     }
 
-    func subscribe() {
+    private func subscribe() {
         wishListViewModel.$items
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
