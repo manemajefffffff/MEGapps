@@ -8,14 +8,16 @@
 import Foundation
 import UIKit
 
-class PurchaseAddView: UITableViewController, UITextViewDelegate{
+class PurchaseAddView: UITableViewController, UITextViewDelegate, receivedDataDelegate{
     
     // MARK: - Variables
     let tableIdentifier = "DeadlineDatePickerTableViewCell"
     var placeholderLabel: UILabel!
     var category: String = "Technology"
     private let viewModel = PurchaseAddViewModel()
+    private let purchaseCategoryViewModel = PurchaseCategoryViewModel()
     let dateFormatter = DateFormatter()
+    
     
     // MARK: - Outlet
 
@@ -32,9 +34,6 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate{
         super.viewDidLoad()
         deadlineDatePicker.isHidden = true
         setupUI()
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
     }
     // MARK: - Actions
     
@@ -67,7 +66,6 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate{
     // MARK: - Functions
     
     func setupUI() {
-        
         reasonTextView.delegate = self
         placeholderLabel = UILabel()
         placeholderLabel.text = "Reason to buy"
@@ -87,6 +85,12 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate{
         } else if itemPriceTextField.text!.isEmpty {
             displayAlert(userMessage: "Empty Price Field")
             return
+        } else if categoryLabel.text == "Collection Items"{
+            displayAlert(userMessage: "Choose Category")
+            return
+        } else if deadlineLabel.text == "Date" {
+            displayAlert(userMessage: "Empty Date")
+            return
         } else if reasonTextView.text.isEmpty {
             displayAlert(userMessage: "Empty Reason Field")
             return
@@ -100,15 +104,22 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate{
         self.present(myAlert, animated: true, completion: nil)
     }
     
+    func passData(data: String){
+        categoryLabel.text =  data
+        categoryLabel.textColor = UIColor.black
+        category = data
+    }
+    
     // MARK: - TextView Function
     func textViewDidChange(_ textView: UITextView) {
-            placeholderLabel.isHidden = !textView.text.isEmpty
+        placeholderLabel.isHidden = !textView.text.isEmpty
     }
     
     // MARK: - PickerView
     @IBAction func dateChanged(_ sender: Any) {
-        dateFormatter.dateFormat = "MMM d, yyyy"
+        dateFormatter.dateFormat = "MMMM d, yyyy"
         let date = dateFormatter.string(from: deadlineDatePicker.date)
+        deadlineLabel.textColor = UIColor.black
         deadlineLabel.text = date
     }
     
@@ -118,7 +129,6 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate{
         
         let shadowView = UIView()
         
-        //let containerView: UIView = UIView(frame: self.tableView.frame)
         let containerview = CALayer()
         containerview.frame.size = CGSize(width: tableView.bounds.width - 40, height: 15)
         
@@ -147,7 +157,16 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate{
         let categoryIndexPath = NSIndexPath(row: 2, section: 0)
 
         if categoryIndexPath as IndexPath == indexPath {
+            let storyBoard = UIStoryboard(name: "PurchaseCategory", bundle: nil)
+            guard let vc = storyBoard.instantiateViewController(withIdentifier: "purchaseViewController") as? PurchaseCategoryView else {
+                fatalError("no view")
+            }
+            let navVc = UINavigationController(rootViewController: vc)
             
+            vc.delegate = self
+            vc.modalPresentationStyle = .pageSheet
+//            self.present(vc, animated: true, completion: nil)
+            self.present(navVc, animated: true, completion: nil)
         } else if deadlineIndexPath as IndexPath == indexPath {
             deadlineDatePicker.isHidden = !deadlineDatePicker.isHidden
 
@@ -156,7 +175,6 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate{
             self.tableView.deselectRow(at: indexPath, animated: true)
             self.tableView.endUpdates()
             })
-            print("category", category)
         }
     }
     

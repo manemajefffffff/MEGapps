@@ -89,9 +89,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="c92-az-PUe" kind="show" id="t8h-XO-q3E"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productDeadline" textLabel="H70-W3-iCe" detailTextLabel="smR-dJ-N29" style="IBUITableViewCellStyleValue1" id="GlV-lg-s4f">
                                         <rect key="frame" x="20" y="150" width="374" height="44"/>
@@ -111,7 +108,7 @@
                                                     <rect key="frame" x="300.5" y="12" width="36" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -205,16 +202,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXL-qK-ziH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1873.913043478261" y="84.375"/>
-        </scene>
-        <!--PurchaseCategory-->
-        <scene sceneID="9Kq-FF-oub">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PurchaseCategory" id="c92-az-PUe" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="uN4-r3-cfk"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HhD-62-caX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2764" y="70"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mKN-f2-MlV">

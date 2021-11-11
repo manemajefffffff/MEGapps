@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 
+protocol receivedDataDelegate: AnyObject {
+    func passData(data: String)
+}
 
 class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -18,11 +21,14 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
     // MARK: - Variables
     let categories = ["Technologies", "Travelling", "Scuba Diving", "Gaming", "Fashion"]
     var selectedCategories: String = ""
+    private let viewModel = PurchaseCategoryViewModel()
+    weak var delegate: receivedDataDelegate?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+
     }
     
     override func viewWillLayoutSubviews() {
@@ -56,6 +62,7 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
     // MARK: - Actions
     @IBAction func dismissCategory(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        
     }
     
     
@@ -85,7 +92,7 @@ extension PurchaseCategoryView {
         if let cell = tableView.cellForRow(at: indexPath){
             cell.accessoryType = .checkmark
             selectedCategories = categories[indexPath.row]
-            print("selected category", selectedCategories)
+            delegate?.passData(data: selectedCategories)
         }
     }
     

@@ -71,6 +71,7 @@
 		C6974C41272BAC67007EA0C7 /* PurchaseProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C40272BAC67007EA0C7 /* PurchaseProductView.swift */; };
 		C6974C43272BAC7C007EA0C7 /* PurchaseProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C42272BAC7C007EA0C7 /* PurchaseProductViewController.swift */; };
 		C6974C45272BAC87007EA0C7 /* PurchaseProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */; };
+		F9657007273CAC6800A92636 /* PurchaseCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9657006273CAC6800A92636 /* PurchaseCategoryViewModel.swift */; };
 		F9681CB9272A21C500941894 /* PurchaseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CB8272A21C500941894 /* PurchaseAddView.swift */; };
 		F9681CBF272AAD4000941894 /* PurchaseCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */; };
 		F9681CC1272AADD100941894 /* PurchaseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */; };
@@ -172,6 +173,7 @@
 		C6974C40272BAC67007EA0C7 /* PurchaseProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductView.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductView.swift; sourceTree = SOURCE_ROOT; };
 		C6974C42272BAC7C007EA0C7 /* PurchaseProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductViewController.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductViewController.swift; sourceTree = SOURCE_ROOT; };
 		C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductViewModel.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductViewModel.swift; sourceTree = SOURCE_ROOT; };
+		F9657006273CAC6800A92636 /* PurchaseCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryViewModel.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseSameItem/PurchaseCategoryViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F9681CB8272A21C500941894 /* PurchaseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAddView.swift; sourceTree = SOURCE_ROOT; };
 		F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = PurchaseCategory.storyboard; path = MEGapps/ModuleWishlist/WishList/PurchaseCategory.storyboard; sourceTree = SOURCE_ROOT; };
 		F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryView.swift; path = MEGapps/ModuleWishlist/WishList/PurchaseCategoryView.swift; sourceTree = SOURCE_ROOT; };
@@ -515,6 +517,7 @@
 			children = (
 				F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */,
 				F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */,
+				F9657006273CAC6800A92636 /* PurchaseCategoryViewModel.swift */,
 			);
 			path = PurchaseCategory;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				C6974C41272BAC67007EA0C7 /* PurchaseProductView.swift in Sources */,
 				F9BD7B2B273B760400AA168A /* PurchaseAddViewModel.swift in Sources */,
 				190EA0A4272B8FBB00479D32 /* PurchaseOtherBudgetAllocationViewController.swift in Sources */,
+				F9657007273CAC6800A92636 /* PurchaseCategoryViewModel.swift in Sources */,
 				C63E3343272A89C500A08D06 /* WishlistDetailViewModel.swift in Sources */,
 				19A7736C2728411000219AE7 /* UICustom.swift in Sources */,
 				F9BD7B2D273B85F900AA168A /* purchaseSameItemViewModel.swift in Sources */,
