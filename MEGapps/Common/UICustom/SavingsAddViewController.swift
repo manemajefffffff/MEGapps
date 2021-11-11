@@ -7,8 +7,13 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class SavingsAddViewController: UIViewController {
+    
+    // MARK: - ViewModel
+    private let savingsAddVM = SavingsAddViewModel()
+    var anyCancellable = Set<AnyCancellable>()
      
     // MARK: -  Outlet
     @IBOutlet weak var dateLabel: UILabel!
@@ -19,12 +24,12 @@ class SavingsAddViewController: UIViewController {
     let currentTime: Date = Date()
     var onViewWillDisappear: (()->())?
     var emptyState = false
-    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        subscribe()
     }
     
     // MARK: - Actions
@@ -34,20 +39,34 @@ class SavingsAddViewController: UIViewController {
     }
     
     @IBAction func saveEntry(_ sender: Any) {
-        //saveSavingsAmount()
+        saveSavingsAmount()
         onViewWillDisappear?()
         self.dismiss(animated: true, completion: nil)
     }
     
     
     // MARK: - Functions
-//    func saveSavingsAmount() {
-//        let newSavingsAmount = SavingsHistory(context: context)
-//
-//        newSavingsAmount.createdAt = currentTime
-//
-//        newSavingsAmount.amount = Int64(amountTextField.text!) ?? 0
-//    }
+    func saveSavingsAmount() {
+        let newSavingsAmount = savingsAddVM.savingsHistory
+
+        newSavingsAmount.createdAt = currentTime //BROKEN
+
+        newSavingsAmount.amount = Int64(amountTextField.text!) ?? 0 //BROKEN
+    }
+    
+    func retrieveData() {
+        savingsAddVM.fetchData()
+    }
+    
+    func subscribe() {
+        savingsAddVM.$savingsHistory
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.tableviewHereOrSmth.reloadData() //BROKEN
+                }
+            }.store(in: &anyCancellable)
+    }
     
     func emptyCheck() {
         if amountTextField.text == ""{

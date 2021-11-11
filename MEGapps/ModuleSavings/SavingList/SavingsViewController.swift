@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import Combine
 
 
 class SavingsViewController: UIViewController {
 
+// MARK: - ViewModel
+    private let savingsVM = SavingsViewModel()
+    var anyCancellable = Set<AnyCancellable>()
+    
 //MARK: - Outlets
     @IBOutlet weak var viewHobbySavingsCell: HobbySavingsCellView!
     @IBOutlet weak var tableViewSavingsBudget: UITableView!
@@ -26,6 +31,7 @@ class SavingsViewController: UIViewController {
         hobbySavingsCellAmountUpdate()
         prepTableView(TV: tableViewSavingsBudget)
         movePage()
+        subscribe()
         // Do any additional setup after loading the view.
     }
     
@@ -50,7 +56,21 @@ class SavingsViewController: UIViewController {
     }
     
     func hobbySavingsCellAmountUpdate() {
-        //viewHobbySavingsCell.labelSavingsAmount.text = "Rp. \(SavingsHistory.amount)"// Get SavingsHistory.amount from CoreData.
+        viewHobbySavingsCell.labelSavingsAmount.text = "Rp. \(savingsVM.savingsHistory.amount)" //BROKEN
+    }
+    
+    func retrieveData() {
+        savingsVM.fetchData()
+    }
+    
+    func subscribe() {
+        savingsVM.$savingsHistory
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.viewHobbySavingsCell.reloadData() //BROKEN
+                }
+            }.store(in: &anyCancellable)
     }
     
     func movePage() {
