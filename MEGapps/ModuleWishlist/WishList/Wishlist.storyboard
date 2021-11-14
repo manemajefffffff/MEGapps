@@ -18,19 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0l-B3-loD" userLabel="No Data View">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4Z-5O-rVb">
-                                        <rect key="frame" x="8" y="260" width="398" height="127"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BBk-DJ-n9S">
+                                        <rect key="frame" x="82.5" y="284" width="249" height="105.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Craving Something?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6W-6m-5Gi">
-                                                <rect key="frame" x="0.0" y="8" width="398" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="249" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qey-1q-YGv">
-                                                <rect key="frame" x="0.0" y="36" width="398" height="91"/>
+                                                <rect key="frame" x="0.0" y="24" width="249" height="81.5"/>
                                                 <string key="text">Currently there is nothing in your
 purchase plans.
 
@@ -40,27 +40,15 @@ Tap the + button to add one.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="L6W-6m-5Gi" firstAttribute="leading" secondItem="h4Z-5O-rVb" secondAttribute="leading" id="LlF-NN-9Th"/>
-                                            <constraint firstItem="Qey-1q-YGv" firstAttribute="leading" secondItem="h4Z-5O-rVb" secondAttribute="leading" id="Wta-9d-2jG"/>
-                                            <constraint firstAttribute="trailing" secondItem="Qey-1q-YGv" secondAttribute="trailing" id="mcZ-Du-i7A"/>
-                                            <constraint firstAttribute="trailing" secondItem="L6W-6m-5Gi" secondAttribute="trailing" id="mda-Pv-Sgv"/>
-                                            <constraint firstAttribute="bottom" secondItem="Qey-1q-YGv" secondAttribute="bottom" id="rKh-PU-fWN"/>
-                                            <constraint firstItem="Qey-1q-YGv" firstAttribute="top" secondItem="L6W-6m-5Gi" secondAttribute="bottom" constant="4" id="tcI-EX-Y2K"/>
-                                            <constraint firstItem="L6W-6m-5Gi" firstAttribute="top" secondItem="h4Z-5O-rVb" secondAttribute="top" constant="8" id="vgV-jz-bAo"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" name="BackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="h4Z-5O-rVb" firstAttribute="centerX" secondItem="Y0l-B3-loD" secondAttribute="centerX" id="Dcj-DL-JQg"/>
-                                    <constraint firstItem="h4Z-5O-rVb" firstAttribute="top" secondItem="Y0l-B3-loD" secondAttribute="top" constant="260" id="HqW-Vh-FtN"/>
-                                    <constraint firstItem="h4Z-5O-rVb" firstAttribute="centerY" secondItem="Y0l-B3-loD" secondAttribute="centerY" constant="-37.5" id="bwW-fd-vjf"/>
-                                    <constraint firstItem="h4Z-5O-rVb" firstAttribute="leading" secondItem="Y0l-B3-loD" secondAttribute="leadingMargin" id="xnH-2w-O9m"/>
+                                    <constraint firstItem="BBk-DJ-n9S" firstAttribute="centerX" secondItem="Y0l-B3-loD" secondAttribute="centerX" id="Tj6-Zg-K68"/>
+                                    <constraint firstItem="BBk-DJ-n9S" firstAttribute="centerY" secondItem="Y0l-B3-loD" secondAttribute="centerY" id="fMK-lr-xdh"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-1K-1Df">
-                                <rect key="frame" x="20" y="140" width="374" height="722"/>
+                                <rect key="frame" x="20" y="140" width="374" height="673"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="nes-sL-vOo" id="hv2-Ab-jdx"/>
@@ -102,15 +90,17 @@ Tap the + button to add one.</string>
         <!--Item-->
         <scene sceneID="FLd-LJ-UEv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qrc-YJ-9hw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Qrc-YJ-9hw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="zXd-CC-Bee"/>
                     <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="d0r-iX-2U0">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EKY-IT-K1e">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
