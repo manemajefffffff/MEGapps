@@ -11,20 +11,34 @@ class SavingsViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var viewHobbySavingsCell: HobbySavingsCellView!
     @IBOutlet weak var tableViewSavingsBudget: UITableView!
+    @IBOutlet weak var emptyStateView: UIView!
     
     // MARK: - Variables
     var savingAmount = 0
     var historyData = Dummy.getDummyData()
+    private var model = [Dummy]()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if model.count == 0 {
+            emptyStateView.isHidden = false
+        } else {
+            emptyStateView.isHidden = true
+        }
 
         prepCustomView(view: viewHobbySavingsCell)
         prepTableView(view: tableViewSavingsBudget)
         movePage()
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: - Button
+    @IBAction func goToWishlistBtn(_ sender: Any) {
+        tabBarController!.selectedIndex = 1
+    }
+    
     
     // MARK: - Functions
     func prepCustomView(view: HobbySavingsCellView) {
@@ -58,9 +72,10 @@ class SavingsViewController: UIViewController {
             let viewController = storyBoard.instantiateViewController(withIdentifier: "savingAddPage")
             self.present(viewController, animated: true)
         }
+        
     }
     
-    /// Update view trigger
+    // Update view trigger
     func updateView() {
         viewHobbySavingsCell.savingAmount = self.savingAmount
         viewHobbySavingsCell.updateView()
@@ -119,11 +134,13 @@ class Dummy {
     var wordings: String
     var amount: String
     
-    let randString: [String] = ["Kemuel", "Tooru", "Cephas", "Ilai", "Azrael"]
+//    let randString: [String] = ["Kemuel", "Tooru", "Cephas", "Ilai", "Azrael"]
+    let randString: [String] = []
     
     init() {
         self.wordings = randString[Int.random(in: 0..<5)]
         self.amount = "\(Int.random(in: 1..<100)*10000)"
+ 
     }
     
     static func getDummyData() -> [Dummy] {
