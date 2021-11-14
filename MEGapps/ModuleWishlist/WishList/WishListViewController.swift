@@ -11,6 +11,7 @@ import Combine
 class WishListViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var wishlistTableView: UITableView!
+    @IBOutlet weak var noDataView: UIView!
     
     // MARK: - ViewModel
     private let wishListViewModel = WishListViewModel()
@@ -45,6 +46,20 @@ class WishListViewController: UIViewController {
                     self?.wishlistTableView.reloadData()
                 }
             }.store(in: &anyCancellable)
+        
+        wishListViewModel.$items
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.setupNoDataView()
+            }.store(in: &anyCancellable)
+    }
+    
+    private func setupNoDataView() {
+        if wishListViewModel.hasItem {
+            wishlistTableView.backgroundView = nil
+        } else {
+            wishlistTableView.backgroundView = noDataView
+        }
     }
     
     // MARK: - IBAction
