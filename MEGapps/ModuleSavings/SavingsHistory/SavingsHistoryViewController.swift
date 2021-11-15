@@ -25,7 +25,7 @@ class SavingsHistoryViewController: UIViewController {
 //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //addData()
+        addData()
         prepTableView(TV: tableViewSavingsHistory)
        // print(coreDataManager.get())
         // Do any additional setup after loading the view.
@@ -61,6 +61,7 @@ class SavingsHistoryViewController: UIViewController {
 //        newData.createdAt = Date()
 //        newData.wordings = "one"
 //        newData.amount = 12345
+//        newData.status = "debit"
 //        do {
 //            try context.save()
 //        } catch {
@@ -93,6 +94,7 @@ extension SavingsHistoryViewController: UITableViewDataSource, UITableViewDelega
         let dateTime = savingsListViewModel.savingHistory[indexPath.row].createdAt// get dateTime coredata
         let amount = savingsListViewModel.savingHistory[indexPath.row].amount// get amount coredata
         let details = savingsListViewModel.savingHistory[indexPath.row].wordings// get details coredata
+        let status = savingsListViewModel.savingHistory[indexPath.row].status
         
         dateFormatter.dateFormat = "MM-d-yy, HH:mm"
         
@@ -100,8 +102,8 @@ extension SavingsHistoryViewController: UITableViewDataSource, UITableViewDelega
         cell.labelAmount.text = "Rp. \(amount)"
         cell.labelDetails.text = details
         
-        if details == "one" {cell.labelAmount.textColor = UIColor(named: "CreditAmountRed")}// Change var amount with actual var
-        else if details == "two" {cell.labelAmount.textColor = UIColor(named: "DebitAmountGreen")}// Change var amount with actual var
+        if status == "credit" {cell.labelAmount.textColor = UIColor(named: "CreditAmountRed")}// Change var amount with actual var
+        else if status == "debit" {cell.labelAmount.textColor = UIColor(named: "DebitAmountGreen")}// Change var amount with actual var
         
         return cell
     }
