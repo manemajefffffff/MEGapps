@@ -25,7 +25,7 @@ class SavingsHistoryViewController: UIViewController {
 //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addData()
+        //addData()
         prepTableView(TV: tableViewSavingsHistory)
        // print(coreDataManager.get())
         // Do any additional setup after loading the view.
