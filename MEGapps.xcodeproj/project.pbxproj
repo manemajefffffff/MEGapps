@@ -40,6 +40,9 @@
 		190EA0A2272B8F5300479D32 /* PurchaseOtherBudgetAllocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 190EA0A1272B8F5300479D32 /* PurchaseOtherBudgetAllocation.storyboard */; };
 		190EA0A4272B8FBB00479D32 /* PurchaseOtherBudgetAllocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA0A3272B8FBB00479D32 /* PurchaseOtherBudgetAllocationViewController.swift */; };
 		190EA0A7272B90B900479D32 /* InsufficientAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EA0A6272B90B900479D32 /* InsufficientAmountView.swift */; };
+		1929479A274206BD0043320B /* PurchaseOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19294799274206BD0043320B /* PurchaseOverviewViewModel.swift */; };
+		1929479E274207FF0043320B /* BudgetUsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1929479D274207FF0043320B /* BudgetUsed.swift */; };
+		192947A127420D130043320B /* PurchaseCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192947A027420D130043320B /* PurchaseCoreDataManager.swift */; };
 		193D48FF2728EFC300F46C30 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193D48FE2728EFC300F46C30 /* WishListViewController.swift */; };
 		193D4906272923B100F46C30 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193D4905272923B100F46C30 /* WishListViewModel.swift */; };
 		1942C9C7272C4BB400E76586 /* BudgetAllocationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942C9C6272C4BB400E76586 /* BudgetAllocationTableView.swift */; };
@@ -144,6 +147,9 @@
 		190EA0A1272B8F5300479D32 /* PurchaseOtherBudgetAllocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = PurchaseOtherBudgetAllocation.storyboard; path = MEGapps/Common/PurchaseAllocateBudgetCell/PurchaseOtherBudgetAllocation.storyboard; sourceTree = SOURCE_ROOT; };
 		190EA0A3272B8FBB00479D32 /* PurchaseOtherBudgetAllocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOtherBudgetAllocationViewController.swift; sourceTree = "<group>"; };
 		190EA0A6272B90B900479D32 /* InsufficientAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsufficientAmountView.swift; sourceTree = "<group>"; };
+		19294799274206BD0043320B /* PurchaseOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOverviewViewModel.swift; sourceTree = "<group>"; };
+		1929479D274207FF0043320B /* BudgetUsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetUsed.swift; sourceTree = "<group>"; };
+		192947A027420D130043320B /* PurchaseCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCoreDataManager.swift; sourceTree = "<group>"; };
 		193D48FE2728EFC300F46C30 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		193D4905272923B100F46C30 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		193D4908272924B200F46C30 /* WishListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListModel.swift; sourceTree = "<group>"; };
@@ -156,7 +162,7 @@
 		19C7BBC12730EBA700AC4499 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		19C7BBC32730EC4900AC4499 /* SavingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistory.swift; sourceTree = "<group>"; };
 		19C7BBC52730F1C000AC4499 /* TrItemBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrItemBudget.swift; sourceTree = "<group>"; };
-		19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCoreDataManager.swift; sourceTree = "<group>"; };
+		19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WishlistCoreDataManager.swift; path = Services/CoreData/WishlistCoreDataManager.swift; sourceTree = "<group>"; };
 		19EDF0392727CE7300AF54A7 /* MEGapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MEGapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -299,6 +305,14 @@
 			path = InsufficientAmountView;
 			sourceTree = "<group>";
 		};
+		1929479F27420CEE0043320B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				192947A027420D130043320B /* PurchaseCoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		1942C9C5272C4B8900E76586 /* BudgetAllocationTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +415,7 @@
 				19C7BBC12730EBA700AC4499 /* Budget.swift */,
 				19C7BBC32730EC4900AC4499 /* SavingHistory.swift */,
 				19C7BBC52730F1C000AC4499 /* TrItemBudget.swift */,
+				1929479D274207FF0043320B /* BudgetUsed.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -574,6 +589,7 @@
 				034FD4C6272A92800060F7F4 /* PurchaseOrderViewController.swift */,
 				034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */,
 				034FD4D5272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift */,
+				19294799274206BD0043320B /* PurchaseOverviewViewModel.swift */,
 				C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */,
 			);
 			path = PurchaseOverview;
@@ -582,16 +598,9 @@
 		19EDF0922727D78B00AF54A7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				19EDF0932727D79200AF54A7 /* CoreData */,
+				1929479F27420CEE0043320B /* CoreData */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		19EDF0932727D79200AF54A7 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		19EDF0942727D79B00AF54A7 /* Common */ = {
@@ -851,12 +860,14 @@
 				19C7BBC62730F1C000AC4499 /* TrItemBudget.swift in Sources */,
 				19C7BBC42730EC4900AC4499 /* SavingHistory.swift in Sources */,
 				1942C9C9272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift in Sources */,
+				1929479A274206BD0043320B /* PurchaseOverviewViewModel.swift in Sources */,
 				030881062730E4FD00EF8F4A /* AddEditBudgetViewController.swift in Sources */,
 				034FD4CB272A936E0060F7F4 /* ProductInformationTableViewController.swift in Sources */,
 				F9681CC1272AADD100941894 /* PurchaseCategoryView.swift in Sources */,
 				190EA0A7272B90B900479D32 /* InsufficientAmountView.swift in Sources */,
 				F9681CB9272A21C500941894 /* PurchaseAddView.swift in Sources */,
 				C681A73B2734DDC000AD0CF4 /* PurchaseDetailView.swift in Sources */,
+				1929479E274207FF0043320B /* BudgetUsed.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
 				C63E3342272A89C500A08D06 /* WishlistDetailViewController.swift in Sources */,
 				193D4906272923B100F46C30 /* WishListViewModel.swift in Sources */,
@@ -871,6 +882,7 @@
 				C6974C45272BAC87007EA0C7 /* PurchaseProductViewModel.swift in Sources */,
 				07545F7B27296BAB002E422A /* OtherBudgetTableViewCell.swift in Sources */,
 				0751401B272AEDF300984C4F /* SavingsBudgetTableViewCell.swift in Sources */,
+				192947A127420D130043320B /* PurchaseCoreDataManager.swift in Sources */,
 				19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */,
 				0710ACF62730F4DA00F8DFA7 /* SavingsHistoryViewController.swift in Sources */,
 			);
@@ -1095,7 +1107,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R8CWTPS5QZ;
+				DEVELOPMENT_TEAM = 282R274LXF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
