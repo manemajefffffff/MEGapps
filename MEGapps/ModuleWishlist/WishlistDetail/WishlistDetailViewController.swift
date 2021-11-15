@@ -28,27 +28,35 @@ class WishlistDetailViewController: UIViewController {
     }
     
     func showAcceptAlert() {
-        let alert = UIAlertController(title: "Accept", message: "Please Select an Option", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Add to Savings", message: "Are you sure you want to add this item to Savings?", preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: {(_)in
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: {(_)in
             print("User click Approve button")
+            self.viewModel.acceptWishlist()
+            self.tabBarController?.selectedIndex = 0
+            self.navigationController?.popToRootViewController(animated: true)
         }))
-
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         self.present(alert, animated: true, completion: {
             print("completion block")
         })
     }
 
     func showDeleteAlert() {
-        let alert = UIAlertController(title: "Delete", message: "Please Select an Option", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Cancel Purchase", message: "Are you sure you want to cancel this item?", preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {(_)in
+        alert.addAction(UIAlertAction(title: "Confirm", style: .destructive, handler: {(_)in
             print("User click Approve button")
+            self.viewModel.cancelWishlist()
+            self.navigationController?.popToRootViewController(animated: true)
         }))
-
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         self.present(alert, animated: true, completion: {
             print("completion block")
         })
     }
-
 }

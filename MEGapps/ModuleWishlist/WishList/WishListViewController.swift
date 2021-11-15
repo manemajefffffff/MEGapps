@@ -11,6 +11,7 @@ import Combine
 class WishListViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var wishlistTableView: UITableView!
+    @IBOutlet weak var noDataView: UIView!
     
     // MARK: - ViewModel
     private let wishListViewModel = WishListViewModel()
@@ -20,19 +21,24 @@ class WishListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNib()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         subscribe()
+        fetchData()
+        print("view will appear")
     }
     
     // MARK: - Function
     private func registerNib() {
         wishlistTableView.register(UINib.init(nibName: "WishlistTableViewCell", bundle: nil), forCellReuseIdentifier: "wishlistTableViewCell")
     }
-        
-    func fetchData() {
+    
+    private func fetchData() {
         wishListViewModel.fetchData()
     }
 
-    func subscribe() {
+    private func subscribe() {
         wishListViewModel.$items
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
@@ -40,6 +46,20 @@ class WishListViewController: UIViewController {
                     self?.wishlistTableView.reloadData()
                 }
             }.store(in: &anyCancellable)
+        
+        wishListViewModel.$items
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.setupNoDataView()
+            }.store(in: &anyCancellable)
+    }
+    
+    private func setupNoDataView() {
+        if wishListViewModel.hasItem {
+            wishlistTableView.backgroundView = nil
+        } else {
+            wishlistTableView.backgroundView = noDataView
+        }
     }
     
     // MARK: - IBAction
