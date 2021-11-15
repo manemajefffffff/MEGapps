@@ -10,7 +10,7 @@ import Combine
 
 class SavingsAddViewModel: NSObject {
     
-    @Published var savingsHistory = [SavingsHistory]()
+    @Published var savingsHistory: [SavingsHistory] = []
         
     private lazy var savingsAddCDM: SavingsAddCoreDataManager = {return SavingsAddCoreDataManager() }()
     

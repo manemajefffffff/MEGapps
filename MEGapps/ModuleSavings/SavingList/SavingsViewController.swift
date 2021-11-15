@@ -56,20 +56,19 @@ class SavingsViewController: UIViewController {
     }
     
     func hobbySavingsCellAmountUpdate() {
-        viewHobbySavingsCell.labelSavingsAmount.text = "Rp. \(savingsVM.savingsHistory.amount)" //BROKEN
+        //viewHobbySavingsCell.labelSavingsAmount.text = "Rp. \(savingsVM.savingsHistory.amount)" //BROKEN; each amount
     }
+
+    //NSPredicate pas ngambil dari coreData
     
     func retrieveData() {
         savingsVM.fetchData()
     }
     
     func subscribe() {
-        savingsVM.$savingsHistory
+        savingsVM.$total
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                DispatchQueue.main.async {
-                    self?.viewHobbySavingsCell.reloadData() //BROKEN
-                }
             }.store(in: &anyCancellable)
     }
     

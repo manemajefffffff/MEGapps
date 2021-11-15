@@ -29,7 +29,7 @@ class SavingsAddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        subscribe()
+        //subscribe()
     }
     
     // MARK: - Actions
@@ -49,24 +49,24 @@ class SavingsAddViewController: UIViewController {
     func saveSavingsAmount() {
         let newSavingsAmount = savingsAddVM.savingsHistory
 
-        newSavingsAmount.createdAt = currentTime //BROKEN
+        //newSavingsAmount.createdAt = currentTime //BROKEN
 
-        newSavingsAmount.amount = Int64(amountTextField.text!) ?? 0 //BROKEN
+        //newSavingsAmount.amount = Int64(amountTextField.text!) ?? 0 //BROKEN
     }
     
     func retrieveData() {
         savingsAddVM.fetchData()
     }
     
-    func subscribe() {
-        savingsAddVM.$savingsHistory
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                DispatchQueue.main.async {
-                    self?.tableviewHereOrSmth.reloadData() //BROKEN
-                }
-            }.store(in: &anyCancellable)
-    }
+//    func subscribe() {
+//        savingsAddVM.$savingsHistory
+//            .receive(on: DispatchQueue.main)
+//            .sink { [weak self] _ in
+//                DispatchQueue.main.async {
+//                    self?.tableviewHereOrSmth.reloadData() //BROKEN
+//                }
+//            }.store(in: &anyCancellable)
+//    }
     
     func emptyCheck() {
         if amountTextField.text == ""{

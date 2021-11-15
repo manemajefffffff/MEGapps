@@ -10,10 +10,9 @@ import Combine
 
 class SavingsViewModel: NSObject {
     
-    @Published var savingsHistory = [SavingsHistory]()
-        
-    private lazy var savingsCDM: SavingsCoreDataManager = {return SavingsCoreDataManager() }()
-    
+    @Published var total = 0
+    var savingsHistory: [SavingsHistory] = []
+
     override init() {
         super.init()
         fetchData()
@@ -24,5 +23,9 @@ class SavingsViewModel: NSObject {
         SavingsCoreDataManager.shared.getAll { savingsHistory in
             self.savingsHistory = savingsHistory
         }
+    }
+    
+    func getTotal() {//getAll amount here
+        
     }
 }
