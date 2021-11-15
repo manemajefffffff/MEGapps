@@ -44,6 +44,9 @@
                     <navigationItem key="navigationItem" title="Savings History" id="Nvi-kn-QR4">
                         <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="1HT-hC-V2F">
                             <color key="tintColor" name="PrimaryHSgradient"/>
+                            <connections>
+                                <action selector="dismissPage:" destination="Y6W-OH-hqX" id="KLY-Gp-XDv"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

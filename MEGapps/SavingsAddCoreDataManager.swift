@@ -34,4 +34,13 @@ class SavingsAddCoreDataManager {
             fatalError()
         }
     }
+    
+    func saveSavingsAmount(_ savingsHistory: [SavingsHistory]) {
+        let context = persistentContainer.viewContext
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
 }

@@ -75,6 +75,8 @@
 		C6974C41272BAC67007EA0C7 /* PurchaseProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C40272BAC67007EA0C7 /* PurchaseProductView.swift */; };
 		C6974C43272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C42272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift */; };
 		C6974C45272BAC87007EA0C7 /* PurchaseProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */; };
+		F9657009273CC1B700A92636 /* SavingsHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9657008273CC1B700A92636 /* SavingsHistoryViewModel.swift */; };
+		F965700B273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965700A273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift */; };
 		F9681CB9272A21C500941894 /* PurchaseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CB8272A21C500941894 /* PurchaseAddView.swift */; };
 		F9681CBF272AAD4000941894 /* PurchaseCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */; };
 		F9681CC1272AADD100941894 /* PurchaseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */; };
@@ -178,6 +180,8 @@
 		C6974C40272BAC67007EA0C7 /* PurchaseProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductView.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductView.swift; sourceTree = SOURCE_ROOT; };
 		C6974C42272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductViewContoller.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductViewContoller.swift; sourceTree = SOURCE_ROOT; };
 		C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductViewModel.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductViewModel.swift; sourceTree = SOURCE_ROOT; };
+		F9657008273CC1B700A92636 /* SavingsHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryViewModel.swift; sourceTree = "<group>"; };
+		F965700A273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryCoreDataManager.swift; sourceTree = "<group>"; };
 		F9681CB8272A21C500941894 /* PurchaseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAddView.swift; sourceTree = SOURCE_ROOT; };
 		F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = PurchaseCategory.storyboard; path = MEGapps/ModuleWishlist/WishList/PurchaseCategory.storyboard; sourceTree = SOURCE_ROOT; };
 		F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryView.swift; path = MEGapps/ModuleWishlist/WishList/PurchaseCategoryView.swift; sourceTree = SOURCE_ROOT; };
@@ -358,6 +362,7 @@
 				19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */,
 				07D212AE273BA00F00BB1FD1 /* SavingsCoreDataManager.swift */,
 				07618A46273D42F900B8DF93 /* SavingsAddCoreDataManager.swift */,
+				F965700A273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift */,
 			);
 			path = MEGapps;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 			children = (
 				0710ACF42730F4DA00F8DFA7 /* SavingsHistoryViewController.swift */,
 				0710ACF82730F55200F8DFA7 /* SavingsHistory.storyboard */,
+				F9657008273CC1B700A92636 /* SavingsHistoryViewModel.swift */,
 			);
 			path = SavingsHistory;
 			sourceTree = "<group>";
@@ -799,6 +805,7 @@
 				076669FB272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift in Sources */,
 				C681A73F2734DDE200AD0CF4 /* PurchaseDetailViewController.swift in Sources */,
 				076669F5272C3D8700C02B20 /* PurchaseSameItemViewController.swift in Sources */,
+				F9657009273CC1B700A92636 /* SavingsHistoryViewModel.swift in Sources */,
 				C681A73D2734DDD100AD0CF4 /* PurchaseDetailViewModel.swift in Sources */,
 				193D48FF2728EFC300F46C30 /* WishListViewController.swift in Sources */,
 				C6974C43272BAC7C007EA0C7 /* PurchaseProductViewContoller.swift in Sources */,
@@ -822,6 +829,7 @@
 				1942C9C7272C4BB400E76586 /* BudgetAllocationTableView.swift in Sources */,
 				19C7BBC02730E70900AC4499 /* Items.swift in Sources */,
 				07D212B1273BA0AC00BB1FD1 /* SavingsViewModel.swift in Sources */,
+				F965700B273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
 				19C7BBC62730F1C000AC4499 /* TrItemBudget.swift in Sources */,
 				19C7BBC42730EC4900AC4499 /* SavingHistory.swift in Sources */,

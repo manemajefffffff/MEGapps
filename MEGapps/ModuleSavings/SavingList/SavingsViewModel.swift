@@ -25,7 +25,11 @@ class SavingsViewModel: NSObject {
         }
     }
     
-    func getTotal() {//getAll amount here
+    func changeSavingsValue(value: Int) {
+        total += value
+    }
+    
+    func getValue() {
         
     }
 }

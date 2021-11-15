@@ -10,20 +10,23 @@ import Combine
 
 class WishListViewModel: NSObject {
     
+    // MARK: - Variables
     @Published var items = [Items]()
-//    var items = CurrentValueSubject<[Items], Never>([])
-        
-    private lazy var wishlistCDM: WishlistCoreDataManager = {return WishlistCoreDataManager() }()
+    @Published var hasItem: Bool = false
     
     override init() {
         super.init()
         fetchData()
-        print("data fetched")
     }
+    
     // MARK: - Function
     func fetchData() {
         WishlistCoreDataManager.shared.getAll { items in
-            self.items = items
+            self.hasItem = items.count > 0 ? true : false
+            if self.items != items {
+                self.items = items
+                print("data refreshed")
+            }
         }
     }
 }

@@ -12,8 +12,18 @@ import UIKit
 class WishlistDetailViewModel {
     // @Published var model: //DataModel
     let bundle: Bundle
+    
+    @Published var wishlist = Items()
 
     init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
+    }
+    
+    func acceptWishlist() {
+        WishlistCoreDataManager.shared.acceptWishlist(wishlist)
+    }
+    
+    func cancelWishlist() {
+        WishlistCoreDataManager.shared.cancelWishlist(wishlist)
     }
 }
