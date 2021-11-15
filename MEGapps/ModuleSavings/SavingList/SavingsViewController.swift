@@ -22,13 +22,12 @@ class SavingsViewController: UIViewController {
     // MARK: - Variables
     var savingAmount = 0
     var historyData = Dummy.getDummyData()
-    private var model = [Dummy]()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if model.count == 0 {
+        if historyData.count == 0 {
             emptyStateView.isHidden = false
         } else {
             emptyStateView.isHidden = true
@@ -37,6 +36,7 @@ class SavingsViewController: UIViewController {
         prepCustomView(view: viewHobbySavingsCell)
         hobbySavingsCellAmountUpdate()
         prepTableView(view: tableViewSavingsBudget)
+        self.updateView()// init call to get data
         movePage()
         subscribe()
         // Do any additional setup after loading the view.
@@ -87,7 +87,7 @@ class SavingsViewController: UIViewController {
     
     func movePage() {
         viewHobbySavingsCell.historyButtonPressed = {
-//            self.updateView()
+            self.updateView()
             let storyBoard = UIStoryboard(name: "SavingsHistory", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "savingHistoryPage")
             self.present(viewController, animated: true)
@@ -158,14 +158,15 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
 class Dummy {
     var wordings: String
     var amount: String
+    var status: String
     
-//    let randString: [String] = ["Kemuel", "Tooru", "Cephas", "Ilai", "Azrael"]
-    let randString: [String] = []
+    let randString: [String] = ["Kemuel", "Tooru", "Cephas", "Ilai", "Azrael"]
+    let randStringRipOff: [String] = ["credit", "debit"]
     
     init() {
-        self.wordings = "wordingTest"//randString[Int.random(in: 0..<5)]
+        self.wordings = randString[Int.random(in: 0..<5)]
         self.amount = "\(Int.random(in: 1..<100)*10000)"
- 
+        self.status = randStringRipOff[Int.random(in: 0..<2)]
     }
     
     static func getDummyData() -> [Dummy] {

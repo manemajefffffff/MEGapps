@@ -1,5 +1,5 @@
 //
-//  WishlistOrderViewController.swift
+//  WishlistOverviewViewController.swift
 //  MEGapps
 //
 //  Created by Adinda Puji Rahmawaty on 28/10/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WishlistOrderViewController: UIViewController, ProductInformationTVCProtocol {
+class WishlistOverviewViewController: UIViewController, ProductInformationTVCProtocol {
     func changepiHeight(piHeight: CGFloat) {
         DispatchQueue.main.async {
             self.productInfoHeight?.constant = piHeight
@@ -18,6 +18,9 @@ class WishlistOrderViewController: UIViewController, ProductInformationTVCProtoc
     // MARK: Outlets
     @IBOutlet weak var productInfoHeight: NSLayoutConstraint!
     @IBOutlet weak var productInfoUiView: UIView!
+    
+    // MARK: Variables
+    var wishlistAdd : WishlistAddViewModel?
     
     // MARK: View
     override func viewDidLoad() {

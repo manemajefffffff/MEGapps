@@ -25,7 +25,7 @@ class SavingsHistoryViewController: UIViewController {
 //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //addData()
+        addData()
         prepTableView(TV: tableViewSavingsHistory)
        // print(coreDataManager.get())
         // Do any additional setup after loading the view.
@@ -53,21 +53,21 @@ class SavingsHistoryViewController: UIViewController {
             }.store(in: &anyCancellable)
     }
     
-//    func addData() {
-//        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {fatalError()}
-//
-//        let newData = SavingsHistory(context: context)
-//        newData.id = UUID()
-//        newData.createdAt = Date()
-//        newData.wordings = "one"
-//        newData.amount = 12345
-//        newData.status = "debit"
-//        do {
-//            try context.save()
-//        } catch {
-//            fatalError()
-//        }
-//    }
+    func addData() {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {fatalError()}
+
+        let newData = SavingsHistory(context: context)
+        newData.id = UUID()
+        newData.createdAt = Date()
+        newData.wordings = "one"
+        newData.amount = 12345
+        newData.status = "debit"
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
     
 //MARK: - Actions
     @IBAction func dismissPage(_ sender: Any) {
