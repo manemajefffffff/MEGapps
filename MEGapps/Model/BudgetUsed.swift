@@ -9,5 +9,5 @@ import Foundation
 
 struct BudgetUsed {
     var budget: Budget?
-    var amountUsed: Int = 0
+    var amountUsed: Int64 = 0
 }
