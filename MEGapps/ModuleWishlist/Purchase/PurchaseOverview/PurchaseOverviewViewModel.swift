@@ -9,7 +9,8 @@ import Foundation
 
 class PurchaseOverviewViewModel: NSObject {
     
-    @Published var purchaseOverview = Items()
+    @Published var itemWantToBuy = Items()
+    @Published var hobbyBudgetUsed = 0
     @Published var budgetUsed = [BudgetUsed]()
     
     override init() {
@@ -18,10 +19,6 @@ class PurchaseOverviewViewModel: NSObject {
     
     // MARK: - Function
     func accept() {
-        
-    }
-    
-    func cancel() {
         
     }
 }
