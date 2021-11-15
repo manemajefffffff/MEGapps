@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PurchaseAdd {
+struct WishlistAdd {
     var name: String = ""
     var price: Int64 = 0
     var category: String = ""

@@ -11,7 +11,7 @@
         <!--Wishlist Overview-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="PurchaseOrderViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="WishlistOrderViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +61,7 @@
                                             <constraint firstAttribute="width" constant="334" id="lju-NC-Icp"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Cancel Purchase">
+                                        <buttonConfiguration key="configuration" style="filled" title="Cancel Wishlist">
                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" name="LightSalmonPink"/>

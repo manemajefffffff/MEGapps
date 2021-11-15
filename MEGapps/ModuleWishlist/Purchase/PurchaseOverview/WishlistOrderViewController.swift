@@ -1,5 +1,5 @@
 //
-//  PurchaseOrderViewController.swift
+//  WishlistOrderViewController.swift
 //  MEGapps
 //
 //  Created by Adinda Puji Rahmawaty on 28/10/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PurchaseOrderViewController: UIViewController, ProductInformationTVCProtocol {
+class WishlistOrderViewController: UIViewController, ProductInformationTVCProtocol {
     func changepiHeight(piHeight: CGFloat) {
         DispatchQueue.main.async {
             self.productInfoHeight?.constant = piHeight

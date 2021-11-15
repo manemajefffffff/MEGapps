@@ -163,7 +163,7 @@ class Dummy {
     let randString: [String] = []
     
     init() {
-        self.wordings = randString[Int.random(in: 0..<5)]
+        self.wordings = "wordingTest"//randString[Int.random(in: 0..<5)]
         self.amount = "\(Int.random(in: 1..<100)*10000)"
  
     }

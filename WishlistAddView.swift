@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-class PurchaseAddView: UITableViewController, UITextViewDelegate, receivedDataDelegate{
+class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDelegate{
     
     // MARK: - Variables
     let tableIdentifier = "DeadlineDatePickerTableViewCell"
     var placeholderLabel: UILabel!
     var category: String = "Technology"
-    private let viewModel = PurchaseAddViewModel()
+    private let viewModel = WishlistAddViewModel()
     private let purchaseCategoryViewModel = PurchaseCategoryViewModel()
     let dateFormatter = DateFormatter()
     
@@ -58,7 +58,7 @@ class PurchaseAddView: UITableViewController, UITextViewDelegate, receivedDataDe
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "purchaseSameItemPage") as? PurchaseSameItemViewController else {
             fatalError("no view")
         }
-        vc.purchaseAdd = viewModel
+        vc.wishlistAdd = viewModel
         navigationController?.pushViewController(vc, animated: true)
         
     }
