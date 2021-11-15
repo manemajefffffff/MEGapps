@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol receivedDataDelegate: AnyObject {
+    func passData(data: String)
+}
+
 class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Outlet
@@ -16,16 +20,24 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
     
     // MARK: - Variables
     let categories = ["Technologies", "Travelling", "Scuba Diving", "Gaming", "Fashion"]
+    var selectedCategories: String = ""
+    private let viewModel = PurchaseCategoryViewModel()
+    weak var delegate: receivedDataDelegate?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+
     }
     
     override func viewWillLayoutSubviews() {
         super.updateViewConstraints()
         self.tableHeight?.constant = self.tableView.contentSize.height
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+       
     }
     
     // MARK: - Functions
@@ -46,6 +58,13 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
         self.view.addSubview(containerView)
         containerView.addSubview(tableView)
     }
+
+    // MARK: - Actions
+    @IBAction func dismissCategory(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
     
 }
 
@@ -71,15 +90,15 @@ extension PurchaseCategoryView {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){
-                cell.accessoryType = .checkmark
-
+            cell.accessoryType = .checkmark
+            selectedCategories = categories[indexPath.row]
+            delegate?.passData(data: selectedCategories)
         }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){
-                cell.accessoryType = .none
-
+            cell.accessoryType = .none
         }
     }
 }
