@@ -15,11 +15,3 @@ class PurchaseAddViewModel: NSObject {
         self.items = PurchaseAdd()
     }
 }
-
-struct PurchaseAdd {
-    var name: String = ""
-    var price: Int64 = 0
-    var category: String = ""
-    var deadline: Date = Date()
-    var reason: String = ""
-}

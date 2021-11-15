@@ -82,6 +82,7 @@
 		F9BD7B2B273B760400AA168A /* PurchaseAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BD7B2A273B760400AA168A /* PurchaseAddViewModel.swift */; };
 		F9BD7B2D273B85F900AA168A /* purchaseSameItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BD7B2C273B85F900AA168A /* purchaseSameItemViewModel.swift */; };
 		F9E596762728FDF200F37B9A /* PurchaseAdd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E596752728FDF200F37B9A /* PurchaseAdd.storyboard */; };
+		F9FF6C772742273200C7826D /* PurchaseAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF6C762742273200C7826D /* PurchaseAdd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		F9BD7B2A273B760400AA168A /* PurchaseAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseAddViewModel.swift; path = MEGapps/Assets.xcassets/Icons/AddPlus.imageset/PurchaseAddViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F9BD7B2C273B85F900AA168A /* purchaseSameItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = purchaseSameItemViewModel.swift; sourceTree = "<group>"; };
 		F9E596752728FDF200F37B9A /* PurchaseAdd.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseAdd.storyboard; sourceTree = SOURCE_ROOT; };
+		F9FF6C762742273200C7826D /* PurchaseAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseAdd.swift; path = MEGapps/PurchaseAdd.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -508,6 +510,7 @@
 				F9E596752728FDF200F37B9A /* PurchaseAdd.storyboard */,
 				F9681CB8272A21C500941894 /* PurchaseAddView.swift */,
 				F9BD7B2A273B760400AA168A /* PurchaseAddViewModel.swift */,
+				F9FF6C762742273200C7826D /* PurchaseAdd.swift */,
 			);
 			path = PurchaseAdd;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				F9838B8F2730D48D0038D041 /* SavingsAddViewController.swift in Sources */,
 				034FD4D6272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift in Sources */,
 				034FD4CF272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift in Sources */,
+				F9FF6C772742273200C7826D /* PurchaseAdd.swift in Sources */,
 				190EA09F272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.swift in Sources */,
 				1942C9C7272C4BB400E76586 /* BudgetAllocationTableView.swift in Sources */,
 				19C7BBC02730E70900AC4499 /* Items.swift in Sources */,
