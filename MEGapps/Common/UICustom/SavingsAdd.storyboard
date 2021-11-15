@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xdg-18-QIt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xdg-18-QIt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,9 +61,15 @@
                     <navigationItem key="navigationItem" title="Add Savings Amount" id="a2U-ns-hf8">
                         <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="93C-PM-fig">
                             <color key="tintColor" name="PrimaryHSgradient"/>
+                            <connections>
+                                <action selector="dismissPage:" destination="Y6W-OH-hqX" id="f1N-8s-G1Q"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="VH2-WB-wNP">
                             <color key="tintColor" name="PrimaryHSgradient"/>
+                            <connections>
+                                <action selector="saveEntry:" destination="Y6W-OH-hqX" id="TAF-dE-OzZ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

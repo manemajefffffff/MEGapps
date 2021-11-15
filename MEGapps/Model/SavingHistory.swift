@@ -18,6 +18,7 @@ class SavingsHistory: NSManagedObject, Codable {
         case amount
         case wordings
         case createdAt
+        case status
     }
     
     required convenience init(from decoder: Decoder) throws {
@@ -33,6 +34,7 @@ class SavingsHistory: NSManagedObject, Codable {
         self.amount = try container.decode(Int64.self, forKey: .amount)
         self.wordings = try container.decode(String.self, forKey: .wordings)
         self.createdAt = try container.decode(Date.self, forKey: .createdAt)
+        self.status = try container.decode(String.self, forKey: .status)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -41,5 +43,6 @@ class SavingsHistory: NSManagedObject, Codable {
         try container.encode(amount, forKey: .amount)
         try container.encode(wordings, forKey: .wordings)
         try container.encode(createdAt, forKey: .createdAt)
+        try container.encode(status, forKey: .status)
     }
 }

@@ -6,9 +6,15 @@
 //
 
 import UIKit
+import Combine
 
 class SavingsViewController: UIViewController {
-    // MARK: - Outlets
+
+// MARK: - ViewModel
+    private let savingsVM = SavingsViewModel()
+    var anyCancellable = Set<AnyCancellable>()
+    
+//MARK: - Outlets
     @IBOutlet weak var viewHobbySavingsCell: HobbySavingsCellView!
     @IBOutlet weak var tableViewSavingsBudget: UITableView!
     @IBOutlet weak var emptyStateView: UIView!
@@ -29,8 +35,10 @@ class SavingsViewController: UIViewController {
         }
 
         prepCustomView(view: viewHobbySavingsCell)
+        hobbySavingsCellAmountUpdate()
         prepTableView(view: tableViewSavingsBudget)
         movePage()
+        subscribe()
         // Do any additional setup after loading the view.
     }
     
@@ -58,6 +66,23 @@ class SavingsViewController: UIViewController {
         view.register(UINib.init(nibName: "SavingsBudgetTableViewCell", bundle: nil), forCellReuseIdentifier: "SavingsBudgetCell")
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
+    }
+    
+    func hobbySavingsCellAmountUpdate() {
+        //viewHobbySavingsCell.labelSavingsAmount.text = "Rp. \(savingsVM.savingsHistory.amount)" //BROKEN; each amount
+    }
+
+    //NSPredicate pas ngambil dari coreData
+    
+    func retrieveData() {
+        savingsVM.fetchData()
+    }
+    
+    func subscribe() {
+        savingsVM.$total
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+            }.store(in: &anyCancellable)
     }
     
     func movePage() {
