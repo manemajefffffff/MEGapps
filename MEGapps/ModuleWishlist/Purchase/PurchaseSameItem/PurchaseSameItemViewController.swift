@@ -17,6 +17,7 @@ class PurchaseSameItemViewController: UIViewController {
 //MARK: - Variables
     var name = ["Product Ichi", "Producto es Dos", "Produccione la Tiga"]
     var deadline = ["11 - 11 - 1111", "21 - 12 - 2112", "10 - 01 - 1001"]
+    var purchaseAdd : PurchaseAddViewModel?
     
 //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class PurchaseSameItemViewController: UIViewController {
 
         prepTableView(TV: tableViewItems)
         
+        print("purchase Add", purchaseAdd?.items)
         // Do any additional setup after loading the view.
     }
     

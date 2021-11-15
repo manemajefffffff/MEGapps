@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wgZ-7g-9i3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wgZ-7g-9i3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -108,7 +108,7 @@
                                                     <rect key="frame" x="300.5" y="12" width="36" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -124,6 +124,9 @@
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="wQb-ZM-5Kn">
                                                     <rect key="frame" x="16" y="0.0" width="342" height="340"/>
                                                     <color key="tintColor" name="PrimaryHSgradient"/>
+                                                    <connections>
+                                                        <action selector="dateChanged:" destination="E9B-3b-zFB" eventType="valueChanged" id="Ulj-9Q-ln4"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -190,6 +193,7 @@
                     <connections>
                         <outlet property="categoryLabel" destination="fiu-CI-Rmv" id="Oz9-gH-EuK"/>
                         <outlet property="deadlineDatePicker" destination="wQb-ZM-5Kn" id="V1J-WW-4e2"/>
+                        <outlet property="deadlineLabel" destination="smR-dJ-N29" id="yOV-Eg-7Vc"/>
                         <outlet property="itemNameTextField" destination="uDt-bd-9sF" id="g4q-1H-1wq"/>
                         <outlet property="itemPriceTextField" destination="J91-qc-fV1" id="MWZ-gY-gC0"/>
                         <outlet property="reasonTextView" destination="CDB-Oh-9hV" id="GBs-tf-pKl"/>
