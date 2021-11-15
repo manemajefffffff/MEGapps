@@ -10,8 +10,8 @@ import Foundation
 class PurchaseOverviewViewModel: NSObject {
     
     @Published var itemWantToBuy = Items()
-    @Published var hobbyBudgetUsed = 0
-    @Published var budgetUsed = [BudgetUsed]()
+//    @Published var hobbyBudgetUsed = 0
+//    @Published var budgetUsed = [BudgetUsed]()
     
     override init() {
         
