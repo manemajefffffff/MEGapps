@@ -14,7 +14,6 @@
 		034FD4CB272A936E0060F7F4 /* ProductInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */; };
 		034FD4CF272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FD4CD272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift */; };
 		034FD4D0272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034FD4CE272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib */; };
-		034FD4D6272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FD4D5272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift */; };
 		0710ACF62730F4DA00F8DFA7 /* SavingsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710ACF42730F4DA00F8DFA7 /* SavingsHistoryViewController.swift */; };
 		0710ACF92730F55200F8DFA7 /* SavingsHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0710ACF82730F55200F8DFA7 /* SavingsHistory.storyboard */; };
 		0710ACFD2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710ACFB2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift */; };
@@ -109,7 +108,6 @@
 		034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationTableViewController.swift; sourceTree = "<group>"; };
 		034FD4CD272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAllocationTableViewCell.swift; sourceTree = "<group>"; };
 		034FD4CE272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetAllocationTableViewCell.xib; sourceTree = "<group>"; };
-		034FD4D5272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAllocationOverviewTableViewController.swift; sourceTree = "<group>"; };
 		0710ACF42730F4DA00F8DFA7 /* SavingsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryViewController.swift; sourceTree = "<group>"; };
 		0710ACF82730F55200F8DFA7 /* SavingsHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavingsHistory.storyboard; sourceTree = "<group>"; };
 		0710ACFB2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -549,7 +547,6 @@
 				034FD4C8272A92920060F7F4 /* PurchaseOverview.storyboard */,
 				034FD4C6272A92800060F7F4 /* PurchaseOrderViewController.swift */,
 				034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */,
-				034FD4D5272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift */,
 				C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */,
 			);
 			path = PurchaseOverview;
@@ -812,7 +809,6 @@
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
 				034FD4C7272A92800060F7F4 /* PurchaseOrderViewController.swift in Sources */,
 				F9838B8F2730D48D0038D041 /* SavingsAddViewController.swift in Sources */,
-				034FD4D6272AAD9D0060F7F4 /* BudgetAllocationOverviewTableViewController.swift in Sources */,
 				034FD4CF272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift in Sources */,
 				190EA09F272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.swift in Sources */,
 				1942C9C7272C4BB400E76586 /* BudgetAllocationTableView.swift in Sources */,
@@ -1040,7 +1036,7 @@
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = PurchaseOverview;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1068,7 +1064,7 @@
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = PurchaseOverview;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
