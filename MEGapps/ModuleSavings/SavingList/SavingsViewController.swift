@@ -7,61 +7,80 @@
 
 import UIKit
 
-
 class SavingsViewController: UIViewController {
-
-//MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var viewHobbySavingsCell: HobbySavingsCellView!
     @IBOutlet weak var tableViewSavingsBudget: UITableView!
+    @IBOutlet weak var emptyStateView: UIView!
     
-//MARK: - Variables
-    var name = ["one", "two", "three"]
-    var price = ["123", "456", "789"]
+    // MARK: - Variables
+    var savingAmount = 0
+    var historyData = Dummy.getDummyData()
+    private var model = [Dummy]()
     
-//MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if model.count == 0 {
+            emptyStateView.isHidden = false
+        } else {
+            emptyStateView.isHidden = true
+        }
 
         prepCustomView(view: viewHobbySavingsCell)
-        prepTableView(TV: tableViewSavingsBudget)
+        prepTableView(view: tableViewSavingsBudget)
         movePage()
         // Do any additional setup after loading the view.
     }
     
-//MARK: - Functions
-    func prepCustomView(view: UIView) {
+    // MARK: - Button
+    @IBAction func goToWishlistBtn(_ sender: Any) {
+        tabBarController!.selectedIndex = 1
+    }
+    
+    
+    // MARK: - Functions
+    func prepCustomView(view: HobbySavingsCellView) {
         view.layer.shadowColor = UIColor.black.cgColor // View DropShadow
         view.layer.shadowRadius = 4.0
         view.layer.shadowOpacity = 0.8
         view.layer.shadowOffset = CGSize(width: 0, height: 4)
         view.layer.masksToBounds = false
         view.layer.cornerRadius = 16.0 // View Rounded
+        
+        view.savingAmount = self.savingAmount
     }
     
-    func prepTableView(TV: UITableView) {
-        TV.delegate = self
-        TV.dataSource = self
-        
-        TV.register(UINib.init(nibName: "SavingsBudgetTableViewCell", bundle: nil), forCellReuseIdentifier: "SavingsBudgetCell")
-        
-        TV.separatorStyle = .none
-        TV.showsVerticalScrollIndicator = false
+    func prepTableView(view: UITableView) {
+        view.delegate = self
+        view.dataSource = self
+        view.register(UINib.init(nibName: "SavingsBudgetTableViewCell", bundle: nil), forCellReuseIdentifier: "SavingsBudgetCell")
+        view.separatorStyle = .none
+        view.showsVerticalScrollIndicator = false
     }
     
     func movePage() {
-        
         viewHobbySavingsCell.historyButtonPressed = {
+//            self.updateView()
             let storyBoard = UIStoryboard(name: "SavingsHistory", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "savingHistoryPage")
-            self.present(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "savingHistoryPage")
+            self.present(viewController, animated: true)
         }
-        
         viewHobbySavingsCell.addButtonPressed = {
             let storyBoard = UIStoryboard(name: "SavingsAdd", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "savingAddPage")
-            self.present(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "savingAddPage")
+            self.present(viewController, animated: true)
         }
         
+    }
+    
+    // Update view trigger
+    func updateView() {
+        viewHobbySavingsCell.savingAmount = self.savingAmount
+        viewHobbySavingsCell.updateView()
+        historyData = Dummy.getDummyData()
+        tableViewSavingsBudget.reloadData()
     }
 
     /*
@@ -76,7 +95,7 @@ class SavingsViewController: UIViewController {
 
 }
 
-//MARK: - TableView Extension
+// MARK: - TableView Extension
 extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -84,20 +103,16 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-        //return Items.count //get product coredata
+        return historyData.count
+        // return Items.count // get product coredata
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableViewSavingsBudget.dequeueReusableCell(withIdentifier: "SavingsBudgetCell") as? SavingsBudgetTableViewCell else {
             fatalError("cell not found!")
         }
-        let productName = name[indexPath.row] //get product coredata
-        let productPrice = price[indexPath.row] //get product coredata
-        
-        
-        cell.labelProductName.text = productName //get Product Name
-        cell.labelProductPrice.text = productPrice //get Product Price
+        cell.labelProductName.text = historyData[indexPath.row].wordings // get Product Name
+        cell.labelProductPrice.text = historyData[indexPath.row].amount // get Product Price
         
         cell.viewSavingsBudgetCell.layer.cornerRadius = 16.0 // View Rounded; Modify this to match
         cell.viewSavingsBudgetCell.layer.shadowColor = UIColor.black.cgColor // View DropShadow
@@ -110,6 +125,30 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //move to item detail
+        // move to item detail
+    }
+}
+
+/// dummy class
+class Dummy {
+    var wordings: String
+    var amount: String
+    
+//    let randString: [String] = ["Kemuel", "Tooru", "Cephas", "Ilai", "Azrael"]
+    let randString: [String] = []
+    
+    init() {
+        self.wordings = randString[Int.random(in: 0..<5)]
+        self.amount = "\(Int.random(in: 1..<100)*10000)"
+ 
+    }
+    
+    static func getDummyData() -> [Dummy] {
+        let counter = Int.random(in: 1..<10)
+        var dummyData: [Dummy] = []
+        for idx in 0...counter-1 {
+            dummyData.append(Dummy())
+        }
+        return dummyData
     }
 }

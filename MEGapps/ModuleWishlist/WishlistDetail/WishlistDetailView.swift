@@ -7,8 +7,12 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class WishlistDetailView: UIView {
+    // MARK: - Combine
+    var anyCancellable = Set<AnyCancellable>()
+    
     // MARK: - MVVM
     private var viewModel: WishlistDetailViewModel
     private var viewController: WishlistDetailViewController
@@ -38,6 +42,7 @@ class WishlistDetailView: UIView {
         self.setupScrollView()
         self.setup()
         self.style()
+        subscribeViewModel()
     }
 
     required init?(coder: NSCoder) {
@@ -45,6 +50,36 @@ class WishlistDetailView: UIView {
     }
 
     // MARK: - Function
+    func subscribeViewModel() {
+        self.viewModel.$wishlist
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+                self.setData()
+            }.store(in: &anyCancellable)
+    }
+    
+    func setData() {
+        if let name = self.viewModel.wishlist.name {
+            self.itemValueLabel.text = "\(name)"
+        }
+        
+        self.priceValueLabel.text = "\(self.viewModel.wishlist.price)"
+        
+        if let dueDate = self.viewModel.wishlist.deadline {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMMM dd, yyyy"
+            self.dueDateValueLabel.text = "\(dateFormatter.string(from: dueDate))"
+        }
+        
+        if let category = self.viewModel.wishlist.category {
+            self.categoryValueLabel.text = "\(category)"
+        }
+        
+        if let reason = self.viewModel.wishlist.reason {
+            self.reasonToBuyValueLabel.text = "\(reason)"
+        }
+    }
+    
     func setupScrollView() {
         self.addSubview(self.scrollView)
         self.scrollView.addSubview(self.contentView)
@@ -217,7 +252,7 @@ class WishlistDetailView: UIView {
         self.deleteWishlistButton.layer.shadowOffset = CGSize(width: 0, height: 4)
         self.deleteWishlistButton.layer.shadowRadius = 4.0
         self.deleteWishlistButton.layer.shadowOpacity = 0.8
-        self.acceptWishlistButton.addTarget(self, action: #selector(deleteWishlistAction), for: .touchUpInside)
+        self.deleteWishlistButton.addTarget(self, action: #selector(deleteWishlistAction), for: .touchUpInside)
         self.acceptWishlistButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.deleteWishlistButton.heightAnchor.constraint(equalToConstant: 49),
