@@ -25,7 +25,7 @@ class PurchaseCoreDataManager {
         return container
     }()
 
-    func acceptPurchase(itemWantToBuy: Items, hobbyBudgetUsed: Int64, budgetUsed: [BudgetUsed]) {
+    func buyItem(itemWantToBuy: Items, hobbyBudgetUsed: Int64, budgetUsed: [BudgetUsed]) {
         let context = persistentContainer.viewContext
         
         // ubah status item jadi completed
@@ -70,6 +70,18 @@ class PurchaseCoreDataManager {
         } catch {
             fatalError()
         }
-
+    }
+    
+    func createNewPurchase () {
+        let context = persistentContainer.viewContext
+        
+        let newData = Items(context: context)
+        
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+        
     }
 }
