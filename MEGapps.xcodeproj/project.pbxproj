@@ -277,6 +277,16 @@
 			path = OtherBudgetCell;
 			sourceTree = "<group>";
 		};
+		079843F627429E3C007AC20B /* WishlistOverview */ = {
+			isa = PBXGroup;
+			children = (
+				034FD4C8272A92920060F7F4 /* WishlistOverview.storyboard */,
+				034FD4C6272A92800060F7F4 /* WishlistOrderViewController.swift */,
+				034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */,
+			);
+			path = WishlistOverview;
+			sourceTree = "<group>";
+		};
 		07D094F22728438300DD0716 /* HobbySavingsCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +533,7 @@
 				19EDF08D2727D6BC00AF54A7 /* PurchaseSameItem */,
 				19EDF08C2727D6B200AF54A7 /* PurchaseCategory */,
 				19EDF08B2727D6A200AF54A7 /* WishlistAdd */,
+				079843F627429E3C007AC20B /* WishlistOverview */,
 			);
 			path = Purchase;
 			sourceTree = "<group>";
@@ -583,9 +594,6 @@
 		19EDF0912727D77A00AF54A7 /* PurchaseOverview */ = {
 			isa = PBXGroup;
 			children = (
-				034FD4C8272A92920060F7F4 /* WishlistOverview.storyboard */,
-				034FD4C6272A92800060F7F4 /* WishlistOrderViewController.swift */,
-				034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */,
 				19294799274206BD0043320B /* PurchaseOverviewViewModel.swift */,
 				C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */,
 			);
