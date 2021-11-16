@@ -28,6 +28,7 @@ class WishlistOverviewViewController: UIViewController, ProductInformationTVCPro
     // MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     // MARK: Buttons
@@ -55,12 +56,17 @@ class WishlistOverviewViewController: UIViewController, ProductInformationTVCPro
     private func cancelWishlistPressed() {
         let alert = UIAlertController(title: "Cancel Purchase", message: "Are you sure you want to cancel this item?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: cancalAddingWishlist))
         self.present(alert, animated: true, completion: nil)
     }
     
     private func saveNewWishlist(alert: UIAlertAction) {
         wishlistAdd?.saveNewWishlist()
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    private func cancalAddingWishlist(alert: UIAlertAction) {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
