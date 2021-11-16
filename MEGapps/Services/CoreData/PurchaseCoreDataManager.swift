@@ -72,6 +72,7 @@ class PurchaseCoreDataManager {
         }
     }
     
+    // MARK: - Dead Code
     func createNewPurchase () {
         let context = persistentContainer.viewContext
         
