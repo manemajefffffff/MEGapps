@@ -37,7 +37,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="kCK-nT-PCu" kind="embed" id="e2t-lO-Jzi"/>
+                                            <segue destination="kCK-nT-PCu" kind="embed" identifier="ProductSegue" id="e2t-lO-Jzi"/>
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnK-PZ-HVg">
@@ -261,6 +261,13 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="categoryNameLbl" destination="SZY-ca-fQG" id="LaK-CQ-ayj"/>
+                        <outlet property="deadlineLbl" destination="uT6-me-S4i" id="Qa2-Mb-Xs7"/>
+                        <outlet property="productNameLbl" destination="eFk-Co-zpB" id="UEx-dH-N2E"/>
+                        <outlet property="productPriceLbl" destination="zez-lM-aCP" id="UUR-Bd-vUd"/>
+                        <outlet property="reasonLbl" destination="KbZ-pM-U45" id="5j9-uG-5XQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I5a-x8-72S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
