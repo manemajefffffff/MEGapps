@@ -44,6 +44,28 @@ class WishlistCoreDataManager {
         }
     }
     
+    func saveNewWishlist(_ newItem: WishlistAdd, completion: @escaping(_ message: String) -> Void) {
+        let context = persistentContainer.viewContext
+        
+        let newData = Items(context: context)
+        newData.id = UUID()
+        newData.name = newItem.name
+        newData.category = newItem.category
+        newData.reason = newItem.reason
+        newData.deadline = newItem.deadline
+        newData.price = newItem.price
+        newData.createdAt = Date()
+        newData.isPrioritize = false
+        newData.status = "waiting"
+        
+        do {
+            try context.save()
+            completion("success")
+        } catch {
+            completion("failed")
+        }
+    }
+    
     func acceptWishlist(_ items: Items) {
         let context = persistentContainer.viewContext
         items.status = "on_progress"
