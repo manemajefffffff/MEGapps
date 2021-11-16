@@ -22,14 +22,11 @@ class ProductInformationTableViewController: UITableViewController {
     
     // MARK: - Variables
     weak var delegate: ProductInformationTVCProtocol?
-    var item: WishlistAdd? {
-        didSet {
-            setDataToUI()
-        }
-    }
+    var item: WishlistAdd?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDataToUI()
     }
     
     override func viewWillLayoutSubviews() {
