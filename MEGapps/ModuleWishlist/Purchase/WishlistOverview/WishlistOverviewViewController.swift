@@ -20,7 +20,10 @@ class WishlistOverviewViewController: UIViewController, ProductInformationTVCPro
     @IBOutlet weak var productInfoUiView: UIView!
     
     // MARK: Variables
-    var wishlistAdd : WishlistAddViewModel?
+    var wishlistAdd: WishlistAddViewModel? {
+        didSet {
+        }
+    }
     
     // MARK: View
     override func viewDidLoad() {
@@ -41,18 +44,34 @@ class WishlistOverviewViewController: UIViewController, ProductInformationTVCPro
     }
     
     // MARK: Functions
-    func addToWishlistPressed() {
+    private func addToWishlistPressed() {
         let alert = UIAlertController(title: "Add Item", message: "Are you sure you want to add this item?", preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: saveNewWishlist))
         self.present(alert, animated: true, completion: nil)
     }
     
-    func cancelWishlistPressed() {
+    private func cancelWishlistPressed() {
         let alert = UIAlertController(title: "Cancel Purchase", message: "Are you sure you want to cancel this item?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    private func saveNewWishlist(alert: UIAlertAction) {
+        wishlistAdd?.saveNewWishlist()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProductSegue"{
+            guard let dest = segue.destination as? ProductInformationTableViewController else {
+                fatalError()
+            }
+            dest.delegate = self
+            dest.item = wishlistAdd?.items
+            return
+        }
+    }
+    
 }
