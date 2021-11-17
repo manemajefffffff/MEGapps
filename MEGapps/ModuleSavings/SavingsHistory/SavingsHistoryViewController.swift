@@ -21,26 +21,32 @@ class SavingsHistoryViewController: UIViewController {
     private let savingsListViewModel = SavingsHistoryViewModel()
     var anyCancellable = Set<AnyCancellable>()
     let dateFormatter = DateFormatter()
+    var delegate: updateViewProtocol?
     
-//MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addData()
-        prepTableView(TV: tableViewSavingsHistory)
+        prepTableView(tableView: tableViewSavingsHistory)
        // print(coreDataManager.get())
         // Do any additional setup after loading the view.
         subscribe()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        delegate?.updateView()
+    }
 
-//MARK: - Functions
-    func prepTableView(TV: UITableView) {
-        TV.delegate = self
-        TV.dataSource = self
+    // MARK: - Functions
+    func prepTableView(tableView: UITableView) {
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        TV.register(UINib.init(nibName: "SavingsHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "SavingsHistoryCell")
+        tableView.register(UINib.init(nibName: "SavingsHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "SavingsHistoryCell")
         
-        TV.separatorStyle = .singleLine
-        TV.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .singleLine
+        tableView.showsVerticalScrollIndicator = false
     }
     
     func subscribe() {
