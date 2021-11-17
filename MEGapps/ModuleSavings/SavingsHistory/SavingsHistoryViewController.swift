@@ -21,6 +21,7 @@ class SavingsHistoryViewController: UIViewController {
     private let savingsListViewModel = SavingsHistoryViewModel()
     var anyCancellable = Set<AnyCancellable>()
     let dateFormatter = DateFormatter()
+    var delegate: updateViewProtocol?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -30,6 +31,11 @@ class SavingsHistoryViewController: UIViewController {
        // print(coreDataManager.get())
         // Do any additional setup after loading the view.
         subscribe()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        delegate?.updateView()
     }
 
     // MARK: - Functions

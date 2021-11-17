@@ -21,9 +21,11 @@ class SavingsViewModel: NSObject {
     func fetchData() {
         SavingsCoreDataManager.shared.getAll { savingsHistory in
             self.savingsHistory = savingsHistory
-        }
-        for savingHistory in self.savingsHistory {
-            self.total+=Int(savingHistory.amount)
+            var tempTotal = 0
+            for savingHistory in savingsHistory {
+                tempTotal+=Int(savingHistory.amount)
+            }
+            self.total = tempTotal
         }
     }
 }

@@ -8,6 +8,10 @@
 import UIKit
 import Combine
 
+protocol updateViewProtocol {
+    func updateView()
+}
+
 class SavingsViewController: UIViewController {
 
     // MARK: - ViewModel
@@ -36,12 +40,10 @@ class SavingsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("I'm here>> APPEAR")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("I'm here>> 222")
     }
     
     // MARK: - Button
@@ -82,6 +84,7 @@ class SavingsViewController: UIViewController {
             .sink { [weak self] total in
                 DispatchQueue.main.async {
                     self?.viewHobbySavingsCell.savingAmount = total
+                    self?.viewHobbySavingsCell.updateView()
                 }
             }
             .store(in: &anyCancellable)
@@ -91,10 +94,11 @@ class SavingsViewController: UIViewController {
         viewHobbySavingsCell.historyButtonPressed = {
             let storyBoard = UIStoryboard(name: "SavingsHistory", bundle: nil)
             guard let viewController = storyBoard.instantiateViewController(withIdentifier: "savingHistoryPage") as? SavingsHistoryViewController else {
-                print("I'm here>> YEA")
-                return
+                fatalError("View not available")
             }
-            self.present(viewController, animated: true)
+            viewController.delegate = self
+            let navController = UINavigationController(rootViewController: viewController)
+            self.present(navController, animated: true)
         }
         viewHobbySavingsCell.addButtonPressed = {
             let storyBoard = UIStoryboard(name: "SavingsAdd", bundle: nil)
@@ -145,5 +149,12 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // move to item detail
+    }
+}
+
+extension SavingsViewController: updateViewProtocol {
+    func updateView() {
+        self.savingsViewModel.fetchData()
+        self.subscribe()
     }
 }
