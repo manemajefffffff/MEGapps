@@ -9,27 +9,21 @@ import Foundation
 import Combine
 
 class SavingsViewModel: NSObject {
-    
     @Published var total = 0
-    var savingsHistory: [SavingsHistory] = []
-
+    @Published var savingsHistory: [SavingsHistory] = []
+    
     override init() {
         super.init()
         fetchData()
-        print("data fetched")
     }
+    
     // MARK: - Function
     func fetchData() {
         SavingsCoreDataManager.shared.getAll { savingsHistory in
             self.savingsHistory = savingsHistory
         }
-    }
-    
-    func changeSavingsValue(value: Int) {
-        total += value
-    }
-    
-    func getValue() {
-        
+        for savingHistory in self.savingsHistory {
+            self.total+=Int(savingHistory.amount)
+        }
     }
 }

@@ -22,25 +22,25 @@ class SavingsHistoryViewController: UIViewController {
     var anyCancellable = Set<AnyCancellable>()
     let dateFormatter = DateFormatter()
     
-//MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //addData()
-        prepTableView(TV: tableViewSavingsHistory)
+        addData()
+        prepTableView(tableView: tableViewSavingsHistory)
        // print(coreDataManager.get())
         // Do any additional setup after loading the view.
         subscribe()
     }
 
-//MARK: - Functions
-    func prepTableView(TV: UITableView) {
-        TV.delegate = self
-        TV.dataSource = self
+    // MARK: - Functions
+    func prepTableView(tableView: UITableView) {
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        TV.register(UINib.init(nibName: "SavingsHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "SavingsHistoryCell")
+        tableView.register(UINib.init(nibName: "SavingsHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "SavingsHistoryCell")
         
-        TV.separatorStyle = .singleLine
-        TV.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .singleLine
+        tableView.showsVerticalScrollIndicator = false
     }
     
     func subscribe() {
@@ -53,21 +53,21 @@ class SavingsHistoryViewController: UIViewController {
             }.store(in: &anyCancellable)
     }
     
-//    func addData() {
-//        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {fatalError()}
-//
-//        let newData = SavingsHistory(context: context)
-//        newData.id = UUID()
-//        newData.createdAt = Date()
-//        newData.wordings = "one"
-//        newData.amount = 12345
-//        newData.status = "debit"
-//        do {
-//            try context.save()
-//        } catch {
-//            fatalError()
-//        }
-//    }
+    func addData() {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {fatalError()}
+
+        let newData = SavingsHistory(context: context)
+        newData.id = UUID()
+        newData.createdAt = Date()
+        newData.wordings = "one"
+        newData.amount = 12345
+        newData.status = "debit"
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
     
 //MARK: - Actions
     @IBAction func dismissPage(_ sender: Any) {
