@@ -28,6 +28,7 @@ class SavingsViewController: UIViewController {
         super.viewDidLoad()
         prepCustomView(view: viewHobbySavingsCell)
         prepTableView(view: tableViewSavingsBudget)
+        self.updateView()// init call to get data
         movePage()
         subscribe()
         if savingsViewModel.savingsHistory.count == 0 {

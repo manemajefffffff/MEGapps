@@ -96,7 +96,7 @@ class PurchaseOverviewView: UIView {
             self.purchaseImage.centerXAnchor.constraint(equalTo: self.backView.centerXAnchor)
         ])
         
-        self.purchaseComplete.text = "Purchase Completed"
+        self.purchaseComplete.text = "Expense Recorded"
         self.purchaseComplete.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         self.purchaseComplete.textColor = UIColor(named: "StarColor")
         self.purchaseComplete.translatesAutoresizingMaskIntoConstraints = false

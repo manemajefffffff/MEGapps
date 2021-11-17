@@ -9,13 +9,13 @@ import XCTest
 @testable import MEGapps
 
 class MEGappsTests: XCTestCase {
-    var pav: PurchaseAddView!
+    var pav: WishlistAddView!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        let storyboard = UIStoryboard(name: "PurchaseAdd", bundle: nil)
-        pav = storyboard.instantiateViewController(withIdentifier: "PurchaseAddView") as? PurchaseAddView
+        let storyboard = UIStoryboard(name: "WishlistAdd", bundle: nil)
+        pav = storyboard.instantiateViewController(withIdentifier: "WishlistAddView") as? WishlistAddView
         pav.loadViewIfNeeded()
         
     }

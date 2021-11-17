@@ -8,10 +8,10 @@
 import Foundation
 import Combine
 
-class PurchaseAddViewModel: NSObject {
-    var items: PurchaseAdd?
+class WishlistAddViewModel: NSObject {
+    var items: WishlistAdd?
     
     override init(){
-        self.items = PurchaseAdd()
+        self.items = WishlistAdd()
     }
 }
