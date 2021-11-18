@@ -69,7 +69,7 @@ Tap the + button to add one.</string>
                             <constraint firstItem="wFn-1K-1Df" firstAttribute="bottom" secondItem="Kp5-HN-bve" secondAttribute="bottom" id="wfv-wM-6Vp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Wishlist" largeTitleDisplayMode="always" id="oxZ-fb-gPX">
+                    <navigationItem key="navigationItem" title="Wishlist" id="oxZ-fb-gPX">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="sX8-T2-12X">
                             <imageReference key="image" image="AddPlus" symbolScale="large"/>
                             <color key="tintColor" name="PrimaryHSgradient"/>
