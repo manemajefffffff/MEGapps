@@ -49,6 +49,7 @@ class WishlistCoreDataManager {
         
         let newData = Items(context: context)
         newData.id = UUID()
+        newData.wishlistNotificationId = newItem.notificationId
         newData.name = newItem.name
         newData.category = newItem.category
         newData.reason = newItem.reason
