@@ -22,7 +22,9 @@ class WishlistAddViewModel: NSObject {
                 switch message {
                 case "success":
                     // buat notification
-                    NotificationService.shared.createNewWishlistAddNotification(itemName: toBeSavedItems.name)
+                    NotificationService.shared.createNewWishlistAddNotification(
+                        itemName: toBeSavedItems.name
+                        , notificationId: toBeSavedItems.notificationId)
                 case "failed":
                     // handler kalau insert coredata gagal
                     fatalError("failed to insert new wishlist")
