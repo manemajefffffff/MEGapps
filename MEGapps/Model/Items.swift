@@ -12,6 +12,7 @@ import UIKit
 class Items: NSManagedObject, Codable {
     enum CodingKeys: CodingKey {
         case id
+        case wishlistNotificationId
         case name
         case reason
         case status
@@ -35,6 +36,7 @@ class Items: NSManagedObject, Codable {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(UUID.self, forKey: .id)
+        self.wishlistNotificationId = try container.decode(UUID.self, forKey: .wishlistNotificationId)
         self.name = try container.decode(String.self, forKey: .name)
         self.reason = try container.decode(String.self, forKey: .reason)
         self.status = try container.decode(String.self, forKey: .status)
@@ -51,6 +53,7 @@ class Items: NSManagedObject, Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
+        try container.encode(wishlistNotificationId, forKey: .wishlistNotificationId)
         try container.encode(name, forKey: .name)
         try container.encode(reason, forKey: .reason)
         try container.encode(status, forKey: .status)
