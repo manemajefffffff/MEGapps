@@ -12,10 +12,13 @@ class NotificationService {
     static let shared = NotificationService()
     
     // MARK: - Function
-    func createNewWishlistAddNotification(itemName: String) {
+    func createNewWishlistAddNotification(itemName: String, notificationId: UUID) {
         let content = createNotificationContent(title: "Waiting is Over", body: "\(itemName) are waiting to be accepted")
         let trigger = createTriggerForTomorrow()
-        let request = createNotificationRequest(content: content, trigger: trigger)
+        let request = createNotificationRequest(
+            content: content,
+            trigger: trigger,
+            notificationId: notificationId)
         addNotificationRequest(request: request)
     }
     
@@ -38,8 +41,8 @@ class NotificationService {
         return trigger
     }
     
-    private func createNotificationRequest(content: UNMutableNotificationContent, trigger: UNCalendarNotificationTrigger) -> UNNotificationRequest {
-        let uuidString = UUID().uuidString
+    private func createNotificationRequest(content: UNMutableNotificationContent, trigger: UNCalendarNotificationTrigger, notificationId: UUID) -> UNNotificationRequest {
+        let uuidString = notificationId.uuidString
         let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
         return request
     }
