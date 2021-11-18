@@ -39,7 +39,6 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
     
     @IBAction func dismissPage(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func moveToCategoryPage(_ sender: Any) {
@@ -104,7 +103,7 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
         self.present(myAlert, animated: true, completion: nil)
     }
     
-    func passData(data: String){
+    func passData(data: String) {
         categoryLabel.text =  data
         categoryLabel.textColor = UIColor.black
         category = data
