@@ -69,7 +69,6 @@ class WishListViewController: UIViewController {
         else {
             fatalError("VC not found")
         }
-        navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(storyboardWL, animated: true)
         
     }
