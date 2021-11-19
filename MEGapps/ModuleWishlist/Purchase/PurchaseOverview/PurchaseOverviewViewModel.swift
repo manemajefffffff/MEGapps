@@ -7,15 +7,18 @@
 
 import Foundation
 
-class PurchaseOverviewViewModel: NSObject {
+class PurchaseOverviewViewModel {
+    
+    let bundle: Bundle
     
     @Published var itemWantToBuy = Items()
 //    @Published var hobbyBudgetUsed = 0
 //    @Published var budgetUsed = [BudgetUsed]()
     
-    override init() {
-        
+    init(bundle: Bundle = Bundle.main) {
+        self.bundle = bundle
     }
+
     
     // MARK: - Function
     func accept() {
