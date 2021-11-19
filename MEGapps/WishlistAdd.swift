@@ -13,4 +13,5 @@ struct WishlistAdd {
     var category: String = ""
     var deadline: Date = Date()
     var reason: String = ""
+    var notificationId = UUID()
 }

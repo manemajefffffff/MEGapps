@@ -48,9 +48,11 @@
 		193D4906272923B100F46C30 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193D4905272923B100F46C30 /* WishListViewModel.swift */; };
 		1942C9C7272C4BB400E76586 /* BudgetAllocationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942C9C6272C4BB400E76586 /* BudgetAllocationTableView.swift */; };
 		1942C9C9272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942C9C8272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift */; };
+		19A736F527474E7400832398 /* PurchaseOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A736F427474E7400832398 /* PurchaseOverviewViewController.swift */; };
 		19A773682728406300219AE7 /* WishlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A773662728406300219AE7 /* WishlistTableViewCell.swift */; };
 		19A773692728406300219AE7 /* WishlistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A773672728406300219AE7 /* WishlistTableViewCell.xib */; };
 		19A7736C2728411000219AE7 /* UICustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7736B2728411000219AE7 /* UICustom.swift */; };
+		19B301F52743607800FCB9C8 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B301F42743607800FCB9C8 /* NotificationService.swift */; };
 		19C7BBC02730E70900AC4499 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBBF2730E70900AC4499 /* Items.swift */; };
 		19C7BBC22730EBA700AC4499 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC12730EBA700AC4499 /* Budget.swift */; };
 		19C7BBC42730EC4900AC4499 /* SavingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC32730EC4900AC4499 /* SavingHistory.swift */; };
@@ -156,9 +158,11 @@
 		193D4908272924B200F46C30 /* WishListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListModel.swift; sourceTree = "<group>"; };
 		1942C9C6272C4BB400E76586 /* BudgetAllocationTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAllocationTableView.swift; sourceTree = "<group>"; };
 		1942C9C8272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOtherBudgetAllocationViewModel.swift; sourceTree = "<group>"; };
+		19A736F427474E7400832398 /* PurchaseOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOverviewViewController.swift; sourceTree = "<group>"; };
 		19A773662728406300219AE7 /* WishlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewCell.swift; sourceTree = "<group>"; };
 		19A773672728406300219AE7 /* WishlistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishlistTableViewCell.xib; sourceTree = "<group>"; };
 		19A7736B2728411000219AE7 /* UICustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustom.swift; sourceTree = "<group>"; };
+		19B301F42743607800FCB9C8 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		19C7BBBF2730E70900AC4499 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		19C7BBC12730EBA700AC4499 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		19C7BBC32730EC4900AC4499 /* SavingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistory.swift; sourceTree = "<group>"; };
@@ -346,6 +350,14 @@
 				19A7736B2728411000219AE7 /* UICustom.swift */,
 			);
 			path = UICustom;
+			sourceTree = "<group>";
+		};
+		19B301F32743606500FCB9C8 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				19B301F42743607800FCB9C8 /* NotificationService.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		19C7BBC7273244AA00AC4499 /* Recovered References */ = {
@@ -559,7 +571,7 @@
 				F9BD7B2A273B760400AA168A /* WishlistAddViewModel.swift */,
 				F9FF6C762742273200C7826D /* WishlistAdd.swift */,
 			);
-			path = WishlistAdd;
+			name = WishlistAdd;
 			sourceTree = "<group>";
 		};
 		19EDF08C2727D6B200AF54A7 /* PurchaseCategory */ = {
@@ -599,6 +611,7 @@
 			children = (
 				19294799274206BD0043320B /* PurchaseOverviewViewModel.swift */,
 				C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */,
+				19A736F427474E7400832398 /* PurchaseOverviewViewController.swift */,
 			);
 			path = PurchaseOverview;
 			sourceTree = "<group>";
@@ -606,6 +619,7 @@
 		19EDF0922727D78B00AF54A7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				19B301F32743606500FCB9C8 /* Notification */,
 				1929479F27420CEE0043320B /* CoreData */,
 			);
 			path = Services;
@@ -874,9 +888,11 @@
 				F9681CC1272AADD100941894 /* PurchaseCategoryView.swift in Sources */,
 				190EA0A7272B90B900479D32 /* InsufficientAmountView.swift in Sources */,
 				F9681CB9272A21C500941894 /* WishlistAddView.swift in Sources */,
+				19B301F52743607800FCB9C8 /* NotificationService.swift in Sources */,
 				C681A73B2734DDC000AD0CF4 /* PurchaseDetailView.swift in Sources */,
 				1929479E274207FF0043320B /* BudgetUsed.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
+				19A736F527474E7400832398 /* PurchaseOverviewViewController.swift in Sources */,
 				C63E3342272A89C500A08D06 /* WishlistDetailViewController.swift in Sources */,
 				193D4906272923B100F46C30 /* WishListViewModel.swift in Sources */,
 				19EF28242732716300D496DF /* CodingUserInfo.swift in Sources */,

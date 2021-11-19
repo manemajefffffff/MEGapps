@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qrc-YJ-9hw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qrc-YJ-9hw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -69,15 +69,16 @@ Tap the + button to add one.</string>
                             <constraint firstItem="wFn-1K-1Df" firstAttribute="bottom" secondItem="Kp5-HN-bve" secondAttribute="bottom" id="wfv-wM-6Vp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Wishlist" largeTitleDisplayMode="always" id="oxZ-fb-gPX">
+                    <navigationItem key="navigationItem" title="Wishlist" id="oxZ-fb-gPX">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="sX8-T2-12X">
-                            <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="large"/>
+                            <imageReference key="image" image="AddPlus" symbolScale="large"/>
                             <color key="tintColor" name="PrimaryHSgradient"/>
                             <connections>
                                 <action selector="addNewWishlist:" destination="nes-sL-vOo" id="HmD-hN-Z3I"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="noDataView" destination="Y0l-B3-loD" id="0hI-gO-g05"/>
                         <outlet property="wishlistTableView" destination="wFn-1K-1Df" id="48P-D3-Nfl"/>
@@ -90,17 +91,15 @@ Tap the + button to add one.</string>
         <!--Item-->
         <scene sceneID="FLd-LJ-UEv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Qrc-YJ-9hw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qrc-YJ-9hw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="zXd-CC-Bee"/>
                     <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="d0r-iX-2U0">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EKY-IT-K1e">
-                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -113,7 +112,7 @@ Tap the + button to add one.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="AddPlus" width="28" height="28"/>
         <namedColor name="BackgroundColor">
             <color red="0.9649999737739563" green="0.96100002527236938" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
