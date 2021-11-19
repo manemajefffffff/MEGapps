@@ -10,8 +10,8 @@ import UIKit
 
 class PurchaseOverviewView: UIView {
     // MARK: - MVVM
-//    private var viewModel: PurchaseOverviewViewModel
-//    private var viewController: PurchaseOverviewViewController
+    private var viewModel: PurchaseOverviewViewModel
+    private var viewController: PurchaseOverviewViewController
 
     // MARK: - Outlet
     let contentView = UIView()
@@ -32,10 +32,9 @@ class PurchaseOverviewView: UIView {
     private let doneButton = UIButton()
 
     // MARK: - Lifecycle
-//    init(viewModel: PurchaseOverviewViewModel, viewController: PurchaseOverviewViewController) {
-    init() {
-//        self.viewModel = viewModel
-//        self.viewController = viewController
+    init(viewModel: PurchaseOverviewViewModel, viewController: PurchaseOverviewViewController) {
+        self.viewModel = viewModel
+        self.viewController = viewController
         super.init(frame: .zero)
         
         self.setup()
