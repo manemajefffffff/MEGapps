@@ -5,29 +5,30 @@
 //  Created by Hannatassja Hardjadinata on 02/11/21.
 //
 
-import Foundation
 import UIKit
+import Combine
 
 class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
     // MARK: - Outlet
-    
     @IBOutlet weak var budgetTableView: UITableView!
+    
+    // MARK: - ViewModel
+    private let viewModel = OtherBudgetViewModel()
+    var anyCancellable = Set<AnyCancellable>()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         register()
-        
+        subscribe()
     }
-    
     
     // MARK: - Actions
     @IBAction func moveToAddBudget(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "AddEditBudget", bundle: nil)
         let addOtherBudgetVC = storyBoard.instantiateViewController(withIdentifier: "addOtherBudget")
         
-        //Half Sheet
+        // Half Sheet
         if let presentationController = addOtherBudgetVC.presentationController as? UISheetPresentationController {
             presentationController.detents = [.medium()]
         }
@@ -36,8 +37,17 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     // MARK: - Functions
-    func register() {
+    private func register() {
         budgetTableView.register(UINib(nibName: "OtherBudgetTableViewCell", bundle: nil), forCellReuseIdentifier: "OtherBudgetTableViewCell")
+    }
+    
+    private func subscribe() {
+        viewModel.$otherBudget
+            .sink { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.budgetTableView.reloadData()
+                }
+            }.store(in: &anyCancellable)
     }
 }
 
@@ -66,4 +76,3 @@ extension OtherBudgetViewController {
     }
     
 }
-
