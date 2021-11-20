@@ -59,6 +59,7 @@
 		19C7BBC62730F1C000AC4499 /* TrItemBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC52730F1C000AC4499 /* TrItemBudget.swift */; };
 		19C7BBC9273247E200AC4499 /* WishlistCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */; };
 		19D9DA7327494DD200A044D3 /* OtherBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9DA7227494DD200A044D3 /* OtherBudgetViewModel.swift */; };
+		19D9DA75274959E700A044D3 /* OtherBudgetCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9DA74274959E700A044D3 /* OtherBudgetCoreDataManager.swift */; };
 		19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */; };
 		19EDF03F2727CE7300AF54A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */; };
 		19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0402727CE7300AF54A7 /* ViewController.swift */; };
@@ -170,6 +171,7 @@
 		19C7BBC52730F1C000AC4499 /* TrItemBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrItemBudget.swift; sourceTree = "<group>"; };
 		19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WishlistCoreDataManager.swift; path = Services/CoreData/WishlistCoreDataManager.swift; sourceTree = "<group>"; };
 		19D9DA7227494DD200A044D3 /* OtherBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetViewModel.swift; sourceTree = "<group>"; };
+		19D9DA74274959E700A044D3 /* OtherBudgetCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetCoreDataManager.swift; sourceTree = "<group>"; };
 		19EDF0392727CE7300AF54A7 /* MEGapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MEGapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19EDF03E2727CE7300AF54A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				192947A027420D130043320B /* PurchaseCoreDataManager.swift */,
+				19D9DA74274959E700A044D3 /* OtherBudgetCoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -883,6 +886,7 @@
 				F965700B273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
 				19C7BBC62730F1C000AC4499 /* TrItemBudget.swift in Sources */,
+				19D9DA75274959E700A044D3 /* OtherBudgetCoreDataManager.swift in Sources */,
 				19C7BBC42730EC4900AC4499 /* SavingHistory.swift in Sources */,
 				079843FC2742A64A007AC20B /* PurchaseSameItemCoreDataManager.swift in Sources */,
 				1942C9C9272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift in Sources */,
