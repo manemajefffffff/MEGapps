@@ -16,6 +16,9 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     private let viewModel = OtherBudgetViewModel()
     var anyCancellable = Set<AnyCancellable>()
     
+    // MARK: - Variable
+    var otherBudgetData: [Budget] = []
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +46,8 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     
     private func subscribe() {
         viewModel.$otherBudget
-            .sink { [weak self] _ in
+            .sink { [weak self] items in
+                self?.otherBudgetData = items
                 DispatchQueue.main.async {
                     self?.budgetTableView.reloadData()
                 }
@@ -53,13 +57,15 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
 
 extension OtherBudgetViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return otherBudgetData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = budgetTableView.dequeueReusableCell(withIdentifier: "OtherBudgetTableViewCell") as? OtherBudgetTableViewCell else {
             fatalError("cell not found!")
         }
+        
+        cell.otherBudget = otherBudgetData[indexPath.row]
         
         return cell
     }
