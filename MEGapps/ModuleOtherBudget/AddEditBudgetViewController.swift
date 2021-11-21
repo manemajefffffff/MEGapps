@@ -8,6 +8,10 @@
 import UIKit
 import Combine
 
+protocol AddEditBudgetDelegate: AnyObject {
+    func refreshData()
+}
+
 class AddEditBudgetViewController: UIViewController {
     
     // MARK: - IBOutlet
@@ -27,11 +31,14 @@ class AddEditBudgetViewController: UIViewController {
         }
     }
     
+    // MARK: - Delegate
+    weak var delegate: AddEditBudgetDelegate?
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         manageShadowView()
-//        subscribe()
+        setData()
     }
     
     // MARK: - IBAction
@@ -41,10 +48,25 @@ class AddEditBudgetViewController: UIViewController {
     
     @IBAction func saveBudget(_ sender: Any) {
         viewModel.saveBudget(name: budgetNameTF.text ?? "", amount: Int64(budgetAmtTF.text ?? "0") ?? 0)
+        dismiss(animated: true, completion: {
+            self.delegate?.refreshData()
+        })
     }
     
     @IBAction func deleteBudget(_ sender: Any) {
-        viewModel.deleteBudget()
+        let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete this budget?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+            self.viewModel.deleteBudget()
+            self.dismiss(animated: true, completion: {
+                self.delegate?.refreshData()
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true) {
+            print("completion block")
+        }
     }
     
     
@@ -63,15 +85,10 @@ class AddEditBudgetViewController: UIViewController {
         self.budgetAmtTF.layer.masksToBounds = false
     }
     
-    private func subscribe() {
-        viewModel.$oldBudgetData
-            .sink { [weak self] _ in
-                self?.setData()
-            }.store(in: &anyCancellable)
-    }
-    
     private func setData() {
-        budgetNameTF.text = "\(viewModel.oldBudgetData.name ?? "")"
-        budgetAmtTF.text = "\(viewModel.oldBudgetData.amount)"
+        if let budget = viewModel.oldBudgetData {
+            budgetNameTF.text = "\(budget.name ?? "")"
+            budgetAmtTF.text = "\(budget.amount)"
+        }
     }
 }
