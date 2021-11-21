@@ -35,4 +35,19 @@ class OtherBudgetCoreDataManager {
             fatalError()
         }
     }
+    
+    func add(_ name: String, _ amount: Int64, completion: @escaping(_ message: String) -> Void) {
+        let context = persistentContainer.viewContext
+        
+        let newBudget = Budget(context: context)
+        newBudget.id = UUID()
+        newBudget.name = name
+        newBudget.amount = amount
+        do {
+            try context.save()
+            completion("success")
+        } catch {
+            completion("failed")
+        }
+    }
 }
