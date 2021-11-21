@@ -17,19 +17,14 @@ class AddEditBudgetViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var budgetNameTF: UITextField!
     @IBOutlet weak var budgetAmtTF: UITextField!
+    @IBOutlet weak var deleteBtn: UIButton!
     
     // MARK: - ViewModel
     private let viewModel = AddEditBudgetViewModel()
     var anyCancellable = Set<AnyCancellable>()
     
     // MARK: - Variables
-    var oldBudgetData: Budget? {
-        didSet {
-            if let data = oldBudgetData {
-                viewModel.oldBudgetData = data
-            }
-        }
-    }
+    var oldBudgetData: Budget?
     
     // MARK: - Delegate
     weak var delegate: AddEditBudgetDelegate?
@@ -38,6 +33,8 @@ class AddEditBudgetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         manageShadowView()
+        manageDeleteBtn()
+        setOldBudgetData()
         setData()
     }
     
@@ -86,9 +83,23 @@ class AddEditBudgetViewController: UIViewController {
     }
     
     private func setData() {
-        if let budget = viewModel.oldBudgetData {
-            budgetNameTF.text = "\(budget.name ?? "")"
-            budgetAmtTF.text = "\(budget.amount)"
+        viewModel.$oldBudgetData
+            .sink { [weak self] oldBudgetData in
+                if let budget = oldBudgetData {
+                    self?.manageDeleteBtn(hidden: false)
+                    self?.budgetNameTF.text = "\(budget.name ?? "")"
+                    self?.budgetAmtTF.text = "\(budget.amount)"
+                }
+            }.store(in: &anyCancellable)
+    }
+    
+    fileprivate func setOldBudgetData() {
+        if let data = oldBudgetData {
+            viewModel.oldBudgetData = data
         }
+    }
+    
+    private func manageDeleteBtn(hidden: Bool = true) {
+        deleteBtn.isHidden = hidden
     }
 }
