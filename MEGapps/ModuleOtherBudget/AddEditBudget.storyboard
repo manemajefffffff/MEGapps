@@ -111,6 +111,7 @@
                     <connections>
                         <outlet property="budgetAmtTF" destination="dnn-tH-JUh" id="5ct-ew-qfS"/>
                         <outlet property="budgetNameTF" destination="the-vZ-gkT" id="t82-dy-qcN"/>
+                        <outlet property="deleteBtn" destination="EpM-mV-pZ6" id="gSk-Tx-MF0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ez0-de-E6M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
