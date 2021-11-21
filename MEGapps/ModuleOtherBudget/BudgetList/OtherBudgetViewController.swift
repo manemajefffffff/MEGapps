@@ -17,7 +17,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     var anyCancellable = Set<AnyCancellable>()
     
     // MARK: - Variable
-    var otherBudgetData: [Budget] = []
+    var container: [Budget] = []
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -29,14 +29,16 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Actions
     @IBAction func moveToAddBudget(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "AddEditBudget", bundle: nil)
-        let addOtherBudgetVC = storyBoard.instantiateViewController(withIdentifier: "addOtherBudget")
-        
+        guard let addOtherBudgetVC = storyBoard.instantiateViewController(withIdentifier: "addOtherBudget") as? AddEditBudgetViewController else {
+            fatalError()
+        }
+        addOtherBudgetVC.delegate = self
+        let navController = UINavigationController(rootViewController: addOtherBudgetVC)
         // Half Sheet
-        if let presentationController = addOtherBudgetVC.presentationController as? UISheetPresentationController {
+        if let presentationController = navController.presentationController as? UISheetPresentationController {
             presentationController.detents = [.medium()]
         }
-        
-        self.present(addOtherBudgetVC, animated: true)
+        self.present(navController, animated: true)
     }
     
     // MARK: - Functions
@@ -47,7 +49,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     private func subscribe() {
         viewModel.$otherBudget
             .sink { [weak self] items in
-                self?.otherBudgetData = items
+                self?.container = items
                 DispatchQueue.main.async {
                     self?.budgetTableView.reloadData()
                 }
@@ -57,7 +59,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
 
 extension OtherBudgetViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return otherBudgetData.count
+        return container.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,20 +67,30 @@ extension OtherBudgetViewController {
             fatalError("cell not found!")
         }
         
-        cell.otherBudget = otherBudgetData[indexPath.row]
+        cell.otherBudget = container[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "AddEditBudget", bundle: nil)
-        let destination = storyBoard.instantiateViewController(withIdentifier: "addOtherBudget")
-        
-        if let presentationController = destination.presentationController as? UISheetPresentationController {
+        guard let addOtherBudgetVC = storyBoard.instantiateViewController(withIdentifier: "addOtherBudget") as? AddEditBudgetViewController else {
+            fatalError()
+        }
+        addOtherBudgetVC.delegate = self
+        addOtherBudgetVC.oldBudgetData = viewModel.otherBudget[indexPath.row]
+        let navController = UINavigationController(rootViewController: addOtherBudgetVC)
+        // Half Sheet
+        if let presentationController = navController.presentationController as? UISheetPresentationController {
             presentationController.detents = [.medium()]
         }
-        
-        self.present(destination, animated: true)
+        self.present(navController, animated: true)
     }
     
+}
+
+extension OtherBudgetViewController: AddEditBudgetDelegate {
+    func refreshData() {
+        viewModel.fetchData()
+    }
 }
