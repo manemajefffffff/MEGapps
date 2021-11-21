@@ -11,8 +11,13 @@ import Combine
 class AddEditBudgetViewModel: NSObject {
     
     // MARK: - Publishers
-    @Published var oldBudgetData = Budget()
-    @Published var isEditing: Bool = false
+    var oldBudgetData: Budget? {
+        didSet {
+            isEditing = true
+        }
+    }
+    
+    @Published var isEditing: Bool?
     
     // MARK: - Function
     override init() {
@@ -20,24 +25,38 @@ class AddEditBudgetViewModel: NSObject {
     }
     
     func saveBudget(name: String, amount: Int64) {
-        OtherBudgetCoreDataManager.shared.add(name, amount) { message in
-            switch message {
-            case "success":
-                print("add new budget success")
-            case "failed" :
-                print("add new budget failed")
-            default:
-                break
+        switch isEditing {
+        case true:
+            oldBudgetData?.name = name
+            oldBudgetData?.amount = amount
+            OtherBudgetCoreDataManager.shared.edit(editedBudget: oldBudgetData!) { message in
+                switch message {
+                case "success":
+                    print("add new budget success")
+                case "failed" :
+                    print("add new budget failed")
+                default:
+                    break
+                }
+            }
+        default:
+            OtherBudgetCoreDataManager.shared.add(name, amount) { message in
+                switch message {
+                case "success":
+                    print("add new budget success")
+                case "failed" :
+                    print("add new budget failed")
+                default:
+                    break
+                }
             }
         }
-//        if !isEditing {
-//            // akan add data baru
-//        } else {
-//            // akan update data lama
-//        }
     }
     
     func deleteBudget() {
-        
+        if let toDeleteData = oldBudgetData {
+            OtherBudgetCoreDataManager.shared.delete(toDeleteData)
+
+        }
     }
 }
