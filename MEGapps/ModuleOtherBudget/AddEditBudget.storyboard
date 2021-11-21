@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K9u-Yd-sUP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WML-iv-Mtj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--Add Other Budget-->
         <scene sceneID="c5z-uA-KbQ">
             <objects>
-                <viewController id="WML-iv-Mtj" customClass="AddEditBudgetViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addOtherBudget" id="WML-iv-Mtj" customClass="AddEditBudgetViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="skk-lD-Lfd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,6 +59,9 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" name="LightSalmonPink"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteBudget:" destination="WML-iv-Mtj" eventType="touchUpInside" id="0iF-0e-qSJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0C-65-cQc">
                                 <rect key="frame" x="20" y="276" width="374" height="49"/>
@@ -71,6 +74,9 @@
                                     <color key="baseForegroundColor" name="PureWhite"/>
                                     <color key="baseBackgroundColor" name="PrimaryHSgradient"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveBudget:" destination="WML-iv-Mtj" eventType="touchUpInside" id="UOt-RX-w0z"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MLw-3j-d4O"/>
@@ -96,8 +102,12 @@
                     <navigationItem key="navigationItem" title="Add Other Budget" id="Oh6-Lp-uJg">
                         <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="8o3-nj-phG">
                             <color key="tintColor" name="PrimaryHSgradient"/>
+                            <connections>
+                                <action selector="dismiss:" destination="WML-iv-Mtj" id="6ZD-VO-RdG"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="budgetAmtTF" destination="dnn-tH-JUh" id="5ct-ew-qfS"/>
                         <outlet property="budgetNameTF" destination="the-vZ-gkT" id="t82-dy-qcN"/>
@@ -106,24 +116,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ez0-de-E6M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3853.6231884057975" y="145.3125"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="h0Z-9W-EkJ">
-            <objects>
-                <navigationController storyboardIdentifier="addOtherBudget" automaticallyAdjustsScrollViewInsets="NO" id="K9u-Yd-sUP" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D9z-Zq-aDj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="WML-iv-Mtj" kind="relationship" relationship="rootViewController" id="gGy-lH-0YG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jPN-l5-uAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2942.0289855072465" y="144.64285714285714"/>
         </scene>
     </scenes>
     <resources>
