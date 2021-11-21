@@ -20,7 +20,7 @@ class OtherBudgetViewModel: NSObject {
         self.fetchData()
     }
     
-    private func fetchData() {
+    func fetchData() {
         OtherBudgetCoreDataManager.shared.get { budgets in
             if budgets.count > 0 {
                 self.otherBudget = budgets
