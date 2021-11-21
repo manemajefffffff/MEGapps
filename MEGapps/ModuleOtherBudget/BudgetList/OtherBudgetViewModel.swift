@@ -10,10 +10,11 @@ import Combine
 
 class OtherBudgetViewModel: NSObject {
     
-    // MARK: - Publisher
+    // MARK: - Publishers
     @Published var otherBudget = [Budget]()
     @Published var hasItem: Bool = false
-
+    
+    // MARK: - Functions
     override init() {
         super.init()
         self.fetchData()
