@@ -6,18 +6,50 @@
 //
 
 import UIKit
+import Combine
 
 class AddEditBudgetViewController: UIViewController {
-
+    
+    // MARK: - IBOutlet
     @IBOutlet weak var budgetNameTF: UITextField!
     @IBOutlet weak var budgetAmtTF: UITextField!
     
+    // MARK: - ViewModel
+    private let viewModel = AddEditBudgetViewModel()
+    var anyCancellable = Set<AnyCancellable>()
+    
+    // MARK: - Variables
+    var oldBudgetData: Budget? {
+        didSet {
+            if let data = oldBudgetData {
+                viewModel.oldBudgetData = data
+            }
+        }
+    }
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         manageShadowView()
+//        subscribe()
     }
     
-    func manageShadowView() {
+    // MARK: - IBAction
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveBudget(_ sender: Any) {
+        viewModel.saveBudget(name: budgetNameTF.text ?? "", amount: Int64(budgetAmtTF.text ?? "0") ?? 0)
+    }
+    
+    @IBAction func deleteBudget(_ sender: Any) {
+        viewModel.deleteBudget()
+    }
+    
+    
+    // MARK: - Functions
+    private func manageShadowView() {
         self.budgetNameTF.layer.shadowColor = UIColor(hex: "bbbbbb")?.cgColor
         self.budgetNameTF.layer.shadowRadius = 0.4
         self.budgetNameTF.layer.shadowOpacity = 0.1
@@ -31,16 +63,15 @@ class AddEditBudgetViewController: UIViewController {
         self.budgetAmtTF.layer.masksToBounds = false
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func subscribe() {
+        viewModel.$oldBudgetData
+            .sink { [weak self] _ in
+                self?.setData()
+            }.store(in: &anyCancellable)
     }
-    */
-
+    
+    private func setData() {
+        budgetNameTF.text = "\(viewModel.oldBudgetData.name ?? "")"
+        budgetAmtTF.text = "\(viewModel.oldBudgetData.amount)"
+    }
 }
