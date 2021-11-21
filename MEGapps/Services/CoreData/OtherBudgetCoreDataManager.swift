@@ -50,4 +50,24 @@ class OtherBudgetCoreDataManager {
             completion("failed")
         }
     }
+    
+    func edit(editedBudget: Budget, completion: @escaping(_ message: String) -> Void) {
+        let context = persistentContainer.viewContext
+        do {
+            try context.save()
+            completion("success")
+        } catch {
+            completion("failed")
+        }
+    }
+    
+    func delete(_ oldBudget: Budget) {
+        let context = persistentContainer.viewContext
+        context.delete(oldBudget)
+        do {
+            try context.save()
+        } catch {
+            
+        }
+    }
 }
