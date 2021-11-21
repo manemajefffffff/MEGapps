@@ -11,19 +11,14 @@ import Combine
 class AddEditBudgetViewModel: NSObject {
     
     // MARK: - Publishers
-    var oldBudgetData: Budget? {
+    @Published var oldBudgetData: Budget? {
         didSet {
             isEditing = true
         }
     }
-    
-    @Published var isEditing: Bool?
+    private var isEditing = false
     
     // MARK: - Function
-    override init() {
-        
-    }
-    
     func saveBudget(name: String, amount: Int64) {
         switch isEditing {
         case true:
