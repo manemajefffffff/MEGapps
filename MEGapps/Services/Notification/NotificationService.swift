@@ -12,6 +12,11 @@ class NotificationService {
     static let shared = NotificationService()
     
     init() {
+        requestAuthorization()
+    }
+    
+    // MARK: - Function
+    func requestAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
                 print("success")
@@ -21,10 +26,10 @@ class NotificationService {
         }
     }
     
-    // MARK: - Function
     func createNewWishlistAddNotification(itemName: String, notificationId: UUID) {
+        requestAuthorization()
         let content = createNotificationContent(title: "Waiting is Over", body: "\(itemName) are waiting to be accepted")
-        let trigger = createTriggerForTomorrow()
+        let trigger = createTriggerByInterval(interval: 86400) // detik dalam satu hari
         let request = createNotificationRequest(
             content: content,
             trigger: trigger,
@@ -33,6 +38,7 @@ class NotificationService {
     }
     
     func deleteNotification(notificationId: UUID) {
+        requestAuthorization()
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationId.uuidString])
     }
     
@@ -56,7 +62,17 @@ class NotificationService {
         return trigger
     }
     
+    private func createTriggerByInterval(interval: Double) -> UNTimeIntervalNotificationTrigger {
+        return UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
+    }
+    
     private func createNotificationRequest(content: UNMutableNotificationContent, trigger: UNCalendarNotificationTrigger, notificationId: UUID) -> UNNotificationRequest {
+        let uuidString = notificationId.uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        return request
+    }
+    
+    private func createNotificationRequest(content: UNMutableNotificationContent, trigger: UNTimeIntervalNotificationTrigger, notificationId: UUID) -> UNNotificationRequest {
         let uuidString = notificationId.uuidString
         let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
         return request
