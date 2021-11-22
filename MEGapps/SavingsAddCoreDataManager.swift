@@ -35,8 +35,15 @@ class SavingsAddCoreDataManager {
         }
     }
     
-    func saveSavingsAmount(_ savingsHistory: [SavingsHistory]) {
+    func saveSavingsAmount(_ createdDate: Date, _ amount: Int64) {
         let context = persistentContainer.viewContext
+
+        let newSavingsHistory = SavingsHistory(context: context)
+        newSavingsHistory.id = UUID()
+        newSavingsHistory.createdAt = createdDate
+        newSavingsHistory.amount = amount
+        newSavingsHistory.status = "credit"
+        newSavingsHistory.wordings = "Savings"
         do {
             try context.save()
         } catch {

@@ -12,6 +12,7 @@ class SavingsAddViewModel: NSObject {
     
     var savingsHistory: [SavingsHistory] = []
     var newAmount = 0
+    var createdDate: Date = Date()
     
     override init() {
         super.init()
@@ -25,7 +26,8 @@ class SavingsAddViewModel: NSObject {
         }
     }
     
-    func saveSavingsAmount() {
-        SavingsAddCoreDataManager.shared.saveSavingsAmount(savingsHistory)
+    func saveSavingsAmount(createdDate: Date, amount: Int64) {
+        SavingsAddCoreDataManager.shared.saveSavingsAmount(createdDate, amount)
     }
+    
 }
