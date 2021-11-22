@@ -22,6 +22,7 @@ class WishlistAddViewModel: NSObject {
                 switch message {
                 case "success":
                     // buat notification
+                    NotificationService.shared.requestAuthorization()
                     NotificationService.shared.createNewWishlistAddNotification(
                         itemName: toBeSavedItems.name,
                         notificationId: toBeSavedItems.notificationId)
