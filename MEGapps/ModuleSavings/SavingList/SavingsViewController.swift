@@ -31,7 +31,7 @@ class SavingsViewController: UIViewController {
         self.updateView()// init call to get data
         movePage()
         subscribe()
-        if savingsViewModel.savingsHistory.count == 0 {
+        if savingsViewModel.items.count == 0 {// Needs fix where savingsViewModel.items WHERE .status == on_progress is 0 check
             emptyStateView.isHidden = false
         } else {
             emptyStateView.isHidden = true
@@ -143,6 +143,9 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // move to item detail
+        let viewController = PurchaseDetailViewController()
+        viewController.items = savingsViewModel.items[indexPath.row]
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
