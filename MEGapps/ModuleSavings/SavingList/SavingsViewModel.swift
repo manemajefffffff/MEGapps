@@ -16,6 +16,7 @@ class SavingsViewModel: NSObject {
     override init() {
         super.init()
         fetchData()
+        fetchDataItems()
     }
     
     // MARK: - Function

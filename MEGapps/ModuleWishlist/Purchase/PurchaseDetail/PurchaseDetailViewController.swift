@@ -10,15 +10,18 @@ import UIKit
 
 class PurchaseDetailViewController: UIViewController {
     
-    var items: Items?
+    var viewModel = PurchaseDetailViewModel()
+    var itemsPD: Items?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
 
     override func loadView() {
-        self.view = PurchaseDetailView(viewModel: PurchaseDetailViewModel(), viewController: self)
+        self.view = PurchaseDetailView(viewModel: viewModel, viewController: self)
+        viewModel.item = itemsPD!
     }
 
     func showAcceptAlert() {

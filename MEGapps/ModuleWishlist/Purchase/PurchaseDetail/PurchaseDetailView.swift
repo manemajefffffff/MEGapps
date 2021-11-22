@@ -39,6 +39,7 @@ class PurchaseDetailView: UIView {
         self.setupScrollView()
         self.setup()
         self.style()
+        self.manageData()
     }
 
     required init?(coder: NSCoder) {
@@ -46,6 +47,26 @@ class PurchaseDetailView: UIView {
     }
 
     // MARK: - Function
+    func manageData() {
+        if let itemName = self.viewModel.item?.name {
+            self.itemValueLabel.text = "\(itemName)"
+        }
+        if let prioritize = self.viewModel.item?.isPrioritize {
+            if prioritize == true {
+                self.starButton.tintColor = UIColor(named: "StarColor")
+            } else {
+                self.starButton.tintColor = UIColor(named: "PureWhite")
+            }
+        }
+        if let itemCategory = self.viewModel.item?.category {
+            self.categoryValueLabel.text = "\(itemCategory)"
+        }
+        if let itemReason = self.viewModel.item?.reason {
+            self.reasonToBuyValueLabel.text = "\(itemReason)"
+        }
+        
+    }
+    
     func setupScrollView() {
         self.addSubview(self.scrollView)
         self.scrollView.addSubview(self.contentView)
