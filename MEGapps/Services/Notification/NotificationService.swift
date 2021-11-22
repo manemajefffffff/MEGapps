@@ -11,6 +11,16 @@ import UserNotifications
 class NotificationService {
     static let shared = NotificationService()
     
+    init() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("success")
+            } else if let err = error {
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     // MARK: - Function
     func createNewWishlistAddNotification(itemName: String, notificationId: UUID) {
         let content = createNotificationContent(title: "Waiting is Over", body: "\(itemName) are waiting to be accepted")
@@ -22,11 +32,16 @@ class NotificationService {
         addNotificationRequest(request: request)
     }
     
+    func deleteNotification(notificationId: UUID) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationId.uuidString])
+    }
+    
     // MARK: - Private func
     private func createNotificationContent(title: String, body: String) -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
+        content.sound = UNNotificationSound.default
         return content
     }
     
