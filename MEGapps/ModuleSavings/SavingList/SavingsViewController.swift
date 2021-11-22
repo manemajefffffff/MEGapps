@@ -8,31 +8,50 @@
 import UIKit
 import Combine
 
+protocol updateViewProtocol {
+    func updateView()
+}
+
 class SavingsViewController: UIViewController {
 
-// MARK: - ViewModel
-    private let savingsVM = SavingsViewModel()
+    // MARK: - ViewModel
+    private let savingsViewModel = SavingsViewModel()
     var anyCancellable = Set<AnyCancellable>()
     
-//MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var viewHobbySavingsCell: HobbySavingsCellView!
     @IBOutlet weak var tableViewSavingsBudget: UITableView!
-    
-    // MARK: - Variables
-    var savingAmount = 0
-    var historyData = Dummy.getDummyData()
+    @IBOutlet weak var emptyStateView: UIView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         prepCustomView(view: viewHobbySavingsCell)
-        hobbySavingsCellAmountUpdate()
         prepTableView(view: tableViewSavingsBudget)
+        self.updateView()// init call to get data
         movePage()
         subscribe()
+        if savingsViewModel.items.count == 0 {// Needs fix where savingsViewModel.items WHERE .status == on_progress is 0 check
+            emptyStateView.isHidden = false
+        } else {
+            emptyStateView.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    // MARK: - Button
+    @IBAction func goToWishlistBtn(_ sender: Any) {
+        tabBarController!.selectedIndex = 1
+    }
+    
     
     // MARK: - Functions
     func prepCustomView(view: HobbySavingsCellView) {
@@ -42,8 +61,6 @@ class SavingsViewController: UIViewController {
         view.layer.shadowOffset = CGSize(width: 0, height: 4)
         view.layer.masksToBounds = false
         view.layer.cornerRadius = 16.0 // View Rounded
-        
-        view.savingAmount = self.savingAmount
     }
     
     func prepTableView(view: UITableView) {
@@ -54,43 +71,41 @@ class SavingsViewController: UIViewController {
         view.showsVerticalScrollIndicator = false
     }
     
-    func hobbySavingsCellAmountUpdate() {
-        //viewHobbySavingsCell.labelSavingsAmount.text = "Rp. \(savingsVM.savingsHistory.amount)" //BROKEN; each amount
-    }
-
-    //NSPredicate pas ngambil dari coreData
-    
-    func retrieveData() {
-        savingsVM.fetchData()
-    }
-    
     func subscribe() {
-        savingsVM.$total
+//        savingsViewModel.$savingsHistory
+//            .receive(on: DispatchQueue.main)
+//            .sink { [weak self] _ in
+//                DispatchQueue.main.async {
+//                    self?.tableViewSavingsBudget.reloadData()
+//                }
+//            }
+//            .store(in: &anyCancellable)
+        savingsViewModel.$total
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-            }.store(in: &anyCancellable)
+            .sink { [weak self] total in
+                DispatchQueue.main.async {
+                    self?.viewHobbySavingsCell.savingAmount = total
+                    self?.viewHobbySavingsCell.updateView()
+                }
+            }
+            .store(in: &anyCancellable)
     }
     
     func movePage() {
         viewHobbySavingsCell.historyButtonPressed = {
-//            self.updateView()
             let storyBoard = UIStoryboard(name: "SavingsHistory", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(withIdentifier: "savingHistoryPage")
-            self.present(viewController, animated: true)
+            guard let viewController = storyBoard.instantiateViewController(withIdentifier: "savingHistoryPage") as? SavingsHistoryViewController else {
+                fatalError("View not available")
+            }
+            viewController.delegate = self
+            let navController = UINavigationController(rootViewController: viewController)
+            self.present(navController, animated: true)
         }
         viewHobbySavingsCell.addButtonPressed = {
             let storyBoard = UIStoryboard(name: "SavingsAdd", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "savingAddPage")
             self.present(viewController, animated: true)
         }
-    }
-    
-    /// Update view trigger
-    func updateView() {
-        viewHobbySavingsCell.savingAmount = self.savingAmount
-        viewHobbySavingsCell.updateView()
-        historyData = Dummy.getDummyData()
-        tableViewSavingsBudget.reloadData()
     }
 
     /*
@@ -113,7 +128,7 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return historyData.count
+        return savingsViewModel.items.count
         // return Items.count // get product coredata
     }
     
@@ -121,42 +136,22 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableViewSavingsBudget.dequeueReusableCell(withIdentifier: "SavingsBudgetCell") as? SavingsBudgetTableViewCell else {
             fatalError("cell not found!")
         }
-        cell.labelProductName.text = historyData[indexPath.row].wordings // get Product Name
-        cell.labelProductPrice.text = historyData[indexPath.row].amount // get Product Price
-        
-        cell.viewSavingsBudgetCell.layer.cornerRadius = 16.0 // View Rounded; Modify this to match
-        cell.viewSavingsBudgetCell.layer.shadowColor = UIColor.black.cgColor // View DropShadow
-        cell.viewSavingsBudgetCell.layer.shadowRadius = 2.0
-        cell.viewSavingsBudgetCell.layer.shadowOpacity = 0.4
-        cell.viewSavingsBudgetCell.layer.shadowOffset = CGSize(width: 0, height: 3)
-        cell.viewSavingsBudgetCell.layer.masksToBounds = false
+        cell.newData = savingsViewModel.items[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // move to item detail
+        let viewController = PurchaseDetailViewController()
+        viewController.items = savingsViewModel.items[indexPath.row]
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
-/// dummy class
-class Dummy {
-    var wordings: String
-    var amount: String
-    
-    let randString: [String] = ["Kemuel", "Tooru", "Cephas", "Ilai", "Azrael"]
-    
-    init() {
-        self.wordings = randString[Int.random(in: 0..<5)]
-        self.amount = "\(Int.random(in: 1..<100)*10000)"
-    }
-    
-    static func getDummyData() -> [Dummy] {
-        let counter = Int.random(in: 1..<10)
-        var dummyData: [Dummy] = []
-        for idx in 0...counter-1 {
-            dummyData.append(Dummy())
-        }
-        return dummyData
+extension SavingsViewController: updateViewProtocol {
+    func updateView() {
+        self.savingsViewModel.fetchData()
+        self.subscribe()
     }
 }

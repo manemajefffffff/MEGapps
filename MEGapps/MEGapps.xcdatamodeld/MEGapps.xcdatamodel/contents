@@ -18,6 +18,7 @@
         <attribute name="reason" optional="YES" attributeType="String"/>
         <attribute name="startSavingDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="wishlistNotificationId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="transactionItemBudget" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TrItemBudget" inverseName="items" inverseEntity="TrItemBudget"/>
     </entity>
     <entity name="SavingsHistory" representedClassName=".SavingsHistory" syncable="YES" codeGenerationType="category">
@@ -36,7 +37,7 @@
     </entity>
     <elements>
         <element name="Budget" positionX="-54" positionY="18" width="128" height="89"/>
-        <element name="Items" positionX="-36" positionY="45" width="128" height="209"/>
+        <element name="Items" positionX="-36" positionY="45" width="128" height="224"/>
         <element name="SavingsHistory" positionX="-63" positionY="-18" width="128" height="104"/>
         <element name="TrItemBudget" positionX="-18" positionY="126" width="128" height="104"/>
     </elements>

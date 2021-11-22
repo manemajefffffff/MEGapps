@@ -12,7 +12,7 @@
         <!--Items in Category-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="PurchaseSameItemViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="purchaseSameItemPage" id="Y6W-OH-hqX" customClass="PurchaseSameItemViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,9 +45,15 @@
                         <barButtonItem key="leftBarButtonItem" id="8xX-q4-fCq">
                             <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
                             <color key="tintColor" name="PrimaryHSgradient"/>
+                            <connections>
+                                <action selector="backButton:" destination="Y6W-OH-hqX" id="fcu-nd-Oi5"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="rE7-f5-qy1">
                             <color key="tintColor" name="PrimaryHSgradient"/>
+                            <connections>
+                                <action selector="nextButton:" destination="Y6W-OH-hqX" id="nSx-BY-fds"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

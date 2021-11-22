@@ -113,6 +113,9 @@ class WishlistDetailView: UIView {
         self.contentView.addSubview(self.reasonToBuyValueView)
         self.contentView.addSubview(self.acceptWishlistButton)
         self.contentView.addSubview(self.deleteWishlistButton)
+        
+        self.viewController.navigationItem.largeTitleDisplayMode = .never
+        self.viewController.title = "Wishlist Overview"
     }
 
     func style() {
