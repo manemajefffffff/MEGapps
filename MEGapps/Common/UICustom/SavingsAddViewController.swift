@@ -47,8 +47,7 @@ class SavingsAddViewController: UIViewController {
     
     // MARK: - Functions
     func saveSavingsAmount() {
-        self.savingsAddVM.newAmount = Int(amountTextField.text ?? "") ?? 0
-        self.savingsAddVM.saveSavingsAmount()
+        self.savingsAddVM.saveSavingsAmount(createdDate: currentTime, amount: Int64(amountTextField.text ?? "0") ?? 0)
     }
     
     func retrieveData() {
