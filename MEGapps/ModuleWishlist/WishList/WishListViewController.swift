@@ -21,6 +21,7 @@ class WishListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNib()
+        NotificationService.shared.requestAuthorization()
     }
     
     override func viewWillAppear(_ animated: Bool) {
