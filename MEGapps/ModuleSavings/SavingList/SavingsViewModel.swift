@@ -10,7 +10,8 @@ import Combine
 
 class SavingsViewModel: NSObject {
     @Published var total = 0
-    @Published var savingsHistory: [SavingsHistory] = []
+    var savingsHistory: [SavingsHistory] = []
+    @Published var items: [Items] = []
     
     override init() {
         super.init()
@@ -26,6 +27,12 @@ class SavingsViewModel: NSObject {
                 tempTotal+=Int(savingHistory.amount)
             }
             self.total = tempTotal
+        }
+    }
+    
+    func fetchDataItems() {
+        SavingsCoreDataManager.shared.getAllItems { items in
+            self.items = items
         }
     }
 }

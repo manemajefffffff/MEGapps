@@ -9,15 +9,23 @@ import UIKit
 
 class SavingsBudgetTableViewCell: UITableViewCell {
     
-//MARK: - Outlets
+// MARK: - Outlets
     @IBOutlet weak var viewSavingsBudgetCell: UIView!
     @IBOutlet weak var imageStar: UIImageView!
     @IBOutlet weak var labelProductName: UILabel!
     @IBOutlet weak var labelProductPrice: UILabel!
     
-
+// MARK: - Variables
+    var newData: Items? {
+        didSet {
+            setData()
+        }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
         // Initialization code
     }
 
@@ -27,4 +35,17 @@ class SavingsBudgetTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    private func setupUI() {
+        self.layer.cornerRadius = 16.0
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.layer.masksToBounds = false
+    }
+    
+    private func setData() {
+        labelProductName.text = newData?.name
+        labelProductPrice.text = "\(newData?.price)"
+    }
 }

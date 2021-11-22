@@ -72,14 +72,14 @@ class SavingsViewController: UIViewController {
     }
     
     func subscribe() {
-        savingsViewModel.$savingsHistory
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                DispatchQueue.main.async {
-                    self?.tableViewSavingsBudget.reloadData()
-                }
-            }
-            .store(in: &anyCancellable)
+//        savingsViewModel.$savingsHistory
+//            .receive(on: DispatchQueue.main)
+//            .sink { [weak self] _ in
+//                DispatchQueue.main.async {
+//                    self?.tableViewSavingsBudget.reloadData()
+//                }
+//            }
+//            .store(in: &anyCancellable)
         savingsViewModel.$total
             .receive(on: DispatchQueue.main)
             .sink { [weak self] total in
@@ -128,7 +128,7 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return savingsViewModel.savingsHistory.count
+        return savingsViewModel.items.count
         // return Items.count // get product coredata
     }
     
@@ -136,14 +136,7 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableViewSavingsBudget.dequeueReusableCell(withIdentifier: "SavingsBudgetCell") as? SavingsBudgetTableViewCell else {
             fatalError("cell not found!")
         }
-        cell.labelProductName.text = savingsViewModel.savingsHistory[indexPath.row].wordings
-        cell.labelProductPrice.text = "\(savingsViewModel.savingsHistory[indexPath.row].amount)"
-        cell.viewSavingsBudgetCell.layer.cornerRadius = 16.0
-        cell.viewSavingsBudgetCell.layer.shadowColor = UIColor.black.cgColor
-        cell.viewSavingsBudgetCell.layer.shadowRadius = 2.0
-        cell.viewSavingsBudgetCell.layer.shadowOpacity = 0.4
-        cell.viewSavingsBudgetCell.layer.shadowOffset = CGSize(width: 0, height: 3)
-        cell.viewSavingsBudgetCell.layer.masksToBounds = false
+        cell.newData = savingsViewModel.items[indexPath.row]
         
         return cell
     }

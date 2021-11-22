@@ -34,4 +34,16 @@ class SavingsCoreDataManager {
             fatalError()
         }
     }
+    
+    func getAllItems(completion: @escaping(_ items: [Items]) -> Void) {
+        let context = persistentContainer.viewContext
+        do {
+            let fetchRequest = Items.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "status == %@", "on_progress")
+            let data = try context.fetch(fetchRequest)
+            completion(data)
+        } catch {
+            fatalError()
+        }
+    }
 }
