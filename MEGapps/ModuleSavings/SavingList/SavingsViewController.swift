@@ -31,11 +31,6 @@ class SavingsViewController: UIViewController {
         self.updateView()// init call to get data
         movePage()
         subscribe()
-        if savingsViewModel.items.count == 0 {// Needs fix where savingsViewModel.items WHERE .status == on_progress is 0 check
-            emptyStateView.isHidden = false
-        } else {
-            emptyStateView.isHidden = true
-        }
         // Do any additional setup after loading the view.
     }
     
@@ -54,6 +49,15 @@ class SavingsViewController: UIViewController {
     
     
     // MARK: - Functions
+    func emptyState() {
+        if savingsViewModel.items.count == 0 { // Needs fix where savingsViewModel.items WHERE .status == on_progress is 0 check
+            emptyStateView.isHidden = false
+        } else {
+            emptyStateView.isHidden = true
+        }
+//        emptyStateView.isHidden = true
+    }
+    
     func prepCustomView(view: HobbySavingsCellView) {
         view.layer.shadowColor = UIColor.black.cgColor // View DropShadow
         view.layer.shadowRadius = 4.0
@@ -80,6 +84,15 @@ class SavingsViewController: UIViewController {
 //                }
 //            }
 //            .store(in: &anyCancellable)
+        savingsViewModel.$items
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.tableViewSavingsBudget.reloadData()
+                }
+                self?.emptyState()
+            }.store(in: &anyCancellable)
+        
         savingsViewModel.$total
             .receive(on: DispatchQueue.main)
             .sink { [weak self] total in
@@ -129,7 +142,7 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return savingsViewModel.items.count
-        // return Items.count // get product coredata
+//         return Items.count // get product coredata
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -143,9 +156,18 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // move to item detail
+        tableView.deselectRow(at: indexPath, animated: true)
         let viewController = PurchaseDetailViewController()
-        viewController.items = savingsViewModel.items[indexPath.row]
-        self.navigationController?.pushViewController(viewController, animated: true)
+        viewController.itemsPD = savingsViewModel.items[indexPath.row]
+        let navPurcDetail: UINavigationController = UINavigationController(rootViewController: viewController)
+        navPurcDetail.modalPresentationStyle = .fullScreen
+        self.present(navPurcDetail, animated: true, completion: nil)
+        
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        let viewController = PurchaseDetailViewController()
+//        viewController.itemsPD = savingsViewModel.items[indexPath.row]
+//        self.navigationController?.pushViewController(viewController, animated: true)
+//        print("Pekora peko")
     }
 }
 

@@ -45,7 +45,12 @@ class SavingsBudgetTableViewCell: UITableViewCell {
     }
     
     private func setData() {
-        labelProductName.text = newData?.name
-        labelProductPrice.text = "\(newData?.price)"
+        if let prodName = newData?.name {
+            labelProductName.text = "\(prodName)"
+        }
+        if let prodPrice = newData?.price {
+            labelProductPrice.text = "\(prodPrice)"
+        }
+
     }
 }

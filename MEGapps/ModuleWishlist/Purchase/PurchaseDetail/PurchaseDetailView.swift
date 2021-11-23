@@ -14,6 +14,7 @@ class PurchaseDetailView: UIView {
     private var viewController: PurchaseDetailViewController
 
     // MARK: - Outlet
+    let navigationBar = UINavigationBar()
     let scrollView = UIScrollView()
     let contentView = UIView()
     private let itemValueLabel = UILabel()
@@ -39,6 +40,7 @@ class PurchaseDetailView: UIView {
         self.setupScrollView()
         self.setup()
         self.style()
+        self.manageData()
     }
 
     required init?(coder: NSCoder) {
@@ -46,7 +48,49 @@ class PurchaseDetailView: UIView {
     }
 
     // MARK: - Function
+    func manageData() {
+        if let itemName = self.viewModel.item?.name {
+            self.itemValueLabel.text = "\(itemName)"
+        }
+        if let itemPrice = self.viewModel.item?.price {
+            self.priceLabel.text = "\(itemPrice)"
+            print(itemPrice)
+        }
+        if let prioritize = self.viewModel.item?.isPrioritize {
+            if prioritize == true {
+                self.starButton.tintColor = UIColor(named: "StarColor")
+            } else {
+                self.starButton.tintColor = UIColor(named: "PureWhite")
+            }
+        }
+        if let itemCategory = self.viewModel.item?.category {
+            self.categoryValueLabel.text = "\(itemCategory)"
+        }
+        if let itemReason = self.viewModel.item?.reason {
+            self.reasonToBuyValueLabel.text = "\(itemReason)"
+        }
+        
+    }
+    
     func setupScrollView() {
+        self.addSubview(navigationBar)
+        navigationBar.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            navigationBar.topAnchor.constraint(equalTo: self.topAnchor, constant: UIApplication.shared.statusBarFrame.height),
+            navigationBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            navigationBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
+        ])
+        let doneButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
+        let navigationItem = UINavigationItem(title: "Wishlist Details")
+        let image = UIImage(systemName: "chevron.left")?.withRenderingMode(.alwaysOriginal)
+        let cancelbutton = UIBarButtonItem(image: image, style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItem = cancelbutton
+        navigationItem.rightBarButtonItem = doneButton
+        navigationBar.items = [navigationItem]
+        navigationBar.barTintColor = UIColor(named: "BackgroundColor")
+        doneButton.tintColor = UIColor(named: "PrimaryHSgradient")
+        cancelbutton.tintColor = UIColor(named: "PrimaryHSgradient")
+        
         self.addSubview(self.scrollView)
         self.scrollView.addSubview(self.contentView)
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -81,12 +125,13 @@ class PurchaseDetailView: UIView {
         self.contentView.addSubview(self.purchaseItemButton)
         self.contentView.addSubview(self.deleteItemButton)
     }
+    
+    
 
     func style() {
         self.backgroundColor = UIColor(named: "BackgroundColor")
 
         self.itemValueLabel.textAlignment = .left
-        self.itemValueLabel.text = "Macbook Pro 2021"
         self.itemValueLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         self.itemValueLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -110,39 +155,16 @@ class PurchaseDetailView: UIView {
         self.priceLabel.font = .systemFont(ofSize: 17, weight: .regular)
         self.priceValueLabel.translatesAutoresizingMaskIntoConstraints = false
         self.priceValueLabel.textAlignment = .right
-        self.priceValueLabel.text = "Rp999.999,00"
         self.priceValueLabel.font = .systemFont(ofSize: 17, weight: .regular)
         self.priceLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.priceLabel.topAnchor.constraint(equalTo: self.itemValueLabel.bottomAnchor, constant: 16),
-            self.priceLabel.bottomAnchor.constraint(equalTo: self.dueDateLabel.topAnchor, constant: -16),
             self.priceLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
             self.priceLabel.trailingAnchor.constraint(equalTo: self.priceValueLabel.leadingAnchor, constant: -21),
 
             self.priceValueLabel.topAnchor.constraint(equalTo: self.itemValueLabel.bottomAnchor, constant: 16),
-            self.priceValueLabel.bottomAnchor.constraint(equalTo: self.dueDateLabel.topAnchor, constant: -16),
             self.priceValueLabel.leadingAnchor.constraint(equalTo: self.priceLabel.trailingAnchor, constant: 21),
             self.priceValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
-        ])
-
-        self.dueDateLabel.textAlignment = .left
-        self.dueDateLabel.text = "Due Date :"
-        self.dueDateLabel.font = .systemFont(ofSize: 17, weight: .regular)
-        self.dueDateValueLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.dueDateValueLabel.textAlignment = .right
-        self.dueDateValueLabel.text = "31 January 2022"
-        self.dueDateValueLabel.font = .systemFont(ofSize: 17, weight: .regular)
-        self.dueDateLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.dueDateLabel.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 16),
-            self.dueDateLabel.bottomAnchor.constraint(equalTo: self.categoryLabel.topAnchor, constant: -16),
-            self.dueDateLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
-            self.dueDateLabel.trailingAnchor.constraint(equalTo: self.dueDateValueLabel.leadingAnchor, constant: -21),
-
-            self.dueDateValueLabel.topAnchor.constraint(equalTo: self.priceValueLabel.bottomAnchor, constant: 16),
-            self.dueDateValueLabel.bottomAnchor.constraint(equalTo: self.categoryValueLabel.topAnchor, constant: -16),
-            self.dueDateValueLabel.leadingAnchor.constraint(equalTo: self.dueDateLabel.trailingAnchor, constant: 21),
-            self.dueDateValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
         ])
 
         self.categoryLabel.textAlignment = .left
@@ -150,16 +172,15 @@ class PurchaseDetailView: UIView {
         self.categoryLabel.font = .systemFont(ofSize: 17, weight: .regular)
         self.categoryValueLabel.translatesAutoresizingMaskIntoConstraints = false
         self.categoryValueLabel.textAlignment = .right
-        self.categoryValueLabel.text = "Technology"
         self.categoryValueLabel.font = .systemFont(ofSize: 17, weight: .regular)
         self.categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.categoryLabel.topAnchor.constraint(equalTo: self.dueDateLabel.bottomAnchor, constant: 16),
+            self.categoryLabel.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 16),
             self.categoryLabel.bottomAnchor.constraint(equalTo: self.reasonToBuyLabel.topAnchor, constant: -16),
             self.categoryLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
             self.categoryLabel.trailingAnchor.constraint(equalTo: self.categoryValueLabel.leadingAnchor, constant: -21),
 
-            self.categoryValueLabel.topAnchor.constraint(equalTo: self.dueDateValueLabel.bottomAnchor, constant: 16),
+            self.categoryValueLabel.topAnchor.constraint(equalTo: self.priceValueLabel.bottomAnchor, constant: 16),
             self.categoryValueLabel.bottomAnchor.constraint(equalTo: self.reasonToBuyLabel.topAnchor, constant: -16),
             self.categoryValueLabel.leadingAnchor.constraint(equalTo: self.categoryLabel.trailingAnchor, constant: 21),
             self.categoryValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
@@ -177,7 +198,6 @@ class PurchaseDetailView: UIView {
         self.reasonToBuyValueView.layer.shadowOpacity = 0.8
         self.reasonToBuyValueLabel.translatesAutoresizingMaskIntoConstraints = false
         self.reasonToBuyValueLabel.textAlignment = NSTextAlignment.left
-        self.reasonToBuyValueLabel.text = "Increasing Social Status\n"
         self.reasonToBuyValueLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         self.reasonToBuyValueLabel.numberOfLines = 0
         self.reasonToBuyValueLabel.padding(10, 10, 10, 10)
@@ -212,8 +232,8 @@ class PurchaseDetailView: UIView {
         self.purchaseItemButton.addTarget(self, action: #selector(acceptWishlistAction), for: .touchUpInside)
         NSLayoutConstraint.activate([
             self.purchaseItemButton.heightAnchor.constraint(equalToConstant: 49),
-            // self.acceptWishlistButton.topAnchor.constraint(equalTo: self.reasonToBuyValueView.bottomAnchor, constant: 77),
-            self.purchaseItemButton.bottomAnchor.constraint(equalTo: self.deleteItemButton.topAnchor, constant: -12),
+            self.purchaseItemButton.topAnchor.constraint(equalTo: self.reasonToBuyValueView.bottomAnchor, constant: 104),
+//            self.purchaseItemButton.bottomAnchor.constraint(equalTo: self.deleteItemButton.topAnchor, constant: -12),
             self.purchaseItemButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 17),
             self.purchaseItemButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
         ])
@@ -232,12 +252,14 @@ class PurchaseDetailView: UIView {
         self.purchaseItemButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.deleteItemButton.heightAnchor.constraint(equalToConstant: 49),
-            self.deleteItemButton.topAnchor.constraint(equalTo: self.purchaseItemButton.bottomAnchor, constant: 12),
-            self.deleteItemButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -128),
+            self.deleteItemButton.topAnchor.constraint(equalTo: self.purchaseItemButton.bottomAnchor, constant: 16),
+//            self.deleteItemButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -128),
             self.deleteItemButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 17),
             self.deleteItemButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
         ])
     }
+    
+    
 
     @objc func acceptWishlistAction() {
         self.viewController.showAcceptAlert()

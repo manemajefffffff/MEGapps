@@ -10,10 +10,12 @@ import Combine
 import UIKit
 
 class PurchaseDetailViewModel {
-    // @Published var model: //DataModel
     let bundle: Bundle
+    @Published var item: Items?
 
     init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
     }
+    
 }
+
