@@ -159,8 +159,15 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let viewController = PurchaseDetailViewController()
         viewController.itemsPD = savingsViewModel.items[indexPath.row]
-        self.navigationController?.pushViewController(viewController, animated: true)
-//        print("Pekora peko")-*
+        let navPurcDetail: UINavigationController = UINavigationController(rootViewController: viewController)
+        navPurcDetail.modalPresentationStyle = .fullScreen
+        self.present(navPurcDetail, animated: true, completion: nil)
+        
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        let viewController = PurchaseDetailViewController()
+//        viewController.itemsPD = savingsViewModel.items[indexPath.row]
+//        self.navigationController?.pushViewController(viewController, animated: true)
+//        print("Pekora peko")
     }
 }
 

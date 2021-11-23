@@ -15,14 +15,14 @@ class PurchaseDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
+    
     override func loadView() {
-        self.view = PurchaseDetailView(viewModel: viewModel, viewController: self)
         viewModel.item = itemsPD!
-    }
+        self.view = PurchaseDetailView(viewModel: viewModel, viewController: self)
+   }
 
     func showAcceptAlert() {
         let alert = UIAlertController(title: "Accept", message: "Please Select an Option", preferredStyle: .actionSheet)
