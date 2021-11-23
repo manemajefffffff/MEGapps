@@ -21,9 +21,15 @@ class WishlistDetailViewModel {
     
     func acceptWishlist() {
         WishlistCoreDataManager.shared.acceptWishlist(wishlist)
+        if let notificationId = wishlist.wishlistNotificationId {
+            NotificationService.shared.deleteNotification(notificationId: notificationId)
+        }
     }
     
     func cancelWishlist() {
         WishlistCoreDataManager.shared.cancelWishlist(wishlist)
+        if let notificationId = wishlist.wishlistNotificationId {
+            NotificationService.shared.deleteNotification(notificationId: notificationId)
+        }
     }
 }
