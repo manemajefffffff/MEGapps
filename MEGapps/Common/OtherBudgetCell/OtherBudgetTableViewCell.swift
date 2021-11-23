@@ -16,6 +16,7 @@ class OtherBudgetTableViewCell: UITableViewCell {
     @IBOutlet weak var labelInitialBudget: UILabel!
     @IBOutlet weak var labelBudgetUsed: UILabel!
     @IBOutlet weak var labelBudgetLeft: UILabel!
+    @IBOutlet weak var progressBar: CustomProgressBar!
     
     var otherBudget: Budget? {
         didSet {
@@ -26,6 +27,7 @@ class OtherBudgetTableViewCell: UITableViewCell {
     
     var budgetUsed = [TrItemBudget]()
     var total: Int64 = 0
+    var percent: Int64 = 0
     
     func setData() {
         labelProductName.text = otherBudget?.name
@@ -43,6 +45,12 @@ class OtherBudgetTableViewCell: UITableViewCell {
             for object in budgetUsed {
                 total = object.amount + total
             }
+        }
+        
+        if let budgetPrice = otherBudget?.amount {
+            percent = total/budgetPrice
+            progressBar.progress = CGFloat(percent)
+            print("percent", percent)
         }
         
     }

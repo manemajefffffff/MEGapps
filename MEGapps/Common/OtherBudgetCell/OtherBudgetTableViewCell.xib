@@ -36,12 +36,7 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryc-rh-DqP" customClass="CustomProgressBar" customModule="MEGapps" customModuleProvider="target">
                                 <rect key="frame" x="16" y="55" width="311" height="20"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" name="PrimaryHSgradient"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <color key="backgroundColor" name="PrimaryHSgradient"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0m-K1-sc5">
                                 <rect key="frame" x="0.0" y="91" width="343" height="117"/>
@@ -162,6 +157,7 @@
                 <outlet property="labelInitialBudget" destination="bOT-o6-bwV" id="y4y-Vw-RNp"/>
                 <outlet property="labelProductName" destination="6cv-8q-DQQ" id="CLV-G8-0ac"/>
                 <outlet property="labelProductPrice" destination="Uyv-Z5-Ug8" id="aao-c6-ry6"/>
+                <outlet property="progressBar" destination="ryc-rh-DqP" id="IGh-Gr-yc7"/>
             </connections>
             <point key="canvasLocation" x="131.15942028985509" y="125.89285714285714"/>
         </tableViewCell>
