@@ -17,7 +17,7 @@ class OtherBudgetTableViewCell: UITableViewCell {
     @IBOutlet weak var labelBudgetUsed: UILabel!
     @IBOutlet weak var labelBudgetLeft: UILabel!
     
-    var newData: Budget? {
+    var otherBudget: Budget? {
         didSet {
             setData()
         }
@@ -31,15 +31,11 @@ class OtherBudgetTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         setupView()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func setupView() {
@@ -50,4 +46,8 @@ class OtherBudgetTableViewCell: UITableViewCell {
 //        cellView.layer.masksToBounds = false
     }
     
+    private func setData() {
+        self.labelProductName.text = "\(otherBudget?.name ?? "budget name")"
+        self.labelProductPrice.text = "\(otherBudget?.amount ?? 0)"
+    }
 }
