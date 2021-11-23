@@ -6,18 +6,69 @@
 //
 
 import UIKit
+import Combine
+
+protocol AddEditBudgetDelegate: AnyObject {
+    func refreshData()
+}
 
 class AddEditBudgetViewController: UIViewController {
-
+    
+    // MARK: - IBOutlet
     @IBOutlet weak var budgetNameTF: UITextField!
     @IBOutlet weak var budgetAmtTF: UITextField!
+    @IBOutlet weak var deleteBtn: UIButton!
     
+    // MARK: - ViewModel
+    private let viewModel = AddEditBudgetViewModel()
+    var anyCancellable = Set<AnyCancellable>()
+    
+    // MARK: - Variables
+    var oldBudgetData: Budget?
+    
+    // MARK: - Delegate
+    weak var delegate: AddEditBudgetDelegate?
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         manageShadowView()
+        manageDeleteBtn()
+        setOldBudgetData()
+        setData()
     }
     
-    func manageShadowView() {
+    // MARK: - IBAction
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveBudget(_ sender: Any) {
+        viewModel.saveBudget(name: budgetNameTF.text ?? "", amount: Int64(budgetAmtTF.text ?? "0") ?? 0)
+        dismiss(animated: true, completion: {
+            self.delegate?.refreshData()
+        })
+    }
+    
+    @IBAction func deleteBudget(_ sender: Any) {
+        let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete this budget?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+            self.viewModel.deleteBudget()
+            self.dismiss(animated: true, completion: {
+                self.delegate?.refreshData()
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true) {
+            print("completion block")
+        }
+    }
+    
+    
+    // MARK: - Functions
+    private func manageShadowView() {
         self.budgetNameTF.layer.shadowColor = UIColor(hex: "bbbbbb")?.cgColor
         self.budgetNameTF.layer.shadowRadius = 0.4
         self.budgetNameTF.layer.shadowOpacity = 0.1
@@ -31,16 +82,25 @@ class AddEditBudgetViewController: UIViewController {
         self.budgetAmtTF.layer.masksToBounds = false
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setData() {
+        viewModel.$oldBudgetData
+            .sink { [weak self] oldBudgetData in
+                if let budget = oldBudgetData {
+                    self?.manageDeleteBtn(hidden: false)
+                    self?.budgetNameTF.text = "\(budget.name ?? "")"
+                    self?.budgetAmtTF.text = "\(budget.amount)"
+                }
+                self?.title = "Edit Other Budget"
+            }.store(in: &anyCancellable)
     }
-    */
-
+    
+    fileprivate func setOldBudgetData() {
+        if let data = oldBudgetData {
+            viewModel.oldBudgetData = data
+        }
+    }
+    
+    private func manageDeleteBtn(hidden: Bool = true) {
+        deleteBtn.isHidden = hidden
+    }
 }
