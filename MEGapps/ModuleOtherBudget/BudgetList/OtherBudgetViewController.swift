@@ -24,6 +24,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         register()
         subscribe()
+        //addData()
     }
     
     // MARK: - Actions
@@ -55,6 +56,28 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
                 }
             }.store(in: &anyCancellable)
     }
+    
+    private func addData() {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {fatalError()}
+        
+        let budgetData = TrItemBudget(context: context)
+        budgetData.id = UUID()
+        budgetData.createdAt = Date()
+        budgetData.amount = 10000
+        
+        let newData = Budget(context: context)
+        newData.id = UUID()
+        newData.amount = 12345
+        newData.name = "MAMAM"
+        
+        newData.addToTrItemBudget(budgetData)
+                
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
 }
 
 extension OtherBudgetViewController {
@@ -83,6 +106,7 @@ extension OtherBudgetViewController {
         // Half Sheet
         if let presentationController = navController.presentationController as? UISheetPresentationController {
             presentationController.detents = [.medium()]
+            
         }
         self.present(navController, animated: true)
     }

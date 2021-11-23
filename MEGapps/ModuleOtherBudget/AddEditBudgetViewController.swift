@@ -90,6 +90,7 @@ class AddEditBudgetViewController: UIViewController {
                     self?.budgetNameTF.text = "\(budget.name ?? "")"
                     self?.budgetAmtTF.text = "\(budget.amount)"
                 }
+                self?.title = "Edit Other Budget"
             }.store(in: &anyCancellable)
     }
     

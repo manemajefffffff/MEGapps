@@ -19,15 +19,34 @@ class OtherBudgetTableViewCell: UITableViewCell {
     
     var otherBudget: Budget? {
         didSet {
+            calculateData()
             setData()
         }
     }
     
-    func setData(){
-        labelProductName.text = newData?.name
-        labelProductPrice.text = "\(newData?.amount)"
-        labelInitialBudget.text = "\(newData?.amount)"
+    var budgetUsed = [TrItemBudget]()
+    var total: Int64 = 0
+    
+    func setData() {
+        labelProductName.text = otherBudget?.name
+        if let labelPrice = otherBudget?.amount {
+            labelProductPrice.text = "Rp. \(labelPrice)"
+            labelInitialBudget.text = "Rp. \(labelPrice)"
+            labelBudgetLeft.text = "Rp. \(labelPrice - total)"
+        }
+        labelBudgetUsed.text = "Rp. \(total)"
     }
+    
+    func calculateData() {
+        total = 0
+        if let budgetUsed = otherBudget?.trItemBudget?.allObjects as? [TrItemBudget] {
+            for object in budgetUsed {
+                total = object.amount + total
+            }
+        }
+        
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,8 +65,8 @@ class OtherBudgetTableViewCell: UITableViewCell {
 //        cellView.layer.masksToBounds = false
     }
     
-    private func setData() {
-        self.labelProductName.text = "\(otherBudget?.name ?? "budget name")"
-        self.labelProductPrice.text = "\(otherBudget?.amount ?? 0)"
-    }
+//    private func setData() {
+//        self.labelProductName.text = "\(otherBudget?.name ?? "budget name")"
+//        self.labelProductPrice.text = "\(otherBudget?.amount ?? 0)"
+//    }
 }
