@@ -12,9 +12,22 @@ class OtherBudgetTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet weak var labelProductName: UILabel!
     @IBOutlet weak var labelProductPrice: UILabel!
-    @IBOutlet weak var imageChevronRight: UIImageView!
     @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var labelInitialBudget: UILabel!
+    @IBOutlet weak var labelBudgetUsed: UILabel!
+    @IBOutlet weak var labelBudgetLeft: UILabel!
     
+    var newData: Budget? {
+        didSet {
+            setData()
+        }
+    }
+    
+    func setData(){
+        labelProductName.text = newData?.name
+        labelProductPrice.text = "\(newData?.amount)"
+        labelInitialBudget.text = "\(newData?.amount)"
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,11 +43,11 @@ class OtherBudgetTableViewCell: UITableViewCell {
     }
     
     func setupView() {
-        cellView.layer.shadowColor = UIColor.lightGray.cgColor
-        cellView.layer.shadowOffset = CGSize(width: 0, height: 3)
-        cellView.layer.shadowRadius = 2.0
-        cellView.layer.shadowOpacity = 0.4
-        cellView.layer.masksToBounds = false
+//        cellView.layer.shadowColor = UIColor.lightGray.cgColor
+//        cellView.layer.shadowOffset = CGSize(width: 0, height: 3)
+//        cellView.layer.shadowRadius = 2.0
+//        cellView.layer.shadowOpacity = 0.4
+//        cellView.layer.masksToBounds = false
     }
     
 }
