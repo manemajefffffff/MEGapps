@@ -10,4 +10,5 @@ import Foundation
 struct BudgetUsed {
     var budget: Budget?
     var amountUsed: Int64 = 0
+    var isUsed = false
 }
