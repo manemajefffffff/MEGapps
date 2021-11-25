@@ -66,7 +66,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productCategory" textLabel="wKD-ov-k4S" detailTextLabel="fiu-CI-Rmv" style="IBUITableViewCellStyleValue1" id="WGL-zv-KvN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productCategory" textLabel="wKD-ov-k4S" detailTextLabel="fiu-CI-Rmv" style="IBUITableViewCellStyleValue1" id="WGL-zv-KvN">
                                         <rect key="frame" x="20" y="106" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WGL-zv-KvN" id="BEz-X5-JGV">

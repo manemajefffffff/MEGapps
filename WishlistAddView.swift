@@ -100,6 +100,7 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
         categoryLabel.text =  data
         categoryLabel.textColor = UIColor.gray
         category = data
+        self.tableView.reloadData()
     }
     
     // MARK: - TextView Function
