@@ -8,18 +8,22 @@
 import Foundation
 import Combine
 
+protocol UseBudgetsFunctionProtocol {
+    func addNewBudgetUse(index: Int)
+    func setBudgetIsUsedStatus(index: Int)
+}
+
 class PurchaseOtherBudgetAllocationViewModel: NSObject {
     
     // MARK: - Publishers
     @Published var budgetAmountUsed: Int64 = 0
-//    @Published var budgetUsage = [BudgetUsed]()
     @Published var budgetUsed = [BudgetUsed]()
     @Published var budgetNotUsed = [BudgetUsed]()
     @Published var isBudgetAllocatedEnough = false
 
-
     // MARK: - Variables
     var insufficientAmount: Int64 = 0
+    var item: Items?
     
     override init() {
         super.init()
@@ -27,7 +31,7 @@ class PurchaseOtherBudgetAllocationViewModel: NSObject {
     }
     
     // MARK: - Function(Other budget allocation)
-    func checkBudgetAmountUsed() {
+    private func checkBudgetAmountUsed() {
 //        var amountUsedTemp: Int64 = 0
 //        for item in budgetUsage {
 //            amountUsedTemp += item.amountUsed
@@ -83,16 +87,34 @@ class PurchaseOtherBudgetAllocationViewModel: NSObject {
         checkBudgetAmountUsed()
     }
     
-    func checkIfBudgetAllocationEnough() {
+    private func checkIfBudgetAllocationEnough() {
         isBudgetAllocatedEnough = insufficientAmount == budgetAmountUsed ? true : false
+    }
+    
+    private func removeUnusedBudget() {
+        budgetUsed.removeAll { item in
+            item.amountUsed <= 0
+        }
+        
+        PurchaseCoreDataManager
+            .shared
+            .proceedWishlist(itemWantToBuy: item!, savingsAmountUsed: getSavingsAmountUsed(), budgetUsed: budgetUsed) { errorMessage in
+                
+            }
+    }
+    
+    private func getSavingsAmountUsed() -> Int64 {
+        // masukin code untuk hitung tabungan yang terpakai
+        return 100000
     }
     
     func proceedWishlist() {
         // save ke coredata
+        removeUnusedBudget()
     }
 }
 
-extension PurchaseOtherBudgetAllocationViewModel {
+extension PurchaseOtherBudgetAllocationViewModel: UseBudgetsFunctionProtocol {
     // MARK: - Function (Use budgets page)
     func addNewBudgetUse(index: Int) {
         var budgetToUse = budgetNotUsed[index]
@@ -100,5 +122,9 @@ extension PurchaseOtherBudgetAllocationViewModel {
         budgetNotUsed = budgetNotUsed // nanti coba comment ini
         budgetToUse.isUsed = true
         budgetUsed.append(budgetToUse)
+    }
+    
+    func setBudgetIsUsedStatus(index: Int) {
+        budgetNotUsed[index].isUsed = !budgetNotUsed[index].isUsed
     }
 }
