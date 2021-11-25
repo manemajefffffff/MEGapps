@@ -30,11 +30,22 @@ class OtherBudgetTableViewCell: UITableViewCell {
     func setData() {
         labelProductName.text = otherBudget?.name
         if let labelPrice = otherBudget?.amount {
-            labelProductPrice.text = "Rp. \(labelPrice)"
-            labelInitialBudget.text = "Rp. \(labelPrice)"
-            labelBudgetLeft.text = "Rp. \(labelPrice - total)"
+            labelProductPrice.text = formatNumber(price: labelPrice)
+            labelInitialBudget.text = formatNumber(price: labelPrice)
+            labelBudgetLeft.text = formatNumber(price: labelPrice - total)
         }
-        labelBudgetUsed.text = "Rp. \(total)"
+        labelBudgetUsed.text = formatNumber(price: total)
+    }
+    
+    func formatNumber(price: Int64) -> String{
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = "."
+        formatter.numberStyle = .decimal
+        
+        if let formattedPrice = formatter.string(from: price as NSNumber) {
+            return "Rp. \(formattedPrice)"
+        }
+        return "Rp. 0"
     }
     
     func calculateData() {

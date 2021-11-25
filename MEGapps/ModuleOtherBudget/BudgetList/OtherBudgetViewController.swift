@@ -26,7 +26,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
         register()
         subscribe()
         setupEmptyState()
-        addData()
+        //addData()
     }
     
     // MARK: - Actions
