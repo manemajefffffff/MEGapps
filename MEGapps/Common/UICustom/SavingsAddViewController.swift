@@ -81,7 +81,7 @@ class SavingsAddViewController: UIViewController {
     }
     
     func getTodaysDate(label: UILabel) {
-        formatter.dateFormat = "dd MMMM yyyy, HH:mm"
+        formatter.dateFormat = "dd MMMM yyyy"
         label.text = "\(formatter.string(from: currentTime))"
     }
 }
