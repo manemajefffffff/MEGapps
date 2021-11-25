@@ -30,6 +30,7 @@ class PurchaseDetailView: UIView {
     private let reasonToBuyValueView = UIView()
     private let purchaseItemButton = UIButton()
     private let deleteItemButton = UIButton()
+//    var isStarButtonTapped = false
 
     // MARK: - Lifecycle
     init(viewModel: PurchaseDetailViewModel, viewController: PurchaseDetailViewController) {
@@ -38,9 +39,11 @@ class PurchaseDetailView: UIView {
         super.init(frame: .zero)
 
         self.setupScrollView()
+        self.manageData()
+        self.starBtnTap()
         self.setup()
         self.style()
-        self.manageData()
+        
     }
 
     required init?(coder: NSCoder) {
@@ -58,9 +61,11 @@ class PurchaseDetailView: UIView {
         }
         if let prioritize = self.viewModel.item?.isPrioritize {
             if prioritize == true {
-                self.starButton.tintColor = UIColor(named: "StarColor")
+                print("if prioritize true")
+                self.starButton.setImage(UIImage(named: "StarFill"), for: .normal)
             } else {
-                self.starButton.tintColor = UIColor(named: "PureWhite")
+                print("if prioritize false")
+                self.starButton.setImage(UIImage(systemName: "Star"), for: .normal)
             }
         }
         if let itemCategory = self.viewModel.item?.category {
@@ -70,6 +75,31 @@ class PurchaseDetailView: UIView {
             self.reasonToBuyValueLabel.text = "\(itemReason)"
         }
         
+    }
+    
+    func setupButton() {
+    print("func setupButton")
+      self.setImageStarButton()
+      self.starButton.addTarget(self, action: #selector(starBtnTap), for: .touchUpInside)
+
+    }
+
+    func setImageStarButton () {
+        if starButton.isSelected {
+        print("prioritized func setImageStarButton")
+        self.starButton.setImage(UIImage(named: "StarFill"), for: .normal)
+        self.viewModel.item?.isPrioritize = true
+      } else {
+        print("not prioritized func setImageStarButton")
+        self.starButton.setImage(UIImage(systemName: "Star"), for: .normal)
+        self.viewModel.item?.isPrioritize = false
+      }
+    }
+
+    @objc func starBtnTap() {
+        print("func starBtnTap")
+        starButton.isSelected = !starButton.isSelected
+        self.setImageStarButton()
     }
     
     func setupScrollView() {
@@ -111,6 +141,8 @@ class PurchaseDetailView: UIView {
     }
 
     func setup() {
+        print("setup button in setup")
+        setupButton()
         self.contentView.addSubview(self.itemValueLabel)
         self.contentView.addSubview(self.starButton)
         self.contentView.addSubview(self.priceLabel)
@@ -126,8 +158,6 @@ class PurchaseDetailView: UIView {
         self.contentView.addSubview(self.deleteItemButton)
     }
     
-    
-
     func style() {
         self.backgroundColor = UIColor(named: "BackgroundColor")
 
@@ -140,8 +170,8 @@ class PurchaseDetailView: UIView {
             self.itemValueLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
             self.itemValueLabel.trailingAnchor.constraint(equalTo: self.starButton.trailingAnchor, constant: -21)
         ])
-
-        self.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        self.starButton.setImage(UIImage(systemName: "star"), for: .normal)
+        print("setup button in STYLE")
         self.starButton.translatesAutoresizingMaskIntoConstraints = false
         self.starButton.tintColor = UIColor(named: "StarColor")
         NSLayoutConstraint.activate([
