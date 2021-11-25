@@ -8,6 +8,10 @@
 import UIKit
 import Combine
 
+protocol WishListDetailProtocol {
+    func pushView(itemData: Items)
+}
+
 class WishListViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var wishlistTableView: UITableView!
@@ -44,6 +48,18 @@ class WishListViewController: UIViewController {
             .sink { [weak self] _ in
                 DispatchQueue.main.async {
                     self?.wishlistTableView.reloadData()
+                    // MARK: - MINUS HERE, BELOM RELOAD DATA
+//                    for cell in self?.wishlistTableView.visibleCells ?? [] {
+//                        guard let tempCell = cell as? ReadyToAcceptTableViewCell else {
+//                            return
+//                        }
+//                        tempCell.collectionView.reloadData()
+//                        print("xi success")
+//                    }
+//                    if let cell = self?.wishlistTableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? ReadyToAcceptTableViewCell {
+//                        cell.collectionView.reloadData()
+//                        print("refreshed xi")
+//                    }
                 }
             }.store(in: &anyCancellable)
         
@@ -101,18 +117,32 @@ extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.textLabel!.topAnchor.constraint(equalTo: cell.topAnchor, constant: 16).isActive = true
                 return cell
             } else {
-                // MARK: - Collection view
-                let cell = tableView.dequeueReusableCell(withIdentifier: ReadyToAcceptTableViewCell.identifier, for: indexPath)
-//                cell.isUserInteractionEnabled = false
-//                print("Heeee\(cell.isUserInteractionEnabled)")
-                return cell
+                if wishListViewModel.hasReadyToAcceptItems {
+                    // MARK: - Collection view
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: ReadyToAcceptTableViewCell.identifier, for: indexPath) as? ReadyToAcceptTableViewCell else {
+                        fatalError("no cell")
+                    }
+                    cell.wishListVCDelegate = self
+                    cell.viewModel = wishListViewModel
+                    return cell
+                } else {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath as IndexPath)
+                    cell.textLabel!.text = "No data available"
+                    cell.textLabel!.font = .systemFont(ofSize: 20, weight: .semibold)
+                    cell.backgroundColor = UIColor(named: "BackgroundColor")
+                    cell.textLabel!.translatesAutoresizingMaskIntoConstraints = false
+                    cell.textLabel!.textAlignment = .center
+                    cell.textLabel!.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 0).isActive = true
+                    cell.textLabel!.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: 0).isActive = true
+                    cell.textLabel!.topAnchor.constraint(equalTo: cell.topAnchor, constant: 16).isActive = true
+                    return cell
+                }
             }
         } else {
             guard let cell = wishlistTableView.dequeueReusableCell(withIdentifier: "wishlistTableViewCell", for: indexPath) as? WishlistTableViewCell else {
                 fatalError("no cell")
             }
             cell.newData = wishListViewModel.items[indexPath.row-3]
-            
             return cell
         }
     }
@@ -120,9 +150,7 @@ extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         wishlistTableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row >= 3 {
-            let wishlistDetailVC = WishlistDetailViewController()
-            wishlistDetailVC.container = wishListViewModel.items[indexPath.row-3]
-            navigationController?.pushViewController(wishlistDetailVC, animated: true)
+            self.pushView(itemData: wishListViewModel.items[indexPath.row-3])
         }
     }
     
@@ -135,9 +163,21 @@ extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - Protocol
+extension WishListViewController: WishListDetailProtocol {
+    func pushView(itemData: Items) {
+        let wishlistDetailVC = WishlistDetailViewController()
+        wishlistDetailVC.container = itemData
+        self.navigationController?.pushViewController(wishlistDetailVC, animated: true)
+    }
+}
+
+// MARK: - Custom table view cell for collection view
 class ReadyToAcceptTableViewCell: UITableViewCell {
     static let identifier = "ReadyToAcceptTableViewCell"
     var collectionView: UICollectionView!
+    var viewModel: WishListViewModel?
+    weak var wishListVCDelegate: WishListViewController?
     
     // MARK: - Func init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -168,28 +208,20 @@ class ReadyToAcceptTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func setData() {
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    override func prepareForReuse() {
-    }
-    func setupUI() {
-    }
 }
 
 extension ReadyToAcceptTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return self.viewModel?.readyToAcceptItems.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return self.collectionView.dequeueReusableCell(withReuseIdentifier: ReadyToAcceptCollectionViewCell.identifier, for: indexPath)
+        guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: ReadyToAcceptCollectionViewCell.identifier, for: indexPath) as? ReadyToAcceptCollectionViewCell else {
+            fatalError("no view")
+        }
+        cell.data = self.viewModel?.readyToAcceptItems[indexPath.row]
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapCollectionView)))
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -198,6 +230,17 @@ extension ReadyToAcceptTableViewCell: UICollectionViewDelegate, UICollectionView
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
             return 15
+    }
+    
+    @objc func tapCollectionView(sender: UITapGestureRecognizer) {
+        let location = sender.location(in: self.collectionView)
+        guard let indexPath = self.collectionView.indexPathForItem(at: location) else {
+            return
+        }
+        guard let item = self.viewModel?.items[indexPath.row] else {
+            return
+        }
+        wishListVCDelegate?.pushView(itemData: item)
     }
 }
 
@@ -217,6 +260,11 @@ class ReadyToAcceptCollectionViewCell: UICollectionViewCell {
     let itemNameLabel = UILabel()
     let waitingPeriodOverLabel = UILabel()
     let waitingDate = UILabel()
+    var data: Items? {
+        didSet {
+            setData()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -255,6 +303,22 @@ class ReadyToAcceptCollectionViewCell: UICollectionViewCell {
             self.itemNameLabel.leadingAnchor.constraint(equalTo: self.statusIconImage.trailingAnchor, constant: 4),
             self.itemNameLabel.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: -16)
         ])
+        
+        self.waitingPeriodOverLabel.font = .systemFont(ofSize: 12, weight: .medium)
+        self.waitingPeriodOverLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.waitingPeriodOverLabel.topAnchor.constraint(equalTo: self.itemNameLabel.bottomAnchor, constant: 9),
+            self.waitingPeriodOverLabel.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: 22),
+            self.waitingPeriodOverLabel.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: 22)
+        ])
+        
+        self.waitingDate.font = .systemFont(ofSize: 15, weight: .medium)
+        self.waitingDate.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.waitingDate.topAnchor.constraint(equalTo: self.waitingPeriodOverLabel.bottomAnchor, constant: 5),
+            self.waitingDate.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: 22),
+            self.waitingDate.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: 22)
+        ])
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -267,6 +331,19 @@ class ReadyToAcceptCollectionViewCell: UICollectionViewCell {
         self.itemNameLabel.text = "ItemName"
         self.waitingPeriodOverLabel.text = "Waiting Period Over"
         self.waitingDate.text = "19 August, 2021 06:51"
+        
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 2
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.layer.masksToBounds = false
     }
-
+    
+    func setData() {
+        self.itemNameLabel.text = "\(self.data?.name ?? "Item name")"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy hh:mm"
+        self.waitingDate.text = dateFormatter.string(from: self.data?.getDeadline() ?? Date.distantPast)
+    }
 }

@@ -13,6 +13,8 @@ class WishListViewModel: NSObject {
     // MARK: - Variables
     @Published var items = [Items]()
     @Published var hasItem: Bool = false
+    @Published var readyToAcceptItems = [Items]()
+    @Published var hasReadyToAcceptItems: Bool = false
     
     override init() {
         super.init()
@@ -22,11 +24,18 @@ class WishListViewModel: NSObject {
     // MARK: - Function
     func fetchData() {
         WishlistCoreDataManager.shared.getAll { items in
-            self.hasItem = items.count > 0 ? true : false
-            if self.items != items {
-                self.items = items
-                print("data refreshed")
+            self.items.removeAll()
+            self.readyToAcceptItems.removeAll()
+            for item in items where item.status == "waiting" {
+                if item.deadline! > Date() {
+                    self.items.append(item)
+                } else {
+                    self.readyToAcceptItems.append(item)
+                }
             }
+            self.hasItem = self.items.count > 0 ? true : false
+            self.hasReadyToAcceptItems = self.readyToAcceptItems.count > 0 ? true : false
+            print("data refreshed")
         }
     }
 }
