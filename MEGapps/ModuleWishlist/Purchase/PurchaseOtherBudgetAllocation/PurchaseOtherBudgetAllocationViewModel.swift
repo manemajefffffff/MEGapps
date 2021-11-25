@@ -99,7 +99,12 @@ class PurchaseOtherBudgetAllocationViewModel: NSObject {
         PurchaseCoreDataManager
             .shared
             .proceedWishlist(itemWantToBuy: item!, savingsAmountUsed: getSavingsAmountUsed(), budgetUsed: budgetUsed) { errorMessage in
-                
+                switch errorMessage {
+                case .success:
+                    print("berhasil proses wishlist")
+                case .failed:
+                    print("gagal proses wishlist")
+                }
             }
     }
     
