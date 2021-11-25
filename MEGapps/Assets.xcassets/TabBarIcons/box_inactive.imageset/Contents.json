@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "box_active.png",
+      "filename" : "box_inactive.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

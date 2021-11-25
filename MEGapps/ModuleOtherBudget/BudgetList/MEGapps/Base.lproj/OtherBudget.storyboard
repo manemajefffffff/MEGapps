@@ -92,8 +92,8 @@
         <scene sceneID="kUl-50-Doz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0QB-Fu-Fjw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Budgets" id="QhO-6c-2GL">
-                        <imageReference key="image" image="wallet_transparent" symbolScale="large"/>
+                    <tabBarItem key="tabBarItem" title="Budgets" selectedImage="wallet_active" id="QhO-6c-2GL">
+                        <imageReference key="image" image="wallet_inactive" symbolScale="large"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="0Ql-pv-1jy">
@@ -112,7 +112,8 @@
     </scenes>
     <resources>
         <image name="AddPlus" width="28" height="28"/>
-        <image name="wallet_transparent" width="32" height="32"/>
+        <image name="wallet_active" width="50" height="50"/>
+        <image name="wallet_inactive" width="30" height="30"/>
         <namedColor name="BackgroundColor">
             <color red="0.9649999737739563" green="0.96100002527236938" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

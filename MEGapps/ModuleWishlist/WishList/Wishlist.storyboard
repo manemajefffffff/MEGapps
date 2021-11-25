@@ -92,7 +92,7 @@ Tap the + button to add one.</string>
         <scene sceneID="FLd-LJ-UEv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qrc-YJ-9hw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wishlist" image="box_transparent" id="zXd-CC-Bee">
+                    <tabBarItem key="tabBarItem" title="Wishlist" image="box_inactive" selectedImage="box_active" id="zXd-CC-Bee">
                         <color key="badgeColor" name="BabyPowder"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -115,7 +115,8 @@ Tap the + button to add one.</string>
     </scenes>
     <resources>
         <image name="AddPlus" width="28" height="28"/>
-        <image name="box_transparent" width="32" height="32"/>
+        <image name="box_active" width="50" height="50"/>
+        <image name="box_inactive" width="30" height="30"/>
         <namedColor name="BabyPowder">
             <color red="0.99500000476837158" green="1" blue="0.97899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

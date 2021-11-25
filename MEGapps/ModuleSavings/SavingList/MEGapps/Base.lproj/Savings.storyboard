@@ -109,7 +109,7 @@
                             <constraint firstItem="IXq-O2-Uoh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yWL-so-yjR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Savings" image="piggybank_transparent" id="zsT-Xz-5cj"/>
+                    <tabBarItem key="tabBarItem" title="Savings" image="piggybank_inactive" selectedImage="piggybank_active" id="zsT-Xz-5cj"/>
                     <navigationItem key="navigationItem" id="oxE-D4-rtC"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -124,7 +124,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="piggybank_transparent" width="32" height="32"/>
+        <image name="piggybank_active" width="50" height="50"/>
+        <image name="piggybank_inactive" width="30" height="30"/>
         <namedColor name="BackgroundColor">
             <color red="0.9649999737739563" green="0.96100002527236938" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

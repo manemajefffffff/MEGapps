@@ -87,7 +87,6 @@
 		C6974C45272BAC87007EA0C7 /* PurchaseProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */; };
 		C6E687BA2741FA0C00929FBC /* PurchaseOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */; };
 		F92A2CC4274C6E8D00B7C427 /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A2CC3274C6E8D00B7C427 /* CustomProgressBar.swift */; };
-		F94B0AF2274FCF2C00A4B82F /* CustomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94B0AF1274FCF2C00A4B82F /* CustomTabBarItem.swift */; };
 		F95C441B274F788900ED1388 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C441A274F788900ED1388 /* CustomTabBar.swift */; };
 		F9657007273CAC6800A92636 /* PurchaseCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9657006273CAC6800A92636 /* PurchaseCategoryViewModel.swift */; };
 		F9657009273CC1B700A92636 /* SavingsHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9657008273CC1B700A92636 /* SavingsHistoryViewModel.swift */; };
@@ -209,7 +208,6 @@
 		C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductViewModel.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductViewModel.swift; sourceTree = SOURCE_ROOT; };
 		C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOverviewView.swift; sourceTree = "<group>"; };
 		F92A2CC3274C6E8D00B7C427 /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
-		F94B0AF1274FCF2C00A4B82F /* CustomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarItem.swift; sourceTree = "<group>"; };
 		F95C441A274F788900ED1388 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F9657006273CAC6800A92636 /* PurchaseCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryViewModel.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseSameItem/PurchaseCategoryViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F9657008273CC1B700A92636 /* SavingsHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryViewModel.swift; sourceTree = "<group>"; };
@@ -428,7 +426,6 @@
 				079843FB2742A64A007AC20B /* PurchaseSameItemCoreDataManager.swift */,
 				038575D5274B6664009B5701 /* PurchaseDetailCoreDataManager .swift */,
 				F95C441A274F788900ED1388 /* CustomTabBar.swift */,
-				F94B0AF1274FCF2C00A4B82F /* CustomTabBarItem.swift */,
 			);
 			path = MEGapps;
 			sourceTree = "<group>";
@@ -872,7 +869,6 @@
 				19A773682728406300219AE7 /* WishlistTableViewCell.swift in Sources */,
 				F9838B912730EF130038D041 /* OtherBudgetViewController.swift in Sources */,
 				C6E687BA2741FA0C00929FBC /* PurchaseOverviewView.swift in Sources */,
-				F94B0AF2274FCF2C00A4B82F /* CustomTabBarItem.swift in Sources */,
 				076669FB272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift in Sources */,
 				C681A73F2734DDE200AD0CF4 /* PurchaseDetailViewController.swift in Sources */,
 				076669F5272C3D8700C02B20 /* PurchaseSameItemViewController.swift in Sources */,
