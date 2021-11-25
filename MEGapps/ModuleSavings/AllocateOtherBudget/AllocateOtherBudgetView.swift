@@ -19,7 +19,7 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: - Variables
     var item: Items?
-    var insufficientAmount: Int64 = 9700000
+    var insufficientAmount: Int64 = 0
     
     // MARK: - ViewModel
     let viewModel = AllocateOtherBudgetViewModel()
@@ -37,6 +37,7 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
     private func sendReceivedDataToVM() {
         viewModel.item = item
         viewModel.insufficientAmount = insufficientAmount
+        insufficientAmountLabel.text = "\(insufficientAmount)"
     }
     
     private func subscribe() {
@@ -88,13 +89,13 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
         self.present(alert, animated: true, completion: nil)
     }
     
-    private func changeAmountWillUsed(amount: Int64, index: Int) {
-        viewModel.setOtherBudgetUsageAmount(amountUsed: amount, index: index)
-    }
-    
-    private func deleteBudgetUsed(index: Int) {
-        viewModel.deleteUsedBudget(index: index)
-    }
+//    private func changeAmountWillUsed(amount: Int64, index: Int) {
+//        viewModel.setOtherBudgetUsageAmount(amountUsed: amount, index: index)
+//    }
+//
+//    private func deleteBudgetUsed(index: Int) {
+//        viewModel.deleteUsedBudget(index: index)
+//    }
     
     // MARK: - Action
     
@@ -147,8 +148,9 @@ extension AllocateOtherBudgetView {
             }
             cell.id = indexPath.row
             cell.budget = viewModel.budgetUsed[indexPath.row]
-            cell.changeAmoutBudgetUsed = self.changeAmountWillUsed(amount:index:)
-            cell.deleteBudgetUsed = self.deleteBudgetUsed(index:)
+            cell.delegate = self
+//            cell.changeAmoutBudgetUsed = self.changeAmountWillUsed(amount:index:)
+//            cell.deleteBudgetUsed = self.deleteBudgetUsed(index:)
             
             return cell
         } else {
@@ -183,6 +185,17 @@ extension AllocateOtherBudgetView: backToAllocateOtherBudgetView {
     func sendBack(budgetUsed: [BudgetUsed], budgetNotUsed: [BudgetUsed]) {
         self.viewModel.budgetUsed = budgetUsed
         self.viewModel.budgetNotUsed = budgetNotUsed
+    }
+}
+
+extension AllocateOtherBudgetView: ChangeBudgetUsedAmountProtocol {
+    func deleteBudgetUsed(index: Int) {
+        viewModel.deleteUsedBudget(index: index)
+
+    }
+    
+    func changeAmountWillUsed(amount: Int64, index: Int) {
+        viewModel.setOtherBudgetUsageAmount(amountUsed: amount, index: index)
     }
 }
 

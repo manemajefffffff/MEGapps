@@ -23,9 +23,12 @@ class AllocateOtherBudgetTableViewCell: UITableViewCell {
         }
     }
     
-    // MARK: Closure
-    var changeAmoutBudgetUsed: ((_ amount: Int64, _ index: Int) -> Void)?
-    var deleteBudgetUsed: ((_ index: Int) -> Void)?
+    // MARK: -
+    weak var delegate: ChangeBudgetUsedAmountProtocol?
+    
+    // MARK: - Closure
+//    var changeAmoutBudgetUsed: ((_ amount: Int64, _ index: Int) -> Void)?
+//    var deleteBudgetUsed: ((_ index: Int) -> Void)?
 
 
     // MARK: - Lifecycle
@@ -48,13 +51,15 @@ class AllocateOtherBudgetTableViewCell: UITableViewCell {
     // MARK: - IBAction
     @IBAction func deleteBudgetCell(_ sender: Any) {
         print("button delete tap")
-        deleteBudgetUsed!(id)
+//        deleteBudgetUsed!(id)
+        delegate?.deleteBudgetUsed(index: id)
     }
     
     @IBAction func changeAmountWillUsed(_ sender: Any) {
         if let amount = Int64("\(budgetToUseTextField.text ?? "0")") {
             self.budgetAmountToUse = amount
-            changeAmoutBudgetUsed!(self.budgetAmountToUse, id)
+//            changeAmoutBudgetUsed!(self.budgetAmountToUse, id)
+            delegate?.changeAmountWillUsed(amount: budgetAmountToUse, index: id)
         }
     }
     
