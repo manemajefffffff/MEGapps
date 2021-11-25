@@ -40,7 +40,6 @@ class PurchaseDetailView: UIView {
 
         self.setupScrollView()
         self.manageData()
-        self.starBtnTap()
         self.setup()
         self.style()
         
@@ -59,24 +58,22 @@ class PurchaseDetailView: UIView {
             self.priceLabel.text = "\(itemPrice)"
             print(itemPrice)
         }
-        if let prioritize = self.viewModel.item?.isPrioritize {
-            if prioritize == true {
-                print("if prioritize true")
-                self.starButton.setImage(UIImage(named: "StarFill"), for: .normal)
-            } else {
-                print("if prioritize false")
-                self.starButton.setImage(UIImage(systemName: "Star"), for: .normal)
-            }
-        }
+//        if let prioritize = self.viewModel.item?.isPrioritize {
+//            if prioritize == true {
+//                self.starButton.setImage(UIImage(named: "StarFill"), for: .normal)
+//            } else {
+//                self.starButton.setImage(UIImage(systemName: "Star"), for: .normal)
+//            }
+//        }
         if let itemCategory = self.viewModel.item?.category {
             self.categoryValueLabel.text = "\(itemCategory)"
         }
         if let itemReason = self.viewModel.item?.reason {
             self.reasonToBuyValueLabel.text = "\(itemReason)"
         }
-        
     }
     
+    /*
     func setupButton() {
     print("func setupButton")
       self.setImageStarButton()
@@ -101,6 +98,8 @@ class PurchaseDetailView: UIView {
         starButton.isSelected = !starButton.isSelected
         self.setImageStarButton()
     }
+     
+     */
     
     func setupScrollView() {
         self.addSubview(navigationBar)
@@ -110,16 +109,17 @@ class PurchaseDetailView: UIView {
             navigationBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             navigationBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
         ])
-        let doneButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
         let navigationItem = UINavigationItem(title: "Wishlist Details")
         let image = UIImage(systemName: "chevron.left")?.withRenderingMode(.alwaysOriginal)
         let cancelbutton = UIBarButtonItem(image: image, style: .plain, target: self, action: nil)
         navigationItem.leftBarButtonItem = cancelbutton
-        navigationItem.rightBarButtonItem = doneButton
         navigationBar.items = [navigationItem]
         navigationBar.barTintColor = UIColor(named: "BackgroundColor")
-        doneButton.tintColor = UIColor(named: "PrimaryHSgradient")
         cancelbutton.tintColor = UIColor(named: "PrimaryHSgradient")
+        
+        if cancelbutton.isSelected {
+            doDismiss()
+        }
         
         self.addSubview(self.scrollView)
         self.scrollView.addSubview(self.contentView)
@@ -139,10 +139,14 @@ class PurchaseDetailView: UIView {
             self.contentView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor, constant: 0)
         ])
     }
+    
+    func doDismiss() {
+        self.viewController.dismiss(animated: true)
+    }
+    
 
     func setup() {
-        print("setup button in setup")
-        setupButton()
+//        setupButton()
         self.contentView.addSubview(self.itemValueLabel)
         self.contentView.addSubview(self.starButton)
         self.contentView.addSubview(self.priceLabel)
@@ -170,8 +174,7 @@ class PurchaseDetailView: UIView {
             self.itemValueLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
             self.itemValueLabel.trailingAnchor.constraint(equalTo: self.starButton.trailingAnchor, constant: -21)
         ])
-        self.starButton.setImage(UIImage(systemName: "star"), for: .normal)
-        print("setup button in STYLE")
+        self.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         self.starButton.translatesAutoresizingMaskIntoConstraints = false
         self.starButton.tintColor = UIColor(named: "StarColor")
         NSLayoutConstraint.activate([

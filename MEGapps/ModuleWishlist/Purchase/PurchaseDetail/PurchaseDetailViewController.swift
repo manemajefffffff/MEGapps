@@ -28,7 +28,9 @@ class PurchaseDetailViewController: UIViewController {
         let alert = UIAlertController(title: "Accept", message: "Please Select an Option", preferredStyle: .actionSheet)
 
         alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: {(_)in
-            print("User click Approve button")
+            print("User click Accept button")
+            self.viewModel.acceptAccWishlist()
+            // need navigation here
         }))
 
         self.present(alert, animated: true, completion: {
@@ -40,12 +42,30 @@ class PurchaseDetailViewController: UIViewController {
         let alert = UIAlertController(title: "Delete", message: "Please Select an Option", preferredStyle: .actionSheet)
 
         alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {(_)in
-            print("User click Approve button")
+            print("User click Delete button")
+            self.viewModel.deleteAccWishlist()
+            self.navigationController?.popToRootViewController(animated: true)
         }))
 
         self.present(alert, animated: true, completion: {
             print("completion block")
         })
+    }
+    
+    func savingsSufficiency() {
+        if viewModel.isSufficient == true {
+            budgetsDeducted()
+        } else {
+            othersBudget()
+        }
+    }
+    
+    func budgetsDeducted() {
+        // navigate ke page budgets deducted
+    }
+    
+    func othersBudget() {
+        // navigate ke page others budget
     }
 
 }
