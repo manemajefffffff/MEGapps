@@ -11,7 +11,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lc9-11-XSm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cCG-Ff-kx1">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cCG-Ff-kx1" customClass="CustomTabBar" customModule="MEGapps" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
