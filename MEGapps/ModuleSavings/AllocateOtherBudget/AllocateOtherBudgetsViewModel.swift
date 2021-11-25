@@ -32,12 +32,6 @@ class AllocateOtherBudgetViewModel: NSObject {
     
     // MARK: - Function(Other budget allocation)
     private func checkBudgetAmountUsed() {
-//        var amountUsedTemp: Int64 = 0
-//        for item in budgetUsage {
-//            amountUsedTemp += item.amountUsed
-//        }
-//        budgetAmountUsed = amountUsedTemp
-        
         var amountUsedTemp: Int64 = 0
         for item in budgetUsed {
             amountUsedTemp += item.amountUsed
@@ -47,18 +41,6 @@ class AllocateOtherBudgetViewModel: NSObject {
     }
     
     func getBudget() {
-//        OtherBudgetCoreDataManager.shared.get { budgets in
-//            var allBudgetTemp: [BudgetUsed] = []
-//            for item in budgets {
-//                var allBudget = BudgetUsed()
-//                allBudget.budget = item
-//                allBudgetTemp.append(allBudget)
-//            }
-//            if allBudgetTemp.count > 0 {
-//                self.budgetUsage = allBudgetTemp
-//            }
-//        }
-        
         OtherBudgetCoreDataManager.shared.get { budgets in
             var notUsedBudgetListTemp: [BudgetUsed] = []
             for budget in budgets {
@@ -98,11 +80,10 @@ class AllocateOtherBudgetViewModel: NSObject {
         }
     }
     
-    private func getSavingsAmountUsed() -> Int64 {
-        // masukin code untuk hitung tabungan yang terpakai
-        return 100000
+    private func getSavingsAmountUsed() -> Int64{
+        return 1000
     }
-    
+        
     func proceedWishlist() {
         // save ke coredata
         removeUnusedBudget()
@@ -117,20 +98,5 @@ class AllocateOtherBudgetViewModel: NSObject {
                 }
             }
 
-    }
-}
-
-extension AllocateOtherBudgetViewModel: UseBudgetsFunctionProtocol {
-    // MARK: - Function (Use budgets page)
-    func addNewBudgetUse(index: Int) {
-        var budgetToUse = budgetNotUsed[index]
-        budgetNotUsed.remove(at: index)
-        budgetNotUsed = budgetNotUsed // nanti coba comment ini
-        budgetToUse.isUsed = true
-        budgetUsed.append(budgetToUse)
-    }
-    
-    func setBudgetIsUsedStatus(index: Int) {
-        budgetNotUsed[index].isUsed = !budgetNotUsed[index].isUsed
     }
 }
