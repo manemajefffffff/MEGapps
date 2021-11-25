@@ -56,6 +56,7 @@
 		19B301F52743607800FCB9C8 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B301F42743607800FCB9C8 /* NotificationService.swift */; };
 		19C6A42C274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A42B274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift */; };
 		19C6A430274F5557002EAC79 /* UseOtherBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A42F274F5557002EAC79 /* UseOtherBudgetViewModel.swift */; };
+		19C6A432274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A431274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift */; };
 		19C7BBC02730E70900AC4499 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBBF2730E70900AC4499 /* Items.swift */; };
 		19C7BBC22730EBA700AC4499 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC12730EBA700AC4499 /* Budget.swift */; };
 		19C7BBC42730EC4900AC4499 /* SavingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC32730EC4900AC4499 /* SavingHistory.swift */; };
@@ -178,8 +179,8 @@
 		19A7736B2728411000219AE7 /* UICustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustom.swift; sourceTree = "<group>"; };
 		19B301F42743607800FCB9C8 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		19C6A42B274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocateOtherBudgetsViewModel.swift; sourceTree = "<group>"; };
-		19C6A42D274F4C6F002EAC79 /* AllocateOtherBudgetBindingsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocateOtherBudgetBindingsTextField.swift; sourceTree = "<group>"; };
 		19C6A42F274F5557002EAC79 /* UseOtherBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseOtherBudgetViewModel.swift; sourceTree = "<group>"; };
+		19C6A431274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBudgetUsedAmountProtocol.swift; sourceTree = "<group>"; };
 		19C7BBBF2730E70900AC4499 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		19C7BBC12730EBA700AC4499 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		19C7BBC32730EC4900AC4499 /* SavingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistory.swift; sourceTree = "<group>"; };
@@ -714,8 +715,8 @@
 				F9061B76274F1C0B009F1521 /* UseBudgets.storyboard */,
 				F9061B78274F1C1C009F1521 /* UseBudgetsView.swift */,
 				19C6A42B274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift */,
-				19C6A42D274F4C6F002EAC79 /* AllocateOtherBudgetBindingsTextField.swift */,
 				19C6A42F274F5557002EAC79 /* UseOtherBudgetViewModel.swift */,
+				19C6A431274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift */,
 			);
 			path = AllocateOtherBudget;
 			sourceTree = "<group>";
@@ -927,6 +928,7 @@
 				0710ACFD2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift in Sources */,
 				C6974C3F272BABF6007EA0C7 /* ViewExtension.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
+				19C6A432274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift in Sources */,
 				034FD4C7272A92800060F7F4 /* WishlistOverviewViewController.swift in Sources */,
 				07618A45273D42C500B8DF93 /* SavingsAddViewModel.swift in Sources */,
 				19D9DA7727496FD800A044D3 /* AddEditBudgetViewModel.swift in Sources */,
