@@ -28,12 +28,35 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
         allocateBudgetTableView.register(UINib(nibName: "AllocateOtherBudgetTableViewCell", bundle: nil), forCellReuseIdentifier: "AllocateOtherBudgetTableViewCell")
     }
     
+    func addAlert() {
+        let alert = UIAlertController(title: "Proceed Wishlist", message: "Are you sure you want to proceed with this wishlist?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: {action in
+            //move page to purchase overview
+            
+            
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - Action
+    
+    @IBAction func moveToPurchaseOverview(_ sender: Any) {
+        addAlert()
+    }
+    
+    @IBAction func dismissPage(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     @objc func buttonAction(sender: UIButton) {
         print("button tap")
         let storyBoard = UIStoryboard(name: "UseBudgets", bundle: nil)
-        guard let useOtherBudgetVC = storyBoard.instantiateViewController(withIdentifier: "useBudgetsPage") as? UseBudgetsView else {
-            fatalError()
-        }
+        let useOtherBudgetVC = storyBoard.instantiateViewController(withIdentifier: "useBudgetsPage")
         self.present(useOtherBudgetVC, animated: true)
     }
     

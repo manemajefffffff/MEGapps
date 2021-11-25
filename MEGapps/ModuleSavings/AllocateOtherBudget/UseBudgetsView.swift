@@ -18,6 +18,15 @@ class UseBudgetsView: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // MARK: - Actions
+    @IBAction func dismissPage(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func saveBudget(_ sender: Any) {
+        
+    }
+    
 }
 
 extension UseBudgetsView {

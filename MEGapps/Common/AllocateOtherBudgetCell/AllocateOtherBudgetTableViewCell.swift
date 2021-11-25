@@ -9,6 +9,11 @@ import UIKit
 
 class AllocateOtherBudgetTableViewCell: UITableViewCell {
 
+    // MARK: - Outlet
+    @IBOutlet weak var budgetNameLabel: UILabel!
+    @IBOutlet weak var budgetAvailabelLabel: UILabel!
+    
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +23,10 @@ class AllocateOtherBudgetTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func deleteBudgetCell(_ sender: Any) {
+        print("button delete tap")
     }
     
 }
