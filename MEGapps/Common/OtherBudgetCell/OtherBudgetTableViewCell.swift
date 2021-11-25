@@ -48,7 +48,9 @@ class OtherBudgetTableViewCell: UITableViewCell {
         }
         
         if let budgetPrice = otherBudget?.amount {
-            percent = total/budgetPrice
+            if budgetPrice > 0 {
+                percent = total/budgetPrice
+            }
             progressBar.progress = CGFloat(percent)
             print("percent", percent)
         }

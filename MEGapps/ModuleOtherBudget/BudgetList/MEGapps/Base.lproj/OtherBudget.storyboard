@@ -17,6 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no other budget allocated yet." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kec-F1-FHu">
+                                <rect key="frame" x="56" y="369" width="302" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the + button to add new budget." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6W-KD-GYT">
+                                <rect key="frame" x="68" y="395.5" width="278" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing here, yet..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxU-Tb-4t5">
+                                <rect key="frame" x="119.5" y="339" width="175" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="224" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fes-Kt-irJ">
                                 <rect key="frame" x="16" y="156" width="382" height="690"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
@@ -29,10 +47,16 @@
                         <viewLayoutGuide key="safeArea" id="oLd-EN-IiA"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="kec-F1-FHu" firstAttribute="top" secondItem="KxU-Tb-4t5" secondAttribute="bottom" constant="6" id="0nB-fC-EE1"/>
+                            <constraint firstItem="KxU-Tb-4t5" firstAttribute="centerX" secondItem="oLd-EN-IiA" secondAttribute="centerX" id="8tY-xD-ezd"/>
                             <constraint firstAttribute="trailing" secondItem="fes-Kt-irJ" secondAttribute="trailing" constant="16" id="CZP-I4-DUx"/>
                             <constraint firstItem="oLd-EN-IiA" firstAttribute="bottom" secondItem="fes-Kt-irJ" secondAttribute="bottom" constant="16" id="Qq5-Nc-A5M"/>
+                            <constraint firstItem="w6W-KD-GYT" firstAttribute="centerX" secondItem="oLd-EN-IiA" secondAttribute="centerX" id="R14-qr-Keo"/>
                             <constraint firstItem="fes-Kt-irJ" firstAttribute="top" secondItem="oLd-EN-IiA" secondAttribute="top" constant="16" id="VPT-Wr-9oA"/>
                             <constraint firstItem="fes-Kt-irJ" firstAttribute="leading" secondItem="oLd-EN-IiA" secondAttribute="leading" constant="16" id="YwT-S2-Of7"/>
+                            <constraint firstItem="kec-F1-FHu" firstAttribute="centerX" secondItem="oLd-EN-IiA" secondAttribute="centerX" id="iOt-hm-zAu"/>
+                            <constraint firstItem="KxU-Tb-4t5" firstAttribute="top" secondItem="oLd-EN-IiA" secondAttribute="top" constant="199" id="jfB-Ka-d90"/>
+                            <constraint firstItem="w6W-KD-GYT" firstAttribute="top" secondItem="kec-F1-FHu" secondAttribute="bottom" constant="6" id="weK-k7-WZQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Budget" largeTitleDisplayMode="always" id="Yxf-aM-ns4">

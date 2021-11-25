@@ -24,6 +24,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         register()
         subscribe()
+        setupEmptyState()
         //addData()
     }
     
@@ -55,6 +56,14 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
                     self?.budgetTableView.reloadData()
                 }
             }.store(in: &anyCancellable)
+    }
+    
+    private func setupEmptyState(){
+        if container.isEmpty {
+            budgetTableView.isHidden = true
+        } else {
+            budgetTableView.isHidden = false
+        }
     }
     
     private func addData() {
