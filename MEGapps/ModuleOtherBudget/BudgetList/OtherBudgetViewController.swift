@@ -11,6 +11,7 @@ import Combine
 class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - Outlet
     @IBOutlet weak var budgetTableView: UITableView!
+    @IBOutlet weak var noDataView: UIView!
     
     // MARK: - ViewModel
     private let viewModel = OtherBudgetViewModel()
@@ -25,7 +26,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
         register()
         subscribe()
         setupEmptyState()
-        //addData()
+        addData()
     }
     
     // MARK: - Actions
@@ -56,13 +57,19 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
                     self?.budgetTableView.reloadData()
                 }
             }.store(in: &anyCancellable)
+        
+        viewModel.$otherBudget
+            .receive(on: DispatchQueue.main)
+            .sink{ [weak self] _ in
+                self?.setupEmptyState()
+            }.store(in: &anyCancellable)
     }
     
     private func setupEmptyState(){
-        if container.isEmpty {
-            budgetTableView.isHidden = true
+        if viewModel.hasItem {
+            budgetTableView.backgroundView = nil
         } else {
-            budgetTableView.isHidden = false
+            budgetTableView.backgroundView = noDataView
         }
     }
     
@@ -76,7 +83,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
         
         let newData = Budget(context: context)
         newData.id = UUID()
-        newData.amount = 12345
+        newData.amount = 300000
         newData.name = "MAMAM"
         
         newData.addToTrItemBudget(budgetData)
@@ -100,6 +107,7 @@ extension OtherBudgetViewController {
         }
         
         cell.otherBudget = container[indexPath.row]
+        cell.calculateData()
         
         return cell
     }
@@ -125,5 +133,6 @@ extension OtherBudgetViewController {
 extension OtherBudgetViewController: AddEditBudgetDelegate {
     func refreshData() {
         viewModel.fetchData()
+        budgetTableView.reloadData()
     }
 }

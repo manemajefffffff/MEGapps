@@ -20,14 +20,12 @@ class OtherBudgetTableViewCell: UITableViewCell {
     
     var otherBudget: Budget? {
         didSet {
-            calculateData()
             setData()
         }
     }
     
     var budgetUsed = [TrItemBudget]()
     var total: Int64 = 0
-    var percent: Int64 = 0
     
     func setData() {
         labelProductName.text = otherBudget?.name
@@ -41,6 +39,7 @@ class OtherBudgetTableViewCell: UITableViewCell {
     
     func calculateData() {
         total = 0
+        var percent: Double = 0.0
         if let budgetUsed = otherBudget?.trItemBudget?.allObjects as? [TrItemBudget] {
             for object in budgetUsed {
                 total = object.amount + total
@@ -48,13 +47,13 @@ class OtherBudgetTableViewCell: UITableViewCell {
         }
         
         if let budgetPrice = otherBudget?.amount {
+            
+            print("budgetPrice", budgetPrice)
             if budgetPrice > 0 {
-                percent = total/budgetPrice
+                percent = Double(total)/Double(budgetPrice)
             }
             progressBar.progress = CGFloat(percent)
-            print("percent", percent)
         }
-        
     }
     
     
