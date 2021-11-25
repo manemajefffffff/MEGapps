@@ -88,11 +88,11 @@ Tap the + button to add one.</string>
             </objects>
             <point key="canvasLocation" x="2379.7101449275365" y="-35.491071428571423"/>
         </scene>
-        <!--Item-->
+        <!--Wishlist-->
         <scene sceneID="FLd-LJ-UEv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qrc-YJ-9hw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zXd-CC-Bee"/>
+                    <tabBarItem key="tabBarItem" title="Wishlist" image="square.and.arrow.up.fill" catalog="system" id="zXd-CC-Bee"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="d0r-iX-2U0">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -113,6 +113,7 @@ Tap the + button to add one.</string>
     </scenes>
     <resources>
         <image name="AddPlus" width="28" height="28"/>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <namedColor name="BackgroundColor">
             <color red="0.9649999737739563" green="0.96100002527236938" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

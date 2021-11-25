@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,11 +51,13 @@
             </objects>
             <point key="canvasLocation" x="2313" y="358"/>
         </scene>
-        <!--Item-->
+        <!--Budgets-->
         <scene sceneID="kUl-50-Doz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0QB-Fu-Fjw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="QhO-6c-2GL"/>
+                    <tabBarItem key="tabBarItem" title="Budgets" id="QhO-6c-2GL">
+                        <imageReference key="image" image="trash.square.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="0Ql-pv-1jy">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -72,6 +75,7 @@
     </scenes>
     <resources>
         <image name="AddPlus" width="28" height="28"/>
+        <image name="trash.square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="BackgroundColor">
             <color red="0.9649999737739563" green="0.96100002527236938" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
