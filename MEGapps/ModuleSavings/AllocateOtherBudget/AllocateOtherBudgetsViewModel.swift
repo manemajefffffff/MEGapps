@@ -80,7 +80,7 @@ class AllocateOtherBudgetViewModel: NSObject {
         }
     }
     
-    private func getSavingsAmountUsed() -> Int64{
+    private func getSavingsAmountUsed() -> Int64 {
         return 1000
     }
         
