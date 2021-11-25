@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Items in Category-->
+        <!--Items in Same Category-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="purchaseSameItemPage" id="Y6W-OH-hqX" customClass="PurchaseSameItemViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="roN-7h-nDR" secondAttribute="bottom" id="Hha-xI-aeF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Items in Category" id="D8f-pL-wfX">
+                    <navigationItem key="navigationItem" title="Items in Same Category" id="D8f-pL-wfX">
                         <barButtonItem key="leftBarButtonItem" id="8xX-q4-fCq">
                             <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
                             <color key="tintColor" name="PrimaryHSgradient"/>
