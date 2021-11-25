@@ -81,7 +81,14 @@ class AllocateOtherBudgetViewModel: NSObject {
     }
     
     private func getSavingsAmountUsed() -> Int64 {
-        return 1000
+        var tempTotal: Int64 = 0
+        SavingsCoreDataManager.shared.getAll { savingsHistory in
+            for savingHistory in savingsHistory {
+                tempTotal += Int64(savingHistory.amount)
+            }
+            
+        }
+        return tempTotal
     }
         
     func proceedWishlist() {
