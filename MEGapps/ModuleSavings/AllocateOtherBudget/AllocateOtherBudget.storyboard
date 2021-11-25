@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Allocate Other Budget View-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="allocateOtherBudgetPage" id="Y6W-OH-hqX" customClass="AllocateOtherBudgetView" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btg-yM-N1F">
+                                <rect key="frame" x="16" y="74" width="382" height="132"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insufficient Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkZ-Xp-gvm">
+                                        <rect key="frame" x="13" y="10" width="138" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget Amount Used" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwt-oA-8jS">
+                                        <rect key="frame" x="13" y="66" width="151" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 9.700.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ec-ap-QKk">
+                                        <rect key="frame" x="13" y="30" width="111" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 9.700.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSu-e0-jRB">
+                                        <rect key="frame" x="13" y="86" width="111" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="PureWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Uwt-oA-8jS" firstAttribute="leading" secondItem="btg-yM-N1F" secondAttribute="leading" constant="13" id="2Dr-7z-fOJ"/>
+                                    <constraint firstItem="1ec-ap-QKk" firstAttribute="top" secondItem="jkZ-Xp-gvm" secondAttribute="bottom" constant="2" id="2bT-ac-ah3"/>
+                                    <constraint firstAttribute="bottom" secondItem="mSu-e0-jRB" secondAttribute="bottom" constant="25" id="95q-sh-rih"/>
+                                    <constraint firstItem="jkZ-Xp-gvm" firstAttribute="leading" secondItem="btg-yM-N1F" secondAttribute="leading" constant="13" id="AgP-BI-NZM"/>
+                                    <constraint firstItem="Uwt-oA-8jS" firstAttribute="top" secondItem="1ec-ap-QKk" secondAttribute="bottom" constant="15" id="BwJ-IH-xSC"/>
+                                    <constraint firstItem="mSu-e0-jRB" firstAttribute="leading" secondItem="btg-yM-N1F" secondAttribute="leading" constant="13" id="JLx-oz-6dM"/>
+                                    <constraint firstItem="1ec-ap-QKk" firstAttribute="leading" secondItem="btg-yM-N1F" secondAttribute="leading" constant="13" id="MDa-Ui-QFy"/>
+                                    <constraint firstItem="jkZ-Xp-gvm" firstAttribute="top" secondItem="btg-yM-N1F" secondAttribute="top" constant="10" id="Vzr-3r-CkO"/>
+                                    <constraint firstItem="mSu-e0-jRB" firstAttribute="top" secondItem="Uwt-oA-8jS" secondAttribute="bottom" constant="2" id="zOg-ts-peG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;Use Other Budgets&quot; to add the budgets you want to use. You can use more than one budget." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGQ-jN-TMy">
+                                <rect key="frame" x="16" y="225" width="382" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="305-vD-zQc">
+                                <rect key="frame" x="16" y="799" width="382" height="49"/>
+                                <color key="backgroundColor" name="PrimaryHSgradient"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Rz3-1X-Q5t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="tintColor" name="PrimaryHSgradient"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Proceed Wishlist"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Proceed Wishlist">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="192" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-Yn-wZU">
+                                <rect key="frame" x="16" y="272" width="382" height="498"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="useOtherBudgetButton" rowHeight="50" id="Y7O-au-ce7" customClass="ButtonCellView" customModule="MEGapps" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="382" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y7O-au-ce7" id="n3u-e6-eff">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGG-CL-9Pm">
+                                                    <rect key="frame" x="19" y="0.0" width="344" height="50"/>
+                                                    <color key="backgroundColor" name="PrimaryHSgradient"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Use Other Budgets"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="xGG-CL-9Pm" secondAttribute="bottom" id="5pP-P6-GS2"/>
+                                                <constraint firstItem="xGG-CL-9Pm" firstAttribute="leading" secondItem="n3u-e6-eff" secondAttribute="leading" constant="19" id="axJ-8t-hMH"/>
+                                                <constraint firstItem="xGG-CL-9Pm" firstAttribute="top" secondItem="n3u-e6-eff" secondAttribute="top" id="dVO-qM-9at"/>
+                                                <constraint firstAttribute="trailing" secondItem="xGG-CL-9Pm" secondAttribute="trailing" constant="19" id="r2v-Wc-sGD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <connections>
+                                            <outlet property="useOtherBudgetButton" destination="xGG-CL-9Pm" id="v15-lq-PBX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="GRm-Km-IdW"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="9Ok-oU-xSW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="305-vD-zQc" secondAttribute="bottom" constant="14" id="2fn-7c-Psf"/>
+                            <constraint firstItem="b3Q-Yn-wZU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="6oa-oy-9P7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="btg-yM-N1F" secondAttribute="trailing" constant="16" id="9Ju-be-IeW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="b3Q-Yn-wZU" secondAttribute="trailing" constant="16" id="9jA-83-anP"/>
+                            <constraint firstItem="ZGQ-jN-TMy" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="16" id="Au2-Cf-4bs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZGQ-jN-TMy" secondAttribute="trailing" constant="16" id="DQx-AI-VqH"/>
+                            <constraint firstItem="305-vD-zQc" firstAttribute="top" secondItem="b3Q-Yn-wZU" secondAttribute="bottom" constant="29" id="FFA-GJ-QeD"/>
+                            <constraint firstItem="ZGQ-jN-TMy" firstAttribute="top" secondItem="btg-yM-N1F" secondAttribute="bottom" constant="19" id="OVS-Eq-Km8"/>
+                            <constraint firstItem="btg-yM-N1F" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Q5I-DW-fUf"/>
+                            <constraint firstItem="btg-yM-N1F" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="jcF-os-pko"/>
+                            <constraint firstItem="b3Q-Yn-wZU" firstAttribute="top" secondItem="ZGQ-jN-TMy" secondAttribute="bottom" constant="13.5" id="mTz-hL-Ra6"/>
+                            <constraint firstItem="305-vD-zQc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="uH3-fj-rb6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="305-vD-zQc" secondAttribute="trailing" constant="16" id="wIp-Xx-dHc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="allocateBudgetTableView" destination="b3Q-Yn-wZU" id="khy-PT-gtq"/>
+                        <outlet property="insufficientAmountLabel" destination="1ec-ap-QKk" id="OnO-lk-1jW"/>
+                        <outlet property="usedBudgetLabel" destination="mSu-e0-jRB" id="iUf-sA-O4d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="60.9375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.9649999737739563" green="0.96100002527236938" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="PrimaryHSgradient">
+            <color red="0.31799998879432678" green="0.38400000333786011" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PureWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
