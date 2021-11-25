@@ -5,13 +5,10 @@
 //  Created by Arya Ilham on 29/10/21.
 //
 
+// DEPRECATED CLASS
+
 import Foundation
 import Combine
-
-protocol UseBudgetsFunctionProtocol {
-    func addNewBudgetUse(index: Int)
-    func setBudgetIsUsedStatus(index: Int)
-}
 
 class PurchaseOtherBudgetAllocationViewModel: NSObject {
     
@@ -116,20 +113,5 @@ class PurchaseOtherBudgetAllocationViewModel: NSObject {
     func proceedWishlist() {
         // save ke coredata
         removeUnusedBudget()
-    }
-}
-
-extension PurchaseOtherBudgetAllocationViewModel: UseBudgetsFunctionProtocol {
-    // MARK: - Function (Use budgets page)
-    func addNewBudgetUse(index: Int) {
-        var budgetToUse = budgetNotUsed[index]
-        budgetNotUsed.remove(at: index)
-        budgetNotUsed = budgetNotUsed // nanti coba comment ini
-        budgetToUse.isUsed = true
-        budgetUsed.append(budgetToUse)
-    }
-    
-    func setBudgetIsUsedStatus(index: Int) {
-        budgetNotUsed[index].isUsed = !budgetNotUsed[index].isUsed
     }
 }
