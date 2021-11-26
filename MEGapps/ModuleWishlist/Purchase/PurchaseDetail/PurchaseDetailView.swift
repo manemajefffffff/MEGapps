@@ -118,6 +118,16 @@ class PurchaseDetailView: UIView {
         if let itemReason = self.viewModel.item?.reason {
             self.reasonToBuyValueLabel.text = itemReason
         }
+        
+        self.yourSavingAmountValueLabel.text = "\(formatNumber(price: (self.viewModel.savingsTotal)))"
+        
+        if let savingsUsed = self.viewModel.item?.price {
+            self.savingsUsedValueLabel.text = formatNumber(price: savingsUsed)
+        }
+        
+        self.savingsAmountLeftValueLabel.text = "\(formatNumber(price: (self.viewModel.savingsLeft)))"
+        
+        self.insufficientAmountValueLabel.text = "\(formatNumber(price: (self.viewModel.insufficientAmt)))"
     }
     
     func formatNumber(price: Int64) -> String {
@@ -310,17 +320,17 @@ class PurchaseDetailView: UIView {
         ])
         
         // Your Budget View
-        
-        //NEED FIX SHADOW COLOR AND CORNER RADIUS
-        self.yourBudgetView.translatesAutoresizingMaskIntoConstraints = false
         self.yourBudgetView.backgroundColor = UIColor(named: "PureWhite")
-        self.yourBudgetView.layer.cornerRadius = 5
-        self.yourBudgetView.layer.shadowColor = UIColor.gray.cgColor
+        self.yourBudgetView.layer.cornerRadius = 15
+        self.yourBudgetView.layer.shadowColor = UIColor(hex: "#BBBBBBFF")?.cgColor
         self.yourBudgetView.layer.shadowOffset = CGSize(width: 0, height: 4)
         self.yourBudgetView.layer.shadowRadius = 4.0
         self.yourBudgetView.layer.shadowOpacity = 0.8
+        self.yourBudgetView.translatesAutoresizingMaskIntoConstraints = false
+        self.yourBudgetView.frame.size.height = yourSavingAmountLabel.frame.size.height + insufficientAmountLabel.frame.size.height
+        // savingsUsedLabel.frame.size.height + savingsAmountLeftLabel.frame.size.height
         
-        //NEED FIX auto layout your budget height
+        // NEED FIX auto layout your budget height
         NSLayoutConstraint.activate([
             self.yourBudgetView.topAnchor.constraint(equalTo: self.yourBudgetLabel.bottomAnchor, constant: 16),
             self.yourBudgetView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
@@ -350,9 +360,6 @@ class PurchaseDetailView: UIView {
             self.yourSavingAmountValueLabel.trailingAnchor.constraint(equalTo: self.yourBudgetView.layoutMarginsGuide.trailingAnchor, constant: -18)
         ])
         
-        // Insufficient Amount Label
-        
-        //Tambahkan if untuk issufcient
         self.insufficientAmountLabel.text = "Insufficient Amount"
         self.insufficientAmountLabel.textAlignment = NSTextAlignment.left
         self.insufficientAmountLabel.font =  .systemFont(ofSize: 13, weight: .medium)
@@ -460,17 +467,6 @@ class PurchaseDetailView: UIView {
             self.deleteItemButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
         ])
     }
-//
-//    func setYourBudgetView() {
-//    }
-//
-//    func setSufficientView() {
-//
-//    }
-//
-//    func setInsufficientView() {
-//
-//    }
     
     @objc func acceptWishlistAction() {
         self.viewController.showAcceptAlert()
