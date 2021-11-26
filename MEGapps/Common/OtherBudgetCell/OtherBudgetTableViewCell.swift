@@ -20,27 +20,37 @@ class OtherBudgetTableViewCell: UITableViewCell {
     
     var otherBudget: Budget? {
         didSet {
-            calculateData()
             setData()
         }
     }
     
     var budgetUsed = [TrItemBudget]()
     var total: Int64 = 0
-    var percent: Int64 = 0
     
     func setData() {
         labelProductName.text = otherBudget?.name
         if let labelPrice = otherBudget?.amount {
-            labelProductPrice.text = "Rp. \(labelPrice)"
-            labelInitialBudget.text = "Rp. \(labelPrice)"
-            labelBudgetLeft.text = "Rp. \(labelPrice - total)"
+            labelProductPrice.text = formatNumber(price: labelPrice)
+            labelInitialBudget.text = formatNumber(price: labelPrice)
+            labelBudgetLeft.text = formatNumber(price: labelPrice - total)
         }
-        labelBudgetUsed.text = "Rp. \(total)"
+        labelBudgetUsed.text = formatNumber(price: total)
+    }
+    
+    func formatNumber(price: Int64) -> String{
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = "."
+        formatter.numberStyle = .decimal
+        
+        if let formattedPrice = formatter.string(from: price as NSNumber) {
+            return "Rp. \(formattedPrice)"
+        }
+        return "Rp. 0"
     }
     
     func calculateData() {
         total = 0
+        var percent: Double = 0.0
         if let budgetUsed = otherBudget?.trItemBudget?.allObjects as? [TrItemBudget] {
             for object in budgetUsed {
                 total = object.amount + total
@@ -48,11 +58,13 @@ class OtherBudgetTableViewCell: UITableViewCell {
         }
         
         if let budgetPrice = otherBudget?.amount {
-            percent = total/budgetPrice
+            
+            print("budgetPrice", budgetPrice)
+            if budgetPrice > 0 {
+                percent = Double(total)/Double(budgetPrice)
+            }
             progressBar.progress = CGFloat(percent)
-            print("percent", percent)
         }
-        
     }
     
     

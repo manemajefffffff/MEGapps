@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,6 +17,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWW-kz-MqC">
+                                <rect key="frame" x="56" y="339" width="302" height="77"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="uqf-Lu-RN2">
+                                        <rect key="frame" x="0.0" y="0.0" width="302" height="77"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing here, yet..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxU-Tb-4t5">
+                                                <rect key="frame" x="0.0" y="0.0" width="302" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no other budget allocated yet." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kec-F1-FHu">
+                                                <rect key="frame" x="0.0" y="30" width="302" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the + button to add new budget." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6W-KD-GYT">
+                                                <rect key="frame" x="0.0" y="56.5" width="302" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uqf-Lu-RN2" firstAttribute="leading" secondItem="kWW-kz-MqC" secondAttribute="leading" id="Mre-ur-JmH"/>
+                                    <constraint firstAttribute="trailing" secondItem="uqf-Lu-RN2" secondAttribute="trailing" id="S39-5g-xBZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="uqf-Lu-RN2" secondAttribute="bottom" id="hTl-kL-j0X"/>
+                                    <constraint firstItem="uqf-Lu-RN2" firstAttribute="top" secondItem="kWW-kz-MqC" secondAttribute="top" id="kAf-Tn-Ym1"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="224" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fes-Kt-irJ">
                                 <rect key="frame" x="16" y="156" width="382" height="690"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
@@ -32,6 +67,8 @@
                             <constraint firstItem="oLd-EN-IiA" firstAttribute="bottom" secondItem="fes-Kt-irJ" secondAttribute="bottom" constant="16" id="Qq5-Nc-A5M"/>
                             <constraint firstItem="fes-Kt-irJ" firstAttribute="top" secondItem="oLd-EN-IiA" secondAttribute="top" constant="16" id="VPT-Wr-9oA"/>
                             <constraint firstItem="fes-Kt-irJ" firstAttribute="leading" secondItem="oLd-EN-IiA" secondAttribute="leading" constant="16" id="YwT-S2-Of7"/>
+                            <constraint firstItem="kWW-kz-MqC" firstAttribute="top" secondItem="oLd-EN-IiA" secondAttribute="top" constant="199" id="ffH-vJ-qQb"/>
+                            <constraint firstItem="kWW-kz-MqC" firstAttribute="centerX" secondItem="oLd-EN-IiA" secondAttribute="centerX" id="iT9-eF-xzi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Budget" largeTitleDisplayMode="always" id="Yxf-aM-ns4">
@@ -44,17 +81,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="budgetTableView" destination="fes-Kt-irJ" id="dvV-c8-8ib"/>
+                        <outlet property="noDataView" destination="kWW-kz-MqC" id="fRz-gf-4vf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7lY-BM-GD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2313" y="358"/>
+            <point key="canvasLocation" x="2311.594202898551" y="357.58928571428572"/>
         </scene>
-        <!--Item-->
+        <!--Budgets-->
         <scene sceneID="kUl-50-Doz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0QB-Fu-Fjw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="QhO-6c-2GL"/>
+                    <tabBarItem key="tabBarItem" title="Budgets" selectedImage="wallet_active" id="QhO-6c-2GL">
+                        <imageReference key="image" image="wallet_inactive" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="0Ql-pv-1jy">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -72,6 +112,8 @@
     </scenes>
     <resources>
         <image name="AddPlus" width="28" height="28"/>
+        <image name="wallet_active" width="50" height="50"/>
+        <image name="wallet_inactive" width="30" height="30"/>
         <namedColor name="BackgroundColor">
             <color red="0.9649999737739563" green="0.96100002527236938" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

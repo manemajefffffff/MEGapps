@@ -88,6 +88,7 @@
 		C6A4866A274E171C000B3589 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A48669274E171C000B3589 /* WishListView.swift */; };
 		C6E687BA2741FA0C00929FBC /* PurchaseOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */; };
 		F92A2CC4274C6E8D00B7C427 /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A2CC3274C6E8D00B7C427 /* CustomProgressBar.swift */; };
+		F95C441B274F788900ED1388 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C441A274F788900ED1388 /* CustomTabBar.swift */; };
 		F9657007273CAC6800A92636 /* PurchaseCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9657006273CAC6800A92636 /* PurchaseCategoryViewModel.swift */; };
 		F9657009273CC1B700A92636 /* SavingsHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9657008273CC1B700A92636 /* SavingsHistoryViewModel.swift */; };
 		F965700B273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965700A273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift */; };
@@ -209,6 +210,7 @@
 		C6A48669274E171C000B3589 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOverviewView.swift; sourceTree = "<group>"; };
 		F92A2CC3274C6E8D00B7C427 /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
+		F95C441A274F788900ED1388 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F9657006273CAC6800A92636 /* PurchaseCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryViewModel.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseSameItem/PurchaseCategoryViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F9657008273CC1B700A92636 /* SavingsHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryViewModel.swift; sourceTree = "<group>"; };
 		F965700A273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryCoreDataManager.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				F965700A273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift */,
 				079843FB2742A64A007AC20B /* PurchaseSameItemCoreDataManager.swift */,
 				038575D5274B6664009B5701 /* PurchaseDetailCoreDataManager .swift */,
+				F95C441A274F788900ED1388 /* CustomTabBar.swift */,
 			);
 			path = MEGapps;
 			sourceTree = "<group>";
@@ -864,6 +867,7 @@
 			files = (
 				19D9DA7327494DD200A044D3 /* OtherBudgetViewModel.swift in Sources */,
 				078A67DD272B0ACA00B60DF5 /* HobbySavingsCellView.swift in Sources */,
+				F95C441B274F788900ED1388 /* CustomTabBar.swift in Sources */,
 				078A67DC272B08E800B60DF5 /* WishlistDetailView.swift in Sources */,
 				19A773682728406300219AE7 /* WishlistTableViewCell.swift in Sources */,
 				F9838B912730EF130038D041 /* OtherBudgetViewController.swift in Sources */,

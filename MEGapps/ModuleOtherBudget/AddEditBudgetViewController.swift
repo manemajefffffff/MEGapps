@@ -44,14 +44,17 @@ class AddEditBudgetViewController: UIViewController {
     }
     
     @IBAction func saveBudget(_ sender: Any) {
-        viewModel.saveBudget(name: budgetNameTF.text ?? "", amount: Int64(budgetAmtTF.text ?? "0") ?? 0)
-        dismiss(animated: true, completion: {
-            self.delegate?.refreshData()
-        })
+        let emptyData = checkEmptyField()
+        if emptyData == false {
+            viewModel.saveBudget(name: budgetNameTF.text ?? "", amount: Int64(budgetAmtTF.text ?? "0") ?? 0)
+            dismiss(animated: true, completion: {
+                self.delegate?.refreshData()
+            })
+        }
     }
     
     @IBAction func deleteBudget(_ sender: Any) {
-        let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete this budget?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Delete Budget", message: "Are you sure you want to delete this budget?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
             self.viewModel.deleteBudget()
@@ -89,8 +92,8 @@ class AddEditBudgetViewController: UIViewController {
                     self?.manageDeleteBtn(hidden: false)
                     self?.budgetNameTF.text = "\(budget.name ?? "")"
                     self?.budgetAmtTF.text = "\(budget.amount)"
+                    self?.title = "Edit Other Budget"
                 }
-                self?.title = "Edit Other Budget"
             }.store(in: &anyCancellable)
     }
     
@@ -102,5 +105,23 @@ class AddEditBudgetViewController: UIViewController {
     
     private func manageDeleteBtn(hidden: Bool = true) {
         deleteBtn.isHidden = hidden
+    }
+    
+    private func checkEmptyField() -> Bool{
+        if budgetNameTF.text == "" {
+            showAlert(message: "You have not inputted Budget Name")
+            return true
+        } else if budgetAmtTF.text == "" {
+            showAlert(message: "You have not inputted Budget Amount")
+            return true
+        }
+        return false
+    }
+    
+    private func showAlert(message: String) {
+        let myAlert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        myAlert.addAction(okAction)
+        self.present(myAlert, animated: true, completion: nil)
     }
 }
