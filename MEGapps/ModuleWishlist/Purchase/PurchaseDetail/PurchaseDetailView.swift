@@ -7,11 +7,15 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class PurchaseDetailView: UIView {
     // MARK: - MVVM
     private var viewModel: PurchaseDetailViewModel
     private var viewController: PurchaseDetailViewController
+    
+    // MARK: - Combine
+    var anyCancellable = Set<AnyCancellable>()
     
     // MARK: - Outlet
     let scrollView = UIScrollView()
@@ -80,6 +84,17 @@ class PurchaseDetailView: UIView {
         self.contentView.addSubview(self.reasonToBuyValueView)
         self.contentView.addSubview(self.purchaseItemButton)
         self.contentView.addSubview(self.deleteItemButton)
+        
+        self.viewController.navigationItem.largeTitleDisplayMode = .never
+        self.viewController.title =  "Accepted Wishlist"
+        
+        //show nav button (NEED FIX)
+        self.viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(dismissPage(sender:)))
+        
+    }
+    
+    @objc func dismissPage(sender: UIBarButtonItem){
+        self.viewController.dismiss(animated: true, completion: nil)
     }
     
     func style() {

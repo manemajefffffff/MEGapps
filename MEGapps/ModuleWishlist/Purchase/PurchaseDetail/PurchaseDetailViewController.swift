@@ -20,8 +20,8 @@ class PurchaseDetailViewController: UIViewController {
 
     
     override func loadView() {
-        viewModel.item = itemsPD!
         self.view = PurchaseDetailView(viewModel: viewModel, viewController: self)
+        viewModel.item = itemsPD!
    }
 
     func showAcceptAlert() {
