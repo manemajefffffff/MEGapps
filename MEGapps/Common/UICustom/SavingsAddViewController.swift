@@ -39,19 +39,27 @@ class SavingsAddViewController: UIViewController {
     }
     
     @IBAction func saveEntry(_ sender: Any) {
-        saveSavingsAmount()
-        onViewWillDisappear?()
-        self.dismiss(animated: true, completion: nil)
+        saveButtonPressed()
     }
     
     
     // MARK: - Functions
     func saveSavingsAmount() {
         self.savingsAddVM.saveSavingsAmount(createdDate: currentTime, amount: Int64(amountTextField.text ?? "0") ?? 0)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func retrieveData() {
         savingsAddVM.fetchData()
+    }
+    
+    func saveButtonPressed() {
+        let alert = UIAlertController(title: "Add Savings", message: "Are you sure you want to add Savings?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { _ in self.saveSavingsAmount()
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func emptyCheck() {
@@ -81,7 +89,7 @@ class SavingsAddViewController: UIViewController {
     }
     
     func getTodaysDate(label: UILabel) {
-        formatter.dateFormat = "dd MMMM yyyy, HH:mm"
+        formatter.dateFormat = "dd MMMM yyyy"
         label.text = "\(formatter.string(from: currentTime))"
     }
 }

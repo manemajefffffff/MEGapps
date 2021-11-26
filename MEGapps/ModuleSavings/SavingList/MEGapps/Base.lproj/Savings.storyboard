@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DaC-lA-1NP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Savings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="savings" id="BYZ-38-t0r" customClass="SavingsViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,17 +18,11 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFZ-cg-evT" customClass="HobbySavingsCellView" customModule="MEGapps" customModuleProvider="target">
                                 <rect key="frame" x="20" y="154" width="374" height="145"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="145" id="eb1-4q-tOK"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Savings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXq-O2-Uoh">
-                                <rect key="frame" x="20" y="95" width="127" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dt1-ag-hAo">
                                 <rect key="frame" x="20" y="368" width="374" height="425"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
@@ -44,8 +37,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igQ-Eh-XPZ">
-                                <rect key="frame" x="20" y="341" width="123" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accepted Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igQ-Eh-XPZ">
+                                <rect key="frame" x="20" y="341" width="181" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -54,13 +47,13 @@
                                 <rect key="frame" x="20" y="341" width="374" height="472"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no items to save up for" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5c-OC-zDT">
-                                        <rect key="frame" x="64" y="77" width="246" height="21"/>
+                                        <rect key="frame" x="64" y="125" width="246" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRg-3e-ofb">
-                                        <rect key="frame" x="81" y="114" width="212" height="39"/>
+                                        <rect key="frame" x="81" y="162" width="212" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="b54-Lj-HAs"/>
                                             <constraint firstAttribute="width" constant="212" id="ge2-RD-l3z"/>
@@ -93,24 +86,21 @@
                             <constraint firstItem="KFZ-cg-evT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7t0-u1-WY4"/>
                             <constraint firstItem="z8D-Y1-ZIX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EAi-Mf-75u"/>
                             <constraint firstItem="igQ-Eh-XPZ" firstAttribute="top" secondItem="KFZ-cg-evT" secondAttribute="bottom" constant="42" id="F1J-Je-kn0"/>
-                            <constraint firstItem="KFZ-cg-evT" firstAttribute="top" secondItem="IXq-O2-Uoh" secondAttribute="bottom" constant="18" id="FRh-kU-daw"/>
                             <constraint firstItem="Dt1-ag-hAo" firstAttribute="top" secondItem="igQ-Eh-XPZ" secondAttribute="bottom" id="J3t-zF-MQK"/>
                             <constraint firstItem="d5c-OC-zDT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LM4-HG-wCa"/>
                             <constraint firstItem="Dt1-ag-hAo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NBt-tb-u1a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KFZ-cg-evT" secondAttribute="trailing" constant="20" id="PhR-TB-9Lx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dt1-ag-hAo" secondAttribute="bottom" constant="20" id="QTU-8z-uzf"/>
+                            <constraint firstItem="KFZ-cg-evT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="RpV-rZ-fi0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dt1-ag-hAo" secondAttribute="trailing" constant="20" id="ToE-kK-DRt"/>
                             <constraint firstItem="d5c-OC-zDT" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="X2i-15-UuQ"/>
                             <constraint firstItem="z8D-Y1-ZIX" firstAttribute="top" secondItem="KFZ-cg-evT" secondAttribute="bottom" constant="42" id="XUJ-a6-Ox4"/>
                             <constraint firstItem="z8D-Y1-ZIX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="guo-Ps-hhx"/>
                             <constraint firstItem="igQ-Eh-XPZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="h5Z-Kc-quc"/>
                             <constraint firstItem="KFZ-cg-evT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jKd-Eu-4tF"/>
-                            <constraint firstItem="IXq-O2-Uoh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="95" id="s3b-OR-FgR"/>
-                            <constraint firstItem="IXq-O2-Uoh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yWL-so-yjR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="zsT-Xz-5cj"/>
-                    <navigationItem key="navigationItem" id="oxE-D4-rtC"/>
+                    <navigationItem key="navigationItem" title="Savings" largeTitleDisplayMode="always" id="lHy-fM-f7j"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emptyStateView" destination="z8D-Y1-ZIX" id="fGY-nq-ait"/>
@@ -119,6 +109,25 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3057.971014492754" y="-904.01785714285711"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="rdK-SA-Hu1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DaC-lA-1NP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="zsT-Xz-5cj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="HbC-qM-vHG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UBi-z0-D2w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Kw-ig-GTB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2147.826086956522" y="-904.01785714285711"/>
         </scene>
@@ -133,8 +142,5 @@
         <namedColor name="PureWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

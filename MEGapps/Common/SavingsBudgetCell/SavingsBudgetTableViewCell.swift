@@ -36,12 +36,12 @@ class SavingsBudgetTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        self.layer.cornerRadius = 16.0
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowRadius = 2.0
-        self.layer.shadowOpacity = 0.4
-        self.layer.shadowOffset = CGSize(width: 0, height: 3)
-        self.layer.masksToBounds = false
+        self.viewSavingsBudgetCell.layer.cornerRadius = 16.0
+        self.viewSavingsBudgetCell.layer.shadowColor = UIColor.black.cgColor
+        self.viewSavingsBudgetCell.layer.shadowRadius = 2.0
+        self.viewSavingsBudgetCell.layer.shadowOpacity = 0.4
+        self.viewSavingsBudgetCell.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.viewSavingsBudgetCell.layer.masksToBounds = false
     }
     
     private func setData() {

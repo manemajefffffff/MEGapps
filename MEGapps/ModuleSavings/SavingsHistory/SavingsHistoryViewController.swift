@@ -14,10 +14,6 @@ class SavingsHistoryViewController: UIViewController {
     @IBOutlet weak var tableViewSavingsHistory: UITableView!
     
 //MARK: - Variables
-//    var dateTime = ["21-12-2112, 12:34", "12-12-1212, 12:12", "10-01-1001, 10:01"]
-//    var amount = ["Rp. 123.456", "Rp. 456.654", "Rp. 789.000"]
-//    var details = ["one", "two", "three"]
-    
     private let savingsListViewModel = SavingsHistoryViewModel()
     var anyCancellable = Set<AnyCancellable>()
     let dateFormatter = DateFormatter()
@@ -26,7 +22,7 @@ class SavingsHistoryViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addData()
+        // addData()
         prepTableView(tableView: tableViewSavingsHistory)
        // print(coreDataManager.get())
         // Do any additional setup after loading the view.
@@ -59,6 +55,7 @@ class SavingsHistoryViewController: UIViewController {
             }.store(in: &anyCancellable)
     }
     
+    /* //Dummy Data
     func addData() {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {fatalError()}
 
@@ -74,6 +71,7 @@ class SavingsHistoryViewController: UIViewController {
             fatalError()
         }
     }
+     */
     
 //MARK: - Actions
     @IBAction func dismissPage(_ sender: Any) {
@@ -102,14 +100,14 @@ extension SavingsHistoryViewController: UITableViewDataSource, UITableViewDelega
         let details = savingsListViewModel.savingHistory[indexPath.row].wordings// get details coredata
         let status = savingsListViewModel.savingHistory[indexPath.row].status
         
-        dateFormatter.dateFormat = "MM-d-yy, HH:mm"
+        dateFormatter.dateFormat = "MM-d-yy"
         
         cell.labelDateTime.text = "\(dateFormatter.string(from: dateTime!))"
         cell.labelAmount.text = "Rp. \(amount)"
         cell.labelDetails.text = details
         
-        if status == "credit" {cell.labelAmount.textColor = UIColor(named: "CreditAmountRed")}// Change var amount with actual var
-        else if status == "debit" {cell.labelAmount.textColor = UIColor(named: "DebitAmountGreen")}// Change var amount with actual var
+        if status == "credit" {cell.labelAmount.textColor = UIColor(named: "DebitAmountGreen")}// Change var amount with actual var
+        else if status == "debit" {cell.labelAmount.textColor = UIColor(named: "CreditAmountRed")}// Change var amount with actual var
         
         return cell
     }
