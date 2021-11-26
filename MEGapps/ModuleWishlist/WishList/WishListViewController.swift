@@ -237,7 +237,7 @@ extension ReadyToAcceptTableViewCell: UICollectionViewDelegate, UICollectionView
         guard let indexPath = self.collectionView.indexPathForItem(at: location) else {
             return
         }
-        guard let item = self.viewModel?.items[indexPath.row] else {
+        guard let item = self.viewModel?.readyToAcceptItems[indexPath.row] else {
             return
         }
         wishListVCDelegate?.pushView(itemData: item)
