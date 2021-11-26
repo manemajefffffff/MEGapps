@@ -41,4 +41,23 @@ class PurchaseDetailCoreDataManager {
             fatalError()
         }
     }
+    
+    func acceptAccWishlist(_ items: Items) {
+        let context = persistentContainer.viewContext
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
+    
+    func deleteAccWishlist(_ items: Items) {
+        let context = persistentContainer.viewContext
+        context.delete(items)
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
 }

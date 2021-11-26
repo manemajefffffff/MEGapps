@@ -43,6 +43,7 @@ class PurchaseDetailView: UIView {
         self.setupScrollView()
         self.setup()
         self.style()
+        subscribe()
     }
     
     required init?(coder: NSCoder) {
@@ -50,6 +51,32 @@ class PurchaseDetailView: UIView {
     }
     
     // MARK: - Function
+    func subscribe() {
+        self.viewModel.$item
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+                self.setData()
+            }.store(in: &anyCancellable)
+    }
+    
+    func setData() {
+        if let itemName = self.viewModel.item?.name {
+            self.itemValueLabel.text = itemName
+        }
+        
+        if let itemPrice = self.viewModel.item?.price {
+            self.priceValueLabel.text = "\(itemPrice)"
+        }
+        
+        if let itemCategory = self.viewModel.item?.category {
+            self.categoryValueLabel.text = itemCategory
+        }
+        
+        if let itemReason = self.viewModel.item?.reason {
+            self.reasonToBuyValueLabel.text = itemReason
+        }
+    }
+    
     func setupScrollView() {
         self.addSubview(self.scrollView)
         self.scrollView.addSubview(self.contentView)
@@ -75,8 +102,8 @@ class PurchaseDetailView: UIView {
         self.contentView.addSubview(self.starButton)
         self.contentView.addSubview(self.priceLabel)
         self.contentView.addSubview(self.priceValueLabel)
-        self.contentView.addSubview(self.dueDateLabel)
-        self.contentView.addSubview(self.dueDateValueLabel)
+        //self.contentView.addSubview(self.dueDateLabel)
+        //self.contentView.addSubview(self.dueDateValueLabel)
         self.contentView.addSubview(self.categoryLabel)
         self.contentView.addSubview(self.categoryValueLabel)
         self.contentView.addSubview(self.reasonToBuyLabel)
@@ -91,10 +118,6 @@ class PurchaseDetailView: UIView {
         //show nav button (NEED FIX)
         self.viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(dismissPage(sender:)))
         
-    }
-    
-    @objc func dismissPage(sender: UIBarButtonItem){
-        self.viewController.dismiss(animated: true, completion: nil)
     }
     
     func style() {
@@ -130,35 +153,35 @@ class PurchaseDetailView: UIView {
         self.priceLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.priceLabel.topAnchor.constraint(equalTo: self.itemValueLabel.bottomAnchor, constant: 16),
-            self.priceLabel.bottomAnchor.constraint(equalTo: self.dueDateLabel.topAnchor, constant: -16),
+            self.priceLabel.bottomAnchor.constraint(equalTo: self.categoryLabel.topAnchor, constant: -16),
             self.priceLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
             self.priceLabel.trailingAnchor.constraint(equalTo: self.priceValueLabel.leadingAnchor, constant: -21),
             
             self.priceValueLabel.topAnchor.constraint(equalTo: self.itemValueLabel.bottomAnchor, constant: 16),
-            self.priceValueLabel.bottomAnchor.constraint(equalTo: self.dueDateLabel.topAnchor, constant: -16),
+            self.priceValueLabel.bottomAnchor.constraint(equalTo: self.categoryValueLabel.topAnchor, constant: -16),
             self.priceValueLabel.leadingAnchor.constraint(equalTo: self.priceLabel.trailingAnchor, constant: 21),
             self.priceValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
         ])
         
-        self.dueDateLabel.textAlignment = .left
-        self.dueDateLabel.text = "Due Date :"
-        self.dueDateLabel.font = .systemFont(ofSize: 17, weight: .regular)
-        self.dueDateValueLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.dueDateValueLabel.textAlignment = .right
-        self.dueDateValueLabel.text = "31 January 2022"
-        self.dueDateValueLabel.font = .systemFont(ofSize: 17, weight: .regular)
-        self.dueDateLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.dueDateLabel.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 16),
-            self.dueDateLabel.bottomAnchor.constraint(equalTo: self.categoryLabel.topAnchor, constant: -16),
-            self.dueDateLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
-            self.dueDateLabel.trailingAnchor.constraint(equalTo: self.dueDateValueLabel.leadingAnchor, constant: -21),
-            
-            self.dueDateValueLabel.topAnchor.constraint(equalTo: self.priceValueLabel.bottomAnchor, constant: 16),
-            self.dueDateValueLabel.bottomAnchor.constraint(equalTo: self.categoryValueLabel.topAnchor, constant: -16),
-            self.dueDateValueLabel.leadingAnchor.constraint(equalTo: self.dueDateLabel.trailingAnchor, constant: 21),
-            self.dueDateValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
-        ])
+//        self.dueDateLabel.textAlignment = .left
+//        self.dueDateLabel.text = "Due Date :"
+//        self.dueDateLabel.font = .systemFont(ofSize: 17, weight: .regular)
+//        self.dueDateValueLabel.translatesAutoresizingMaskIntoConstraints = false
+//        self.dueDateValueLabel.textAlignment = .right
+//        self.dueDateValueLabel.text = "31 January 2022"
+//        self.dueDateValueLabel.font = .systemFont(ofSize: 17, weight: .regular)
+//        self.dueDateLabel.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            self.dueDateLabel.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 16),
+//            self.dueDateLabel.bottomAnchor.constraint(equalTo: self.categoryLabel.topAnchor, constant: -16),
+//            self.dueDateLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
+//            self.dueDateLabel.trailingAnchor.constraint(equalTo: self.dueDateValueLabel.leadingAnchor, constant: -21),
+//
+//            self.dueDateValueLabel.topAnchor.constraint(equalTo: self.priceValueLabel.bottomAnchor, constant: 16),
+//            self.dueDateValueLabel.bottomAnchor.constraint(equalTo: self.categoryValueLabel.topAnchor, constant: -16),
+//            self.dueDateValueLabel.leadingAnchor.constraint(equalTo: self.dueDateLabel.trailingAnchor, constant: 21),
+//            self.dueDateValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
+//        ])
         
         self.categoryLabel.textAlignment = .left
         self.categoryLabel.text = "Category :"
@@ -169,12 +192,12 @@ class PurchaseDetailView: UIView {
         self.categoryValueLabel.font = .systemFont(ofSize: 17, weight: .regular)
         self.categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.categoryLabel.topAnchor.constraint(equalTo: self.dueDateLabel.bottomAnchor, constant: 16),
+            self.categoryLabel.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 16),
             self.categoryLabel.bottomAnchor.constraint(equalTo: self.reasonToBuyLabel.topAnchor, constant: -16),
             self.categoryLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
             self.categoryLabel.trailingAnchor.constraint(equalTo: self.categoryValueLabel.leadingAnchor, constant: -21),
             
-            self.categoryValueLabel.topAnchor.constraint(equalTo: self.dueDateValueLabel.bottomAnchor, constant: 16),
+            self.categoryValueLabel.topAnchor.constraint(equalTo: self.priceValueLabel.bottomAnchor, constant: 16),
             self.categoryValueLabel.bottomAnchor.constraint(equalTo: self.reasonToBuyLabel.topAnchor, constant: -16),
             self.categoryValueLabel.leadingAnchor.constraint(equalTo: self.categoryLabel.trailingAnchor, constant: 21),
             self.categoryValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
@@ -260,6 +283,10 @@ class PurchaseDetailView: UIView {
     
     @objc func deleteWishlistAction() {
         self.viewController.showDeleteAlert()
+    }
+    
+    @objc func dismissPage(sender: UIBarButtonItem){
+        self.viewController.dismiss(animated: true, completion: nil)
     }
 }
 
