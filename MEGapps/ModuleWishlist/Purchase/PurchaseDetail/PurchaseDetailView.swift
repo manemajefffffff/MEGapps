@@ -434,8 +434,7 @@ class PurchaseDetailView: UIView {
         self.viewController.showDeleteAlert()
     }
     
-    @objc func dismissPage(sender: UIBarButtonItem){
+    @objc func dismissPage(sender: UIBarButtonItem) {
         self.viewController.dismiss(animated: true, completion: nil)
     }
 }
-

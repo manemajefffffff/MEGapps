@@ -19,6 +19,8 @@ class PurchaseDetailViewModel {
 
     init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
+        fetchData()
+        calculate()
     }
     
     func fetchData() {
@@ -35,11 +37,14 @@ class PurchaseDetailViewModel {
         if let item = item {
             self.savingsLeft = savingsTotal - item.price
             
-            if savingsTotal < item.price {
+            if savingsTotal >= item.price {
                 isSufficient = true
-            } else if savingsTotal >= item.price {
+            } else if savingsTotal < item.price {
                 isSufficient = false
             }
+            print(item.price)
+            print(savingsTotal)
+            print(savingsLeft)
         }
     }
     
@@ -50,6 +55,4 @@ class PurchaseDetailViewModel {
     func deleteAccWishlist() {
         PurchaseDetailCoreDataManager.shared.deleteAccWishlist(accWishlistDetail)
     }
-    
 }
-
