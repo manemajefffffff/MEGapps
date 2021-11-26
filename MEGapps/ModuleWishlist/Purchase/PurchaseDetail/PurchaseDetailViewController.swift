@@ -25,7 +25,7 @@ class PurchaseDetailViewController: UIViewController {
    }
 
     func showAcceptAlert() {
-        let alert = UIAlertController(title: "Accept", message: "Please Select an Option", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Accept", message: "Please Select an Option", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: {(_)in
             print("User click Approve button")
@@ -37,7 +37,7 @@ class PurchaseDetailViewController: UIViewController {
     }
 
     func showDeleteAlert() {
-        let alert = UIAlertController(title: "Delete", message: "Please Select an Option", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Delete", message: "Please Select an Option", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {(_)in
             print("User click Approve button")
