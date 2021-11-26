@@ -28,7 +28,7 @@ class WishlistDetailViewController: UIViewController {
     }
     
     func showAcceptAlert() {
-        let alert = UIAlertController(title: "Add to Savings", message: "Are you sure you want to add this item to Savings?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Accept Wishlist", message: "Do you want to accept this wishlist?", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: {(_)in
             print("User click Approve button")
@@ -45,7 +45,7 @@ class WishlistDetailViewController: UIViewController {
     }
 
     func showDeleteAlert() {
-        let alert = UIAlertController(title: "Cancel Purchase", message: "Are you sure you want to cancel this item?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Cancel Wishlist", message: "Do you want to cancel this wishlist?", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Confirm", style: .destructive, handler: {(_)in
             print("User click Approve button")
