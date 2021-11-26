@@ -15,12 +15,14 @@ class PurchaseDetailViewModel {
     @Published var accWishlistDetail = Items()
     @Published var savingsTotal: Int64 = 0
     @Published var savingsLeft: Int64 = 0
+    @Published var insufficientAmt: Int64 = 0
     @Published var isSufficient = false
 
     init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
         fetchData()
-        calculate()
+//        calculate()
+        print("Test Init")
     }
     
     func fetchData() {
@@ -35,16 +37,15 @@ class PurchaseDetailViewModel {
         
     func calculate() {
         if let item = item {
-            self.savingsLeft = savingsTotal - item.price
-            
             if savingsTotal >= item.price {
                 isSufficient = true
+                print("Sufficient True View Model")
+                self.savingsLeft = savingsTotal - item.price
             } else if savingsTotal < item.price {
                 isSufficient = false
+                print("Sufficient False View Model")
+                self.insufficientAmt = item.price - savingsTotal
             }
-            print(item.price)
-            print(savingsTotal)
-            print(savingsLeft)
         }
     }
     

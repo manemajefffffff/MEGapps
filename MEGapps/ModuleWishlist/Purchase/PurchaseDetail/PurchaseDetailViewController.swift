@@ -20,8 +20,9 @@ class PurchaseDetailViewController: UIViewController {
 
     
     override func loadView() {
-        self.view = PurchaseDetailView(viewModel: viewModel, viewController: self)
         viewModel.item = itemsPD!
+        viewModel.calculate()
+        self.view = PurchaseDetailView(viewModel: viewModel, viewController: self)
    }
 
     func showAcceptAlert() {
@@ -56,9 +57,6 @@ class PurchaseDetailViewController: UIViewController {
     }
 
     func savingsSufficiency() {
-        print(viewModel.item!.price)
-        print(viewModel.savingsTotal)
-        print(viewModel.savingsLeft)
             if viewModel.isSufficient == true {
                 budgetsDeducted()
                 print("sufficient")

@@ -65,9 +65,39 @@ class PurchaseDetailView: UIView {
     func subscribe() {
         self.viewModel.$item
             .receive(on: DispatchQueue.main)
-            .sink { _ in
-                self.setData()
+            .sink {[weak self] _ in
+                self?.setData()
             }.store(in: &anyCancellable)
+        
+        self.viewModel.$isSufficient
+            .receive(on: DispatchQueue.main)
+            .sink {[weak self] _ in
+                self?.sufficientStat()
+            }.store(in: &anyCancellable)
+        
+        self.viewModel.$insufficientAmt
+            .receive(on: DispatchQueue.main)
+            .sink {[weak self] _ in
+                self?.sufficientStat()
+            }.store(in: &anyCancellable)
+        
+        self.viewModel.$savingsLeft
+            .receive(on: DispatchQueue.main)
+            .sink {[weak self] _ in
+                self?.setSavingLefAmt()
+            }.store(in: &anyCancellable)
+    }
+    
+    func sufficientStat() {
+        
+    }
+    
+    func setInsufficientAmt() {
+        
+    }
+    
+    func setSavingLefAmt() {
+        
     }
     
     func setData() {
@@ -124,8 +154,6 @@ class PurchaseDetailView: UIView {
         self.contentView.addSubview(self.starButton)
         self.contentView.addSubview(self.priceLabel)
         self.contentView.addSubview(self.priceValueLabel)
-        //self.contentView.addSubview(self.dueDateLabel)
-        //self.contentView.addSubview(self.dueDateValueLabel)
         self.contentView.addSubview(self.categoryLabel)
         self.contentView.addSubview(self.categoryValueLabel)
         self.contentView.addSubview(self.reasonToBuyLabel)
@@ -149,8 +177,10 @@ class PurchaseDetailView: UIView {
         self.viewController.navigationItem.largeTitleDisplayMode = .never
         self.viewController.title =  "Accepted Wishlist"
         
-        //show nav button (NEED FIX)
-        self.viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(dismissPage(sender:)))
+        let image = UIImage(systemName: "chevron.left")?.withRenderingMode(.alwaysOriginal)
+        let cancelbutton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(dismissPage(sender:)))
+        self.viewController.navigationItem.leftBarButtonItem = cancelbutton
+        cancelbutton.tintColor = UIColor(named: "PrimaryHSgradient")
         
     }
     
@@ -415,7 +445,7 @@ class PurchaseDetailView: UIView {
         ])
     }
     
-    func setYourBudgetView(){
+    func setYourBudgetView() {
     }
     
     func setSufficientView() {
