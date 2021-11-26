@@ -106,8 +106,8 @@ extension SavingsHistoryViewController: UITableViewDataSource, UITableViewDelega
         cell.labelAmount.text = "Rp. \(amount)"
         cell.labelDetails.text = details
         
-        if status == "credit" {cell.labelAmount.textColor = UIColor(named: "CreditAmountRed")}// Change var amount with actual var
-        else if status == "debit" {cell.labelAmount.textColor = UIColor(named: "DebitAmountGreen")}// Change var amount with actual var
+        if status == "credit" {cell.labelAmount.textColor = UIColor(named: "DebitAmountGreen")}// Change var amount with actual var
+        else if status == "debit" {cell.labelAmount.textColor = UIColor(named: "CreditAmountRed")}// Change var amount with actual var
         
         return cell
     }

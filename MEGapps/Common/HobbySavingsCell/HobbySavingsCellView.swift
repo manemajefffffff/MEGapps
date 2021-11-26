@@ -46,9 +46,10 @@ final class HobbySavingsCellView: UIView {
         
         let gradient = CAGradientLayer()// Gradient
         gradient.frame = view.bounds
-        gradient.colors = [UIColor(named: "PrimaryHSgradient"), UIColor(named: "SecondaryHSgradient")]
+        gradient.colors = [UIColor(named: "PrimaryHSgradient")?.cgColor , UIColor(named: "SecondaryHSgradient")?.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1, y: 0.5)
+        gradient.cornerRadius = 16.0
         view.layer.insertSublayer(gradient, at: 0)
         
         view.frame = self.bounds
