@@ -25,11 +25,13 @@ class PurchaseDetailViewController: UIViewController {
    }
 
     func showAcceptAlert() {
-        let alert = UIAlertController(title: "Accept", message: "Please Select an Option", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Proceed Wishlist", message: "Are you sure you want to proceed with this wishlist?", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: {(_)in
             print("User click Approve button")
         }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
         self.present(alert, animated: true, completion: {
             print("completion block")
@@ -37,11 +39,13 @@ class PurchaseDetailViewController: UIViewController {
     }
 
     func showDeleteAlert() {
-        let alert = UIAlertController(title: "Delete", message: "Please Select an Option", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Delete Wishlist", message: "Are you sure you want to delete this wishlist?", preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {(_)in
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {(_)in
             print("User click Approve button")
         }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
         self.present(alert, animated: true, completion: {
             print("completion block")

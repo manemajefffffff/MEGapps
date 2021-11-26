@@ -65,7 +65,7 @@ class PurchaseDetailView: UIView {
         }
         
         if let itemPrice = self.viewModel.item?.price {
-            self.priceValueLabel.text = "\(itemPrice)"
+            self.priceValueLabel.text = formatNumber(price: itemPrice)
         }
         
         if let itemCategory = self.viewModel.item?.category {
@@ -75,6 +75,17 @@ class PurchaseDetailView: UIView {
         if let itemReason = self.viewModel.item?.reason {
             self.reasonToBuyValueLabel.text = itemReason
         }
+    }
+    
+    func formatNumber(price: Int64) -> String{
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = "."
+        formatter.numberStyle = .decimal
+        
+        if let formattedPrice = formatter.string(from: price as NSNumber) {
+            return "Rp. \(formattedPrice)"
+        }
+        return "Rp. 0"
     }
     
     func setupScrollView() {
@@ -238,7 +249,7 @@ class PurchaseDetailView: UIView {
             self.reasonToBuyValueLabel.trailingAnchor.constraint(equalTo: self.reasonToBuyValueView.layoutMarginsGuide.trailingAnchor, constant: 0)
         ])
         
-        self.purchaseItemButton.setTitle("Purchase Item", for: .normal)
+        self.purchaseItemButton.setTitle("Proceed Wishlist", for: .normal)
         self.purchaseItemButton.setTitleColor(UIColor(named: "PureWhite"), for: .normal)
         self.purchaseItemButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
         self.purchaseItemButton.backgroundColor = UIColor(named: "PrimaryHSgradient")
@@ -248,6 +259,7 @@ class PurchaseDetailView: UIView {
         self.purchaseItemButton.layer.shadowRadius = 4.0
         self.purchaseItemButton.layer.shadowOpacity = 0.8
         self.purchaseItemButton.addTarget(self, action: #selector(acceptWishlistAction), for: .touchUpInside)
+        self.purchaseItemButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.purchaseItemButton.heightAnchor.constraint(equalToConstant: 49),
             // self.acceptWishlistButton.topAnchor.constraint(equalTo: self.reasonToBuyValueView.bottomAnchor, constant: 77),
@@ -256,8 +268,8 @@ class PurchaseDetailView: UIView {
             self.purchaseItemButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
         ])
         
-        self.deleteItemButton.translatesAutoresizingMaskIntoConstraints = false
-        self.deleteItemButton.setTitle("Delete Item", for: .normal)
+        
+        self.deleteItemButton.setTitle("Delete Wishlist", for: .normal)
         self.deleteItemButton.setTitleColor(UIColor(hex: "#000000FF"), for: .normal)
         self.deleteItemButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
         self.deleteItemButton.backgroundColor = UIColor(named: "LightSalmonPink")
@@ -266,8 +278,10 @@ class PurchaseDetailView: UIView {
         self.deleteItemButton.layer.shadowOffset = CGSize(width: 0, height: 4)
         self.deleteItemButton.layer.shadowRadius = 4.0
         self.deleteItemButton.layer.shadowOpacity = 0.8
-        self.purchaseItemButton.addTarget(self, action: #selector(deleteWishlistAction), for: .touchUpInside)
-        self.purchaseItemButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.deleteItemButton.addTarget(self, action: #selector(deleteWishlistAction), for: .touchUpInside)
+        self.deleteItemButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             self.deleteItemButton.heightAnchor.constraint(equalToConstant: 49),
             self.deleteItemButton.topAnchor.constraint(equalTo: self.purchaseItemButton.bottomAnchor, constant: 12),
