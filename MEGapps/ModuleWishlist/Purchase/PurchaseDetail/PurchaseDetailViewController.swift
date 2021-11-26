@@ -23,6 +23,10 @@ class PurchaseDetailViewController: UIViewController {
         viewModel.item = itemsPD!
         self.view = PurchaseDetailView(viewModel: viewModel, viewController: self)
    }
+    
+    func showAlert() {
+        
+    }
 
     func showAcceptAlert() {
         let alert = UIAlertController(title: "Accept", message: "Please Select an Option", preferredStyle: .actionSheet)
@@ -30,7 +34,7 @@ class PurchaseDetailViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: {(_)in
             print("User click Accept button")
             self.viewModel.acceptAccWishlist()
-            // need navigation here
+            self.savingsSufficiency()
         }))
 
         self.present(alert, animated: true, completion: {
@@ -62,10 +66,21 @@ class PurchaseDetailViewController: UIViewController {
     
     func budgetsDeducted() {
         // navigate ke page budgets deducted
+        let viewController = PurchaseOverviewViewController()
+        viewController.itemsBD = self.itemsPD
+        let navPurcOverview: UINavigationController = UINavigationController(rootViewController: viewController)
+        navPurcOverview.modalPresentationStyle = .fullScreen
+        self.present(navPurcOverview, animated: true, completion: nil)
     }
     
     func othersBudget() {
         // navigate ke page others budget
+        // Ini insufficient view controllernya tunggu ada
+//        let viewController = InsufficientAmountViewController()
+//        viewController.itemsIA = self.itemsPD
+//        let navInsufficientAmt: UINavigationController = UINavigationController(rootViewController: viewController)
+//        navInsufficientAmt.modalPresentationStyle = .fullScreen
+//        self.present(navInsufficientAmt, animated: true, completion: nil)
     }
 
 }

@@ -11,6 +11,7 @@ class PurchaseOverviewViewController: UIViewController {
     
     // MARK: - ViewModel
     var viewModel = PurchaseOverviewViewModel()
+    var itemsBD: Items?
     
     // MARK: - Variables
 

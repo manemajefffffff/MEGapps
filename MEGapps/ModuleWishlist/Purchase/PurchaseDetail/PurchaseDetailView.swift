@@ -18,7 +18,7 @@ class PurchaseDetailView: UIView {
     let scrollView = UIScrollView()
     let contentView = UIView()
     private let itemValueLabel = UILabel()
-    private let starButton = UIButton()
+//    private let starButton = UIButton()
     private let priceLabel = UILabel()
     private let priceValueLabel = UILabel()
     private let dueDateLabel = UILabel()
@@ -55,7 +55,7 @@ class PurchaseDetailView: UIView {
             self.itemValueLabel.text = "\(itemName)"
         }
         if let itemPrice = self.viewModel.item?.price {
-            self.priceLabel.text = "\(itemPrice)"
+            self.priceValueLabel.text = "\(itemPrice)"
             print(itemPrice)
         }
 //        if let prioritize = self.viewModel.item?.isPrioritize {
@@ -148,7 +148,7 @@ class PurchaseDetailView: UIView {
     func setup() {
 //        setupButton()
         self.contentView.addSubview(self.itemValueLabel)
-        self.contentView.addSubview(self.starButton)
+//        self.contentView.addSubview(self.starButton)
         self.contentView.addSubview(self.priceLabel)
         self.contentView.addSubview(self.priceValueLabel)
         self.contentView.addSubview(self.dueDateLabel)
@@ -172,16 +172,16 @@ class PurchaseDetailView: UIView {
             self.itemValueLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 16),
             self.itemValueLabel.bottomAnchor.constraint(equalTo: self.priceLabel.topAnchor, constant: -16),
             self.itemValueLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
-            self.itemValueLabel.trailingAnchor.constraint(equalTo: self.starButton.trailingAnchor, constant: -21)
+            self.itemValueLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
         ])
-        self.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        self.starButton.translatesAutoresizingMaskIntoConstraints = false
-        self.starButton.tintColor = UIColor(named: "StarColor")
-        NSLayoutConstraint.activate([
-            self.starButton.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 16),
-            self.starButton.bottomAnchor.constraint(equalTo: self.priceLabel.topAnchor, constant: -16),
-            self.starButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
-        ])
+//        self.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+//        self.starButton.translatesAutoresizingMaskIntoConstraints = false
+//        self.starButton.tintColor = UIColor(named: "StarColor")
+//        NSLayoutConstraint.activate([
+//            self.starButton.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 16),
+//            self.starButton.bottomAnchor.constraint(equalTo: self.priceLabel.topAnchor, constant: -16),
+//            self.starButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21)
+//        ])
 
         self.priceLabel.textAlignment = .left
         self.priceLabel.text = "Price :"
@@ -263,15 +263,15 @@ class PurchaseDetailView: UIView {
         self.purchaseItemButton.layer.shadowRadius = 4.0
         self.purchaseItemButton.layer.shadowOpacity = 0.8
         self.purchaseItemButton.addTarget(self, action: #selector(acceptWishlistAction), for: .touchUpInside)
+        self.purchaseItemButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.purchaseItemButton.heightAnchor.constraint(equalToConstant: 49),
-            self.purchaseItemButton.topAnchor.constraint(equalTo: self.reasonToBuyValueView.bottomAnchor, constant: 104),
+            self.purchaseItemButton.topAnchor.constraint(equalTo: self.reasonToBuyValueView.bottomAnchor, constant: 16),
 //            self.purchaseItemButton.bottomAnchor.constraint(equalTo: self.deleteItemButton.topAnchor, constant: -12),
             self.purchaseItemButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 17),
             self.purchaseItemButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
         ])
 
-        self.deleteItemButton.translatesAutoresizingMaskIntoConstraints = false
         self.deleteItemButton.setTitle("Delete Item", for: .normal)
         self.deleteItemButton.setTitleColor(UIColor(hex: "#000000FF"), for: .normal)
         self.deleteItemButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
@@ -281,8 +281,8 @@ class PurchaseDetailView: UIView {
         self.deleteItemButton.layer.shadowOffset = CGSize(width: 0, height: 4)
         self.deleteItemButton.layer.shadowRadius = 4.0
         self.deleteItemButton.layer.shadowOpacity = 0.8
-        self.purchaseItemButton.addTarget(self, action: #selector(deleteWishlistAction), for: .touchUpInside)
-        self.purchaseItemButton.translatesAutoresizingMaskIntoConstraints = false
+        self.deleteItemButton.addTarget(self, action: #selector(deleteWishlistAction), for: .touchUpInside)
+        self.deleteItemButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.deleteItemButton.heightAnchor.constraint(equalToConstant: 49),
             self.deleteItemButton.topAnchor.constraint(equalTo: self.purchaseItemButton.bottomAnchor, constant: 16),
@@ -294,11 +294,13 @@ class PurchaseDetailView: UIView {
     
     
 
-    @objc func acceptWishlistAction() {
+    @objc func acceptWishlistAction(sender: Any) {
         self.viewController.showAcceptAlert()
+        print("acceptWishlistAction jalan")
     }
 
-    @objc func deleteWishlistAction() {
+    @objc func deleteWishlistAction(sender: Any) {
         self.viewController.showDeleteAlert()
+        print("deleteWishlistAction jalan")
     }
 }
