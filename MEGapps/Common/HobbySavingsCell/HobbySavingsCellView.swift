@@ -69,7 +69,7 @@ final class HobbySavingsCellView: UIView {
         if isOpen {
             labelSavingsAmount.text = "Rp. \(self.savingAmount.formattedWithSeparator)"
         } else {
-            labelSavingsAmount.text = "Rp *******"
+            labelSavingsAmount.text = "Rp. *******"
         }
     }
     
