@@ -11,7 +11,6 @@ class PurchaseSameItemTableViewCell: UITableViewCell {
     
 //MARK: - Outlets
     @IBOutlet weak var labelProductName: UILabel!
-    @IBOutlet weak var labelProductDeadline: UILabel!
     
 //MARK: - Lifecycle
     override func awakeFromNib() {

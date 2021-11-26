@@ -25,7 +25,7 @@ class PurchaseSameItemViewController: UIViewController {
     var deadline = ["11 - 11 - 1111", "21 - 12 - 2112", "10 - 01 - 1001"]
     var wishlistAdd : WishlistAddViewModel?
     
-    var productName: String = ""
+    var productName: [String] = []
     var productDeadline: String = ""
     let dateFormatter = DateFormatter()
     var categoryChosen: String = ""
@@ -41,6 +41,8 @@ class PurchaseSameItemViewController: UIViewController {
         print("wishlist Add", wishlistAdd?.items)
         
         subscribe()
+        countData()
+        setupEmptyState()
         // Do any additional setup after loading the view.
     }
     
@@ -82,16 +84,38 @@ class PurchaseSameItemViewController: UIViewController {
             }
         }.store(in: &anyCancellable)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func countData() {
+        if let category = wishlistAdd?.items?.category {
+            categoryChosen = category
+        }
+        
+        for object in purchaseSameItemVM.items {
+            if object.category == categoryChosen {
+                productName.append(object.name ?? "None")
+                numberOfItemSameCat += 1
+            }
+        }
     }
-    */
+    
+    func setupEmptyState() {
+        if numberOfItemSameCat == 0 {
+            print("zero")
+            tableViewItems.isHidden = true
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 343, height: 50))
+            
+            self.view.addSubview(label)
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            label.textAlignment = .center
+            
+            label.text = "You have no items in same category."
+            label.textColor = .gray
+        } else {
+            print("has items")
+        }
+    }
 
 }
 
@@ -106,16 +130,8 @@ extension PurchaseSameItemViewController: UITableViewDataSource, UITableViewDele
             guard let cell = tableViewItems.dequeueReusableCell(withIdentifier: "PurchaseSameItemCell") as? PurchaseSameItemTableViewCell else {
                 fatalError("cell not found!")
             }
-            dateFormatter.dateFormat = "dd - MM - YYYY"
             
-            if purchaseSameItemVM.items[indexPath.row].category == categoryChosen {
-                productName = purchaseSameItemVM.items[indexPath.row].name ?? "" //get name coredata
-                productDeadline = dateFormatter.string(from: purchaseSameItemVM.items[indexPath.row].deadline ?? Date()) //get deadline coredata
-                numberOfItemSameCat += 1
-            }
-            
-            cell.labelProductName.text = productName //get Product Name
-            cell.labelProductDeadline.text = productDeadline //get Product Deadline
+        cell.labelProductName.text = productName[indexPath.row] //get Product Name //get Product Deadline
             
             return cell
         }

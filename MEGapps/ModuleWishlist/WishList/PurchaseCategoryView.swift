@@ -19,7 +19,7 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var tableHeight: NSLayoutConstraint!
     
     // MARK: - Variables
-    let categories = ["Technologies", "Travelling", "Scuba Diving", "Gaming", "Fashion"]
+    let categories = ["Collection Items", "Technologies", "Travelling", "Gaming", "Fashion"]
     var selectedCategories: String = ""
     private let viewModel = PurchaseCategoryViewModel()
     weak var delegate: receivedDataDelegate?
@@ -44,9 +44,9 @@ class PurchaseCategoryView: UIViewController, UITableViewDataSource, UITableView
     
     func setupUI() {
         tableView.layer.borderColor = UIColor.white.cgColor
-        tableView.layer.borderWidth = 1.0
+        tableView.layer.borderWidth = 0.5
 
-        let containerView: UIView = UIView(frame: self.tableView.frame)
+        let containerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 382, height: 400))
         containerView.backgroundColor = UIColor.clear
         containerView.layer.shadowColor = UIColor.lightGray.cgColor
         containerView.layer.shadowOffset = CGSize(width: 0, height: 5)

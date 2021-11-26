@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Purchase-->
+        <!--Add Wishlist-->
         <scene sceneID="MRf-4n-U4E">
             <objects>
                 <tableViewController storyboardIdentifier="wishlistAddSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E9B-3b-zFB" customClass="WishlistAddView" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,7 +55,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Product Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J91-qc-fV1">
                                                     <rect key="frame" x="16" y="0.0" width="342" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -66,79 +66,32 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productCategory" textLabel="wKD-ov-k4S" detailTextLabel="fiu-CI-Rmv" style="IBUITableViewCellStyleValue1" id="WGL-zv-KvN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productCategory" textLabel="wKD-ov-k4S" detailTextLabel="fiu-CI-Rmv" style="IBUITableViewCellStyleValue1" id="WGL-zv-KvN">
                                         <rect key="frame" x="20" y="106" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WGL-zv-KvN" id="BEz-X5-JGV">
                                             <rect key="frame" x="0.0" y="0.0" width="344.5" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Product Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wKD-ov-k4S">
-                                                    <rect key="frame" x="20" y="12" width="135" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wKD-ov-k4S">
+                                                    <rect key="frame" x="20" y="12" width="70" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Collection Items" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fiu-CI-Rmv">
-                                                    <rect key="frame" x="214" y="12" width="122.5" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fiu-CI-Rmv">
+                                                    <rect key="frame" x="292.5" y="12" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productDeadline" textLabel="H70-W3-iCe" detailTextLabel="smR-dJ-N29" style="IBUITableViewCellStyleValue1" id="GlV-lg-s4f">
-                                        <rect key="frame" x="20" y="150" width="374" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GlV-lg-s4f" id="Go6-EV-33J">
-                                            <rect key="frame" x="0.0" y="0.0" width="344.5" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Product Deadline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H70-W3-iCe">
-                                                    <rect key="frame" x="20" y="12" width="131.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="smR-dJ-N29">
-                                                    <rect key="frame" x="300.5" y="12" width="36" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productDatePicker" rowHeight="340" id="n9t-GO-UiH">
-                                        <rect key="frame" x="20" y="194" width="374" height="340"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n9t-GO-UiH" id="Id9-zo-wEf">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="340"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="wQb-ZM-5Kn">
-                                                    <rect key="frame" x="16" y="0.0" width="342" height="340"/>
-                                                    <color key="tintColor" name="PrimaryHSgradient"/>
-                                                    <connections>
-                                                        <action selector="dateChanged:" destination="E9B-3b-zFB" eventType="valueChanged" id="Ulj-9Q-ln4"/>
-                                                    </connections>
-                                                </datePicker>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="wQb-ZM-5Kn" firstAttribute="top" secondItem="Id9-zo-wEf" secondAttribute="top" id="3Md-mo-3XV"/>
-                                                <constraint firstAttribute="trailing" secondItem="wQb-ZM-5Kn" secondAttribute="trailing" constant="16" id="ecF-lX-EIV"/>
-                                                <constraint firstItem="wQb-ZM-5Kn" firstAttribute="leading" secondItem="Id9-zo-wEf" secondAttribute="leading" constant="16" id="qgr-cr-VCv"/>
-                                                <constraint firstAttribute="bottom" secondItem="wQb-ZM-5Kn" secondAttribute="bottom" id="twC-qz-Tji"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="132" id="VQZ-j9-Qxh">
-                                        <rect key="frame" x="20" y="534" width="374" height="132"/>
+                                        <rect key="frame" x="20" y="150" width="374" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VQZ-j9-Qxh" id="VAL-Ti-F4d">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="132"/>
@@ -176,7 +129,7 @@
                             <outlet property="delegate" destination="E9B-3b-zFB" id="gEz-LK-4MS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Purchase" largeTitleDisplayMode="never" id="RH4-0b-nlL">
+                    <navigationItem key="navigationItem" title="Add Wishlist" largeTitleDisplayMode="never" id="RH4-0b-nlL">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="nnQ-7i-EJh">
                             <color key="tintColor" name="PrimaryHSgradient"/>
                             <connections>
@@ -193,8 +146,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="categoryLabel" destination="fiu-CI-Rmv" id="Oz9-gH-EuK"/>
-                        <outlet property="deadlineDatePicker" destination="wQb-ZM-5Kn" id="V1J-WW-4e2"/>
-                        <outlet property="deadlineLabel" destination="smR-dJ-N29" id="yOV-Eg-7Vc"/>
                         <outlet property="itemNameTextField" destination="uDt-bd-9sF" id="g4q-1H-1wq"/>
                         <outlet property="itemPriceTextField" destination="J91-qc-fV1" id="MWZ-gY-gC0"/>
                         <outlet property="reasonTextView" destination="CDB-Oh-9hV" id="GBs-tf-pKl"/>

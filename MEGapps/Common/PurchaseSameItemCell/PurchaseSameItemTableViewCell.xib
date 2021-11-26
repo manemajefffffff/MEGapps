@@ -17,29 +17,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r47-Qm-ICj">
-                        <rect key="frame" x="16" y="8" width="112" height="21"/>
+                        <rect key="frame" x="16" y="20" width="112" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 - 12 - 2112" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rd-sa-p1G">
-                        <rect key="frame" x="16" y="31" width="94" height="18"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                        <color key="textColor" red="0.54126244779999999" green="0.54095995429999999" blue="0.55294352769999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="4Rd-sa-p1G" firstAttribute="top" secondItem="r47-Qm-ICj" secondAttribute="bottom" constant="2" id="Ifu-dW-0Eq"/>
-                    <constraint firstItem="r47-Qm-ICj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="YQ7-cD-OJe"/>
-                    <constraint firstItem="4Rd-sa-p1G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="eH1-6M-fUc"/>
-                    <constraint firstItem="r47-Qm-ICj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="woU-hg-8qb"/>
+                    <constraint firstItem="r47-Qm-ICj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="RcE-YE-oKi"/>
+                    <constraint firstItem="r47-Qm-ICj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="zcz-21-HOy"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="labelProductDeadline" destination="4Rd-sa-p1G" id="c4l-GJ-Tzj"/>
                 <outlet property="labelProductName" destination="r47-Qm-ICj" id="2Vn-8L-iLQ"/>
             </connections>
             <point key="canvasLocation" x="138.40579710144928" y="139.95535714285714"/>
