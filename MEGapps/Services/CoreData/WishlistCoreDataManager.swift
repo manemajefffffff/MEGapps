@@ -53,9 +53,9 @@ class WishlistCoreDataManager {
         newData.name = newItem.name
         newData.category = newItem.category
         newData.reason = newItem.reason
-        newData.deadline = newItem.deadline
-        newData.price = newItem.price
         newData.createdAt = Date()
+        newData.deadline = newData.getDeadline() //newItem.deadline
+        newData.price = newItem.price
         newData.isPrioritize = false
         newData.status = "waiting"
         

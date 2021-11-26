@@ -25,8 +25,8 @@ class WishlistTableViewCell: UITableViewCell {
         self.statusIconImg.image = self.newData?.getImage()
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd, yyyy"        
-        self.waitingEndDateLbl.text = dateFormatter.string(from: self.newData?.getDeadline() ?? Date.distantPast)
+        dateFormatter.dateFormat = "MMMM dd, yyyy hh:mm"        
+        self.waitingEndDateLbl.text = dateFormatter.string(from: self.newData?.deadline ?? Date.distantPast)
     }
     
     override func awakeFromNib() {
@@ -42,7 +42,8 @@ class WishlistTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         itemNameLbl.text = "ItemName"
         waitingEndDateLbl.text = "Date"
-        statusIconImg.image = UIImage(systemName: "clock")
+        statusIconImg.image = UIImage(systemName: "time")
+        statusIconImg.tintColor = .systemRed
     }
     func setupUI() {
         wishlistContainerView.layer.shadowColor = UIColor.black.cgColor

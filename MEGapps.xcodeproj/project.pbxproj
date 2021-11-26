@@ -85,6 +85,7 @@
 		C6974C41272BAC67007EA0C7 /* PurchaseProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C40272BAC67007EA0C7 /* PurchaseProductView.swift */; };
 		C6974C43272BAC7C007EA0C7 /* PurchaseProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C42272BAC7C007EA0C7 /* PurchaseProductViewController.swift */; };
 		C6974C45272BAC87007EA0C7 /* PurchaseProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */; };
+		C6A4866A274E171C000B3589 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A48669274E171C000B3589 /* WishListView.swift */; };
 		C6E687BA2741FA0C00929FBC /* PurchaseOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */; };
 		F92A2CC4274C6E8D00B7C427 /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A2CC3274C6E8D00B7C427 /* CustomProgressBar.swift */; };
 		F95C441B274F788900ED1388 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C441A274F788900ED1388 /* CustomTabBar.swift */; };
@@ -206,6 +207,7 @@
 		C6974C40272BAC67007EA0C7 /* PurchaseProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductView.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductView.swift; sourceTree = SOURCE_ROOT; };
 		C6974C42272BAC7C007EA0C7 /* PurchaseProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductViewController.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductViewController.swift; sourceTree = SOURCE_ROOT; };
 		C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductViewModel.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductViewModel.swift; sourceTree = SOURCE_ROOT; };
+		C6A48669274E171C000B3589 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOverviewView.swift; sourceTree = "<group>"; };
 		F92A2CC3274C6E8D00B7C427 /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
 		F95C441A274F788900ED1388 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -552,6 +554,7 @@
 				19EDF0A927283E3400AF54A7 /* Wishlist.storyboard */,
 				193D48FE2728EFC300F46C30 /* WishListViewController.swift */,
 				193D4905272923B100F46C30 /* WishListViewModel.swift */,
+				C6A48669274E171C000B3589 /* WishListView.swift */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -871,6 +874,7 @@
 				C6E687BA2741FA0C00929FBC /* PurchaseOverviewView.swift in Sources */,
 				076669FB272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift in Sources */,
 				C681A73F2734DDE200AD0CF4 /* PurchaseDetailViewController.swift in Sources */,
+				C6A4866A274E171C000B3589 /* WishListView.swift in Sources */,
 				076669F5272C3D8700C02B20 /* PurchaseSameItemViewController.swift in Sources */,
 				F9657009273CC1B700A92636 /* SavingsHistoryViewModel.swift in Sources */,
 				C681A73D2734DDD100AD0CF4 /* PurchaseDetailViewModel.swift in Sources */,
@@ -1127,7 +1131,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 282R274LXF;
+				DEVELOPMENT_TEAM = R8CWTPS5QZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1155,7 +1159,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 282R274LXF;
+				DEVELOPMENT_TEAM = R8CWTPS5QZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

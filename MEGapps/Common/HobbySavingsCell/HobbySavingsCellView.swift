@@ -46,10 +46,10 @@ final class HobbySavingsCellView: UIView {
         
         let gradient = CAGradientLayer()// Gradient
         gradient.frame = view.bounds
-        gradient.colors = [UIColor(named: "PrimaryHSgradient"), UIColor(named: "SecondaryHSgradient")]
+        gradient.colors = [UIColor(named: "PrimaryHSgradient")?.cgColor , UIColor(named: "SecondaryHSgradient")?.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1, y: 0.5)
-        // gradient.endPoint <-- ini apa ya?
+        gradient.cornerRadius = 16.0
         view.layer.insertSublayer(gradient, at: 0)
         
         view.frame = self.bounds
@@ -57,7 +57,7 @@ final class HobbySavingsCellView: UIView {
         self.addSubview(view)
         self.buttonAddAmount.layer.cornerRadius = 16.0// Button Rounded
         
-        self.labelSavingsAmount.text = "Rp\(self.savingAmount)"
+        self.labelSavingsAmount.text = "Rp. \(self.savingAmount.formattedWithSeparator)"
         self.showAmount()
     }
     
@@ -67,9 +67,9 @@ final class HobbySavingsCellView: UIView {
     
     func showAmount() {
         if isOpen {
-            labelSavingsAmount.text = "Rp\(self.savingAmount)"
+            labelSavingsAmount.text = "Rp. \(self.savingAmount.formattedWithSeparator)"
         } else {
-            labelSavingsAmount.text = "Rp*******"
+            labelSavingsAmount.text = "Rp *******"
         }
     }
     
@@ -91,4 +91,17 @@ final class HobbySavingsCellView: UIView {
     }
     
     
+}
+
+extension Formatter {
+    static let withSeparator: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = "."
+        return formatter
+    }()
+}
+
+extension Numeric {
+    var formattedWithSeparator: String { Formatter.withSeparator.string(for: self) ?? "" }
 }

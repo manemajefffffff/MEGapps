@@ -24,15 +24,12 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
     @IBOutlet weak var itemNameTextField: UITextField!
     @IBOutlet weak var itemPriceTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var deadlineDatePicker: UIDatePicker!
     @IBOutlet weak var reasonTextView: UITextView!
-    @IBOutlet weak var deadlineLabel: UILabel!
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        deadlineDatePicker.isHidden = true
         setupUI()
     }
     // MARK: - Actions
@@ -50,7 +47,6 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
             viewModel.items?.price  = Int64(price) ?? 0
         }
         viewModel.items?.reason = reasonTextView.text
-        viewModel.items?.deadline = deadlineDatePicker.date
         viewModel.items?.category = category
         
         let storyBoard = UIStoryboard(name: "PurchaseSameItem", bundle: nil)
@@ -79,25 +75,22 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
     
     func checkEmptyField(){
         if itemNameTextField.text!.isEmpty {
-            displayAlert(userMessage: "Empty Text Field Name")
+            displayAlert(userMessage: "You have not inputted Product Name")
             return
         } else if itemPriceTextField.text!.isEmpty {
-            displayAlert(userMessage: "Empty Price Field")
+            displayAlert(userMessage: "You have not inputted Product Price")
             return
-        } else if categoryLabel.text == "Collection Items"{
-            displayAlert(userMessage: "Choose Category")
-            return
-        } else if deadlineLabel.text == "Date" {
-            displayAlert(userMessage: "Empty Date")
+        } else if categoryLabel.text == ""{
+            displayAlert(userMessage: "You have not chosen Product Category")
             return
         } else if reasonTextView.text.isEmpty {
-            displayAlert(userMessage: "Empty Reason Field")
+            displayAlert(userMessage: "You have not inputted Reason to buy")
             return
         }
     }
     
     func displayAlert(userMessage: String){
-        let myAlert = UIAlertController(title: "Warning!", message: userMessage, preferredStyle: .alert)
+        let myAlert = UIAlertController(title: "Error", message: userMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         myAlert.addAction(okAction)
         self.present(myAlert, animated: true, completion: nil)
@@ -105,23 +98,15 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
     
     func passData(data: String) {
         categoryLabel.text =  data
-        categoryLabel.textColor = UIColor.black
+        categoryLabel.textColor = UIColor.gray
         category = data
+        self.tableView.reloadData()
     }
     
     // MARK: - TextView Function
     func textViewDidChange(_ textView: UITextView) {
         placeholderLabel.isHidden = !textView.text.isEmpty
     }
-    
-    // MARK: - PickerView
-    @IBAction func dateChanged(_ sender: Any) {
-        dateFormatter.dateFormat = "MMMM d, yyyy"
-        let date = dateFormatter.string(from: deadlineDatePicker.date)
-        deadlineLabel.textColor = UIColor.black
-        deadlineLabel.text = date
-    }
-    
     
     // MARK: - TableView Function
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -143,11 +128,6 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 && indexPath.row == 4 {
-            let height: CGFloat = deadlineDatePicker.isHidden ? 0.1 : 340.0
-            return height
-        }
-
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
 
@@ -164,16 +144,7 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
             
             vc.delegate = self
             vc.modalPresentationStyle = .pageSheet
-//            self.present(vc, animated: true, completion: nil)
             self.present(navVc, animated: true, completion: nil)
-        } else if deadlineIndexPath as IndexPath == indexPath {
-            deadlineDatePicker.isHidden = !deadlineDatePicker.isHidden
-
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            self.tableView.beginUpdates()
-            self.tableView.deselectRow(at: indexPath, animated: true)
-            self.tableView.endUpdates()
-            })
         }
     }
     

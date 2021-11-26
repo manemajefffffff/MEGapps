@@ -26,7 +26,8 @@ class SavingsViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepCustomView(view: viewHobbySavingsCell)
+        NotificationService.shared.requestAuthorization()
+        //prepCustomView(view: viewHobbySavingsCell)
         prepTableView(view: tableViewSavingsBudget)
         self.updateView()// init call to get data
         movePage()
@@ -35,6 +36,7 @@ class SavingsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tableViewSavingsBudget.reloadData()
         super.viewWillAppear(animated)
     }
     
@@ -58,7 +60,7 @@ class SavingsViewController: UIViewController {
 //        emptyStateView.isHidden = true
     }
     
-    func prepCustomView(view: HobbySavingsCellView) {
+    func prepCustomView(view: HobbySavingsCellView) {// unused
         view.layer.shadowColor = UIColor.black.cgColor // View DropShadow
         view.layer.shadowRadius = 4.0
         view.layer.shadowOpacity = 0.8
@@ -112,6 +114,7 @@ class SavingsViewController: UIViewController {
             }
             viewController.delegate = self
             let navController = UINavigationController(rootViewController: viewController)
+            navController.modalPresentationStyle = .fullScreen
             self.present(navController, animated: true)
         }
         viewHobbySavingsCell.addButtonPressed = {
