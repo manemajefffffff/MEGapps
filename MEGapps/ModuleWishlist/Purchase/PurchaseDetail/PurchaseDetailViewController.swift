@@ -43,7 +43,7 @@ class PurchaseDetailViewController: UIViewController {
 
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {(_)in
             print("User click Delete button")
-            self.savingsSufficiency()
+            self.viewModel.deleteAccWishlist()
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -52,6 +52,18 @@ class PurchaseDetailViewController: UIViewController {
 
         self.present(alert, animated: true, completion: {
             print("completion block B")
+        })
+    }
+    
+    func prioritizeAlert() {
+        let alert = UIAlertController(title: "Unable to Prioritize", message: "You have more than 1 prioritized item!", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Accept", style: .destructive, handler: {(_)in
+            print("User click Accept button")
+        }))
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block C")
         })
     }
 

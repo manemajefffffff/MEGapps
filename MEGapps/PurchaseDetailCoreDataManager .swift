@@ -35,6 +35,8 @@ class PurchaseDetailCoreDataManager {
     func getAll(completion: @escaping(_ items: [Items]) -> Void) {
         let context = persistentContainer.viewContext
         do {
+            let fetchRequest = Items.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "isPrioritize == %@", true)
             let data = try context.fetch(Items.fetchRequest())
             completion(data)
         } catch {

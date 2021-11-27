@@ -430,6 +430,7 @@ class PurchaseDetailView: UIView {
                 self.savingsAmountLeftValueLabel.topAnchor.constraint(equalTo: self.savingsUsedLabel.bottomAnchor, constant: 20),
                 self.savingsAmountLeftValueLabel.trailingAnchor.constraint(equalTo: self.yourBudgetView.layoutMarginsGuide.trailingAnchor, constant: -18)
             ])
+        
         if viewModel.isSufficient == true {
             self.purchaseItemButton.setTitle("Proceed Wishlist", for: .normal)
         } else {
@@ -475,7 +476,11 @@ class PurchaseDetailView: UIView {
     }
     
     @objc func acceptWishlistAction() {
-        self.viewController.showAcceptAlert()
+        if viewModel.isSufficient == true {
+            self.viewController.showAcceptAlert()
+        } else {
+            self.viewController.othersBudget()
+        }
     }
     
     @objc func deleteWishlistAction() {
@@ -484,6 +489,11 @@ class PurchaseDetailView: UIView {
     
     @objc func starButtonTapped() {
         self.starButton.isSelected = !self.starButton.isSelected
+        if starButton.isSelected {
+            viewModel.item?.isPrioritize = true
+        } else {
+            viewModel.item?.isPrioritize = false
+        }
     }
     
     @objc func dismissPage(sender: UIBarButtonItem) {
