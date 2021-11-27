@@ -327,15 +327,19 @@ class PurchaseDetailView: UIView {
         self.yourBudgetView.layer.shadowRadius = 4.0
         self.yourBudgetView.layer.shadowOpacity = 0.8
         self.yourBudgetView.translatesAutoresizingMaskIntoConstraints = false
-        self.yourBudgetView.frame.size.height = yourSavingAmountLabel.frame.size.height + insufficientAmountLabel.frame.size.height
-        // savingsUsedLabel.frame.size.height + savingsAmountLeftLabel.frame.size.height
+        
+        var bottomConstraint = self.yourBudgetView.bottomAnchor.constraint(equalTo: self.insufficientAmountLabel.topAnchor, constant: 40)
+        
+        if viewModel.isSufficient == true {
+            bottomConstraint = self.yourBudgetView.bottomAnchor.constraint(equalTo: self.savingsAmountLeftLabel.topAnchor, constant: 40)
+        }
         
         // NEED FIX auto layout your budget height
         NSLayoutConstraint.activate([
             self.yourBudgetView.topAnchor.constraint(equalTo: self.yourBudgetLabel.bottomAnchor, constant: 16),
             self.yourBudgetView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
             self.yourBudgetView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
-            self.yourBudgetView.bottomAnchor.constraint(equalTo: self.purchaseItemButton.topAnchor, constant: -142)
+            bottomConstraint
         ])
         
         // Your Saving Amount Label
