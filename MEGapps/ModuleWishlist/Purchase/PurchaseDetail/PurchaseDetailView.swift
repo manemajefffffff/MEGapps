@@ -163,7 +163,7 @@ class PurchaseDetailView: UIView {
     
     func setup() {
         self.contentView.addSubview(self.itemValueLabel)
-        self.contentView.addSubview(self.starButton)
+        self.scrollView.addSubview(self.starButton)
         self.contentView.addSubview(self.priceLabel)
         self.contentView.addSubview(self.priceValueLabel)
         self.contentView.addSubview(self.categoryLabel)
@@ -224,9 +224,11 @@ class PurchaseDetailView: UIView {
             self.itemValueLabel.trailingAnchor.constraint(equalTo: self.starButton.trailingAnchor, constant: -21)
         ])
         
-        self.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        self.starButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
+        self.starButton.setImage(UIImage(systemName: "star"), for: .normal)
         self.starButton.translatesAutoresizingMaskIntoConstraints = false
         self.starButton.tintColor = UIColor(named: "StarColor")
+        self.starButton.addTarget(self, action: #selector(starButtonTapped), for: .touchUpInside)
         NSLayoutConstraint.activate([
             self.starButton.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 16),
             self.starButton.bottomAnchor.constraint(equalTo: self.priceLabel.topAnchor, constant: -16),
@@ -478,6 +480,10 @@ class PurchaseDetailView: UIView {
     
     @objc func deleteWishlistAction() {
         self.viewController.showDeleteAlert()
+    }
+    
+    @objc func starButtonTapped() {
+        self.starButton.isSelected = !self.starButton.isSelected
     }
     
     @objc func dismissPage(sender: UIBarButtonItem) {
