@@ -45,7 +45,22 @@ class PurchaseDetailCoreDataManager {
     }
     
     func acceptAccWishlist(_ items: Items) {
+        guard let objectContext = items.managedObjectContext else { return }
+        items.status = "completed"
+        do {
+            try objectContext.save()
+        } catch {
+            fatalError()
+        }
+        
         let context = persistentContainer.viewContext
+
+        let newSavingsHistory = SavingsHistory(context: context)
+        newSavingsHistory.id = UUID()
+        newSavingsHistory.createdAt = Date()
+        newSavingsHistory.amount = items.price * -1
+        newSavingsHistory.status = "debit"
+        newSavingsHistory.wordings = "Purchase \(items.name ?? "Item")"
         do {
             try context.save()
         } catch {
@@ -54,10 +69,21 @@ class PurchaseDetailCoreDataManager {
     }
     
     func deleteAccWishlist(_ items: Items) {
-        let context = persistentContainer.viewContext
-        context.delete(items)
+        guard let objectContext = items.managedObjectContext else { return }
+        objectContext.delete(items)
         do {
-            try context.save()
+            try objectContext.save()
+        } catch {
+            fatalError()
+        }
+    }
+    
+    func changePrioritizeStatus(_ items: Items) {
+        guard let objectContext = items.managedObjectContext else { return }
+        items.isPrioritize = items.isPrioritize
+        print("Prioritize item \(items.isPrioritize)")
+        do {
+            try objectContext.save()
         } catch {
             fatalError()
         }

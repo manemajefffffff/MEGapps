@@ -17,7 +17,6 @@ class PurchaseDetailViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    
     override func loadView() {
         viewModel.item = itemsPD!
         viewModel.calculate()
@@ -29,6 +28,7 @@ class PurchaseDetailViewController: UIViewController {
 
         alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: {(_)in
             print("User click Accept button")
+            self.viewModel.acceptAccWishlist()
             self.savingsSufficiency()
         }))
         
@@ -79,8 +79,11 @@ class PurchaseDetailViewController: UIViewController {
             }
         }
     
+    func changePriorityStatus() {
+        self.viewModel.changePriorityStatus()
+    }
+    
     func budgetsDeducted() {
-            // navigate ke page budgets deducted
             let viewController = PurchaseOverviewViewController()
 //            viewController.itemsBD = self.itemsPD
             let navPurcOverview: UINavigationController = UINavigationController(rootViewController: viewController)

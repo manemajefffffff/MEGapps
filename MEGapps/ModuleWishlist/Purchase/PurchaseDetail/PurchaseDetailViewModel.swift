@@ -11,8 +11,7 @@ import UIKit
 
 class PurchaseDetailViewModel {
     let bundle: Bundle
-    @Published var item: Items?
-    @Published var accWishlistDetail = Items()
+    @Published var item = Items()
     @Published var savingsTotal: Int64 = 0
     @Published var savingsLeft: Int64 = 0
     @Published var insufficientAmt: Int64 = 0
@@ -21,7 +20,6 @@ class PurchaseDetailViewModel {
     init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
         fetchData()
-//        calculate()
         print("Test Init")
     }
     
@@ -36,7 +34,6 @@ class PurchaseDetailViewModel {
     }
         
     func calculate() {
-        if let item = item {
             if savingsTotal >= item.price {
                 isSufficient = true
                 print("Sufficient True View Model")
@@ -46,14 +43,19 @@ class PurchaseDetailViewModel {
                 print("Sufficient False View Model")
                 self.insufficientAmt = item.price - savingsTotal
             }
-        }
+    }
+    
+    func changePriorityStatus() {
+        item.isPrioritize = !item.isPrioritize
+        PurchaseDetailCoreDataManager.shared.changePrioritizeStatus(item)
+        
     }
     
     func acceptAccWishlist() {
-        PurchaseDetailCoreDataManager.shared.acceptAccWishlist(accWishlistDetail)
+        PurchaseDetailCoreDataManager.shared.acceptAccWishlist(item)
     }
     
     func deleteAccWishlist() {
-        PurchaseDetailCoreDataManager.shared.deleteAccWishlist(accWishlistDetail)
+        PurchaseDetailCoreDataManager.shared.deleteAccWishlist(item)
     }
 }

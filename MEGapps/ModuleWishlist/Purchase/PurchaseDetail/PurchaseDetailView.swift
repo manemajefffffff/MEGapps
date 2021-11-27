@@ -103,30 +103,14 @@ class PurchaseDetailView: UIView {
     }
     
     func setData() {
-        if let itemName = self.viewModel.item?.name {
-            self.itemValueLabel.text = itemName
-        }
-        
-        if let itemPrice = self.viewModel.item?.price {
-            self.priceValueLabel.text = formatNumber(price: itemPrice)
-        }
-        
-        if let itemCategory = self.viewModel.item?.category {
-            self.categoryValueLabel.text = itemCategory
-        }
-        
-        if let itemReason = self.viewModel.item?.reason {
-            self.reasonToBuyValueLabel.text = itemReason
-        }
-        
+        self.itemValueLabel.text = self.viewModel.item.name
+        starButton.isSelected = self.viewModel.item.isPrioritize
+        self.priceValueLabel.text = "\(formatNumber(price: (self.viewModel.item.price)))"
+        self.categoryValueLabel.text = self.viewModel.item.category
+        self.reasonToBuyValueLabel.text = self.viewModel.item.reason
         self.yourSavingAmountValueLabel.text = "\(formatNumber(price: (self.viewModel.savingsTotal)))"
-        
-        if let savingsUsed = self.viewModel.item?.price {
-            self.savingsUsedValueLabel.text = formatNumber(price: savingsUsed)
-        }
-        
+        self.savingsUsedValueLabel.text = "\(formatNumber(price: (self.viewModel.item.price)))"
         self.savingsAmountLeftValueLabel.text = "\(formatNumber(price: (self.viewModel.savingsLeft)))"
-        
         self.insufficientAmountValueLabel.text = "\(formatNumber(price: (self.viewModel.insufficientAmt)))"
     }
     
@@ -161,6 +145,7 @@ class PurchaseDetailView: UIView {
         ])
     }
     
+    // MARK: - Setup
     func setup() {
         self.contentView.addSubview(self.itemValueLabel)
         self.scrollView.addSubview(self.starButton)
@@ -210,6 +195,7 @@ class PurchaseDetailView: UIView {
         
     }
     
+    // MARK: - Style
     func style() {
         self.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -311,7 +297,7 @@ class PurchaseDetailView: UIView {
             self.reasonToBuyValueLabel.trailingAnchor.constraint(equalTo: self.reasonToBuyValueView.layoutMarginsGuide.trailingAnchor, constant: 0)
         ])
         
-        // Your Budget Label
+        // MARK: - Your Budget Label
         self.yourBudgetLabel.textAlignment = .left
         self.yourBudgetLabel.text = "Your Budgets"
         self.yourBudgetLabel.font = .systemFont(ofSize: 20, weight: .semibold)
@@ -321,7 +307,7 @@ class PurchaseDetailView: UIView {
             self.yourBudgetLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20)
         ])
         
-        // Your Budget View
+        // MARK: - Your Budget View
         self.yourBudgetView.backgroundColor = UIColor(named: "PureWhite")
         self.yourBudgetView.layer.cornerRadius = 15
         self.yourBudgetView.layer.shadowColor = UIColor(hex: "#BBBBBBFF")?.cgColor
@@ -336,7 +322,7 @@ class PurchaseDetailView: UIView {
             bottomConstraint = self.yourBudgetView.bottomAnchor.constraint(equalTo: self.savingsAmountLeftLabel.topAnchor, constant: 40)
         }
         
-        // NEED FIX auto layout your budget height
+        // MARK: - Your Budget View Autolayout
         NSLayoutConstraint.activate([
             self.yourBudgetView.topAnchor.constraint(equalTo: self.yourBudgetLabel.bottomAnchor, constant: 16),
             self.yourBudgetView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
@@ -344,7 +330,7 @@ class PurchaseDetailView: UIView {
             bottomConstraint
         ])
         
-        // Your Saving Amount Label
+        // MARK: - Your Saving Amount Label
         self.yourSavingAmountLabel.text = "Your Savings Amount"
         self.yourSavingAmountLabel.textAlignment = NSTextAlignment.left
         self.yourSavingAmountLabel.font =  .systemFont(ofSize: 13, weight: .medium)
@@ -355,7 +341,7 @@ class PurchaseDetailView: UIView {
             self.yourSavingAmountLabel.leadingAnchor.constraint(equalTo: self.yourBudgetView.layoutMarginsGuide.leadingAnchor, constant: 18)
         ])
         
-        // Your Budget Amount Value Label
+        // MARK: - Your Budget Amount Value Label
         self.yourSavingAmountValueLabel.text = "Rp. 2.000.000"
         self.yourSavingAmountValueLabel.textAlignment = NSTextAlignment.left
         self.yourSavingAmountValueLabel.font =  .systemFont(ofSize: 17, weight: .semibold)
@@ -366,6 +352,7 @@ class PurchaseDetailView: UIView {
             self.yourSavingAmountValueLabel.trailingAnchor.constraint(equalTo: self.yourBudgetView.layoutMarginsGuide.trailingAnchor, constant: -18)
         ])
         
+        // MARK: - Insufficient Amount Label
         self.insufficientAmountLabel.text = "Insufficient Amount"
         self.insufficientAmountLabel.textAlignment = NSTextAlignment.left
         self.insufficientAmountLabel.font =  .systemFont(ofSize: 13, weight: .medium)
@@ -376,7 +363,7 @@ class PurchaseDetailView: UIView {
                 self.insufficientAmountLabel.leadingAnchor.constraint(equalTo: self.yourBudgetView.layoutMarginsGuide.leadingAnchor, constant: 18)
             ])
                 
-        // Insufficient Amount Value Label
+        // MARK: - Insufficient Amount Value Label
         self.insufficientAmountValueLabel.text = "Rp. 2.000.000"
         self.insufficientAmountValueLabel.textAlignment = NSTextAlignment.left
         self.insufficientAmountValueLabel.font =  .systemFont(ofSize: 17, weight: .semibold)
@@ -385,9 +372,9 @@ class PurchaseDetailView: UIView {
         self.insufficientAmountValueLabel.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 self.insufficientAmountValueLabel.topAnchor.constraint(equalTo: self.yourSavingAmountLabel.bottomAnchor, constant: 20),
-                self.insufficientAmountValueLabel.trailingAnchor.constraint(equalTo: self.yourBudgetView.layoutMarginsGuide.trailingAnchor, constant:-18)
+                self.insufficientAmountValueLabel.trailingAnchor.constraint(equalTo: self.yourBudgetView.layoutMarginsGuide.trailingAnchor, constant: -18)
                 ])
-                
+        // MARK: - Saving Used Label
         self.savingsUsedLabel.text = "Savings Used"
         self.savingsUsedLabel.textAlignment = NSTextAlignment.left
         self.savingsUsedLabel.font =  .systemFont(ofSize: 13, weight: .medium)
@@ -397,7 +384,8 @@ class PurchaseDetailView: UIView {
                 self.savingsUsedLabel.topAnchor.constraint(equalTo: self.yourSavingAmountLabel.bottomAnchor, constant: 20),
                 self.savingsUsedLabel.leadingAnchor.constraint(equalTo: self.yourBudgetView.layoutMarginsGuide.leadingAnchor, constant: 18)
             ])
-            
+        
+        // MARK: - Saving Used Value Label
         self.savingsUsedValueLabel.text = "Rp. 2.000.000"
         self.savingsUsedValueLabel.textAlignment = NSTextAlignment.left
         self.savingsUsedValueLabel.font =  .systemFont(ofSize: 17, weight: .semibold)
@@ -408,8 +396,8 @@ class PurchaseDetailView: UIView {
                 self.savingsUsedValueLabel.topAnchor.constraint(equalTo: self.yourSavingAmountLabel.bottomAnchor, constant: 20),
                 self.savingsUsedValueLabel.trailingAnchor.constraint(equalTo: self.yourBudgetView.layoutMarginsGuide.trailingAnchor, constant: -18)
             ])
-    
-            // Tambahkan if untuk munculin savings amount left
+        
+        // MARK: - Savings Amount Left Label
         self.savingsAmountLeftLabel.text = "Savings Amount Left"
         self.savingsAmountLeftLabel.textAlignment = NSTextAlignment.left
         self.savingsAmountLeftLabel.font =  .systemFont(ofSize: 13, weight: .medium)
@@ -420,7 +408,7 @@ class PurchaseDetailView: UIView {
                 self.savingsAmountLeftLabel.leadingAnchor.constraint(equalTo: self.yourBudgetView.layoutMarginsGuide.leadingAnchor, constant: 18)
             ])
             
-            // Insufficient Amount Value Label
+        // MARK: - Savings Amount Left Value Label
         self.savingsAmountLeftValueLabel.text = "Rp. 2.000.000"
         self.savingsAmountLeftValueLabel.textAlignment = NSTextAlignment.left
         self.savingsAmountLeftValueLabel.font =  .systemFont(ofSize: 17, weight: .semibold)
@@ -431,6 +419,7 @@ class PurchaseDetailView: UIView {
                 self.savingsAmountLeftValueLabel.trailingAnchor.constraint(equalTo: self.yourBudgetView.layoutMarginsGuide.trailingAnchor, constant: -18)
             ])
         
+        // MARK: - Buttons
         if viewModel.isSufficient == true {
             self.purchaseItemButton.setTitle("Proceed Wishlist", for: .normal)
         } else {
@@ -475,6 +464,8 @@ class PurchaseDetailView: UIView {
         ])
     }
     
+    // MARK: - @objc func
+    
     @objc func acceptWishlistAction() {
         if viewModel.isSufficient == true {
             self.viewController.showAcceptAlert()
@@ -489,11 +480,7 @@ class PurchaseDetailView: UIView {
     
     @objc func starButtonTapped() {
         self.starButton.isSelected = !self.starButton.isSelected
-        if starButton.isSelected {
-            viewModel.item?.isPrioritize = true
-        } else {
-            viewModel.item?.isPrioritize = false
-        }
+        self.viewController.changePriorityStatus()
     }
     
     @objc func dismissPage(sender: UIBarButtonItem) {
