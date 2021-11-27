@@ -196,8 +196,8 @@ class PurchaseDetailView: UIView {
         }
         
         // MARK: - Buttons Setup
-        self.contentView.addSubview(self.purchaseItemButton)
-        self.contentView.addSubview(self.deleteItemButton)
+        self.scrollView.addSubview(self.purchaseItemButton)
+        self.scrollView.addSubview(self.deleteItemButton)
         
         // MARK: - Navigation Bar Setup
         self.viewController.navigationItem.largeTitleDisplayMode = .never
@@ -299,7 +299,7 @@ class PurchaseDetailView: UIView {
             
             self.reasonToBuyValueView.heightAnchor.constraint(equalTo: self.reasonToBuyValueLabel.heightAnchor),
             self.reasonToBuyValueView.topAnchor.constraint(equalTo: self.reasonToBuyLabel.bottomAnchor, constant: 16),
-            self.reasonToBuyValueView.bottomAnchor.constraint(equalTo: self.purchaseItemButton.topAnchor, constant: -16),
+            self.reasonToBuyValueView.bottomAnchor.constraint(equalTo: self.yourBudgetLabel.topAnchor, constant: -16),
             self.reasonToBuyValueView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
             self.reasonToBuyValueView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21),
             
@@ -315,7 +315,7 @@ class PurchaseDetailView: UIView {
         self.yourBudgetLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         self.yourBudgetLabel.translatesAutoresizingMaskIntoConstraints =  false
         NSLayoutConstraint.activate([
-            self.yourBudgetLabel.topAnchor.constraint(equalTo: self.deleteItemButton.bottomAnchor, constant: 30),
+            self.yourBudgetLabel.topAnchor.constraint(equalTo: self.reasonToBuyValueView.bottomAnchor, constant: 30),
             self.yourBudgetLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20)
         ])
         
@@ -335,7 +335,7 @@ class PurchaseDetailView: UIView {
             self.yourBudgetView.topAnchor.constraint(equalTo: self.yourBudgetLabel.bottomAnchor, constant: 16),
             self.yourBudgetView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
             self.yourBudgetView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
-            self.yourBudgetView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 100)
+            self.yourBudgetView.bottomAnchor.constraint(equalTo: self.purchaseItemButton.topAnchor, constant: -142)
         ])
         
         // Your Saving Amount Label
@@ -462,7 +462,7 @@ class PurchaseDetailView: UIView {
         NSLayoutConstraint.activate([
             self.deleteItemButton.heightAnchor.constraint(equalToConstant: 49),
             self.deleteItemButton.topAnchor.constraint(equalTo: self.purchaseItemButton.bottomAnchor, constant: 12),
-            self.deleteItemButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -128),
+            self.deleteItemButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 650),
             self.deleteItemButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 17),
             self.deleteItemButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
         ])
