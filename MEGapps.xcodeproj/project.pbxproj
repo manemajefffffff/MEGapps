@@ -54,6 +54,9 @@
 		19A773692728406300219AE7 /* WishlistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A773672728406300219AE7 /* WishlistTableViewCell.xib */; };
 		19A7736C2728411000219AE7 /* UICustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7736B2728411000219AE7 /* UICustom.swift */; };
 		19B301F52743607800FCB9C8 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B301F42743607800FCB9C8 /* NotificationService.swift */; };
+		19C6A42C274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A42B274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift */; };
+		19C6A430274F5557002EAC79 /* UseOtherBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A42F274F5557002EAC79 /* UseOtherBudgetViewModel.swift */; };
+		19C6A432274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A431274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift */; };
 		19C7BBC02730E70900AC4499 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBBF2730E70900AC4499 /* Items.swift */; };
 		19C7BBC22730EBA700AC4499 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC12730EBA700AC4499 /* Budget.swift */; };
 		19C7BBC42730EC4900AC4499 /* SavingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7BBC32730EC4900AC4499 /* SavingHistory.swift */; };
@@ -87,6 +90,12 @@
 		C6974C45272BAC87007EA0C7 /* PurchaseProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */; };
 		C6A4866A274E171C000B3589 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A48669274E171C000B3589 /* WishListView.swift */; };
 		C6E687BA2741FA0C00929FBC /* PurchaseOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */; };
+		F9061B6E274E689A009F1521 /* AllocateOtherBudget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9061B6D274E689A009F1521 /* AllocateOtherBudget.storyboard */; };
+		F9061B70274F02B1009F1521 /* AllocateOtherBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9061B6F274F02B1009F1521 /* AllocateOtherBudgetView.swift */; };
+		F9061B74274F0AD6009F1521 /* AllocateOtherBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9061B72274F0AD6009F1521 /* AllocateOtherBudgetTableViewCell.swift */; };
+		F9061B75274F0AD6009F1521 /* AllocateOtherBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9061B73274F0AD6009F1521 /* AllocateOtherBudgetTableViewCell.xib */; };
+		F9061B77274F1C0B009F1521 /* UseBudgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9061B76274F1C0B009F1521 /* UseBudgets.storyboard */; };
+		F9061B79274F1C1C009F1521 /* UseBudgetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9061B78274F1C1C009F1521 /* UseBudgetsView.swift */; };
 		F92A2CC4274C6E8D00B7C427 /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A2CC3274C6E8D00B7C427 /* CustomProgressBar.swift */; };
 		F95C441B274F788900ED1388 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C441A274F788900ED1388 /* CustomTabBar.swift */; };
 		F9657007273CAC6800A92636 /* PurchaseCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9657006273CAC6800A92636 /* PurchaseCategoryViewModel.swift */; };
@@ -171,6 +180,9 @@
 		19A773672728406300219AE7 /* WishlistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishlistTableViewCell.xib; sourceTree = "<group>"; };
 		19A7736B2728411000219AE7 /* UICustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustom.swift; sourceTree = "<group>"; };
 		19B301F42743607800FCB9C8 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		19C6A42B274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocateOtherBudgetsViewModel.swift; sourceTree = "<group>"; };
+		19C6A42F274F5557002EAC79 /* UseOtherBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseOtherBudgetViewModel.swift; sourceTree = "<group>"; };
+		19C6A431274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBudgetUsedAmountProtocol.swift; sourceTree = "<group>"; };
 		19C7BBBF2730E70900AC4499 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		19C7BBC12730EBA700AC4499 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		19C7BBC32730EC4900AC4499 /* SavingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistory.swift; sourceTree = "<group>"; };
@@ -209,6 +221,12 @@
 		C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseProductViewModel.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseProduct/PurchaseProductViewModel.swift; sourceTree = SOURCE_ROOT; };
 		C6A48669274E171C000B3589 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		C6E687B92741FA0C00929FBC /* PurchaseOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOverviewView.swift; sourceTree = "<group>"; };
+		F9061B6D274E689A009F1521 /* AllocateOtherBudget.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllocateOtherBudget.storyboard; sourceTree = "<group>"; };
+		F9061B6F274F02B1009F1521 /* AllocateOtherBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocateOtherBudgetView.swift; sourceTree = "<group>"; };
+		F9061B72274F0AD6009F1521 /* AllocateOtherBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocateOtherBudgetTableViewCell.swift; sourceTree = "<group>"; };
+		F9061B73274F0AD6009F1521 /* AllocateOtherBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllocateOtherBudgetTableViewCell.xib; sourceTree = "<group>"; };
+		F9061B76274F1C0B009F1521 /* UseBudgets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UseBudgets.storyboard; sourceTree = "<group>"; };
+		F9061B78274F1C1C009F1521 /* UseBudgetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseBudgetsView.swift; sourceTree = "<group>"; };
 		F92A2CC3274C6E8D00B7C427 /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
 		F95C441A274F788900ED1388 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F9657006273CAC6800A92636 /* PurchaseCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryViewModel.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseSameItem/PurchaseCategoryViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -473,6 +491,7 @@
 		19EDF0722727D02D00AF54A7 /* ModuleSavings */ = {
 			isa = PBXGroup;
 			children = (
+				F9061B6C274E6885009F1521 /* AllocateOtherBudget */,
 				19EDF0862727D45600AF54A7 /* SavingList */,
 				19EDF0852727D3D900AF54A7 /* SavingsDetail */,
 				19EDF0772727D06F00AF54A7 /* SavingsHistory */,
@@ -649,6 +668,7 @@
 		19EDF0942727D79B00AF54A7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F9061B71274F0AC0009F1521 /* AllocateOtherBudgetCell */,
 				0710ACFA2730F5D100F8DFA7 /* SavingsHistoryCell */,
 				076669F8272C40E400C02B20 /* PurchaseSameItemCell */,
 				190EA09C272B8A8500479D32 /* PurchaseAllocateBudgetCell */,
@@ -691,6 +711,29 @@
 				C6974C44272BAC87007EA0C7 /* PurchaseProductViewModel.swift */,
 			);
 			path = PurchaseProduct;
+			sourceTree = "<group>";
+		};
+		F9061B6C274E6885009F1521 /* AllocateOtherBudget */ = {
+			isa = PBXGroup;
+			children = (
+				F9061B6D274E689A009F1521 /* AllocateOtherBudget.storyboard */,
+				F9061B6F274F02B1009F1521 /* AllocateOtherBudgetView.swift */,
+				F9061B76274F1C0B009F1521 /* UseBudgets.storyboard */,
+				F9061B78274F1C1C009F1521 /* UseBudgetsView.swift */,
+				19C6A42B274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift */,
+				19C6A42F274F5557002EAC79 /* UseOtherBudgetViewModel.swift */,
+				19C6A431274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift */,
+			);
+			path = AllocateOtherBudget;
+			sourceTree = "<group>";
+		};
+		F9061B71274F0AC0009F1521 /* AllocateOtherBudgetCell */ = {
+			isa = PBXGroup;
+			children = (
+				F9061B72274F0AD6009F1521 /* AllocateOtherBudgetTableViewCell.swift */,
+				F9061B73274F0AD6009F1521 /* AllocateOtherBudgetTableViewCell.xib */,
+			);
+			path = AllocateOtherBudgetCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -817,10 +860,13 @@
 				19EDF0AD27283E5500AF54A7 /* OtherBudget.storyboard in Resources */,
 				190EA0A2272B8F5300479D32 /* PurchaseOtherBudgetAllocation.storyboard in Resources */,
 				F9838B922730FE7F0038D041 /* OtherBudgetTableViewCell.xib in Resources */,
+				F9061B75274F0AD6009F1521 /* AllocateOtherBudgetTableViewCell.xib in Resources */,
 				19EDF0442727CE7300AF54A7 /* Main.storyboard in Resources */,
 				19A773692728406300219AE7 /* WishlistTableViewCell.xib in Resources */,
 				F9838B8D2730D47E0038D041 /* SavingsAdd.storyboard in Resources */,
+				F9061B77274F1C0B009F1521 /* UseBudgets.storyboard in Resources */,
 				076669FC272C411F00C02B20 /* PurchaseSameItemTableViewCell.xib in Resources */,
+				F9061B6E274E689A009F1521 /* AllocateOtherBudget.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,11 +936,14 @@
 				0710ACFD2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift in Sources */,
 				C6974C3F272BABF6007EA0C7 /* ViewExtension.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
+				19C6A432274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift in Sources */,
 				034FD4C7272A92800060F7F4 /* WishlistOverviewViewController.swift in Sources */,
 				07618A45273D42C500B8DF93 /* SavingsAddViewModel.swift in Sources */,
 				19D9DA7727496FD800A044D3 /* AddEditBudgetViewModel.swift in Sources */,
 				F9838B8F2730D48D0038D041 /* SavingsAddViewController.swift in Sources */,
+				F9061B79274F1C1C009F1521 /* UseBudgetsView.swift in Sources */,
 				07D212AF273BA00F00BB1FD1 /* SavingsCoreDataManager.swift in Sources */,
+				19C6A430274F5557002EAC79 /* UseOtherBudgetViewModel.swift in Sources */,
 				034FD4CF272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift in Sources */,
 				F9FF6C772742273200C7826D /* WishlistAdd.swift in Sources */,
 				190EA09F272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.swift in Sources */,
@@ -906,6 +955,7 @@
 				19C7BBC62730F1C000AC4499 /* TrItemBudget.swift in Sources */,
 				19D9DA75274959E700A044D3 /* OtherBudgetCoreDataManager.swift in Sources */,
 				19C7BBC42730EC4900AC4499 /* SavingHistory.swift in Sources */,
+				F9061B70274F02B1009F1521 /* AllocateOtherBudgetView.swift in Sources */,
 				079843FC2742A64A007AC20B /* PurchaseSameItemCoreDataManager.swift in Sources */,
 				1942C9C9272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift in Sources */,
 				1929479A274206BD0043320B /* PurchaseOverviewViewModel.swift in Sources */,
@@ -922,12 +972,14 @@
 				19A736F527474E7400832398 /* PurchaseOverviewViewController.swift in Sources */,
 				C63E3342272A89C500A08D06 /* WishlistDetailViewController.swift in Sources */,
 				193D4906272923B100F46C30 /* WishListViewModel.swift in Sources */,
+				19C6A42C274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift in Sources */,
 				19EF28242732716300D496DF /* CodingUserInfo.swift in Sources */,
 				C6974C41272BAC67007EA0C7 /* PurchaseProductView.swift in Sources */,
 				F9BD7B2B273B760400AA168A /* WishlistAddViewModel.swift in Sources */,
 				190EA0A4272B8FBB00479D32 /* PurchaseOtherBudgetAllocationViewController.swift in Sources */,
 				038575D6274B6664009B5701 /* PurchaseDetailCoreDataManager .swift in Sources */,
 				F9657007273CAC6800A92636 /* PurchaseCategoryViewModel.swift in Sources */,
+				F9061B74274F0AD6009F1521 /* AllocateOtherBudgetTableViewCell.swift in Sources */,
 				C63E3343272A89C500A08D06 /* WishlistDetailViewModel.swift in Sources */,
 				19A7736C2728411000219AE7 /* UICustom.swift in Sources */,
 				C6974C45272BAC87007EA0C7 /* PurchaseProductViewModel.swift in Sources */,

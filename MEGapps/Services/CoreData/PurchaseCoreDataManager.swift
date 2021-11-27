@@ -8,6 +8,11 @@
 import Foundation
 import CoreData
 
+enum ErrorStatus {
+    case success
+    case failed
+}
+
 class PurchaseCoreDataManager {
     static let shared = PurchaseCoreDataManager()
     
@@ -25,7 +30,10 @@ class PurchaseCoreDataManager {
         return container
     }()
 
-    func buyItem(itemWantToBuy: Items, hobbyBudgetUsed: Int64, budgetUsed: [BudgetUsed]) {
+    func proceedWishlist(itemWantToBuy: Items,
+                         savingsAmountUsed: Int64,
+                         budgetUsed: [BudgetUsed],
+                         completion: @escaping(_ errorMessage: ErrorStatus) -> Void) {
         let context = persistentContainer.viewContext
         
         // ubah status item jadi completed
@@ -33,6 +41,7 @@ class PurchaseCoreDataManager {
         do {
             try context.save()
         } catch {
+            completion(.failed)
             fatalError()
         }
         
@@ -54,6 +63,7 @@ class PurchaseCoreDataManager {
             do {
                 try context.save()
             } catch {
+                completion(.failed)
                 fatalError()
             }
         }
@@ -61,28 +71,17 @@ class PurchaseCoreDataManager {
         // tambahkan data budget terpakai
         let newSavingHistory = SavingsHistory(context: context)
         newSavingHistory.id = UUID()
-        newSavingHistory.amount = hobbyBudgetUsed * -1
+        newSavingHistory.amount = savingsAmountUsed * -1
         newSavingHistory.createdAt = Date()
         newSavingHistory.wordings = "bought \(itemWantToBuy.name ?? "item") at price \(itemWantToBuy.price)"
         
         do {
             try context.save()
         } catch {
-            fatalError()
-        }
-    }
-    
-    // MARK: - Dead Code
-    func createNewPurchase () {
-        let context = persistentContainer.viewContext
-        
-        let newData = Items(context: context)
-        
-        do {
-            try context.save()
-        } catch {
+            completion(.failed)
             fatalError()
         }
         
+        completion(.success)
     }
 }
