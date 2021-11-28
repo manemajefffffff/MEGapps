@@ -171,7 +171,7 @@
 		190EA0A6272B90B900479D32 /* InsufficientAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsufficientAmountView.swift; sourceTree = "<group>"; };
 		19294799274206BD0043320B /* PurchaseOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOverviewViewModel.swift; sourceTree = "<group>"; };
 		1929479D274207FF0043320B /* BudgetUsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetUsed.swift; sourceTree = "<group>"; };
-		192947A027420D130043320B /* PurchaseCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCoreDataManager.swift; sourceTree = "<group>"; };
+		192947A027420D130043320B /* PurchaseCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCoreDataManager.swift; path = CoreData/PurchaseCoreDataManager.swift; sourceTree = "<group>"; };
 		193D48FE2728EFC300F46C30 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		193D4905272923B100F46C30 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		193D4908272924B200F46C30 /* WishListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListModel.swift; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 		19C7BBC52730F1C000AC4499 /* TrItemBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrItemBudget.swift; sourceTree = "<group>"; };
 		19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WishlistCoreDataManager.swift; path = Services/CoreData/WishlistCoreDataManager.swift; sourceTree = "<group>"; };
 		19D9DA7227494DD200A044D3 /* OtherBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetViewModel.swift; sourceTree = "<group>"; };
-		19D9DA74274959E700A044D3 /* OtherBudgetCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetCoreDataManager.swift; sourceTree = "<group>"; };
+		19D9DA74274959E700A044D3 /* OtherBudgetCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OtherBudgetCoreDataManager.swift; path = CoreData/OtherBudgetCoreDataManager.swift; sourceTree = "<group>"; };
 		19D9DA7627496FD800A044D3 /* AddEditBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditBudgetViewModel.swift; sourceTree = "<group>"; };
 		19EDF0392727CE7300AF54A7 /* MEGapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MEGapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -363,7 +363,7 @@
 				19D9DA74274959E700A044D3 /* OtherBudgetCoreDataManager.swift */,
 				192947A027420D130043320B /* PurchaseCoreDataManager.swift */,
 			);
-			path = CoreData;
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		1942C9C5272C4B8900E76586 /* BudgetAllocationTableView */ = {
@@ -412,7 +412,7 @@
 			children = (
 				19C012EF275392BA0044704C /* CoreDataContext.swift */,
 			);
-			path = CoreDataContext;
+			name = CoreDataContext;
 			sourceTree = "<group>";
 		};
 		19C7BBC7273244AA00AC4499 /* Recovered References */ = {
