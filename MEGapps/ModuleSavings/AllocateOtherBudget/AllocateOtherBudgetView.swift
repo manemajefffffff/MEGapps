@@ -17,9 +17,9 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var allocateBudgetTableView: UITableView!
     @IBOutlet weak var proceedWishlistButton: UIButton!
     
-    // MARK: - Variables
-    var item: Items?
-    var insufficientAmount: Int64 = 0
+    // MARK: - Containers
+    var itemContainer: Items?
+    var insufficientAmountContainer: Int64 = 0
     
     // MARK: - ViewModel
     let viewModel = AllocateOtherBudgetViewModel()
@@ -35,9 +35,9 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: - Function
     private func sendReceivedDataToVM() {
-        viewModel.item = item
-        viewModel.insufficientAmount = insufficientAmount
-        insufficientAmountLabel.text = "\(insufficientAmount)"
+        viewModel.item = itemContainer
+        viewModel.insufficientAmount = insufficientAmountContainer
+        insufficientAmountLabel.text = "\(insufficientAmountContainer)"
     }
     
     private func subscribe() {
@@ -65,7 +65,8 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
     }
     
     private func setOtherBudgetUsedTotal() {
-        usedBudgetLabel.text = "Rp. \(viewModel.budgetAmountUsed)"
+//        usedBudgetLabel.text = "Rp. \(viewModel.budgetAmountUsed)"
+        usedBudgetLabel.text = "\(FormatNumberHelper.formatNumber(price: viewModel.budgetAmountUsed))"
     }
     
     private func setProceedWishlistButtonState() {
