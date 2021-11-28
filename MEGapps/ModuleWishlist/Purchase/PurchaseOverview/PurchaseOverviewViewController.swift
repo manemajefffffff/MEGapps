@@ -18,7 +18,7 @@ class PurchaseOverviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        sendReceivedDataToVM()
         // Do any additional setup after loading the view.
     }
     

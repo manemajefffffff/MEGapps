@@ -16,19 +16,7 @@ enum ErrorStatus {
 class PurchaseCoreDataManager {
     static let shared = PurchaseCoreDataManager()
     
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "MEGapps")
-        container.loadPersistentStores { _, error in
-            guard error == nil else {
-                fatalError("Unresolved error \(error!)")
-            }
-        }
-        container.viewContext.automaticallyMergesChangesFromParent = false
-        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        container.viewContext.shouldDeleteInaccessibleFaults = true
-        container.viewContext.undoManager = nil
-        return container
-    }()
+    lazy var persistentContainer = CoreDataContext.sharedCDC.persistentContainer
 
     func proceedWishlist(itemWantToBuy: Items,
                          savingsAmountUsed: Int64,
@@ -50,8 +38,8 @@ class PurchaseCoreDataManager {
             // buat object baru untuk catat pemakaian
             let budgetUseContext = persistentContainer.viewContext
             let otherBudgetUsage = TrItemBudget(context: budgetUseContext)
-//            otherBudgetUsage.items = itemWantToBuy
-//            otherBudgetUsage.budget = budgetUse.budget
+            otherBudgetUsage.items = itemWantToBuy
+            otherBudgetUsage.budget = budgetUse.budget
             otherBudgetUsage.amount = budgetUse.amountUsed
             otherBudgetUsage.createdAt = Date()
             otherBudgetUsage.id = UUID()
