@@ -13,11 +13,13 @@ class PurchaseOverviewViewModel {
     
     @Published var itemWantToBuy = Items()
 //    @Published var hobbyBudgetUsed = 0
-//    @Published var budgetUsed = [BudgetUsed]()
+    @Published var budgetUsed = [BudgetUsed]()
     
     init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
     }
+    
+    
 
     
     // MARK: - Function
