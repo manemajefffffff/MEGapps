@@ -191,7 +191,7 @@
 		19C7BBC12730EBA700AC4499 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		19C7BBC32730EC4900AC4499 /* SavingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistory.swift; sourceTree = "<group>"; };
 		19C7BBC52730F1C000AC4499 /* TrItemBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrItemBudget.swift; sourceTree = "<group>"; };
-		19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WishlistCoreDataManager.swift; path = Services/CoreData/WishlistCoreDataManager.swift; sourceTree = "<group>"; };
+		19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCoreDataManager.swift; sourceTree = "<group>"; };
 		19D9DA7227494DD200A044D3 /* OtherBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetViewModel.swift; sourceTree = "<group>"; };
 		19D9DA74274959E700A044D3 /* OtherBudgetCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetCoreDataManager.swift; sourceTree = "<group>"; };
 		19D9DA7627496FD800A044D3 /* AddEditBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditBudgetViewModel.swift; sourceTree = "<group>"; };
@@ -362,6 +362,12 @@
 				19C012EE275392A90044704C /* CoreDataContext */,
 				19D9DA74274959E700A044D3 /* OtherBudgetCoreDataManager.swift */,
 				192947A027420D130043320B /* PurchaseCoreDataManager.swift */,
+				19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */,
+				07D212AE273BA00F00BB1FD1 /* SavingsCoreDataManager.swift */,
+				07618A46273D42F900B8DF93 /* SavingsAddCoreDataManager.swift */,
+				F965700A273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift */,
+				079843FB2742A64A007AC20B /* PurchaseSameItemCoreDataManager.swift */,
+				038575D5274B6664009B5701 /* PurchaseDetailCoreDataManager .swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -460,12 +466,6 @@
 				19EDF04A2727CE7400AF54A7 /* LaunchScreen.storyboard */,
 				19EDF04D2727CE7400AF54A7 /* Info.plist */,
 				19EDF0452727CE7300AF54A7 /* MEGapps.xcdatamodeld */,
-				19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */,
-				07D212AE273BA00F00BB1FD1 /* SavingsCoreDataManager.swift */,
-				07618A46273D42F900B8DF93 /* SavingsAddCoreDataManager.swift */,
-				F965700A273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift */,
-				079843FB2742A64A007AC20B /* PurchaseSameItemCoreDataManager.swift */,
-				038575D5274B6664009B5701 /* PurchaseDetailCoreDataManager .swift */,
 				F95C441A274F788900ED1388 /* CustomTabBar.swift */,
 			);
 			path = MEGapps;
