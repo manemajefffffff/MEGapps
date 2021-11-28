@@ -9,8 +9,8 @@ import Foundation
 import CoreData
 
 class CoreDataContext {
-    static let shared = PurchaseCoreDataManager()
-    
+    static let sharedCDC = CoreDataContext()
+        
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "MEGapps")
         container.loadPersistentStores { _, error in
