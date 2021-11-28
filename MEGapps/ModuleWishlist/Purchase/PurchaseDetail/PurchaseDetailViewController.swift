@@ -86,6 +86,7 @@ class PurchaseDetailViewController: UIViewController {
     func budgetsDeducted() {
         let viewController = PurchaseOverviewViewController()
         viewController.itemContainer = viewModel.item
+        
         let navPurcOverview: UINavigationController = UINavigationController(rootViewController: viewController)
         navPurcOverview.modalPresentationStyle = .fullScreen
             

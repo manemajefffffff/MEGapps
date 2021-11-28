@@ -32,6 +32,8 @@ class PurchaseOverviewView: UIView {
     private let savingLabel = UILabel()
     private let savingAmount = UILabel()
     private let doneButton = UIButton()
+    private let otherBudgetLabel = UILabel()
+    private let otherBudgetValueLabel = UILabel()
 
     // MARK: - Lifecycle
     init(viewModel: PurchaseOverviewViewModel, viewController: PurchaseOverviewViewController) {
@@ -58,10 +60,16 @@ class PurchaseOverviewView: UIView {
                 self?.setItemData()
             }.store(in: &anyCancellable)
         
-        viewModel.$budgetUsed
+        viewModel.$otherBudgetAmount
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.setBudgetUsedData()
+            }.store(in: &anyCancellable)
+        
+        viewModel.$savingAmount
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.setSavingData()
             }.store(in: &anyCancellable)
     }
     
@@ -70,13 +78,17 @@ class PurchaseOverviewView: UIView {
             itemName.text = "\(item.name ?? "name")"
             priceAmountLabel.text = "\(FormatNumberHelper.formatNumber(price: item.price))"
             categotyAmountLabel.text = "\(item.category ?? "category")"
-            
         }
     }
     
     private func setBudgetUsedData() {
-        
+        otherBudgetValueLabel.text = "\(FormatNumberHelper.formatNumber(price: viewModel.otherBudgetAmount))"
     }
+    
+    private func setSavingData() {
+        savingAmount.text = "\(FormatNumberHelper.formatNumber(price: viewModel.savingAmount))"
+    }
+    
     func setup() {
         self.addSubview(self.contentView)
         self.contentView.addSubview(self.backView)
@@ -85,12 +97,16 @@ class PurchaseOverviewView: UIView {
         self.backView.addSubview(self.itemName)
         self.backView.addSubview(self.priceLabel)
         self.backView.addSubview(self.priceAmountLabel)
-        self.backView.addSubview(self.dueDateLabel)
-        self.backView.addSubview(self.dueDateAmountLabel)
+//        self.backView.addSubview(self.dueDateLabel)
+//        self.backView.addSubview(self.dueDateAmountLabel)
         self.backView.addSubview(self.categoryLabel)
         self.backView.addSubview(self.categotyAmountLabel)
         self.backView.addSubview(self.lineView)
         self.backView.addSubview(self.budgetAllocationLabel)
+        
+        self.backView.addSubview(self.otherBudgetLabel)
+        self.backView.addSubview(self.otherBudgetValueLabel)
+        
         self.backView.addSubview(self.savingLabel)
         self.backView.addSubview(self.savingAmount)
         self.backView.addSubview(self.doneButton)
@@ -163,27 +179,27 @@ class PurchaseOverviewView: UIView {
             self.priceAmountLabel.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -16)
         ])
         
-        self.dueDateLabel.text = "Due Date:"
-        self.dueDateLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        self.dueDateLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.dueDateLabel.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 12),
-            self.dueDateLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 30)
-        ])
-        
-        self.dueDateAmountLabel.text = "March 3, 2022"
-        self.dueDateAmountLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        self.dueDateAmountLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.dueDateAmountLabel.topAnchor.constraint(equalTo: self.priceAmountLabel.bottomAnchor, constant: 12),
-            self.dueDateAmountLabel.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -16)
-        ])
+//        self.dueDateLabel.text = "Due Date:"
+//        self.dueDateLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+//        self.dueDateLabel.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            self.dueDateLabel.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 12),
+//            self.dueDateLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 30)
+//        ])
+//
+//        self.dueDateAmountLabel.text = "March 3, 2022"
+//        self.dueDateAmountLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+//        self.dueDateAmountLabel.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            self.dueDateAmountLabel.topAnchor.constraint(equalTo: self.priceAmountLabel.bottomAnchor, constant: 12),
+//            self.dueDateAmountLabel.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -16)
+//        ])
         
         self.categoryLabel.text = "Category:"
         self.categoryLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         self.categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.categoryLabel.topAnchor.constraint(equalTo: self.dueDateLabel.bottomAnchor, constant: 12),
+            self.categoryLabel.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 16),
             self.categoryLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 30)
         ])
         
@@ -191,7 +207,7 @@ class PurchaseOverviewView: UIView {
         self.categotyAmountLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         self.categotyAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.categotyAmountLabel.topAnchor.constraint(equalTo: self.dueDateAmountLabel.bottomAnchor, constant: 12),
+            self.categotyAmountLabel.topAnchor.constraint(equalTo: self.priceAmountLabel.bottomAnchor, constant: 16),
             self.categotyAmountLabel.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -16)
         ])
         
@@ -210,30 +226,46 @@ class PurchaseOverviewView: UIView {
         self.budgetAllocationLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.budgetAllocationLabel.topAnchor.constraint(equalTo: self.lineView.bottomAnchor, constant: 13),
-            self.budgetAllocationLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 20),
-            self.budgetAllocationLabel.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -20)
+            self.budgetAllocationLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 30)
         ])
         
         self.savingLabel.text = "Savings"
         self.savingLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         self.savingLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.savingLabel.topAnchor.constraint(equalTo: self.budgetAllocationLabel.bottomAnchor, constant: 6),
-            self.savingLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 30)
+            self.savingLabel.topAnchor.constraint(equalTo: self.budgetAllocationLabel.bottomAnchor, constant: 12),
+            self.savingLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 39)
         ])
         
         self.savingAmount.text = "Rp1.700.000"
         self.savingAmount.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         self.savingAmount.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.savingAmount.topAnchor.constraint(equalTo: self.budgetAllocationLabel.bottomAnchor, constant: 6),
+            self.savingAmount.topAnchor.constraint(equalTo: self.budgetAllocationLabel.bottomAnchor, constant: 12),
             self.savingAmount.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -26)
+        ])
+        
+        self.otherBudgetLabel.text = "Other Budgets"
+        self.otherBudgetLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        self.otherBudgetLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.otherBudgetLabel.topAnchor.constraint(equalTo: self.savingLabel.bottomAnchor, constant: 12),
+            self.otherBudgetLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 39)
+        ])
+        
+        self.otherBudgetValueLabel.text = "Rp1.700.000"
+        self.otherBudgetValueLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        self.otherBudgetValueLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.otherBudgetValueLabel.topAnchor.constraint(equalTo: self.savingAmount.bottomAnchor, constant: 12),
+            self.otherBudgetValueLabel.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -26)
         ])
         
         self.doneButton.setTitle("Done", for: .normal)
         self.doneButton.backgroundColor = UIColor(named: "PrimaryHSgradient")
         self.doneButton.cornerRadius = 12
         self.doneButton.translatesAutoresizingMaskIntoConstraints = false
+        self.doneButton.addTarget(self, action: #selector(tapButtonDone), for: .touchUpInside)
         NSLayoutConstraint.activate([
             self.doneButton.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 70),
             self.doneButton.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -70),
@@ -241,4 +273,8 @@ class PurchaseOverviewView: UIView {
             self.doneButton.heightAnchor.constraint(equalToConstant: 35)
         ])
     }
+    
+    @objc func tapButtonDone(){
+            print("button done tapped")
+        }
 }
