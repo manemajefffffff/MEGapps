@@ -33,7 +33,7 @@ class WishListViewModel: NSObject {
                     self.readyToAcceptItems.append(item)
                 }
             }
-            self.hasItem = items.count > 0 ? true : false
+            self.hasItem = self.items.count > 0 ? true : false
             self.hasReadyToAcceptItems = self.readyToAcceptItems.count > 0 ? true : false
             print("data refreshed")
         }
