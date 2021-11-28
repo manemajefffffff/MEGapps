@@ -57,9 +57,13 @@ class AllocateOtherBudgetTableViewCell: UITableViewCell {
     
     @IBAction func changeAmountWillUsed(_ sender: Any) {
         if let amount = Int64("\(budgetToUseTextField.text ?? "0")") {
-            self.budgetAmountToUse = amount
-//            changeAmoutBudgetUsed!(self.budgetAmountToUse, id)
-            delegate?.changeAmountWillUsed(amount: budgetAmountToUse, index: id)
+            if amount <= 0 {
+                self.budgetAmountToUse = 0
+                delegate?.changeAmountWillUsed(amount: budgetAmountToUse, index: id)
+            } else {
+                self.budgetAmountToUse = amount
+                delegate?.changeAmountWillUsed(amount: budgetAmountToUse, index: id)
+            }
         }
     }
     
@@ -67,6 +71,8 @@ class AllocateOtherBudgetTableViewCell: UITableViewCell {
     private func setData() {
         budgetNameLabel.text = "\(budget?.budget?.name ?? "Budget Name")"
         budgetAvailabelLabel.text = "Rp. \(budget?.budget?.amount ?? 0)"
-        budgetToUseTextField.text = "\(budget?.amountUsed ?? 0)"
+        if budget!.amountUsed > 0 {
+            budgetToUseTextField.text = "\(budget?.amountUsed ?? 0)"
+        }
     }
 }
