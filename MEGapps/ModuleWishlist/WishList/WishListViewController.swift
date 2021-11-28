@@ -34,6 +34,7 @@ class WishListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         subscribe()
         fetchData()
+        setupNoDataView()
         print("view will appear")
     }
     
@@ -69,22 +70,19 @@ class WishListViewController: UIViewController {
 //                    }
                 }
             }.store(in: &anyCancellable)
-        
-        wishListViewModel.$hasItem
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                self?.setupNoDataView()
-            }.store(in: &anyCancellable)
     }
     
     private func setupNoDataView() {
-        if wishListViewModel.hasItem {
-//            wishlistTableView.isHidden = false
-            wishlistTableView.backgroundView = nil
+        if !noDataView.isDescendant(of: wishlistTableView) {
+            wishlistTableView.addSubview(noDataView)
+        }
+        
+        if wishListViewModel.hasItem || wishListViewModel.hasReadyToAcceptItems {
+            noDataView.isHidden = true
+            print("wishlist has data")
         } else {
-//            wishlistTableView.isHidden = true
-//            self.view.addSubview(noDataView)
-            wishlistTableView.backgroundView = noDataView
+            noDataView.isHidden = false
+            print("wishlist no data")
         }
     }
     
