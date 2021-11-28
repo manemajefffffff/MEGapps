@@ -7,11 +7,13 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class PurchaseOverviewView: UIView {
     // MARK: - MVVM
     private var viewModel: PurchaseOverviewViewModel
     private var viewController: PurchaseOverviewViewController
+    var anyCancellable = Set<AnyCancellable>()
 
     // MARK: - Outlet
     let contentView = UIView()
@@ -39,6 +41,8 @@ class PurchaseOverviewView: UIView {
         
         self.setup()
         self.style()
+        
+        subscribe()
     }
 
     required init?(coder: NSCoder) {
@@ -46,6 +50,33 @@ class PurchaseOverviewView: UIView {
     }
     
     // MARK: - Function
+    
+    private func subscribe() {
+        viewModel.$itemWantToBuy
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.setItemData()
+            }.store(in: &anyCancellable)
+        
+        viewModel.$budgetUsed
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.setBudgetUsedData()
+            }.store(in: &anyCancellable)
+    }
+    
+    private func setItemData() {
+        if let item = viewModel.itemWantToBuy {
+            itemName.text = "\(item.name ?? "name")"
+            priceAmountLabel.text = "\(FormatNumberHelper.formatNumber(price: item.price))"
+            categotyAmountLabel.text = "\(item.category ?? "category")"
+            
+        }
+    }
+    
+    private func setBudgetUsedData() {
+        
+    }
     func setup() {
         self.addSubview(self.contentView)
         self.contentView.addSubview(self.backView)
@@ -95,7 +126,7 @@ class PurchaseOverviewView: UIView {
             self.purchaseImage.centerXAnchor.constraint(equalTo: self.backView.centerXAnchor)
         ])
         
-        self.purchaseComplete.text = "Expense Recorded"
+        self.purchaseComplete.text = "Budgets Deducted"
         self.purchaseComplete.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         self.purchaseComplete.textColor = UIColor(named: "StarColor")
         self.purchaseComplete.translatesAutoresizingMaskIntoConstraints = false

@@ -34,12 +34,11 @@ class PurchaseCoreDataManager {
                          savingsAmountUsed: Int64,
                          budgetUsed: [BudgetUsed],
                          completion: @escaping(_ errorMessage: ErrorStatus) -> Void) {
-        let context = persistentContainer.viewContext
-        
         // ubah status item jadi completed
+        guard let itemWTBContext = itemWantToBuy.managedObjectContext else { return }
         itemWantToBuy.status = "completed"
         do {
-            try context.save()
+            try itemWTBContext.save()
         } catch {
             completion(.failed)
             fatalError()
@@ -47,41 +46,50 @@ class PurchaseCoreDataManager {
         
         // catat pemakaian budget
         for budgetUse in budgetUsed {
+            // bug di bagian sini
             // buat object baru untuk catat pemakaian
-            let otherBudgetUsage = TrItemBudget(context: context)
-            otherBudgetUsage.items = itemWantToBuy
-            otherBudgetUsage.budget = budgetUse.budget
+            let budgetUseContext = persistentContainer.viewContext
+            let otherBudgetUsage = TrItemBudget(context: budgetUseContext)
+//            otherBudgetUsage.items = itemWantToBuy
+//            otherBudgetUsage.budget = budgetUse.budget
             otherBudgetUsage.amount = budgetUse.amountUsed
             otherBudgetUsage.createdAt = Date()
             otherBudgetUsage.id = UUID()
-            
-            // ubah jumlah budget berdasarkan jumlah pemakaian
-            if let budgetSource = budgetUse.budget {
-                budgetSource.amount -= budgetUse.amountUsed
-            }
-            
             do {
-                try context.save()
+                try budgetUseContext.save()
             } catch {
                 completion(.failed)
                 fatalError()
             }
+            
+            // ubah jumlah budget berdasarkan jumlah pemakaian
+            if let budgetSource = budgetUse.budget {
+                guard let budgetSourceContext = budgetSource.managedObjectContext else { return }
+                budgetSource.amount -= budgetUse.amountUsed
+                do {
+                    try budgetSourceContext.save()
+                } catch {
+                    completion(.failed)
+                }
+            }
+            
         }
         
         // tambahkan data budget terpakai
-        let newSavingHistory = SavingsHistory(context: context)
+        let savingHistoryContext = persistentContainer.viewContext
+        let newSavingHistory = SavingsHistory(context: savingHistoryContext)
         newSavingHistory.id = UUID()
         newSavingHistory.amount = savingsAmountUsed * -1
         newSavingHistory.createdAt = Date()
-        newSavingHistory.wordings = "bought \(itemWantToBuy.name ?? "item") at price \(itemWantToBuy.price)"
+        newSavingHistory.wordings = "Purchase \(itemWantToBuy.name ?? "Item")"
         
         do {
-            try context.save()
+            try savingHistoryContext.save()
         } catch {
             completion(.failed)
             fatalError()
         }
-        
+        print("berhasil proceed wishlist")
         completion(.success)
     }
 }

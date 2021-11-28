@@ -55,6 +55,7 @@
 		19A7736C2728411000219AE7 /* UICustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7736B2728411000219AE7 /* UICustom.swift */; };
 		19B301F52743607800FCB9C8 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B301F42743607800FCB9C8 /* NotificationService.swift */; };
 		19C012ED275365680044704C /* FormatNumberHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C012EC275365680044704C /* FormatNumberHelper.swift */; };
+		19C012F0275392BA0044704C /* CoreDataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C012EF275392BA0044704C /* CoreDataContext.swift */; };
 		19C6A42C274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A42B274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift */; };
 		19C6A430274F5557002EAC79 /* UseOtherBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A42F274F5557002EAC79 /* UseOtherBudgetViewModel.swift */; };
 		19C6A432274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A431274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift */; };
@@ -182,6 +183,7 @@
 		19A7736B2728411000219AE7 /* UICustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustom.swift; sourceTree = "<group>"; };
 		19B301F42743607800FCB9C8 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		19C012EC275365680044704C /* FormatNumberHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatNumberHelper.swift; sourceTree = "<group>"; };
+		19C012EF275392BA0044704C /* CoreDataContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContext.swift; sourceTree = "<group>"; };
 		19C6A42B274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocateOtherBudgetsViewModel.swift; sourceTree = "<group>"; };
 		19C6A42F274F5557002EAC79 /* UseOtherBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseOtherBudgetViewModel.swift; sourceTree = "<group>"; };
 		19C6A431274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBudgetUsedAmountProtocol.swift; sourceTree = "<group>"; };
@@ -357,8 +359,9 @@
 		1929479F27420CEE0043320B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				192947A027420D130043320B /* PurchaseCoreDataManager.swift */,
+				19C012EE275392A90044704C /* CoreDataContext */,
 				19D9DA74274959E700A044D3 /* OtherBudgetCoreDataManager.swift */,
+				192947A027420D130043320B /* PurchaseCoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -402,6 +405,14 @@
 				19C012EC275365680044704C /* FormatNumberHelper.swift */,
 			);
 			path = FormatNumberHelper;
+			sourceTree = "<group>";
+		};
+		19C012EE275392A90044704C /* CoreDataContext */ = {
+			isa = PBXGroup;
+			children = (
+				19C012EF275392BA0044704C /* CoreDataContext.swift */,
+			);
+			path = CoreDataContext;
 			sourceTree = "<group>";
 		};
 		19C7BBC7273244AA00AC4499 /* Recovered References */ = {
@@ -978,6 +989,7 @@
 				F9681CB9272A21C500941894 /* WishlistAddView.swift in Sources */,
 				19B301F52743607800FCB9C8 /* NotificationService.swift in Sources */,
 				C681A73B2734DDC000AD0CF4 /* PurchaseDetailView.swift in Sources */,
+				19C012F0275392BA0044704C /* CoreDataContext.swift in Sources */,
 				F92A2CC4274C6E8D00B7C427 /* CustomProgressBar.swift in Sources */,
 				1929479E274207FF0043320B /* BudgetUsed.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,

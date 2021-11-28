@@ -54,7 +54,7 @@ class WishListViewController: UIViewController {
         wishListViewModel.$items
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                self?.setupNoDataView()
+//                self?.setupNoDataView()
             }.store(in: &anyCancellable)
         
         

@@ -84,7 +84,7 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
         
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { _ in
             // move page to purchase overview
-            
+            self.viewModel.proceedWishlist()
         }))
         
         self.present(alert, animated: true, completion: nil)
