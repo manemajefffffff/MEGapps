@@ -10,6 +10,8 @@ import CoreData
 
 class CoreDataContext {
     static let sharedCDC = CoreDataContext()
+    
+    private init() {}
         
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "MEGapps")
