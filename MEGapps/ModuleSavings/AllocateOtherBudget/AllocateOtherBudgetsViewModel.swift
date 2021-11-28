@@ -96,7 +96,7 @@ class AllocateOtherBudgetViewModel: NSObject {
         removeUnusedBudget()
         PurchaseCoreDataManager
             .shared
-            .proceedWishlist(itemWantToBuy: item!, savingsAmountUsed: getSavingsAmountUsed(), budgetUsed: budgetUsed) { errorMessage in
+            .proceedWishlist(itemWantToBuy: item!, savingsAmountUsed: getSavingsUsed(), budgetUsed: budgetUsed) { errorMessage in
                 switch errorMessage {
                 case .success:
                     print("berhasil proses wishlist")
@@ -105,5 +105,9 @@ class AllocateOtherBudgetViewModel: NSObject {
                 }
             }
 
+    }
+    
+    private func getSavingsUsed() -> Int64 {
+        return item!.price - insufficientAmount
     }
 }

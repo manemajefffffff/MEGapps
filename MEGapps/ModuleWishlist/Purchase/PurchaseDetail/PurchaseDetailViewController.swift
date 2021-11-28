@@ -84,22 +84,30 @@ class PurchaseDetailViewController: UIViewController {
     }
     
     func budgetsDeducted() {
-            let viewController = PurchaseOverviewViewController()
-//            viewController.itemsBD = self.itemsPD
-            let navPurcOverview: UINavigationController = UINavigationController(rootViewController: viewController)
-            navPurcOverview.modalPresentationStyle = .fullScreen
-            self.present(navPurcOverview, animated: true, completion: nil)
-        }
+        let viewController = PurchaseOverviewViewController()
+        viewController.itemContainer = viewModel.item
+        let navPurcOverview: UINavigationController = UINavigationController(rootViewController: viewController)
+        navPurcOverview.modalPresentationStyle = .fullScreen
+            
+        self.present(navPurcOverview, animated: true, completion: nil)
+    }
         
-        func othersBudget() {
-            // navigate ke page others budget
-            // Ini insufficient view controllernya tunggu ada
-    //        let viewController = InsufficientAmountViewController()
-    //        viewController.itemsIA = self.itemsPD
-    //        let navInsufficientAmt: UINavigationController = UINavigationController(rootViewController: viewController)
-    //        navInsufficientAmt.modalPresentationStyle = .fullScreen
-    //        self.present(navInsufficientAmt, animated: true, completion: nil)
+    func othersBudget() {
+        // navigate ke page others budget
+        // Ini insufficient view controllernya tunggu ada
+//        let viewController = InsufficientAmountViewController()
+//        viewController.itemsIA = self.itemsPD
+//        let navInsufficientAmt: UINavigationController = UINavigationController(rootViewController: viewController)
+//        navInsufficientAmt.modalPresentationStyle = .fullScreen
+//        self.present(navInsufficientAmt, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "AllocateOtherBudget", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "allocateOtherBudgetPage") as? AllocateOtherBudgetView else {
+            fatalError("no view")
         }
+        viewController.itemContainer = viewModel.item
+        viewController.insufficientAmountContainer = viewModel.insufficientAmt
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 
 
 }
