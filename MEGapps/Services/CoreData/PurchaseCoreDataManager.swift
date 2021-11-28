@@ -34,7 +34,6 @@ class PurchaseCoreDataManager {
         
         // catat pemakaian budget
         for budgetUse in budgetUsed {
-            // bug di bagian sini
             // buat object baru untuk catat pemakaian
             let budgetUseContext = persistentContainer.viewContext
             let otherBudgetUsage = TrItemBudget(context: budgetUseContext)
