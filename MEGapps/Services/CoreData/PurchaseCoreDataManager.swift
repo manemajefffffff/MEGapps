@@ -38,8 +38,8 @@ class PurchaseCoreDataManager {
             // buat object baru untuk catat pemakaian
             let budgetUseContext = persistentContainer.viewContext
             let otherBudgetUsage = TrItemBudget(context: budgetUseContext)
-//            otherBudgetUsage.items = itemWantToBuy
-//            otherBudgetUsage.budget = budgetUse.budget
+            otherBudgetUsage.items = itemWantToBuy
+            otherBudgetUsage.budget = budgetUse.budget
             otherBudgetUsage.amount = budgetUse.amountUsed
             otherBudgetUsage.createdAt = Date()
             otherBudgetUsage.id = UUID()
