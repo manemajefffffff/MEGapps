@@ -99,6 +99,13 @@ class PurchaseDetailViewController: UIViewController {
     //        let navInsufficientAmt: UINavigationController = UINavigationController(rootViewController: viewController)
     //        navInsufficientAmt.modalPresentationStyle = .fullScreen
     //        self.present(navInsufficientAmt, animated: true, completion: nil)
+            let storyboard = UIStoryboard(name: "AllocateOtherBudget", bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(withIdentifier: "allocateOtherBudgetPage") as? AllocateOtherBudgetView else {
+                fatalError("no view")
+            }
+            viewController.itemContainer = viewModel.item
+            viewController.insufficientAmountContainer = viewModel.insufficientAmt
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
 
 
