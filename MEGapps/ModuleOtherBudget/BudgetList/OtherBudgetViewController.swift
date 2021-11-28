@@ -29,6 +29,13 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
         //addData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if !viewModel.hasItem{
+            print("check")
+            container = []
+        }
+    }
+    
     // MARK: - Actions
     @IBAction func moveToAddBudget(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "AddEditBudget", bundle: nil)
@@ -133,6 +140,9 @@ extension OtherBudgetViewController {
 extension OtherBudgetViewController: AddEditBudgetDelegate {
     func refreshData() {
         viewModel.fetchData()
+        
+        print("check 2")
+        setupEmptyState()
         budgetTableView.reloadData()
     }
 }
