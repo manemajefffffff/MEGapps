@@ -51,13 +51,6 @@ class WishListViewController: UIViewController {
                 }
             }.store(in: &anyCancellable)
         
-        wishListViewModel.$items
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-//                self?.setupNoDataView()
-            }.store(in: &anyCancellable)
-        
-        
         wishListViewModel.$readyToAcceptItems
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
@@ -76,14 +69,22 @@ class WishListViewController: UIViewController {
 //                    }
                 }
             }.store(in: &anyCancellable)
+        
+        wishListViewModel.$hasItem
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.setupNoDataView()
+            }.store(in: &anyCancellable)
     }
     
     private func setupNoDataView() {
-        if wishListViewModel.hasItem || wishListViewModel.hasReadyToAcceptItems {
-            wishlistTableView.isHidden = false
+        if wishListViewModel.hasItem {
+//            wishlistTableView.isHidden = false
+            wishlistTableView.backgroundView = nil
         } else {
-            wishlistTableView.isHidden = true
-            self.view.addSubview(noDataView)
+//            wishlistTableView.isHidden = true
+//            self.view.addSubview(noDataView)
+            wishlistTableView.backgroundView = noDataView
         }
     }
     
