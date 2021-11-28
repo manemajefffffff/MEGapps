@@ -54,6 +54,7 @@
 		19A773692728406300219AE7 /* WishlistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A773672728406300219AE7 /* WishlistTableViewCell.xib */; };
 		19A7736C2728411000219AE7 /* UICustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7736B2728411000219AE7 /* UICustom.swift */; };
 		19B301F52743607800FCB9C8 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B301F42743607800FCB9C8 /* NotificationService.swift */; };
+		19C012ED275365680044704C /* FormatNumberHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C012EC275365680044704C /* FormatNumberHelper.swift */; };
 		19C6A42C274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A42B274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift */; };
 		19C6A430274F5557002EAC79 /* UseOtherBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A42F274F5557002EAC79 /* UseOtherBudgetViewModel.swift */; };
 		19C6A432274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6A431274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift */; };
@@ -180,6 +181,7 @@
 		19A773672728406300219AE7 /* WishlistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishlistTableViewCell.xib; sourceTree = "<group>"; };
 		19A7736B2728411000219AE7 /* UICustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustom.swift; sourceTree = "<group>"; };
 		19B301F42743607800FCB9C8 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		19C012EC275365680044704C /* FormatNumberHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatNumberHelper.swift; sourceTree = "<group>"; };
 		19C6A42B274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocateOtherBudgetsViewModel.swift; sourceTree = "<group>"; };
 		19C6A42F274F5557002EAC79 /* UseOtherBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseOtherBudgetViewModel.swift; sourceTree = "<group>"; };
 		19C6A431274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBudgetUsedAmountProtocol.swift; sourceTree = "<group>"; };
@@ -392,6 +394,14 @@
 				19B301F42743607800FCB9C8 /* NotificationService.swift */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		19C012EB275365530044704C /* FormatNumberHelper */ = {
+			isa = PBXGroup;
+			children = (
+				19C012EC275365680044704C /* FormatNumberHelper.swift */,
+			);
+			path = FormatNumberHelper;
 			sourceTree = "<group>";
 		};
 		19C7BBC7273244AA00AC4499 /* Recovered References */ = {
@@ -668,6 +678,7 @@
 		19EDF0942727D79B00AF54A7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				19C012EB275365530044704C /* FormatNumberHelper */,
 				F9061B71274F0AC0009F1521 /* AllocateOtherBudgetCell */,
 				0710ACFA2730F5D100F8DFA7 /* SavingsHistoryCell */,
 				076669F8272C40E400C02B20 /* PurchaseSameItemCell */,
@@ -951,6 +962,7 @@
 				19C7BBC02730E70900AC4499 /* Items.swift in Sources */,
 				07D212B1273BA0AC00BB1FD1 /* SavingsViewModel.swift in Sources */,
 				F965700B273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift in Sources */,
+				19C012ED275365680044704C /* FormatNumberHelper.swift in Sources */,
 				19EDF03D2727CE7300AF54A7 /* AppDelegate.swift in Sources */,
 				19C7BBC62730F1C000AC4499 /* TrItemBudget.swift in Sources */,
 				19D9DA75274959E700A044D3 /* OtherBudgetCoreDataManager.swift in Sources */,
@@ -1183,7 +1195,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R8CWTPS5QZ;
+				DEVELOPMENT_TEAM = 282R274LXF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1211,7 +1223,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R8CWTPS5QZ;
+				DEVELOPMENT_TEAM = 282R274LXF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
