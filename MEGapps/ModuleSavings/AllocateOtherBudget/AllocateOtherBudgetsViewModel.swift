@@ -110,4 +110,9 @@ class AllocateOtherBudgetViewModel: NSObject {
     private func getSavingsUsed() -> Int64 {
         return item!.price - insufficientAmount
     }
+    
+    func getBudgetUsed() -> [BudgetUsed] {
+        removeUnusedBudget()
+        return budgetUsed
+    }
 }

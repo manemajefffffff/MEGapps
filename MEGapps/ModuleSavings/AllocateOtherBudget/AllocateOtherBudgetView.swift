@@ -85,6 +85,14 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { _ in
             // move page to purchase overview
             self.viewModel.proceedWishlist()
+            
+            let viewController = PurchaseOverviewViewController()
+            viewController.itemContainer = self.viewModel.item
+            viewController.budgetUsedContainer = self.viewModel.getBudgetUsed()
+            let navPurcOverview: UINavigationController = UINavigationController(rootViewController: viewController)
+            navPurcOverview.modalPresentationStyle = .fullScreen
+                
+            self.present(navPurcOverview, animated: true, completion: nil)
         }))
         
         self.present(alert, animated: true, completion: nil)

@@ -140,7 +140,7 @@
 		034FD4CA272A936E0060F7F4 /* ProductInformationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationTableViewController.swift; sourceTree = "<group>"; };
 		034FD4CD272A9C900060F7F4 /* BudgetAllocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAllocationTableViewCell.swift; sourceTree = "<group>"; };
 		034FD4CE272A9C900060F7F4 /* BudgetAllocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetAllocationTableViewCell.xib; sourceTree = "<group>"; };
-		038575D5274B6664009B5701 /* PurchaseDetailCoreDataManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PurchaseDetailCoreDataManager .swift"; sourceTree = "<group>"; };
+		038575D5274B6664009B5701 /* PurchaseDetailCoreDataManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PurchaseDetailCoreDataManager .swift"; path = "CoreData/PurchaseDetailCoreDataManager .swift"; sourceTree = "<group>"; };
 		0710ACF42730F4DA00F8DFA7 /* SavingsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryViewController.swift; sourceTree = "<group>"; };
 		0710ACF82730F55200F8DFA7 /* SavingsHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavingsHistory.storyboard; sourceTree = "<group>"; };
 		0710ACFB2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		07545F7927296BAB002E422A /* OtherBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetTableViewCell.swift; sourceTree = "<group>"; };
 		07545F7A27296BAB002E422A /* OtherBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherBudgetTableViewCell.xib; sourceTree = "<group>"; };
 		07618A44273D42C500B8DF93 /* SavingsAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsAddViewModel.swift; sourceTree = "<group>"; };
-		07618A46273D42F900B8DF93 /* SavingsAddCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsAddCoreDataManager.swift; sourceTree = "<group>"; };
+		07618A46273D42F900B8DF93 /* SavingsAddCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SavingsAddCoreDataManager.swift; path = CoreData/SavingsAddCoreDataManager.swift; sourceTree = "<group>"; };
 		076669F4272C3D8700C02B20 /* PurchaseSameItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSameItemViewController.swift; sourceTree = "<group>"; };
 		076669F6272C3D9800C02B20 /* PurchaseSameItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseSameItem.storyboard; sourceTree = "<group>"; };
 		076669F9272C411F00C02B20 /* PurchaseSameItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSameItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -158,11 +158,11 @@
 		078A1B942729112700813423 /* OtherBudgetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetCellView.swift; sourceTree = "<group>"; };
 		078A1B962729113000813423 /* OtherBudgetCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherBudgetCellView.xib; sourceTree = "<group>"; };
 		079843F92742A4D1007AC20B /* PurchaseSameItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSameItemViewModel.swift; sourceTree = "<group>"; };
-		079843FB2742A64A007AC20B /* PurchaseSameItemCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSameItemCoreDataManager.swift; sourceTree = "<group>"; };
+		079843FB2742A64A007AC20B /* PurchaseSameItemCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseSameItemCoreDataManager.swift; path = CoreData/PurchaseSameItemCoreDataManager.swift; sourceTree = "<group>"; };
 		07D094F92728458100DD0716 /* HobbySavingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbySavingsCellView.swift; sourceTree = "<group>"; };
 		07D094FB2728459A00DD0716 /* HobbySavingsCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HobbySavingsCellView.xib; sourceTree = "<group>"; };
 		07D094FD27285A6200DD0716 /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
-		07D212AE273BA00F00BB1FD1 /* SavingsCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsCoreDataManager.swift; sourceTree = "<group>"; };
+		07D212AE273BA00F00BB1FD1 /* SavingsCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SavingsCoreDataManager.swift; path = CoreData/SavingsCoreDataManager.swift; sourceTree = "<group>"; };
 		07D212B0273BA0AC00BB1FD1 /* SavingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewModel.swift; sourceTree = "<group>"; };
 		190EA09D272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAllocateBudgetTableViewCell.swift; sourceTree = "<group>"; };
 		190EA09E272B8AB600479D32 /* PurchaseAllocateBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseAllocateBudgetTableViewCell.xib; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		190EA0A6272B90B900479D32 /* InsufficientAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsufficientAmountView.swift; sourceTree = "<group>"; };
 		19294799274206BD0043320B /* PurchaseOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOverviewViewModel.swift; sourceTree = "<group>"; };
 		1929479D274207FF0043320B /* BudgetUsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetUsed.swift; sourceTree = "<group>"; };
-		192947A027420D130043320B /* PurchaseCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCoreDataManager.swift; sourceTree = "<group>"; };
+		192947A027420D130043320B /* PurchaseCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCoreDataManager.swift; path = CoreData/PurchaseCoreDataManager.swift; sourceTree = "<group>"; };
 		193D48FE2728EFC300F46C30 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		193D4905272923B100F46C30 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		193D4908272924B200F46C30 /* WishListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListModel.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		19A7736B2728411000219AE7 /* UICustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustom.swift; sourceTree = "<group>"; };
 		19B301F42743607800FCB9C8 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		19C012EC275365680044704C /* FormatNumberHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatNumberHelper.swift; sourceTree = "<group>"; };
-		19C012EF275392BA0044704C /* CoreDataContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContext.swift; sourceTree = "<group>"; };
+		19C012EF275392BA0044704C /* CoreDataContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataContext.swift; path = CoreData/CoreDataContext/CoreDataContext.swift; sourceTree = "<group>"; };
 		19C6A42B274F3BC0002EAC79 /* AllocateOtherBudgetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocateOtherBudgetsViewModel.swift; sourceTree = "<group>"; };
 		19C6A42F274F5557002EAC79 /* UseOtherBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseOtherBudgetViewModel.swift; sourceTree = "<group>"; };
 		19C6A431274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBudgetUsedAmountProtocol.swift; sourceTree = "<group>"; };
@@ -191,9 +191,9 @@
 		19C7BBC12730EBA700AC4499 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		19C7BBC32730EC4900AC4499 /* SavingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistory.swift; sourceTree = "<group>"; };
 		19C7BBC52730F1C000AC4499 /* TrItemBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrItemBudget.swift; sourceTree = "<group>"; };
-		19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCoreDataManager.swift; sourceTree = "<group>"; };
+		19C7BBC8273247E200AC4499 /* WishlistCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WishlistCoreDataManager.swift; path = CoreData/WishlistCoreDataManager.swift; sourceTree = "<group>"; };
 		19D9DA7227494DD200A044D3 /* OtherBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetViewModel.swift; sourceTree = "<group>"; };
-		19D9DA74274959E700A044D3 /* OtherBudgetCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetCoreDataManager.swift; sourceTree = "<group>"; };
+		19D9DA74274959E700A044D3 /* OtherBudgetCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OtherBudgetCoreDataManager.swift; path = CoreData/OtherBudgetCoreDataManager.swift; sourceTree = "<group>"; };
 		19D9DA7627496FD800A044D3 /* AddEditBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditBudgetViewModel.swift; sourceTree = "<group>"; };
 		19EDF0392727CE7300AF54A7 /* MEGapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MEGapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EDF03C2727CE7300AF54A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		F95C441A274F788900ED1388 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F9657006273CAC6800A92636 /* PurchaseCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryViewModel.swift; path = MEGapps/ModuleWishlist/Purchase/PurchaseSameItem/PurchaseCategoryViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F9657008273CC1B700A92636 /* SavingsHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryViewModel.swift; sourceTree = "<group>"; };
-		F965700A273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryCoreDataManager.swift; sourceTree = "<group>"; };
+		F965700A273CC1D600A92636 /* SavingsHistoryCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SavingsHistoryCoreDataManager.swift; path = CoreData/SavingsHistoryCoreDataManager.swift; sourceTree = "<group>"; };
 		F9681CB8272A21C500941894 /* WishlistAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistAddView.swift; sourceTree = SOURCE_ROOT; };
 		F9681CBE272AAD4000941894 /* PurchaseCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = PurchaseCategory.storyboard; path = MEGapps/ModuleWishlist/WishList/PurchaseCategory.storyboard; sourceTree = SOURCE_ROOT; };
 		F9681CC0272AADD100941894 /* PurchaseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchaseCategoryView.swift; path = MEGapps/ModuleWishlist/WishList/PurchaseCategoryView.swift; sourceTree = SOURCE_ROOT; };
@@ -369,7 +369,7 @@
 				079843FB2742A64A007AC20B /* PurchaseSameItemCoreDataManager.swift */,
 				038575D5274B6664009B5701 /* PurchaseDetailCoreDataManager .swift */,
 			);
-			path = CoreData;
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		1942C9C5272C4B8900E76586 /* BudgetAllocationTableView */ = {
@@ -418,7 +418,7 @@
 			children = (
 				19C012EF275392BA0044704C /* CoreDataContext.swift */,
 			);
-			path = CoreDataContext;
+			name = CoreDataContext;
 			sourceTree = "<group>";
 		};
 		19C7BBC7273244AA00AC4499 /* Recovered References */ = {
