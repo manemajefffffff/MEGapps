@@ -70,6 +70,11 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
     }
     
     private func setProceedWishlistButtonState() {
+        if viewModel.isBudgetAllocatedEnough == false {
+            proceedWishlistButton.backgroundColor = .gray
+        } else {
+            proceedWishlistButton.backgroundColor = UIColor(named: "PrimaryHSgradient")
+        }
         proceedWishlistButton.isEnabled = viewModel.isBudgetAllocatedEnough
     }
     

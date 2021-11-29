@@ -35,6 +35,7 @@ class UseBudgetsView: UIViewController, UITableViewDelegate, UITableViewDataSour
         reloadTableView()
         subscribe()
         sendDataToVM()
+        useBudgetTableView.allowsMultipleSelection = true
     }
     
     private func reloadTableView() {
@@ -90,11 +91,31 @@ extension UseBudgetsView {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewModel.changeIsUsedStatus(index: indexPath.row)
+        //self.viewModel.changeIsUsedStatus(index: indexPath.row)
+        if let cell = useBudgetTableView.cellForRow(at: indexPath) {
+            cell.borderWidth = 3
+            cell.borderColor = UIColor(named: "PrimaryHSgradient")
+            cell.selectionStyle = .none
+            cell.cornerRadius = 10
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = useBudgetTableView.cellForRow(at: indexPath){
+            cell.borderColor = .clear
+            cell.cornerRadius = 0
+        }
     }
 }
 
 class UseBudgetCell: UITableViewCell {
     @IBOutlet weak var budgetNameLabel: UILabel!
     @IBOutlet weak var budgetLeftLabel: UILabel!
+    
+//    override var isSelected: Bool {
+//        didSet {
+//            contentView.borderColor = isSelected ? UIColor(named: "PrimaryHSGradient") : .red
+//            contentView.borderWidth = isSelected ? 1 : 1
+//        }
+//    }
 }

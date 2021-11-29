@@ -76,12 +76,13 @@
                                     <constraint firstAttribute="height" constant="49" id="Rz3-1X-Q5t"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <color key="tintColor" name="PrimaryHSgradient"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Proceed Wishlist"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Proceed Wishlist">
-                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
-                                </buttonConfiguration>
+                                <state key="normal" title="Proceed Wishlist">
+                                    <color key="titleColor" name="PureWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" name="PureWhite"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>

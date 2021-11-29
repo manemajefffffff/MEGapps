@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="177"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcZ-q1-Wdt">
-                                <rect key="frame" x="116.5" y="13" width="109" height="21"/>
+                                <rect key="frame" x="117" y="13" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="changeAmountWillUsed:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="Q11-f9-9W7"/>
+                                            <action selector="changeAmountWillUsed:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="tqs-Kc-zrc"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 2.500.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZm-QW-gqW">
@@ -96,11 +96,10 @@
                             <constraint firstAttribute="trailing" secondItem="lXR-aj-N1q" secondAttribute="trailing" constant="13" id="0ql-ka-A6R"/>
                             <constraint firstItem="vcZ-q1-Wdt" firstAttribute="top" secondItem="zIy-l6-H2p" secondAttribute="top" constant="12.999999999999972" id="0tr-pl-VI1"/>
                             <constraint firstAttribute="trailing" secondItem="2Pd-iZ-zNW" secondAttribute="trailing" id="5YQ-XF-JJ7"/>
-                            <constraint firstItem="vcZ-q1-Wdt" firstAttribute="leading" secondItem="zIy-l6-H2p" secondAttribute="leading" constant="116.50817532720828" id="6d3-5h-nAF"/>
-                            <constraint firstItem="lXR-aj-N1q" firstAttribute="centerY" secondItem="vcZ-q1-Wdt" secondAttribute="centerY" id="FDO-DM-pdb"/>
+                            <constraint firstItem="vcZ-q1-Wdt" firstAttribute="centerX" secondItem="zIy-l6-H2p" secondAttribute="centerX" id="CWv-oJ-bMr"/>
                             <constraint firstAttribute="bottom" secondItem="2Pd-iZ-zNW" secondAttribute="bottom" id="Lgh-4z-5e5"/>
+                            <constraint firstItem="lXR-aj-N1q" firstAttribute="top" secondItem="zIy-l6-H2p" secondAttribute="top" constant="8" id="Pgr-HF-cAo"/>
                             <constraint firstItem="2Pd-iZ-zNW" firstAttribute="leading" secondItem="zIy-l6-H2p" secondAttribute="leading" id="Q7w-OE-pEg"/>
-                            <constraint firstAttribute="trailing" secondItem="vcZ-q1-Wdt" secondAttribute="trailing" constant="117.49182467279172" id="srJ-O6-sJe"/>
                             <constraint firstItem="2Pd-iZ-zNW" firstAttribute="top" secondItem="zIy-l6-H2p" secondAttribute="top" constant="45" id="w30-iD-rCx"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -122,7 +121,7 @@
             <connections>
                 <outlet property="budgetAvailabelLabel" destination="fZm-QW-gqW" id="822-LO-6zM"/>
                 <outlet property="budgetNameLabel" destination="vcZ-q1-Wdt" id="4u5-YM-CCk"/>
-                <outlet property="budgetToUseTextField" destination="fd0-ML-fBf" id="oZQ-wX-crT"/>
+                <outlet property="budgetToUseTextField" destination="fd0-ML-fBf" id="7D7-vb-XJ7"/>
             </connections>
             <point key="canvasLocation" x="131.15942028985509" y="75"/>
         </tableViewCell>
