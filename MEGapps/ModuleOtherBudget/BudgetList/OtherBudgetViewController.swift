@@ -30,10 +30,6 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if !viewModel.hasItem{
-            print("check")
-            container = []
-        }
     }
     
     // MARK: - Actions
@@ -72,11 +68,15 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
             }.store(in: &anyCancellable)
     }
     
-    private func setupEmptyState(){
+    private func setupEmptyState() {
+        if !noDataView.isDescendant(of: budgetTableView) {
+            budgetTableView.addSubview(noDataView)
+        }
+        
         if viewModel.hasItem {
-            budgetTableView.backgroundView = nil
+            noDataView.isHidden = true
         } else {
-            budgetTableView.backgroundView = noDataView
+            noDataView.isHidden = false
         }
     }
     
@@ -141,6 +141,10 @@ extension OtherBudgetViewController: AddEditBudgetDelegate {
     func refreshData() {
         viewModel.fetchData()
         
+        if !viewModel.hasItem{
+            print("check")
+            container = []
+        }
         print("check 2")
         setupEmptyState()
         budgetTableView.reloadData()
