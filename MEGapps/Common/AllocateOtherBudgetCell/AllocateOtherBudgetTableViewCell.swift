@@ -66,6 +66,7 @@ class AllocateOtherBudgetTableViewCell: UITableViewCell {
             }
         }
     }
+
     
     // MARK: Function
     private func setData() {
