@@ -265,16 +265,17 @@ class PurchaseOverviewView: UIView {
         self.doneButton.backgroundColor = UIColor(named: "PrimaryHSgradient")
         self.doneButton.cornerRadius = 12
         self.doneButton.translatesAutoresizingMaskIntoConstraints = false
-        self.doneButton.addTarget(self, action: #selector(tapButtonDone), for: .touchUpInside)
         NSLayoutConstraint.activate([
             self.doneButton.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 70),
             self.doneButton.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -70),
             self.doneButton.bottomAnchor.constraint(equalTo: self.backView.bottomAnchor, constant: -20),
             self.doneButton.heightAnchor.constraint(equalToConstant: 35)
         ])
+        self.doneButton.addTarget(self, action: #selector(tapButtonDone), for: .touchUpInside)
     }
     
-    @objc func tapButtonDone(){
-            print("button done tapped")
-        }
+    @objc func tapButtonDone(_ sender: Any ) {
+        print("button done tapped")
+        self.viewController.dismiss(animated: true, completion: nil)
+    }
 }
