@@ -1,16 +1,18 @@
 //
-//  PurchaseCoreDataManager.swift
+//  CoreDataContext.swift
 //  MEGapps
 //
-//  Created by William Giovanni Kambuno on 10/11/21.
+//  Created by Arya Ilham on 28/11/21.
 //
 
 import Foundation
 import CoreData
 
-class PurchaseSameItemCoreDataManager {
-    static let shared = PurchaseSameItemCoreDataManager()
+class CoreDataContext {
+    static let sharedCDC = CoreDataContext()
     
+    private init() {}
+        
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "MEGapps")
         container.loadPersistentStores { _, error in
@@ -24,14 +26,5 @@ class PurchaseSameItemCoreDataManager {
         container.viewContext.undoManager = nil
         return container
     }()
-    
-    func getAll(completion: @escaping(_ items: [Items]) -> Void) {
-        let context = persistentContainer.viewContext
-        do {
-            let data = try context.fetch(Items.fetchRequest())
-            completion(data)
-        } catch {
-            fatalError()
-        }
-    }
+
 }

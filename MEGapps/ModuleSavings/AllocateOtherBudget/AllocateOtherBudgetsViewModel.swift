@@ -1,16 +1,19 @@
 //
-//  PurchaseOtherBudgetAllocationViewModel.swift
+//  AllocateOtherBudgetsViewModel.swift
 //  MEGapps
 //
-//  Created by Arya Ilham on 29/10/21.
+//  Created by Arya Ilham on 25/11/21.
 //
-
-// DEPRECATED CLASS
 
 import Foundation
 import Combine
 
-class PurchaseOtherBudgetAllocationViewModel: NSObject {
+protocol UseBudgetsFunctionProtocol {
+    func addNewBudgetUse(index: Int)
+    func setBudgetIsUsedStatus(index: Int)
+}
+
+class AllocateOtherBudgetViewModel: NSObject {
     
     // MARK: - Publishers
     @Published var budgetAmountUsed: Int64 = 0
@@ -29,12 +32,6 @@ class PurchaseOtherBudgetAllocationViewModel: NSObject {
     
     // MARK: - Function(Other budget allocation)
     private func checkBudgetAmountUsed() {
-//        var amountUsedTemp: Int64 = 0
-//        for item in budgetUsage {
-//            amountUsedTemp += item.amountUsed
-//        }
-//        budgetAmountUsed = amountUsedTemp
-        
         var amountUsedTemp: Int64 = 0
         for item in budgetUsed {
             amountUsedTemp += item.amountUsed
@@ -44,18 +41,6 @@ class PurchaseOtherBudgetAllocationViewModel: NSObject {
     }
     
     func getBudget() {
-//        OtherBudgetCoreDataManager.shared.get { budgets in
-//            var allBudgetTemp: [BudgetUsed] = []
-//            for item in budgets {
-//                var allBudget = BudgetUsed()
-//                allBudget.budget = item
-//                allBudgetTemp.append(allBudget)
-//            }
-//            if allBudgetTemp.count > 0 {
-//                self.budgetUsage = allBudgetTemp
-//            }
-//        }
-        
         OtherBudgetCoreDataManager.shared.get { budgets in
             var notUsedBudgetListTemp: [BudgetUsed] = []
             for budget in budgets {
@@ -81,6 +66,7 @@ class PurchaseOtherBudgetAllocationViewModel: NSObject {
     
     func setOtherBudgetUsageAmount(amountUsed: Int64, index: Int) {
         budgetUsed[index].amountUsed = amountUsed
+        print(budgetUsed[index].amountUsed)
         checkBudgetAmountUsed()
     }
     
@@ -92,10 +78,25 @@ class PurchaseOtherBudgetAllocationViewModel: NSObject {
         budgetUsed.removeAll { item in
             item.amountUsed <= 0
         }
+    }
+    
+    private func getSavingsAmountUsed() -> Int64 {
+        var tempTotal: Int64 = 0
+        SavingsCoreDataManager.shared.getAll { savingsHistory in
+            for savingHistory in savingsHistory {
+                tempTotal += Int64(savingHistory.amount)
+            }
+            
+        }
+        return tempTotal
+    }
         
+    func proceedWishlist() {
+        // save ke coredata
+        removeUnusedBudget()
         PurchaseCoreDataManager
             .shared
-            .proceedWishlist(itemWantToBuy: item!, savingsAmountUsed: getSavingsAmountUsed(), budgetUsed: budgetUsed) { errorMessage in
+            .proceedWishlist(itemWantToBuy: item!, savingsAmountUsed: getSavingsUsed(), budgetUsed: budgetUsed) { errorMessage in
                 switch errorMessage {
                 case .success:
                     print("berhasil proses wishlist")
@@ -103,15 +104,15 @@ class PurchaseOtherBudgetAllocationViewModel: NSObject {
                     print("gagal proses wishlist")
                 }
             }
+
     }
     
-    private func getSavingsAmountUsed() -> Int64 {
-        // masukin code untuk hitung tabungan yang terpakai
-        return 100000
+    private func getSavingsUsed() -> Int64 {
+        return item!.price - insufficientAmount
     }
     
-    func proceedWishlist() {
-        // save ke coredata
+    func getBudgetUsed() -> [BudgetUsed] {
         removeUnusedBudget()
+        return budgetUsed
     }
 }

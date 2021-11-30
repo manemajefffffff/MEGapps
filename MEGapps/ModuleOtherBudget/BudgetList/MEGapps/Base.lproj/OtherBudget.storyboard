@@ -52,7 +52,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="224" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fes-Kt-irJ">
-                                <rect key="frame" x="16" y="156" width="382" height="690"/>
+                                <rect key="frame" x="16" y="156" width="382" height="641"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Zpg-x9-fuj" id="hg5-os-K9k"/>
@@ -71,6 +71,7 @@
                             <constraint firstItem="kWW-kz-MqC" firstAttribute="centerX" secondItem="oLd-EN-IiA" secondAttribute="centerX" id="iT9-eF-xzi"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Budget" largeTitleDisplayMode="always" id="Yxf-aM-ns4">
                         <barButtonItem key="rightBarButtonItem" image="AddPlus" style="plain" id="5VN-L3-Gjx">
                             <color key="tintColor" name="PrimaryHSgradient"/>
@@ -79,6 +80,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="budgetTableView" destination="fes-Kt-irJ" id="dvV-c8-8ib"/>
                         <outlet property="noDataView" destination="kWW-kz-MqC" id="fRz-gf-4vf"/>

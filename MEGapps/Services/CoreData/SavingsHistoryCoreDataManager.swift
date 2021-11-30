@@ -38,19 +38,7 @@ class SavingHistoryCoreDataManager {
     
     static let shared = SavingHistoryCoreDataManager()
     
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "MEGapps")
-        container.loadPersistentStores { _, error in
-            guard error == nil else {
-                fatalError("Unresolved error \(error!)")
-            }
-        }
-        container.viewContext.automaticallyMergesChangesFromParent = false
-        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        container.viewContext.shouldDeleteInaccessibleFaults = true
-        container.viewContext.undoManager = nil
-        return container
-    }()
+    lazy var persistentContainer = CoreDataContext.sharedCDC.persistentContainer
     
     private func newTaskContext() -> NSManagedObjectContext {
         let taskContext = persistentContainer.newBackgroundContext()
