@@ -12,6 +12,10 @@ protocol updateViewProtocol {
     func updateView()
 }
 
+protocol SavingsViewControllerDelegate {
+    func didSave( triggerCheck: Bool)
+}
+
 class SavingsViewController: UIViewController {
 
     // MARK: - ViewModel
@@ -36,7 +40,7 @@ class SavingsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tableViewSavingsBudget.reloadData()
+        self.updateView()
         super.viewWillAppear(animated)
     }
     
@@ -119,8 +123,12 @@ class SavingsViewController: UIViewController {
         }
         viewHobbySavingsCell.addButtonPressed = {
             let storyBoard = UIStoryboard(name: "SavingsAdd", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(withIdentifier: "savingAddPage")
-            self.present(viewController, animated: true)
+            guard let viewController = storyBoard.instantiateViewController(withIdentifier: "savingAddPage") as? SavingsAddViewController else {
+                fatalError("View not available")
+            }
+            viewController.delegate = self
+            let navController = UINavigationController(rootViewController: viewController)
+            self.present(navController, animated: true)
         }
     }
 
@@ -178,5 +186,15 @@ extension SavingsViewController: updateViewProtocol {
     func updateView() {
         self.savingsViewModel.fetchData()
         self.subscribe()
+    }
+}
+
+extension SavingsViewController: SavingsViewControllerDelegate {
+    func didSave(triggerCheck: Bool) {
+        if triggerCheck {// This doesn't work? ProtDel works fine, but the CoreData Value doesn't update until page change. BROKEN
+            self.updateView()
+            subscribe()
+            print("\(savingsViewModel.total)DELEGATE BS HERE")
+        }
     }
 }

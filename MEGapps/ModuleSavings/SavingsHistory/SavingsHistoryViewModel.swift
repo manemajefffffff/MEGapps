@@ -23,6 +23,9 @@ class SavingsHistoryViewModel: NSObject {
         SavingHistoryCoreDataManager.shared.getAll { savingHistory in
             self.savingHistory = savingHistory
         }
+        self.savingHistory = savingHistory.sorted(by: {
+            $0.createdAt?.compare($1.createdAt ?? Date()) == .orderedDescending
+        })
     }
     
 }
