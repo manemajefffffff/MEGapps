@@ -103,7 +103,7 @@ extension SavingsHistoryViewController: UITableViewDataSource, UITableViewDelega
         dateFormatter.dateFormat = "MM-d-yy"
         
         cell.labelDateTime.text = "\(dateFormatter.string(from: dateTime!))"
-        cell.labelAmount.text = "Rp. \(amount)"
+        cell.labelAmount.text = "Rp. \(amount.formattedWithSeparator)"
         cell.labelDetails.text = details
         
         if status == "credit" {cell.labelAmount.textColor = UIColor(named: "DebitAmountGreen")}// Change var amount with actual var

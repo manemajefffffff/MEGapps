@@ -13,6 +13,7 @@ class SavingsBudgetTableViewCell: UITableViewCell {
     @IBOutlet weak var viewSavingsBudgetCell: UIView!
     @IBOutlet weak var imageStar: UIImageView!
     @IBOutlet weak var labelProductName: UILabel!
+    @IBOutlet weak var labelProductName2: UILabel!
     @IBOutlet weak var labelProductPrice: UILabel!
     
 // MARK: - Variables
@@ -47,10 +48,22 @@ class SavingsBudgetTableViewCell: UITableViewCell {
     private func setData() {
         if let prodName = newData?.name {
             labelProductName.text = "\(prodName)"
+            labelProductName2.text = "\(prodName)"
         }
         if let prodPrice = newData?.price {
-            labelProductPrice.text = "\(prodPrice)"
+            labelProductPrice.text = "Rp. \(prodPrice.formattedWithSeparator)"
         }
-
+        if let prodPriority = newData?.isPrioritize {
+            if prodPriority == true {
+                imageStar.isHidden = false
+                labelProductName.isHidden = false
+                labelProductName2.isHidden = true
+            }
+            else {
+                imageStar.isHidden = true
+                labelProductName.isHidden = true
+                labelProductName2.isHidden = false
+            }
+        }
     }
 }

@@ -52,6 +52,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NM-Op-lfO">
+                                <rect key="frame" x="25" y="15" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="OnProgressCellColor"/>
                         <constraints>
@@ -60,6 +66,8 @@
                             <constraint firstAttribute="trailing" secondItem="jIJ-54-RdT" secondAttribute="trailing" constant="20" id="C1O-Aj-ztG"/>
                             <constraint firstItem="mMo-a6-Aza" firstAttribute="top" secondItem="JLa-hi-tBn" secondAttribute="bottom" constant="7" id="GMo-oN-pVp"/>
                             <constraint firstItem="USo-oq-nd7" firstAttribute="top" secondItem="tlu-IO-oWS" secondAttribute="top" constant="15" id="GpC-CX-fhh"/>
+                            <constraint firstItem="8NM-Op-lfO" firstAttribute="top" secondItem="tlu-IO-oWS" secondAttribute="top" constant="15" id="HG9-MV-bBc"/>
+                            <constraint firstItem="8NM-Op-lfO" firstAttribute="leading" secondItem="tlu-IO-oWS" secondAttribute="leading" constant="25" id="aIn-8E-r1i"/>
                             <constraint firstItem="JLa-hi-tBn" firstAttribute="leading" secondItem="tlu-IO-oWS" secondAttribute="leading" constant="25" id="gDz-4u-udU"/>
                             <constraint firstItem="JLa-hi-tBn" firstAttribute="top" secondItem="tlu-IO-oWS" secondAttribute="top" constant="17" id="tNM-cS-Msr"/>
                             <constraint firstItem="USo-oq-nd7" firstAttribute="leading" secondItem="JLa-hi-tBn" secondAttribute="trailing" constant="10" id="xcs-4v-4DK"/>
@@ -79,6 +87,7 @@
             <connections>
                 <outlet property="imageStar" destination="JLa-hi-tBn" id="DUE-dX-bdr"/>
                 <outlet property="labelProductName" destination="USo-oq-nd7" id="K7R-ay-B4A"/>
+                <outlet property="labelProductName2" destination="8NM-Op-lfO" id="AVq-CF-5X5"/>
                 <outlet property="labelProductPrice" destination="mMo-a6-Aza" id="Un6-We-n2E"/>
                 <outlet property="viewSavingsBudgetCell" destination="tlu-IO-oWS" id="MqV-nX-WCZ"/>
             </connections>

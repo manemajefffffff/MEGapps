@@ -24,6 +24,7 @@ class SavingsAddViewController: UIViewController {
     let currentTime: Date = Date()
     var onViewWillDisappear: (()->())?
     var emptyState = false
+    var delegate: SavingsViewControllerDelegate?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -36,10 +37,12 @@ class SavingsAddViewController: UIViewController {
     @IBAction func dismissPage(_ sender: Any) {
         onViewWillDisappear?()
         self.dismiss(animated: true, completion: nil)
+        delegate?.didSave(triggerCheck: false)
     }
     
     @IBAction func saveEntry(_ sender: Any) {
         saveButtonPressed()
+        delegate?.didSave(triggerCheck: true)
     }
     
     
