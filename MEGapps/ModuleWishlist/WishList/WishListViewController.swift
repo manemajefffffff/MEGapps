@@ -38,6 +38,15 @@ class WishListViewController: UIViewController {
         print("view will appear")
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     // MARK: - Function
     private func fetchData() {
         wishListViewModel.fetchData()
