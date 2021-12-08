@@ -219,6 +219,7 @@ extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
 extension WishListViewController: WishListDetailProtocol {
     func pushView(itemData: Items) {
         let wishlistDetailVC = WishlistDetailViewController()
+        wishlistDetailVC.hidesBottomBarWhenPushed = true
         wishlistDetailVC.container = itemData
         self.navigationController?.pushViewController(wishlistDetailVC, animated: true)
     }
