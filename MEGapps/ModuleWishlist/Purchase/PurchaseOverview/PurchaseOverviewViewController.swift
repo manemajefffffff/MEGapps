@@ -22,6 +22,14 @@ class PurchaseOverviewViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     private func sendReceivedDataToVM() {
         if let itemReceived = itemContainer {
             viewModel.itemWantToBuy = itemReceived
