@@ -12,6 +12,7 @@ class PurchaseDetailViewController: UIViewController {
     
     var viewModel = PurchaseDetailViewModel()
     var itemsPD: Items?
+    weak var delegate: updateViewProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class PurchaseDetailViewController: UIViewController {
         viewModel.item = itemsPD!
         viewModel.calculate()
         self.view = PurchaseDetailView(viewModel: viewModel, viewController: self)
-   }
+    }
 
     func showAcceptAlert() {
         let alert = UIAlertController(title: "Proceed Wishlist", message: "Are you sure you want to proceed with this wishlist?", preferredStyle: .alert)
@@ -44,6 +45,10 @@ class PurchaseDetailViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {(_)in
             print("User click Delete button")
             self.viewModel.deleteAccWishlist()
+//            self.delegate?.updateSavingListView()
+//            self.navigationController?.popToRootViewController(animated: true)
+//            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -86,11 +91,16 @@ class PurchaseDetailViewController: UIViewController {
     func budgetsDeducted() {
         let viewController = PurchaseOverviewViewController()
         viewController.itemContainer = viewModel.item
+        viewController.hidesBottomBarWhenPushed = true
+//        viewController.navigationController?.navigationItem.leftBarButtonItem = nil
+//        viewController.navigationController?.navigationItem.setHidesBackButton(true, animated: false)
+//        viewController.navigationController?.isNavigationBarHidden = true
         
-        let navPurcOverview: UINavigationController = UINavigationController(rootViewController: viewController)
-        navPurcOverview.modalPresentationStyle = .fullScreen
-            
-        self.present(navPurcOverview, animated: true, completion: nil)
+//        let navPurcOverview: UINavigationController = UINavigationController(rootViewController: viewController)
+//        navPurcOverview.modalPresentationStyle = .fullScreen
+//
+//        self.present(navPurcOverview, animated: true, completion: nil)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
         
     func othersBudget() {
