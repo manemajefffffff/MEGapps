@@ -33,7 +33,7 @@ class SavingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationService.shared.requestAuthorization()
-        //prepCustomView(view: viewHobbySavingsCell)
+//        prepCustomView(view: viewHobbySavingsCell)
         prepTableView(view: tableViewSavingsBudget)
         self.updateView()// init call to get data
         movePage()
@@ -129,7 +129,7 @@ class SavingsViewController: UIViewController {
                 fatalError("View not available")
             }
             viewController.delegate = self
-            let navController = UINavigationController(rootViewController: self.navigationController!)
+            let navController = UINavigationController(rootViewController: viewController)
             self.present(navController, animated: true)
         }
     }
