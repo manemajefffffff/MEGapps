@@ -276,6 +276,7 @@ class PurchaseOverviewView: UIView {
     
     @objc func tapButtonDone(_ sender: Any ) {
         print("button done tapped")
-        self.viewController.dismiss(animated: true, completion: nil)
+//        self.viewController.dismiss(animated: true, completion: nil)
+        self.viewController.navigationController?.popToRootViewController(animated: true)
     }
 }
