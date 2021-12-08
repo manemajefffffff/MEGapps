@@ -156,6 +156,8 @@ extension OtherBudgetViewController: AddEditBudgetDelegate {
         }
         print("check 2")
         setupEmptyState()
-        budgetTableView.reloadData()
+        DispatchQueue.main.async {
+            self.budgetTableView.reloadData()
+        }
     }
 }
