@@ -32,6 +32,15 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     // MARK: - Actions
     @IBAction func moveToAddBudget(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "AddEditBudget", bundle: nil)
