@@ -15,7 +15,7 @@ class SavingsAddViewController: UIViewController {
     private let savingsAddVM = SavingsAddViewModel()
     var anyCancellable = Set<AnyCancellable>()
      
-    // MARK: -  Outlet
+    // MARK: - Outlet
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
     
@@ -35,20 +35,20 @@ class SavingsAddViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func dismissPage(_ sender: Any) {
-        onViewWillDisappear?()
+//        onViewWillDisappear?()
         self.dismiss(animated: true, completion: nil)
-        delegate?.didSave(triggerCheck: false)
+//        delegate?.didSave(triggerCheck: false)
     }
     
     @IBAction func saveEntry(_ sender: Any) {
         saveButtonPressed()
-        delegate?.didSave(triggerCheck: true)
     }
     
     
     // MARK: - Functions
     func saveSavingsAmount() {
         self.savingsAddVM.saveSavingsAmount(createdDate: currentTime, amount: Int64(amountTextField.text ?? "0") ?? 0)
+        delegate?.didSave(triggerCheck: true)
         navigationController?.popToRootViewController(animated: true)
     }
     
