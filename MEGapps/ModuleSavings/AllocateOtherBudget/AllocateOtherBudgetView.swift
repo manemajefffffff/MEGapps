@@ -118,7 +118,8 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func dismissPage(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     
