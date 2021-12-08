@@ -8,11 +8,13 @@
 import UIKit
 import Combine
 
-protocol updateViewProtocol {
+protocol updateViewProtocol: AnyObject {
     func updateView()
+    func updateSavingListView()
+    func updateSavingsAmountView()
 }
 
-protocol SavingsViewControllerDelegate {
+protocol SavingsViewControllerDelegate: AnyObject {
     func didSave( triggerCheck: Bool)
 }
 
@@ -127,7 +129,7 @@ class SavingsViewController: UIViewController {
                 fatalError("View not available")
             }
             viewController.delegate = self
-            let navController = UINavigationController(rootViewController: viewController)
+            let navController = UINavigationController(rootViewController: self.navigationController!)
             self.present(navController, animated: true)
         }
     }
@@ -169,10 +171,13 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
         // move to item detail
         tableView.deselectRow(at: indexPath, animated: true)
         let viewController = PurchaseDetailViewController()
+        viewController.hidesBottomBarWhenPushed = true
+        viewController.delegate = self
         viewController.itemsPD = savingsViewModel.items[indexPath.row]
-        let navPurcDetail: UINavigationController = UINavigationController(rootViewController: viewController)
-        navPurcDetail.modalPresentationStyle = .fullScreen
-        self.present(navPurcDetail, animated: true, completion: nil)
+//        let navPurcDetail: UINavigationController = UINavigationController(rootViewController: viewController)
+//        navPurcDetail.modalPresentationStyle = .fullScreen
+//        self.present(navPurcDetail, animated: true, completion: nil)
+        self.navigationController?.pushViewController(viewController, animated: true)
         
 //        tableView.deselectRow(at: indexPath, animated: true)
 //        let viewController = PurchaseDetailViewController()
@@ -183,17 +188,27 @@ extension SavingsViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension SavingsViewController: updateViewProtocol {
+    func updateSavingsAmountView() {
+        self.savingsViewModel.fetchData()
+    }
+    
+    func updateSavingListView() {
+        self.savingsViewModel.fetchDataItems()
+    }
+    
     func updateView() {
         self.savingsViewModel.fetchData()
-        self.subscribe()
+        self.savingsViewModel.fetchDataItems()
+//        self.subscribe()
     }
 }
 
 extension SavingsViewController: SavingsViewControllerDelegate {
     func didSave(triggerCheck: Bool) {
         if triggerCheck {// This doesn't work? ProtDel works fine, but the CoreData Value doesn't update until page change. BROKEN
-            self.updateView()
-            subscribe()
+//            self.updateView()
+            self.updateSavingsAmountView()
+//            subscribe()
             print("\(savingsViewModel.total)DELEGATE BS HERE")
         }
     }
