@@ -484,6 +484,7 @@ class PurchaseDetailView: UIView {
     }
     
     @objc func dismissPage(sender: UIBarButtonItem) {
-        self.viewController.dismiss(animated: true, completion: nil)
+//        self.viewController.dismiss(animated: true, completion: nil)
+        self.viewController.navigationController?.popViewController(animated: true)
     }
 }
