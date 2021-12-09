@@ -68,6 +68,7 @@ class PurchaseCoreDataManager {
         newSavingHistory.id = UUID()
         newSavingHistory.amount = savingsAmountUsed * -1
         newSavingHistory.createdAt = Date()
+        newSavingHistory.status = "credit"
         newSavingHistory.wordings = "Purchase \(itemWantToBuy.name ?? "Item")"
         
         do {
