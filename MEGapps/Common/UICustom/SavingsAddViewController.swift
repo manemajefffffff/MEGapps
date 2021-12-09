@@ -41,12 +41,19 @@ class SavingsAddViewController: UIViewController {
             }
         }
     }
+    var currentSavingsAmountContainer: Int64? {
+        didSet {
+            if let currentSavingsAmountContainer = currentSavingsAmountContainer {
+                savingsAddVM.currentSavingsAmount = currentSavingsAmountContainer
+            }
+        }
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        retrieveData()
+//        retrieveData()
     }
     
     // MARK: - Actions
@@ -68,17 +75,36 @@ class SavingsAddViewController: UIViewController {
         saveAlertMessage = "Are you sure you want to deduct Savings?"
     }
     
-    func saveSavingsAmount() {
+    private func saveSavingsAmount() {
         self.savingsAddVM.saveSavingsAmount(createdDate: currentTime, amount: Int64(amountTextField.text ?? "0") ?? 0)
         delegate?.didSave(triggerCheck: true)
         navigationController?.popToRootViewController(animated: true)
     }
     
-    func retrieveData() {
+    private func retrieveData() {
         savingsAddVM.fetchData()
     }
     
-    func saveButtonPressed() {
+    private func saveButtonPressed() {
+        savingsAddVM.newAmount = Int64(amountTextField.text ?? "0") ?? 0
+        switch savingsAddVM.checkAmountField() {
+        case .noAmount:
+            showErrorAlert(title: "No Amount", message: "Please enter amount")
+        case .deductMoreThanCurrent:
+            showErrorAlert(title: "Too Much Deduct", message: "You cannot deduct more than current savings total")
+        case .eligible:
+            showSaveAlert()
+        }
+    }
+    
+    private func showErrorAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+
+    }
+    
+    private func showSaveAlert() {
         let alert = UIAlertController(title: saveAlertTitle, message: saveAlertMessage, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { _ in self.saveSavingsAmount()
@@ -87,7 +113,7 @@ class SavingsAddViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func emptyCheck() {
+    private func emptyCheck() {
         if amountTextField.text == ""{
             let alert = UIAlertController(title: "Error", message: "Please enter a valid amount.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in NSLog("The \"OK\" alert occured.")}))
@@ -96,7 +122,7 @@ class SavingsAddViewController: UIViewController {
         }
     }
     
-    func setupUI() {
+    private func setupUI() {
         amountTextField.layer.cornerRadius = 10
         
         amountTextField.layer.borderColor = UIColor.lightGray.cgColor
@@ -113,7 +139,7 @@ class SavingsAddViewController: UIViewController {
         getTodaysDate(label: dateLabel)
     }
     
-    func getTodaysDate(label: UILabel) {
+    private func getTodaysDate(label: UILabel) {
         formatter.dateFormat = "dd MMMM yyyy"
         label.text = "\(formatter.string(from: currentTime))"
     }
