@@ -129,14 +129,22 @@ class SavingsViewController: UIViewController {
             self.present(navController, animated: true)
         }
         viewHobbySavingsCell.addButtonPressed = {
-            let storyBoard = UIStoryboard(name: "SavingsAdd", bundle: nil)
-            guard let viewController = storyBoard.instantiateViewController(withIdentifier: "savingAddPage") as? SavingsAddViewController else {
-                fatalError("View not available")
-            }
-            viewController.delegate = self
-            let navController = UINavigationController(rootViewController: viewController)
-            self.present(navController, animated: true)
+            self.goToAddDeductSavings(isAdd: true)
         }
+        viewHobbySavingsCell.deductButtonPressed = {
+            self.goToAddDeductSavings(isAdd: false)
+        }
+    }
+    
+    private func goToAddDeductSavings(isAdd: Bool) {
+        let storyBoard = UIStoryboard(name: "SavingsAdd", bundle: nil)
+        guard let viewController = storyBoard.instantiateViewController(withIdentifier: "savingAddPage") as? SavingsAddViewController else {
+            fatalError("View not available")
+        }
+        viewController.delegate = self
+        viewController.isAddContainer = isAdd
+        let navController = UINavigationController(rootViewController: viewController)
+        self.present(navController, animated: true)
     }
 
     /*
