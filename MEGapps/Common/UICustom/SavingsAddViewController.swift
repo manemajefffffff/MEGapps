@@ -22,9 +22,25 @@ class SavingsAddViewController: UIViewController {
     // MARK: - Variable
     let formatter = DateFormatter()
     let currentTime: Date = Date()
-    var onViewWillDisappear: (()->())?
+    var onViewWillDisappear: (() -> Void)?
     var emptyState = false
-    var delegate: SavingsViewControllerDelegate?
+    weak var delegate: SavingsViewControllerDelegate?
+    
+    // MARK: - UI Wordings
+    private var saveAlertTitle = "Add Savings"
+    private var saveAlertMessage = "Are you sure you want to add Savings?"
+    
+    // MARK: - Container
+    var isAddContainer: Bool? {
+        didSet {
+            if let isAddContainer = isAddContainer {
+                savingsAddVM.isAdd = isAddContainer
+                if !(isAddContainer) {
+                    changeUIToDeductWordings()
+                }
+            }
+        }
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -46,6 +62,12 @@ class SavingsAddViewController: UIViewController {
     
     
     // MARK: - Functions
+    private func changeUIToDeductWordings() {
+        self.navigationItem.title = "Deduct Savings Amount"
+        saveAlertTitle = "Deduct Savings"
+        saveAlertMessage = "Are you sure you want to deduct Savings?"
+    }
+    
     func saveSavingsAmount() {
         self.savingsAddVM.saveSavingsAmount(createdDate: currentTime, amount: Int64(amountTextField.text ?? "0") ?? 0)
         delegate?.didSave(triggerCheck: true)
@@ -57,7 +79,7 @@ class SavingsAddViewController: UIViewController {
     }
     
     func saveButtonPressed() {
-        let alert = UIAlertController(title: "Add Savings", message: "Are you sure you want to add Savings?", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: saveAlertTitle, message: saveAlertMessage, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { _ in self.saveSavingsAmount()
             self.dismiss(animated: true, completion: nil)
