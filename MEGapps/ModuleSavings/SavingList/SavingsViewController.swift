@@ -143,6 +143,7 @@ class SavingsViewController: UIViewController {
         }
         viewController.delegate = self
         viewController.isAddContainer = isAdd
+        viewController.currentSavingsAmountContainer = savingsViewModel.total
         let navController = UINavigationController(rootViewController: viewController)
         self.present(navController, animated: true)
     }
