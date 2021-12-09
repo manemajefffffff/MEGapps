@@ -15,7 +15,7 @@ final class HobbySavingsCellView: UIView {
     var addButtonPressed: (() -> Void) = {}
     var deductButtonPressed: (() -> Void) = {}
     var isOpen: Bool = false
-    var savingAmount: Int = 0
+    var savingAmount: Int64 = 0
     
 // MARK: - Outlets
     @IBOutlet weak var labelHobbySavings: UILabel!
