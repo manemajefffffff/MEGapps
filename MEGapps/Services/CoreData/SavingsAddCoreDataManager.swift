@@ -38,4 +38,20 @@ class SavingsAddCoreDataManager {
             fatalError()
         }
     }
+    
+    func saveDeduct(_ createdDate: Date, _ amount: Int64) {
+        let context = persistentContainer.viewContext
+
+        let newSavingsHistory = SavingsHistory(context: context)
+        newSavingsHistory.id = UUID()
+        newSavingsHistory.createdAt = createdDate
+        newSavingsHistory.amount = amount * -1
+        newSavingsHistory.status = "debit"
+        newSavingsHistory.wordings = "Deduct"
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
 }
