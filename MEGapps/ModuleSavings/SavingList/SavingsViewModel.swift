@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class SavingsViewModel: NSObject {
-    @Published var total = 0
+    @Published var total: Int64 = 0
     var savingsHistory: [SavingsHistory] = []
     @Published var items: [Items] = []
     
@@ -23,9 +23,9 @@ class SavingsViewModel: NSObject {
     func fetchData() {
         SavingsCoreDataManager.shared.getAll { savingsHistory in
             self.savingsHistory = savingsHistory
-            var tempTotal = 0
+            var tempTotal: Int64 = 0
             for savingHistory in savingsHistory {
-                tempTotal+=Int(savingHistory.amount)
+                tempTotal+=Int64(savingHistory.amount)
             }
             self.total = tempTotal
         }

@@ -8,15 +8,23 @@
 import Foundation
 import Combine
 
+enum SaveStatus {
+    case noAmount
+    case deductMoreThanCurrent
+    case eligible
+}
+
 class SavingsAddViewModel: NSObject {
     
     var savingsHistory: [SavingsHistory] = []
-    var newAmount = 0
+    var newAmount: Int64 = 0
     var createdDate: Date = Date()
+    var isAdd: Bool = true
+    var currentSavingsAmount: Int64 = 0
     
     override init() {
         super.init()
-        fetchData()
+//        fetchData()
         print("data fetched")
     }
     // MARK: - Function
@@ -27,7 +35,18 @@ class SavingsAddViewModel: NSObject {
     }
     
     func saveSavingsAmount(createdDate: Date, amount: Int64) {
-        SavingsAddCoreDataManager.shared.saveSavingsAmount(createdDate, amount)
+        isAdd == true ?
+        SavingsAddCoreDataManager.shared.saveSavingsAmount(createdDate, amount) :
+        SavingsAddCoreDataManager.shared.saveDeduct(createdDate, amount)
+    }
+    
+    func checkAmountField() -> SaveStatus {
+        if newAmount == 0 { // case: tidak ada uang yang diinput / sama dengan nol
+            return .noAmount
+        } else if !isAdd && newAmount > currentSavingsAmount { // case: uang yang deduct lebih dari yang dipunya
+            return .deductMoreThanCurrent
+        }
+        return .eligible
     }
     
 }

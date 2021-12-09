@@ -15,6 +15,7 @@
                 <outlet property="ButtonHistory" destination="WyB-cH-OLF" id="O9k-Kh-5X4"/>
                 <outlet property="LabelHobbySavings" destination="Qqg-LU-zjP" id="vse-vF-ay5"/>
                 <outlet property="LabelSavingsAmount" destination="4GB-hD-XnX" id="dfd-SQ-d99"/>
+                <outlet property="buttonDeductAmount" destination="xfl-7p-cVK" id="sg8-VE-3iw"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -48,15 +49,19 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ns2-L9-btJ">
-                    <rect key="frame" x="177" y="92" width="150" height="35"/>
+                    <rect key="frame" x="76" y="97" width="120" height="30"/>
                     <color key="backgroundColor" name="AddAmountAndSelectedIndicator"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="150" id="lNC-C1-lfB"/>
-                        <constraint firstAttribute="height" constant="35" id="xei-ZW-Amu"/>
+                        <constraint firstAttribute="width" constant="120" id="lNC-C1-lfB"/>
+                        <constraint firstAttribute="height" constant="30" id="xei-ZW-Amu"/>
                     </constraints>
                     <color key="tintColor" name="OuterSpaceColor"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title=" Add Amount"/>
+                    <buttonConfiguration key="configuration" style="plain" title=" Add Amount" imagePadding="5">
+                        <imageReference key="image" image="plus.circle" catalog="system" symbolScale="small"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                        <fontDescription key="titleFontDescription" type="system" pointSize="9"/>
+                    </buttonConfiguration>
                     <connections>
                         <action selector="moveToAddAmount:" destination="-1" eventType="touchUpInside" id="CZW-5g-E8B"/>
                     </connections>
@@ -76,37 +81,53 @@
                         <action selector="hideAmount:" destination="-1" eventType="touchUpInside" id="G9a-uB-GN7"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfl-7p-cVK">
+                    <rect key="frame" x="205" y="97" width="120" height="30"/>
+                    <color key="backgroundColor" name="LightSalmonPink"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Ekg-9k-wx1"/>
+                        <constraint firstAttribute="width" constant="120" id="K8H-ID-Vkx"/>
+                    </constraints>
+                    <color key="tintColor" name="OuterSpaceColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Deduct Savings" imagePadding="5">
+                        <imageReference key="image" image="minus.circle" catalog="system" symbolScale="small"/>
+                        <fontDescription key="titleFontDescription" type="system" pointSize="9"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="moveToDeductAmount:" destination="-1" eventType="touchUpInside" id="AQn-dE-KBo"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstItem="xfl-7p-cVK" firstAttribute="leading" secondItem="ns2-L9-btJ" secondAttribute="trailing" constant="9" id="2YN-XZ-EEL"/>
+                <constraint firstAttribute="bottom" secondItem="xfl-7p-cVK" secondAttribute="bottom" constant="18" id="3EB-gc-ufi"/>
                 <constraint firstItem="Qqg-LU-zjP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="6WK-AU-chP"/>
                 <constraint firstItem="ZhA-Ma-349" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="57" id="AGO-rr-JdN"/>
+                <constraint firstItem="ns2-L9-btJ" firstAttribute="centerY" secondItem="xfl-7p-cVK" secondAttribute="centerY" id="Che-hn-vrd"/>
                 <constraint firstItem="WyB-cH-OLF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="GTR-1G-MUY"/>
                 <constraint firstAttribute="bottom" secondItem="ns2-L9-btJ" secondAttribute="bottom" constant="18" id="H94-5h-Saa"/>
                 <constraint firstAttribute="trailing" secondItem="WyB-cH-OLF" secondAttribute="trailing" constant="27" id="T1I-6n-9w6"/>
                 <constraint firstItem="4GB-hD-XnX" firstAttribute="top" secondItem="Qqg-LU-zjP" secondAttribute="bottom" constant="5" id="TN6-LS-IRo"/>
-                <constraint firstAttribute="trailing" secondItem="ns2-L9-btJ" secondAttribute="trailing" constant="16" id="cnF-F3-5oa"/>
+                <constraint firstAttribute="trailing" secondItem="xfl-7p-cVK" secondAttribute="trailing" constant="18" id="Tnw-bH-Sda"/>
                 <constraint firstItem="Qqg-LU-zjP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="ekQ-cq-zDi"/>
                 <constraint firstItem="ZhA-Ma-349" firstAttribute="leading" secondItem="4GB-hD-XnX" secondAttribute="trailing" constant="15" id="kHQ-ky-BzR"/>
                 <constraint firstItem="4GB-hD-XnX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="zd6-nG-JFT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="132" y="117"/>
+            <point key="canvasLocation" x="131.15942028985509" y="116.85267857142857"/>
         </view>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Um7-qI-K8c">
-            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-            <nil key="textColor"/>
-            <nil key="highlightedColor"/>
-            <point key="canvasLocation" x="-54" y="90"/>
-        </label>
     </objects>
     <resources>
         <image name="EyeOpen-1" width="21" height="13"/>
         <image name="clock.arrow.circlepath" catalog="system" width="128" height="110"/>
+        <image name="minus.circle" catalog="system" width="128" height="121"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <namedColor name="AddAmountAndSelectedIndicator">
             <color red="1" green="0.9100000262260437" blue="0.45100000500679016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightSalmonPink">
+            <color red="0.96100002527236938" green="0.60500001907348633" blue="0.60199999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="OuterSpaceColor">
             <color red="0.18000000715255737" green="0.23899999260902405" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
