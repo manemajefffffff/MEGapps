@@ -57,7 +57,7 @@
                     </constraints>
                     <color key="tintColor" name="OuterSpaceColor"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title=" Add Amount" imagePadding="13">
+                    <buttonConfiguration key="configuration" style="plain" title=" Add Amount" imagePadding="5">
                         <imageReference key="image" image="plus.circle" catalog="system" symbolScale="small"/>
                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                         <fontDescription key="titleFontDescription" type="system" pointSize="9"/>
@@ -90,7 +90,7 @@
                     </constraints>
                     <color key="tintColor" name="OuterSpaceColor"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Deduct Savings" imagePadding="13">
+                    <buttonConfiguration key="configuration" style="plain" title="Deduct Savings" imagePadding="5">
                         <imageReference key="image" image="minus.circle" catalog="system" symbolScale="small"/>
                         <fontDescription key="titleFontDescription" type="system" pointSize="9"/>
                     </buttonConfiguration>
