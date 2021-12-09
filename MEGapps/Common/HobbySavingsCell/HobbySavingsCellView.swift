@@ -10,20 +10,22 @@ import UIKit
 @IBDesignable
 final class HobbySavingsCellView: UIView {
     
-//MARK: - Variables
-    var historyButtonPressed: (() -> ()) = {}
-    var addButtonPressed: (() -> ()) = {}
+// MARK: - Variables
+    var historyButtonPressed: (() -> Void) = {}
+    var addButtonPressed: (() -> Void) = {}
+    var deductButtonPressed: (() -> Void) = {}
     var isOpen: Bool = false
     var savingAmount: Int = 0
     
-//MARK: - Outlets
+// MARK: - Outlets
     @IBOutlet weak var labelHobbySavings: UILabel!
     @IBOutlet weak var labelSavingsAmount: UILabel!
     @IBOutlet weak var buttonHistory: UIButton!
     @IBOutlet weak var buttonEye: UIButton!
     @IBOutlet weak var buttonAddAmount: UIButton!
+    @IBOutlet weak var buttonDeductAmount: UIButton!
     
-//MARK: - Lifecycle
+// MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureView()
@@ -34,7 +36,7 @@ final class HobbySavingsCellView: UIView {
         self.configureView()
     }
     
-//MARK: - Functions
+// MARK: - Functions
     func loadViewFromNib(nibName: String) -> UIView? {// Load Custom UIView NIB
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
@@ -56,7 +58,7 @@ final class HobbySavingsCellView: UIView {
         view.layer.cornerRadius = 16.0// View Rounded
         self.addSubview(view)
         self.buttonAddAmount.layer.cornerRadius = 16.0// Button Rounded
-        
+        self.buttonDeductAmount.layer.cornerRadius = 16.0
         self.labelSavingsAmount.text = "Rp. \(self.savingAmount.formattedWithSeparator)"
         self.showAmount()
     }
@@ -83,6 +85,10 @@ final class HobbySavingsCellView: UIView {
     
     @IBAction func moveToAddAmount(_ sender: Any) {
         addButtonPressed()
+    }
+    
+    @IBAction func moveToDeductAmount(_ sender: Any) {
+        deductButtonPressed()
     }
     
     @IBAction func hideAmount(_ sender: Any) {
