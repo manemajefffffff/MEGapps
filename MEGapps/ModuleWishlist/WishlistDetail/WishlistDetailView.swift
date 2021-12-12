@@ -85,7 +85,7 @@ class WishlistDetailView: UIView {
         if let date = self.viewModel.wishlist.createdAt {
             if let addedDate = Calendar.current.date(byAdding: .day, value: 1, to: date) {
                 if addedDate > Date() {
-                    deleteWishlistButton.isHidden = true
+                    acceptWishlistButton.isHidden = true
                 }
             }
         }

@@ -31,6 +31,7 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        self.hideKeyboardWhenTappedAround()
     }
     // MARK: - Actions
     
@@ -148,4 +149,16 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
         }
     }
     
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
