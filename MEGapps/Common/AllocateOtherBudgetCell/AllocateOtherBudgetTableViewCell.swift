@@ -52,6 +52,7 @@ class AllocateOtherBudgetTableViewCell: UITableViewCell {
     @IBAction func deleteBudgetCell(_ sender: Any) {
         print("button delete tap")
 //        deleteBudgetUsed!(id)
+        budgetAmountToUse = 0
         delegate?.deleteBudgetUsed(index: id)
     }
     
