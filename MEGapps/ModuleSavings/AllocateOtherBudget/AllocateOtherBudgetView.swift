@@ -37,7 +37,7 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
     private func sendReceivedDataToVM() {
         viewModel.item = itemContainer
         viewModel.insufficientAmount = insufficientAmountContainer
-        insufficientAmountLabel.text = "\(insufficientAmountContainer)"
+        insufficientAmountLabel.text = "\(FormatNumberHelper.formatNumber(price: insufficientAmountContainer))"
     }
     
     private func subscribe() {
