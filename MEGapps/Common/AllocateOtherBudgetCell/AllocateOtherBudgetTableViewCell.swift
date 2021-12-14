@@ -96,7 +96,10 @@ class AllocateOtherBudgetTableViewCell: UITableViewCell {
     
     private func setData() {
         budgetNameLabel.text = "\(budget?.budget?.name ?? "Budget Name")"
-        budgetAvailabelLabel.text = "Rp. \(budget?.budget?.amount ?? 0)"
+        if let budget = budget?.budget?.amount {
+            budgetAvailabelLabel.text = "\(FormatNumberHelper.formatNumber(price: budget))"
+
+        }
         if budget!.amountUsed > 0 {
             budgetToUseTextField.text = "\(budget?.amountUsed ?? 0)"
         }
