@@ -60,6 +60,9 @@ class AllocateOtherBudgetTableViewCell: UITableViewCell {
             if amount <= 0 {
                 self.budgetAmountToUse = 0
                 delegate?.changeAmountWillUsed(amount: budgetAmountToUse, index: id)
+            } else if amount > budget?.budget?.amount ?? 0 {
+                self.budgetAmountToUse = budget?.budget?.amount ?? 0
+                delegate?.changeAmountWillUsed(amount: budgetAmountToUse, index: id)
             } else {
                 self.budgetAmountToUse = amount
                 delegate?.changeAmountWillUsed(amount: budgetAmountToUse, index: id)
