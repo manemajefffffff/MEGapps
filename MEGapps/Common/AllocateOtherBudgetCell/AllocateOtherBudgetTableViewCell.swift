@@ -35,11 +35,11 @@ class AllocateOtherBudgetTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setupToolbar()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -76,6 +76,24 @@ class AllocateOtherBudgetTableViewCell: UITableViewCell {
 
     
     // MARK: Function
+    private func setupToolbar() {
+        // Create a toolbar
+        let bar = UIToolbar()
+        // Create a done button with an action to trigger our function to dismiss the keyboard
+        let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissKeyboard))
+        // Create a felxible space item so that we can add it around in toolbar to position our done button
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        // Add the created button items in the toobar
+        bar.items = [flexSpace, flexSpace, doneBtn]
+        bar.sizeToFit()
+        // Add the toolbar to our textfield
+        budgetToUseTextField.inputAccessoryView = bar
+    }
+    
+    @objc private func dismissKeyboard() {
+        self.endEditing(true)
+    }
+    
     private func setData() {
         budgetNameLabel.text = "\(budget?.budget?.name ?? "Budget Name")"
         budgetAvailabelLabel.text = "Rp. \(budget?.budget?.amount ?? 0)"
