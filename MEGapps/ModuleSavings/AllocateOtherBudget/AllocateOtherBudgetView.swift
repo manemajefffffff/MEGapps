@@ -206,7 +206,6 @@ extension AllocateOtherBudgetView: backToAllocateOtherBudgetView {
 extension AllocateOtherBudgetView: ChangeBudgetUsedAmountProtocol {
     func deleteBudgetUsed(index: Int) {
         viewModel.deleteUsedBudget(index: index)
-
     }
     
     func changeAmountWillUsed(amount: Int64, index: Int) {
