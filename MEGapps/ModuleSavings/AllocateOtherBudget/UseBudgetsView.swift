@@ -85,7 +85,7 @@ extension UseBudgetsView {
             fatalError("no cell found")
         }
         cell.budgetNameLabel.text = viewModel.budgetNotUsed[indexPath.row].budget?.name
-        cell.budgetLeftLabel.text = "\(viewModel.budgetNotUsed[indexPath.row].budget?.amount ?? 0)"
+        cell.budgetLeftLabel.text = "\(FormatNumberHelper.formatNumber(price: viewModel.budgetNotUsed[indexPath.row].budget?.amount ?? 0))"
         
         return cell
     }
