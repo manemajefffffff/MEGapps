@@ -36,8 +36,8 @@ class SavingsAddViewModel: NSObject {
     
     func saveSavingsAmount(createdDate: Date, amount: Int64) {
         isAdd == true ?
-        SavingsAddCoreDataManager.shared.saveSavingsAmount(createdDate, amount) :
-        SavingsAddCoreDataManager.shared.saveDeduct(createdDate, amount)
+        SavingsAddCoreDataManager.shared.saveSavingsAmount(createdDate, abs(amount)) :
+        SavingsAddCoreDataManager.shared.saveDeduct(createdDate, abs(amount))
     }
     
     func checkAmountField() -> SaveStatus {
