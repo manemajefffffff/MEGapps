@@ -17,6 +17,7 @@ class OtherBudgetTableViewCell: UITableViewCell {
     @IBOutlet weak var labelBudgetUsed: UILabel!
     @IBOutlet weak var labelBudgetLeft: UILabel!
     @IBOutlet weak var progressBar: CustomProgressBar!
+    @IBOutlet weak var editButton: UIButton!
     
     var otherBudget: Budget? {
         didSet {
@@ -89,4 +90,7 @@ class OtherBudgetTableViewCell: UITableViewCell {
 //        self.labelProductName.text = "\(otherBudget?.name ?? "budget name")"
 //        self.labelProductPrice.text = "\(otherBudget?.amount ?? 0)"
 //    }
+    @IBAction func test(_ sender: Any) {
+        print("test")
+    }
 }

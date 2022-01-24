@@ -28,7 +28,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 9.999.999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyv-Z5-Ug8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 9.999.999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyv-Z5-Ug8">
                                 <rect key="frame" x="220" y="16" width="101" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -48,12 +48,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-mP-IQ4">
-                                        <rect key="frame" x="301.5" y="0.0" width="41.5" height="34"/>
+                                        <rect key="frame" x="304.5" y="0.0" width="38.5" height="31"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="pencil" catalog="system" symbolScale="default"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="moveToEditPage:" destination="-1" eventType="touchUpInside" id="rRx-yi-4wD"/>
+                                            <action selector="test:" destination="-1" eventType="touchUpInside" id="L6J-nh-y2R"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp. 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOT-o6-bwV">
                                         <rect key="frame" x="16" y="31" width="33" height="16"/>
@@ -152,6 +156,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellView" destination="oe4-W2-y7e" id="shQ-Bs-XeC"/>
+                <outlet property="editButton" destination="32Y-mP-IQ4" id="S7X-ae-39t"/>
                 <outlet property="labelBudgetLeft" destination="DsM-iK-9Y1" id="c01-yS-fo8"/>
                 <outlet property="labelBudgetUsed" destination="zlJ-6S-AGk" id="lki-Sh-grd"/>
                 <outlet property="labelInitialBudget" destination="bOT-o6-bwV" id="y4y-Vw-RNp"/>
