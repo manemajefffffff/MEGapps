@@ -51,7 +51,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
         let navController = UINavigationController(rootViewController: addOtherBudgetVC)
         // Half Sheet
         if let presentationController = navController.presentationController as? UISheetPresentationController {
-//            presentationController.detents = [.large()()]
+            presentationController.detents = [.medium()]
         }
         self.present(navController, animated: true)
     }
