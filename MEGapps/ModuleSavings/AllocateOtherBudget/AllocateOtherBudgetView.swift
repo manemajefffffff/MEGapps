@@ -94,10 +94,8 @@ class AllocateOtherBudgetView: UIViewController, UITableViewDelegate, UITableVie
             let viewController = PurchaseOverviewViewController()
             viewController.itemContainer = self.viewModel.item
             viewController.budgetUsedContainer = self.viewModel.getBudgetUsed()
-            let navPurcOverview: UINavigationController = UINavigationController(rootViewController: viewController)
-            navPurcOverview.modalPresentationStyle = .fullScreen
-                
-            self.present(navPurcOverview, animated: true, completion: nil)
+            viewController.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(viewController, animated: true)
         }))
         
         self.present(alert, animated: true, completion: nil)
