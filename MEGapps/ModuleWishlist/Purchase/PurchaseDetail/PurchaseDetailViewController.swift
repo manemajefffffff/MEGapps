@@ -13,6 +13,7 @@ class PurchaseDetailViewController: UIViewController {
     var viewModel = PurchaseDetailViewModel()
     var itemsPD: Items?
     weak var delegate: updateViewProtocol?
+    private var purchaseDetailView: PurchaseDetailView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,8 @@ class PurchaseDetailViewController: UIViewController {
     override func loadView() {
         viewModel.item = itemsPD!
         viewModel.calculate()
-        self.view = PurchaseDetailView(viewModel: viewModel, viewController: self)
+        purchaseDetailView = PurchaseDetailView(viewModel: viewModel, viewController: self)
+        self.view = purchaseDetailView
     }
 
     func showAcceptAlert() {
@@ -120,5 +122,22 @@ class PurchaseDetailViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
+    func editWishlistPage() {
+        let storyboard = UIStoryboard(name: "WishlistAdd", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "wishlistAddSB") as? WishlistAddView
+        else {
+            fatalError("VC not found")
+        }
+        viewController.oldWishlistData = viewModel.item
+        viewController.delegate = self
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+}
 
+extension PurchaseDetailViewController: sendEditedWishlistBackDelegate {
+    func send(_ editedItem: Items) {
+        print("edited item send back")
+        self.viewModel.item = editedItem
+    }
 }
