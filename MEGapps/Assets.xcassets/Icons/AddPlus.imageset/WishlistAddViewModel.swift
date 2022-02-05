@@ -35,4 +35,8 @@ class WishlistAddViewModel: NSObject {
             }
         }
     }
+    
+    func editOldWishlist(_ items: Items) {
+        WishlistCoreDataManager.shared.editWishlist(items)
+    }
 }
