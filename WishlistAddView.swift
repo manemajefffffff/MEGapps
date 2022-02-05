@@ -8,7 +8,11 @@
 import Foundation
 import UIKit
 
-class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDelegate{
+protocol sendEditedWishlistBackDelegate: AnyObject {
+    func send(_ editedItem: Items)
+}
+
+class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDelegate {
     
     // MARK: - Variables
     let tableIdentifier = "DeadlineDatePickerTableViewCell"
@@ -18,6 +22,10 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
     private let purchaseCategoryViewModel = PurchaseCategoryViewModel()
     let dateFormatter = DateFormatter()
     
+    var oldWishlistData: Items?
+    
+    // MARK: - Delegate
+    weak var delegate: sendEditedWishlistBackDelegate?
     
     // MARK: - Outlet
 
@@ -38,29 +46,69 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func moveToCategoryPage(_ sender: Any) {
-        
+    @IBAction func rightBarButtonClicked(_ sender: Any) {
         checkEmptyField()
         
+        if oldWishlistData != nil {
+            saveEditData()
+        } else {
+            moveToCategoryPage()
+        }
+    }
+        
+    // MARK: - Functions
+    
+    fileprivate func moveToCategoryPage() {
         viewModel.items?.name = itemNameTextField.text ?? "None"
         if let price = itemPriceTextField.text {
             viewModel.items?.price  = Int64(price) ?? 0
         }
         viewModel.items?.reason = reasonTextView.text
         viewModel.items?.category = category
-        
+
         let storyBoard = UIStoryboard(name: "PurchaseSameItem", bundle: nil)
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "purchaseSameItemPage") as? PurchaseSameItemViewController else {
             fatalError("no view")
         }
         vc.wishlistAdd = viewModel
         navigationController?.pushViewController(vc, animated: true)
-        
     }
     
-    // MARK: - Functions
+    fileprivate func saveEditData() {
+        if let oldWishlistData = oldWishlistData {
+            oldWishlistData.name = itemNameTextField.text ?? "None"
+            if let price = itemPriceTextField.text {
+                oldWishlistData.price  = Int64(price) ?? 0
+            }
+            oldWishlistData.reason = reasonTextView.text
+            oldWishlistData.category = category
+
+            viewModel.editOldWishlist(oldWishlistData)
+            delegate?.send(oldWishlistData)
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
     
-    func setupUI() {
+    fileprivate func setupUIforEdit() {
+        self.navigationItem.rightBarButtonItem?.title = "Save"
+        self.title = "Edit Wishlist"
+        
+        guard let oldWishlistData = oldWishlistData else {
+            return
+        }
+
+        itemNameTextField.text = "\(oldWishlistData.name ?? "item name")"
+        itemPriceTextField.text = "\(oldWishlistData.price)"
+        categoryLabel.text = "\(oldWishlistData.category ?? "category")"
+        reasonTextView.text = "\(oldWishlistData.reason ?? "reason")"
+    }
+    
+    
+    fileprivate func setupUI() {
+        if oldWishlistData != nil {
+            setupUIforEdit()
+        }
+
         reasonTextView.delegate = self
         placeholderLabel = UILabel()
         placeholderLabel.text = "Reason to buy"
@@ -70,10 +118,9 @@ class WishlistAddView: UITableViewController, UITextViewDelegate, receivedDataDe
         placeholderLabel.frame.origin = CGPoint(x: 5, y: (reasonTextView.font?.pointSize)! / 2)
         placeholderLabel.textColor = UIColor.lightGray
         placeholderLabel.isHidden = !reasonTextView.text.isEmpty
-        
     }
     
-    func checkEmptyField(){
+    func checkEmptyField() {
         if itemNameTextField.text!.isEmpty {
             displayAlert(userMessage: "You have not inputted Product Name")
             return
