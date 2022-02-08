@@ -453,9 +453,9 @@
 		19EDF03B2727CE7300AF54A7 /* MEGapps */ = {
 			isa = PBXGroup;
 			children = (
+				19EDF0922727D78B00AF54A7 /* Services */,
 				C6974C3D272BABF6007EA0C7 /* Extension */,
 				19EDF0942727D79B00AF54A7 /* Common */,
-				19EDF0922727D78B00AF54A7 /* Services */,
 				19EDF0752727D05600AF54A7 /* ModuleWishlist */,
 				19EDF0722727D02D00AF54A7 /* ModuleSavings */,
 				19EDF0702727CFDC00AF54A7 /* ModuleOtherBudget */,

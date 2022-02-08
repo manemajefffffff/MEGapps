@@ -405,7 +405,7 @@ class ReadyToAcceptCollectionViewCell: UICollectionViewCell {
     func setData() {
         self.itemNameLabel.text = "\(self.data?.name ?? "Item name")"
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd, yyyy hh:mm"
+        dateFormatter.dateFormat = "MMMM dd, yyyy HH:mm"
         self.waitingDate.text = dateFormatter.string(from: self.data?.deadline ?? Date.distantPast)
     }
 }

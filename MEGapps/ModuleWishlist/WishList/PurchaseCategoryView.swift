@@ -93,6 +93,7 @@ extension PurchaseCategoryView {
             cell.accessoryType = .checkmark
             selectedCategories = categories[indexPath.row]
             delegate?.passData(data: selectedCategories)
+            dismiss(animated: true, completion: nil)
         }
     }
     
