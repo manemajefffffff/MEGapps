@@ -19,6 +19,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - Variable
     var container: [Budget] = []
+    var row = 0
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -124,22 +125,24 @@ extension OtherBudgetViewController {
         
         cell.otherBudget = container[indexPath.row]
         cell.calculateData()
+        row = indexPath.row
+        cell.editButton.addTarget(self, action: #selector(moveToEditPage), for: .touchUpInside)
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    @objc func moveToEditPage(sender: UIButton) {
         let storyBoard = UIStoryboard(name: "AddEditBudget", bundle: nil)
         guard let addOtherBudgetVC = storyBoard.instantiateViewController(withIdentifier: "addOtherBudget") as? AddEditBudgetViewController else {
             fatalError()
         }
         addOtherBudgetVC.delegate = self
-        addOtherBudgetVC.oldBudgetData = viewModel.otherBudget[indexPath.row]
+        addOtherBudgetVC.oldBudgetData = viewModel.otherBudget[row]
         let navController = UINavigationController(rootViewController: addOtherBudgetVC)
         // Half Sheet
         if let presentationController = navController.presentationController as? UISheetPresentationController {
             presentationController.detents = [.medium()]
-            
+
         }
         self.present(navController, animated: true)
     }

@@ -85,7 +85,7 @@ class WishlistDetailView: UIView {
         if let date = self.viewModel.wishlist.createdAt {
             if let addedDate = Calendar.current.date(byAdding: .day, value: 1, to: date) {
                 if addedDate > Date() {
-                    deleteWishlistButton.isHidden = true
+                    acceptWishlistButton.isHidden = true
                 }
             }
         }
@@ -140,6 +140,12 @@ class WishlistDetailView: UIView {
         
         self.viewController.navigationItem.largeTitleDisplayMode = .never
         self.viewController.title = "Wishlist Detail"
+        self.viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(moveToEditPage))
+        self.viewController.navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "PrimaryHSgradient")
+        let image = UIImage(systemName: "chevron.left")?.withRenderingMode(.alwaysOriginal)
+        let cancelbutton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(dismissPage(sender:)))
+        self.viewController.navigationItem.leftBarButtonItem = cancelbutton
+        cancelbutton.tintColor = UIColor(named: "PrimaryHSgradient")
     }
 
     func style() {
@@ -299,5 +305,13 @@ class WishlistDetailView: UIView {
 
     @objc func deleteWishlistAction() {
         self.viewController.showDeleteAlert()
+    }
+    
+    @objc func moveToEditPage() {
+        self.viewController.showEditPage()
+    }
+    
+    @objc func dismissPage(sender: UIBarButtonItem) {
+        self.viewController.navigationController?.popViewController(animated: true)
     }
 }

@@ -59,4 +59,12 @@ class WishlistDetailViewController: UIViewController {
             print("completion block")
         })
     }
+    
+    func showEditPage() {
+        let storyboard = UIStoryboard(name: "WishlistAdd", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "wishlistAddSB")
+        
+        
+        self.present(vc, animated: true)
+    }
 }
