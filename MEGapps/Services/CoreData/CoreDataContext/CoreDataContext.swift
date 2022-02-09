@@ -13,14 +13,14 @@ class CoreDataContext {
     
     private init() {}
         
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "MEGapps")
+    lazy var persistentContainer: NSPersistentCloudKitContainer = {
+        let container = NSPersistentCloudKitContainer(name: "MEGapps")
         container.loadPersistentStores { _, error in
             guard error == nil else {
                 fatalError("Unresolved error \(error!)")
             }
         }
-        container.viewContext.automaticallyMergesChangesFromParent = false
+        container.viewContext.automaticallyMergesChangesFromParent = true
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         container.viewContext.shouldDeleteInaccessibleFaults = true
         container.viewContext.undoManager = nil

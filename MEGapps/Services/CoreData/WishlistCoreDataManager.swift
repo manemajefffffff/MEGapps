@@ -65,6 +65,15 @@ class WishlistCoreDataManager {
         }
     }
     
+    func editWishlist(_ items: Items) {
+        let context = persistentContainer.viewContext
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
+    
     func cancelWishlist(_ items: Items) {
         let context = persistentContainer.viewContext
         context.delete(items)

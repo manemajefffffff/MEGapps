@@ -87,25 +87,24 @@ extension UseBudgetsView {
         cell.budgetNameLabel.text = viewModel.budgetNotUsed[indexPath.row].budget?.name
         cell.budgetLeftLabel.text = "\(FormatNumberHelper.formatNumber(price: viewModel.budgetNotUsed[indexPath.row].budget?.amount ?? 0))"
         
+                    if self.viewModel.budgetNotUsed[indexPath.row].isUsed {
+                        cell.activate()
+                    } else {
+                        cell.deactivate()
+                    }
+
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.viewModel.changeIsUsedStatus(index: indexPath.row)
-        if let cell = useBudgetTableView.cellForRow(at: indexPath) {
-            if self.viewModel.budgetNotUsed[indexPath.row].isUsed {
-                cell.borderWidth = 3
-                cell.borderColor = UIColor(named: "PrimaryHSgradient")
-                cell.selectionStyle = .none
-                cell.cornerRadius = 10
-            } else {
-                cell.borderColor = .clear
-                cell.cornerRadius = 0
-            }
-        }
-        
-
     }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
 class UseBudgetCell: UITableViewCell {
@@ -118,4 +117,21 @@ class UseBudgetCell: UITableViewCell {
 //            contentView.borderWidth = isSelected ? 1 : 1
 //        }
 //    }
+    
+    func activate() {
+        self.borderWidth = 3
+        self.borderColor = UIColor(named: "PrimaryHSgradient")
+        self.selectionStyle = .none
+        self.cornerRadius = 10
+    }
+    
+    func deactivate() {
+        self.borderColor = .clear
+        self.cornerRadius = 0
+    }
+    
+    override func prepareForReuse() {
+        budgetNameLabel.text = "name"
+        budgetLeftLabel.text = "0"
+    }
 }
