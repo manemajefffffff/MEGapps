@@ -61,10 +61,26 @@ class WishlistDetailViewController: UIViewController {
     }
     
     func showEditPage() {
+//        let storyboard = UIStoryboard(name: "WishlistAdd", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "wishlistAddSB")
+//
+//
+//        self.present(vc, animated: true)
+        
         let storyboard = UIStoryboard(name: "WishlistAdd", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "wishlistAddSB")
-        
-        
-        self.present(vc, animated: true)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "wishlistAddSB") as? WishlistAddView
+        else {
+            fatalError("VC not found")
+        }
+        viewController.oldWishlistData = viewModel.wishlist
+        viewController.delegate = self
+        navigationController?.pushViewController(viewController, animated: true)
+
+    }
+}
+
+extension WishlistDetailViewController: sendEditedWishlistBackDelegate {
+    func send(_ editedItem: Items) {
+        viewModel.wishlist = editedItem
     }
 }
