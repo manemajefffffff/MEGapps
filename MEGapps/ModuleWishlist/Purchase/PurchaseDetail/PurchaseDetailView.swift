@@ -189,6 +189,8 @@ class PurchaseDetailView: UIView {
         
         // MARK: - Navigation Bar Setup
         self.viewController.navigationItem.largeTitleDisplayMode = .never
+        self.viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editWishlistAction))
+        self.viewController.navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "PrimaryHSgradient")
         self.viewController.title =  "Accepted Wishlist"
         
         let image = UIImage(systemName: "chevron.left")?.withRenderingMode(.alwaysOriginal)
@@ -440,32 +442,32 @@ class PurchaseDetailView: UIView {
         self.purchaseItemButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.purchaseItemButton.heightAnchor.constraint(equalToConstant: 49),
-            self.purchaseItemButton.bottomAnchor.constraint(equalTo: self.editItemButton.topAnchor, constant: -12),
+            self.purchaseItemButton.bottomAnchor.constraint(equalTo: self.deleteItemButton.topAnchor, constant: -12),
             self.purchaseItemButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 17),
             self.purchaseItemButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
         ])
         
-        self.editItemButton.setTitle("Edit Wishlist", for: .normal)
-        self.editItemButton.setTitleColor(UIColor(named: "PrimaryHSgradient"), for: .normal)
-        self.editItemButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-//        self.editItemButton.backgroundColor = UIColor(named: "PrimaryHSgradient")
-        self.editItemButton.layer.borderColor = UIColor(named: "PrimaryHSgradient")?.cgColor
-        self.editItemButton.layer.borderWidth = 2
-        self.editItemButton.layer.cornerRadius = 10
-        self.editItemButton.layer.shadowColor = UIColor(hex: "#BBBBBBFF")?.cgColor
-        self.editItemButton.layer.shadowOffset = CGSize(width: 0, height: 4)
-        self.editItemButton.layer.shadowRadius = 4.0
-        self.editItemButton.layer.shadowOpacity = 0.8
-        self.editItemButton.addTarget(self, action: #selector(editWishlistAction), for: .touchUpInside)
-        self.editItemButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            self.editItemButton.heightAnchor.constraint(equalToConstant: 49),
-            self.editItemButton.topAnchor.constraint(equalTo: self.purchaseItemButton.bottomAnchor, constant: 12),
-            self.editItemButton.bottomAnchor.constraint(equalTo: self.deleteItemButton.topAnchor, constant: -12),
-            self.editItemButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 17),
-            self.editItemButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
-        ])
+//        self.editItemButton.setTitle("Edit Wishlist", for: .normal)
+//        self.editItemButton.setTitleColor(UIColor(named: "PrimaryHSgradient"), for: .normal)
+//        self.editItemButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
+////        self.editItemButton.backgroundColor = UIColor(named: "PrimaryHSgradient")
+//        self.editItemButton.layer.borderColor = UIColor(named: "PrimaryHSgradient")?.cgColor
+//        self.editItemButton.layer.borderWidth = 2
+//        self.editItemButton.layer.cornerRadius = 10
+//        self.editItemButton.layer.shadowColor = UIColor(hex: "#BBBBBBFF")?.cgColor
+//        self.editItemButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+//        self.editItemButton.layer.shadowRadius = 4.0
+//        self.editItemButton.layer.shadowOpacity = 0.8
+//        self.editItemButton.addTarget(self, action: #selector(editWishlistAction), for: .touchUpInside)
+//        self.editItemButton.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            self.editItemButton.heightAnchor.constraint(equalToConstant: 49),
+//            self.editItemButton.topAnchor.constraint(equalTo: self.purchaseItemButton.bottomAnchor, constant: 12),
+//            self.editItemButton.bottomAnchor.constraint(equalTo: self.deleteItemButton.topAnchor, constant: -12),
+//            self.editItemButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 17),
+//            self.editItemButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
+//        ])
         
         self.deleteItemButton.setTitle("Delete Wishlist", for: .normal)
         self.deleteItemButton.setTitleColor(UIColor(hex: "#000000FF"), for: .normal)
@@ -481,7 +483,7 @@ class PurchaseDetailView: UIView {
         
         NSLayoutConstraint.activate([
             self.deleteItemButton.heightAnchor.constraint(equalToConstant: 49),
-            self.deleteItemButton.topAnchor.constraint(equalTo: self.editItemButton.bottomAnchor, constant: 12),
+            self.deleteItemButton.topAnchor.constraint(equalTo: self.purchaseItemButton.bottomAnchor, constant: 12),
             self.deleteItemButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 650),
             self.deleteItemButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 17),
             self.deleteItemButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -17)
