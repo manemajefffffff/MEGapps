@@ -73,7 +73,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
         
         viewModel.$otherBudget
             .receive(on: DispatchQueue.main)
-            .sink{ [weak self] _ in
+            .sink { [weak self] _ in
                 self?.setupEmptyState()
             }.store(in: &anyCancellable)
     }
@@ -125,7 +125,7 @@ extension OtherBudgetViewController {
         
         cell.otherBudget = container[indexPath.row]
         cell.calculateData()
-        row = indexPath.row
+        cell.editButton.tag = indexPath.row
         cell.editButton.addTarget(self, action: #selector(moveToEditPage), for: .touchUpInside)
         
         return cell
@@ -137,7 +137,7 @@ extension OtherBudgetViewController {
             fatalError()
         }
         addOtherBudgetVC.delegate = self
-        addOtherBudgetVC.oldBudgetData = viewModel.otherBudget[row]
+        addOtherBudgetVC.oldBudgetData = viewModel.otherBudget[sender.tag]
         let navController = UINavigationController(rootViewController: addOtherBudgetVC)
         // Half Sheet
         if let presentationController = navController.presentationController as? UISheetPresentationController {
