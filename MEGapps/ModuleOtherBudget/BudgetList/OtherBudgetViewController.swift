@@ -27,7 +27,6 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
         register()
         subscribe()
         setupEmptyState()
-        //addData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,28 +86,6 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
             noDataView.isHidden = true
         } else {
             noDataView.isHidden = false
-        }
-    }
-    
-    private func addData() {
-        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {fatalError()}
-        
-        let budgetData = TrItemBudget(context: context)
-        budgetData.id = UUID()
-        budgetData.createdAt = Date()
-        budgetData.amount = 10000
-        
-        let newData = Budget(context: context)
-        newData.id = UUID()
-        newData.amount = 300000
-        newData.name = "MAMAM"
-        
-        newData.addToTrItemBudget(budgetData)
-                
-        do {
-            try context.save()
-        } catch {
-            fatalError()
         }
     }
 }
