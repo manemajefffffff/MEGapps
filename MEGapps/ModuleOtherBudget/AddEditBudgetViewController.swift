@@ -24,7 +24,7 @@ class AddEditBudgetViewController: UIViewController {
     var anyCancellable = Set<AnyCancellable>()
     
     // MARK: - Variables
-    var oldBudgetData: Budget?
+    weak var oldBudgetData: Budget?
     
     // MARK: - Delegate
     weak var delegate: AddEditBudgetDelegate?
