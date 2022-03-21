@@ -71,26 +71,12 @@ class OtherBudgetTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func setupView() {
-//        cellView.layer.shadowColor = UIColor.lightGray.cgColor
-//        cellView.layer.shadowOffset = CGSize(width: 0, height: 3)
-//        cellView.layer.shadowRadius = 2.0
-//        cellView.layer.shadowOpacity = 0.4
-//        cellView.layer.masksToBounds = false
-    }
     
-//    private func setData() {
-//        self.labelProductName.text = "\(otherBudget?.name ?? "budget name")"
-//        self.labelProductPrice.text = "\(otherBudget?.amount ?? 0)"
-//    }
-    @IBAction func test(_ sender: Any) {
-        print("test")
-    }
+
 }
