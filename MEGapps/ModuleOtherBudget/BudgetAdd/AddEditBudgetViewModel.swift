@@ -51,7 +51,6 @@ class AddEditBudgetViewModel: NSObject {
     func deleteBudget() {
         if let toDeleteData = oldBudgetData {
             OtherBudgetCoreDataManager.shared.delete(toDeleteData)
-
         }
     }
 }

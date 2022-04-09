@@ -32,6 +32,26 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "19EDF05B2727CE7400AF54A7"
+               BuildableName = "MEGappsUITests.xctest"
+               BlueprintName = "MEGappsUITests"
+               ReferencedContainer = "container:MEGapps.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1942F07927E8B983002AB45A"
+               BuildableName = "ViewModelTests.xctest"
+               BlueprintName = "ViewModelTests"
+               ReferencedContainer = "container:MEGapps.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "19EDF0512727CE7400AF54A7"
                BuildableName = "MEGappsTests.xctest"
                BlueprintName = "MEGappsTests"
@@ -42,9 +62,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "19EDF05B2727CE7400AF54A7"
-               BuildableName = "MEGappsUITests.xctest"
-               BlueprintName = "MEGappsUITests"
+               BlueprintIdentifier = "1942F08627E8BDD1002AB45A"
+               BuildableName = "MEGappsViewModelTests.xctest"
+               BlueprintName = "MEGappsViewModelTests"
                ReferencedContainer = "container:MEGapps.xcodeproj">
             </BuildableReference>
          </TestableReference>

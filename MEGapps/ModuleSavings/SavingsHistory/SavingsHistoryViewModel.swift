@@ -18,6 +18,7 @@ class SavingsHistoryViewModel: NSObject {
         fetchData()
         print("data fetched")
     }
+    
     // MARK: - Function
     func fetchData() {
         SavingHistoryCoreDataManager.shared.getAll { savingHistory in
