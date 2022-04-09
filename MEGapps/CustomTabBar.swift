@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 @IBDesignable class CustomTabBar: UITabBar {
-    @IBInspectable var color : UIColor?
+    @IBInspectable var color: UIColor?
     @IBInspectable var radius: CGFloat = 20
     
     private var shapeLayer: CALayer?
@@ -44,16 +44,23 @@ import UIKit
         
         return path.cgPath
     }
-    
+        
     override func layoutSubviews() {
         super.layoutSubviews()
         self.isTranslucent = true
         var tabFrame = self.frame
-        tabFrame.size.height = 65 + (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? CGFloat.zero)
-        tabFrame.origin.y = self.frame.origin.y + (self.frame.height - 65 - (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? CGFloat.zero))
+
+        // MARK: - BAGIAN YANG BIKIN LAG
+//        tabFrame.size.height = 65 + (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? CGFloat.zero)
+//        tabFrame.origin.y = self.frame.origin.y + (self.frame.height - 65 - (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? CGFloat.zero))
+
+        tabFrame.size.height = 65 + (window?.safeAreaInsets.bottom ?? CGFloat.zero)
+        tabFrame.origin.y = self.frame.origin.y + (self.frame.height - 65 - (window?.safeAreaInsets.bottom ?? CGFloat.zero))
+        // MARK: - END OF BAGIAN YANG BIKIN LAG
+
         self.layer.cornerRadius = 20
         self.frame = tabFrame
-        
+
         self.items?.forEach({$0.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -5.0)})
     }
 }

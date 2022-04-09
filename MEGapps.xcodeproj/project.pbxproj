@@ -54,6 +54,7 @@
 		1942F09127E8C06D002AB45A /* OtherBudgetViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942F09027E8C06D002AB45A /* OtherBudgetViewModelTests.swift */; };
 		196DDCBB27F06D1B000334D6 /* UseOtherBudgetViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196DDCBA27F06D1B000334D6 /* UseOtherBudgetViewModelTests.swift */; };
 		196DDCBD27F098EC000334D6 /* AllocateOtherBudgetViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196DDCBC27F098EC000334D6 /* AllocateOtherBudgetViewModelTests.swift */; };
+		196F19932801681F00D15A26 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196F19922801681F00D15A26 /* CustomTabBarViewController.swift */; };
 		1971F98A27EC37EE00EE2218 /* SavingsAddViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1971F98927EC37EE00EE2218 /* SavingsAddViewModelTests.swift */; };
 		1971F98C27EC415700EE2218 /* SavingsHistoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1971F98B27EC415700EE2218 /* SavingsHistoryViewModelTests.swift */; };
 		1971F98E27ECC3C700EE2218 /* SavingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1971F98D27ECC3C700EE2218 /* SavingsViewModelTests.swift */; };
@@ -191,6 +192,7 @@
 		1942F09027E8C06D002AB45A /* OtherBudgetViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetViewModelTests.swift; sourceTree = "<group>"; };
 		196DDCBA27F06D1B000334D6 /* UseOtherBudgetViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseOtherBudgetViewModelTests.swift; sourceTree = "<group>"; };
 		196DDCBC27F098EC000334D6 /* AllocateOtherBudgetViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocateOtherBudgetViewModelTests.swift; sourceTree = "<group>"; };
+		196F19922801681F00D15A26 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		1971F98927EC37EE00EE2218 /* SavingsAddViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsAddViewModelTests.swift; sourceTree = "<group>"; };
 		1971F98B27EC415700EE2218 /* SavingsHistoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryViewModelTests.swift; sourceTree = "<group>"; };
 		1971F98D27ECC3C700EE2218 /* SavingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewModelTests.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				19A7736B2728411000219AE7 /* UICustom.swift */,
+				196F19922801681F00D15A26 /* CustomTabBarViewController.swift */,
 			);
 			path = UICustom;
 			sourceTree = "<group>";
@@ -1002,6 +1005,7 @@
 				19C7BBC22730EBA700AC4499 /* Budget.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				0710ACFD2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift in Sources */,
+				196F19932801681F00D15A26 /* CustomTabBarViewController.swift in Sources */,
 				C6974C3F272BABF6007EA0C7 /* ViewExtension.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
 				19C6A432274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift in Sources */,
