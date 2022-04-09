@@ -42,6 +42,7 @@ import UIKit
     private func createPath() -> CGPath {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: radius, height: 0.0))
         
+        
         return path.cgPath
     }
         
@@ -62,5 +63,10 @@ import UIKit
         self.frame = tabFrame
 
         self.items?.forEach({$0.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -5.0)})
+    }
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        let superSize = super.sizeThatFits(size)
+        return CGSize(width: superSize.width, height: 65 + (window?.safeAreaInsets.bottom ?? CGFloat.zero))
     }
 }

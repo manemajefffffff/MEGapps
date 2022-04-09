@@ -11,7 +11,7 @@ class CustomTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addShape()
+//        addShape()
     }
     
     private func addShape() {
