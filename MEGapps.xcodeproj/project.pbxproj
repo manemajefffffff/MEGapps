@@ -50,6 +50,14 @@
 		193D4906272923B100F46C30 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193D4905272923B100F46C30 /* WishListViewModel.swift */; };
 		1942C9C7272C4BB400E76586 /* BudgetAllocationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942C9C6272C4BB400E76586 /* BudgetAllocationTableView.swift */; };
 		1942C9C9272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942C9C8272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift */; };
+		1942F08A27E8BDD1002AB45A /* MEGappsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942F08927E8BDD1002AB45A /* MEGappsViewModelTests.swift */; };
+		1942F09127E8C06D002AB45A /* OtherBudgetViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942F09027E8C06D002AB45A /* OtherBudgetViewModelTests.swift */; };
+		196DDCBB27F06D1B000334D6 /* UseOtherBudgetViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196DDCBA27F06D1B000334D6 /* UseOtherBudgetViewModelTests.swift */; };
+		196DDCBD27F098EC000334D6 /* AllocateOtherBudgetViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196DDCBC27F098EC000334D6 /* AllocateOtherBudgetViewModelTests.swift */; };
+		196F19932801681F00D15A26 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196F19922801681F00D15A26 /* CustomTabBarViewController.swift */; };
+		1971F98A27EC37EE00EE2218 /* SavingsAddViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1971F98927EC37EE00EE2218 /* SavingsAddViewModelTests.swift */; };
+		1971F98C27EC415700EE2218 /* SavingsHistoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1971F98B27EC415700EE2218 /* SavingsHistoryViewModelTests.swift */; };
+		1971F98E27ECC3C700EE2218 /* SavingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1971F98D27ECC3C700EE2218 /* SavingsViewModelTests.swift */; };
 		19A736F527474E7400832398 /* PurchaseOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A736F427474E7400832398 /* PurchaseOverviewViewController.swift */; };
 		19A773682728406300219AE7 /* WishlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A773662728406300219AE7 /* WishlistTableViewCell.swift */; };
 		19A773692728406300219AE7 /* WishlistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A773672728406300219AE7 /* WishlistTableViewCell.xib */; };
@@ -75,7 +83,6 @@
 		19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0452727CE7300AF54A7 /* MEGapps.xcdatamodeld */; };
 		19EDF0492727CE7400AF54A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0482727CE7400AF54A7 /* Assets.xcassets */; };
 		19EDF04C2727CE7400AF54A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF04A2727CE7400AF54A7 /* LaunchScreen.storyboard */; };
-		19EDF0572727CE7400AF54A7 /* MEGappsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0562727CE7400AF54A7 /* MEGappsTests.swift */; };
 		19EDF0612727CE7400AF54A7 /* MEGappsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0602727CE7400AF54A7 /* MEGappsUITests.swift */; };
 		19EDF0632727CE7400AF54A7 /* MEGappsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDF0622727CE7400AF54A7 /* MEGappsUITestsLaunchTests.swift */; };
 		19EDF0A827283E1400AF54A7 /* Savings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDF0A627283E1400AF54A7 /* Savings.storyboard */; };
@@ -117,7 +124,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		19EDF0532727CE7400AF54A7 /* PBXContainerItemProxy */ = {
+		1942F08B27E8BDD1002AB45A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 19EDF0312727CE7300AF54A7 /* Project object */;
 			proxyType = 1;
@@ -180,6 +187,15 @@
 		193D4908272924B200F46C30 /* WishListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListModel.swift; sourceTree = "<group>"; };
 		1942C9C6272C4BB400E76586 /* BudgetAllocationTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAllocationTableView.swift; sourceTree = "<group>"; };
 		1942C9C8272C4FA700E76586 /* PurchaseOtherBudgetAllocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOtherBudgetAllocationViewModel.swift; sourceTree = "<group>"; };
+		1942F08727E8BDD1002AB45A /* MEGappsViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MEGappsViewModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1942F08927E8BDD1002AB45A /* MEGappsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEGappsViewModelTests.swift; sourceTree = "<group>"; };
+		1942F09027E8C06D002AB45A /* OtherBudgetViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBudgetViewModelTests.swift; sourceTree = "<group>"; };
+		196DDCBA27F06D1B000334D6 /* UseOtherBudgetViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseOtherBudgetViewModelTests.swift; sourceTree = "<group>"; };
+		196DDCBC27F098EC000334D6 /* AllocateOtherBudgetViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocateOtherBudgetViewModelTests.swift; sourceTree = "<group>"; };
+		196F19922801681F00D15A26 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		1971F98927EC37EE00EE2218 /* SavingsAddViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsAddViewModelTests.swift; sourceTree = "<group>"; };
+		1971F98B27EC415700EE2218 /* SavingsHistoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHistoryViewModelTests.swift; sourceTree = "<group>"; };
+		1971F98D27ECC3C700EE2218 /* SavingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewModelTests.swift; sourceTree = "<group>"; };
 		19A736F427474E7400832398 /* PurchaseOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOverviewViewController.swift; sourceTree = "<group>"; };
 		19A773662728406300219AE7 /* WishlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewCell.swift; sourceTree = "<group>"; };
 		19A773672728406300219AE7 /* WishlistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishlistTableViewCell.xib; sourceTree = "<group>"; };
@@ -207,8 +223,6 @@
 		19EDF0482727CE7400AF54A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19EDF04B2727CE7400AF54A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19EDF04D2727CE7400AF54A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19EDF0522727CE7400AF54A7 /* MEGappsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MEGappsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19EDF0562727CE7400AF54A7 /* MEGappsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEGappsTests.swift; sourceTree = "<group>"; };
 		19EDF05C2727CE7400AF54A7 /* MEGappsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MEGappsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EDF0602727CE7400AF54A7 /* MEGappsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEGappsUITests.swift; sourceTree = "<group>"; };
 		19EDF0622727CE7400AF54A7 /* MEGappsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEGappsUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -251,18 +265,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1942F08427E8BDD1002AB45A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19EDF0362727CE7300AF54A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1938B5E2278F43DA007BE2EF /* CloudKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19EDF04F2727CE7400AF54A7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +406,20 @@
 			path = BudgetAllocationTableView;
 			sourceTree = "<group>";
 		};
+		1942F08827E8BDD1002AB45A /* MEGappsViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				196DDCBC27F098EC000334D6 /* AllocateOtherBudgetViewModelTests.swift */,
+				196DDCBA27F06D1B000334D6 /* UseOtherBudgetViewModelTests.swift */,
+				1971F98D27ECC3C700EE2218 /* SavingsViewModelTests.swift */,
+				1971F98B27EC415700EE2218 /* SavingsHistoryViewModelTests.swift */,
+				1971F98927EC37EE00EE2218 /* SavingsAddViewModelTests.swift */,
+				1942F09027E8C06D002AB45A /* OtherBudgetViewModelTests.swift */,
+				1942F08927E8BDD1002AB45A /* MEGappsViewModelTests.swift */,
+			);
+			path = MEGappsViewModelTests;
+			sourceTree = "<group>";
+		};
 		19A773652728401600219AE7 /* WishlistCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				19A7736B2728411000219AE7 /* UICustom.swift */,
+				196F19922801681F00D15A26 /* CustomTabBarViewController.swift */,
 			);
 			path = UICustom;
 			sourceTree = "<group>";
@@ -445,8 +474,8 @@
 			isa = PBXGroup;
 			children = (
 				19EDF03B2727CE7300AF54A7 /* MEGapps */,
-				19EDF0552727CE7400AF54A7 /* MEGappsTests */,
 				19EDF05F2727CE7400AF54A7 /* MEGappsUITests */,
+				1942F08827E8BDD1002AB45A /* MEGappsViewModelTests */,
 				19EDF03A2727CE7300AF54A7 /* Products */,
 				19C7BBC7273244AA00AC4499 /* Recovered References */,
 				1938B5E0278F43DA007BE2EF /* Frameworks */,
@@ -457,8 +486,8 @@
 			isa = PBXGroup;
 			children = (
 				19EDF0392727CE7300AF54A7 /* MEGapps.app */,
-				19EDF0522727CE7400AF54A7 /* MEGappsTests.xctest */,
 				19EDF05C2727CE7400AF54A7 /* MEGappsUITests.xctest */,
+				1942F08727E8BDD1002AB45A /* MEGappsViewModelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -483,14 +512,6 @@
 				F95C441A274F788900ED1388 /* CustomTabBar.swift */,
 			);
 			path = MEGapps;
-			sourceTree = "<group>";
-		};
-		19EDF0552727CE7400AF54A7 /* MEGappsTests */ = {
-			isa = PBXGroup;
-			children = (
-				19EDF0562727CE7400AF54A7 /* MEGappsTests.swift */,
-			);
-			path = MEGappsTests;
 			sourceTree = "<group>";
 		};
 		19EDF05F2727CE7400AF54A7 /* MEGappsUITests */ = {
@@ -775,6 +796,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1942F08627E8BDD1002AB45A /* MEGappsViewModelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1942F08D27E8BDD1002AB45A /* Build configuration list for PBXNativeTarget "MEGappsViewModelTests" */;
+			buildPhases = (
+				1942F08327E8BDD1002AB45A /* Sources */,
+				1942F08427E8BDD1002AB45A /* Frameworks */,
+				1942F08527E8BDD1002AB45A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1942F08C27E8BDD1002AB45A /* PBXTargetDependency */,
+			);
+			name = MEGappsViewModelTests;
+			productName = MEGappsViewModelTests;
+			productReference = 1942F08727E8BDD1002AB45A /* MEGappsViewModelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		19EDF0382727CE7300AF54A7 /* MEGapps */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19EDF0662727CE7400AF54A7 /* Build configuration list for PBXNativeTarget "MEGapps" */;
@@ -792,24 +831,6 @@
 			productName = MEGapps;
 			productReference = 19EDF0392727CE7300AF54A7 /* MEGapps.app */;
 			productType = "com.apple.product-type.application";
-		};
-		19EDF0512727CE7400AF54A7 /* MEGappsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 19EDF0692727CE7400AF54A7 /* Build configuration list for PBXNativeTarget "MEGappsTests" */;
-			buildPhases = (
-				19EDF04E2727CE7400AF54A7 /* Sources */,
-				19EDF04F2727CE7400AF54A7 /* Frameworks */,
-				19EDF0502727CE7400AF54A7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				19EDF0542727CE7400AF54A7 /* PBXTargetDependency */,
-			);
-			name = MEGappsTests;
-			productName = MEGappsTests;
-			productReference = 19EDF0522727CE7400AF54A7 /* MEGappsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		19EDF05B2727CE7400AF54A7 /* MEGappsUITests */ = {
 			isa = PBXNativeTarget;
@@ -836,15 +857,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					1942F08627E8BDD1002AB45A = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 19EDF0382727CE7300AF54A7;
+					};
 					19EDF0382727CE7300AF54A7 = {
 						CreatedOnToolsVersion = 13.0;
-					};
-					19EDF0512727CE7400AF54A7 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 19EDF0382727CE7300AF54A7;
 					};
 					19EDF05B2727CE7400AF54A7 = {
 						CreatedOnToolsVersion = 13.0;
@@ -866,13 +887,20 @@
 			projectRoot = "";
 			targets = (
 				19EDF0382727CE7300AF54A7 /* MEGapps */,
-				19EDF0512727CE7400AF54A7 /* MEGappsTests */,
 				19EDF05B2727CE7400AF54A7 /* MEGappsUITests */,
+				1942F08627E8BDD1002AB45A /* MEGappsViewModelTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1942F08527E8BDD1002AB45A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19EDF0372727CE7300AF54A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -906,13 +934,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		19EDF0502727CE7400AF54A7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		19EDF05A2727CE7400AF54A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -943,6 +964,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1942F08327E8BDD1002AB45A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				196DDCBB27F06D1B000334D6 /* UseOtherBudgetViewModelTests.swift in Sources */,
+				1942F09127E8C06D002AB45A /* OtherBudgetViewModelTests.swift in Sources */,
+				196DDCBD27F098EC000334D6 /* AllocateOtherBudgetViewModelTests.swift in Sources */,
+				1971F98C27EC415700EE2218 /* SavingsHistoryViewModelTests.swift in Sources */,
+				1971F98A27EC37EE00EE2218 /* SavingsAddViewModelTests.swift in Sources */,
+				1942F08A27E8BDD1002AB45A /* MEGappsViewModelTests.swift in Sources */,
+				1971F98E27ECC3C700EE2218 /* SavingsViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19EDF0352727CE7300AF54A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -970,6 +1005,7 @@
 				19C7BBC22730EBA700AC4499 /* Budget.swift in Sources */,
 				19EDF0412727CE7300AF54A7 /* ViewController.swift in Sources */,
 				0710ACFD2730F61C00F8DFA7 /* SavingsHistoryTableViewCell.swift in Sources */,
+				196F19932801681F00D15A26 /* CustomTabBarViewController.swift in Sources */,
 				C6974C3F272BABF6007EA0C7 /* ViewExtension.swift in Sources */,
 				19EDF0472727CE7300AF54A7 /* MEGapps.xcdatamodeld in Sources */,
 				19C6A432274FC730002EAC79 /* ChangeBudgetUsedAmountProtocol.swift in Sources */,
@@ -1030,14 +1066,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		19EDF04E2727CE7400AF54A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				19EDF0572727CE7400AF54A7 /* MEGappsTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		19EDF0582727CE7400AF54A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1050,10 +1078,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		19EDF0542727CE7400AF54A7 /* PBXTargetDependency */ = {
+		1942F08C27E8BDD1002AB45A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 19EDF0382727CE7300AF54A7 /* MEGapps */;
-			targetProxy = 19EDF0532727CE7400AF54A7 /* PBXContainerItemProxy */;
+			targetProxy = 1942F08B27E8BDD1002AB45A /* PBXContainerItemProxy */;
 		};
 		19EDF05E2727CE7400AF54A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1098,6 +1126,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1942F08E27E8BDD1002AB45A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 282R274LXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Arya.MEGappsViewModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MEGapps.app/MEGapps";
+			};
+			name = Debug;
+		};
+		1942F08F27E8BDD1002AB45A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 282R274LXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Arya.MEGappsViewModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MEGapps.app/MEGapps";
+			};
+			name = Release;
+		};
 		19EDF0642727CE7400AF54A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1272,54 +1338,6 @@
 			};
 			name = Release;
 		};
-		19EDF06A2727CE7400AF54A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Arya.MEGappsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MEGapps.app/MEGapps";
-			};
-			name = Debug;
-		};
-		19EDF06B2727CE7400AF54A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Arya.MEGappsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MEGapps.app/MEGapps";
-			};
-			name = Release;
-		};
 		19EDF06D2727CE7400AF54A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1367,6 +1385,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1942F08D27E8BDD1002AB45A /* Build configuration list for PBXNativeTarget "MEGappsViewModelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1942F08E27E8BDD1002AB45A /* Debug */,
+				1942F08F27E8BDD1002AB45A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		19EDF0342727CE7300AF54A7 /* Build configuration list for PBXProject "MEGapps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1381,15 +1408,6 @@
 			buildConfigurations = (
 				19EDF0672727CE7400AF54A7 /* Debug */,
 				19EDF0682727CE7400AF54A7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		19EDF0692727CE7400AF54A7 /* Build configuration list for PBXNativeTarget "MEGappsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				19EDF06A2727CE7400AF54A7 /* Debug */,
-				19EDF06B2727CE7400AF54A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

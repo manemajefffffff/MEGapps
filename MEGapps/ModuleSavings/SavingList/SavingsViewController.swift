@@ -124,9 +124,10 @@ class SavingsViewController: UIViewController {
                 fatalError("View not available")
             }
             viewController.delegate = self
-            let navController = UINavigationController(rootViewController: viewController)
-            navController.modalPresentationStyle = .fullScreen
-            self.present(navController, animated: true)
+            self.navigationController?.pushViewController(viewController, animated: true)
+//            let navController = UINavigationController(rootViewController: viewController)
+//            navController.modalPresentationStyle = .fullScreen
+//            self.present(navController, animated: true)
         }
         viewHobbySavingsCell.addButtonPressed = {
             self.goToAddDeductSavings(isAdd: true)

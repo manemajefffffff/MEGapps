@@ -75,7 +75,8 @@ class SavingsHistoryViewController: UIViewController {
     
 //MARK: - Actions
     @IBAction func dismissPage(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
 
