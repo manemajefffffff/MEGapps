@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar View Controller-->
         <scene sceneID="nA0-7A-eYj">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lc9-11-XSm" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lc9-11-XSm" customClass="CustomTabBarViewController" customModule="MEGapps" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cCG-Ff-kx1" customClass="CustomTabBar" customModule="MEGapps" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="49"/>
