@@ -23,7 +23,8 @@ class WishListViewController: UIViewController {
     
     // MARK: - Variable
     var segments = ["Ready to Accept", "---", "On Wait"]
-        
+    var section = ["Ready to Accept", "On Wait"]
+
     // MARK: - State
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,103 +118,229 @@ extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
         wishlistTableView.register(UINib.init(nibName: "WishlistTableViewCell", bundle: nil), forCellReuseIdentifier: "wishlistTableViewCell")
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        var tempCount = 0
+        tempCount += wishListViewModel.hasItem ? 1 : 0
+        tempCount += wishListViewModel.hasReadyToAcceptItems ? 1 : 0
+        return tempCount
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var tempCounter = 0
-        if wishListViewModel.hasReadyToAcceptItems {
-            tempCounter += 2
+        var numOfRows = 0
+        
+        if wishListViewModel.hasItem && !wishListViewModel.hasReadyToAcceptItems {
+            numOfRows += wishListViewModel.items.count
+        } else if !wishListViewModel.hasItem && wishListViewModel.hasReadyToAcceptItems {
+            numOfRows += 1
+        } else if wishListViewModel.hasItem && wishListViewModel.hasReadyToAcceptItems {
+            switch section {
+            case 0:
+                numOfRows += 1
+            case 1:
+                numOfRows += wishListViewModel.items.count
+            default:
+                numOfRows = 0
+            }
         }
-        if wishListViewModel.hasItem {
-            tempCounter += 1
+        
+        return numOfRows
+        
+        // BACK UP CODE
+//        var tempCounter = 0
+//        if wishListViewModel.hasReadyToAcceptItems {
+//            tempCounter += 2
+//        }
+//        if wishListViewModel.hasItem {
+//            tempCounter += 1
+//        }
+//        return wishListViewModel.items.count + tempCounter
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if wishListViewModel.hasItem && !wishListViewModel.hasReadyToAcceptItems {
+            return self.section[1]
+        } else if !wishListViewModel.hasItem && wishListViewModel.hasReadyToAcceptItems {
+            return self.section[0]
+        } else {
+            return self.section[section]
         }
-        return wishListViewModel.items.count + tempCounter
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var tempCounter = 0
-        if wishListViewModel.hasItem || wishListViewModel.hasReadyToAcceptItems {
-            if wishListViewModel.hasReadyToAcceptItems {
-                tempCounter+=2
-                if indexPath.row == 0 {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath as IndexPath)
-                    cell.textLabel!.text = "\(self.segments[0])"
-                    cell.textLabel!.font = .systemFont(ofSize: 20, weight: .semibold)
-                    cell.backgroundColor = UIColor(named: "BackgroundColor")
-                    cell.textLabel!.translatesAutoresizingMaskIntoConstraints = false
-                    cell.textLabel!.textAlignment = .left
-                    cell.textLabel!.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 0).isActive = true
-                    cell.textLabel!.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: 0).isActive = true
-                    cell.textLabel!.topAnchor.constraint(equalTo: cell.topAnchor, constant: 16).isActive = true
-                    return cell
-                } else if indexPath.row == 1 {
-                    guard let cell = tableView.dequeueReusableCell(withIdentifier: ReadyToAcceptTableViewCell.identifier, for: indexPath) as? ReadyToAcceptTableViewCell else {
-                        fatalError("no cell")
-                    }
-                    cell.wishListVCDelegate = self
-                    cell.viewModel = wishListViewModel
-                    return cell
-                }
+        if wishListViewModel.hasItem && !wishListViewModel.hasReadyToAcceptItems {
+            guard let cell = wishlistTableView.dequeueReusableCell(withIdentifier: "wishlistTableViewCell", for: indexPath) as? WishlistTableViewCell else {
+                fatalError("no cell")
             }
-            if wishListViewModel.hasItem {
-                tempCounter+=1
-                if indexPath.row == tempCounter-1 {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath as IndexPath)
-                    cell.textLabel!.text = "\(self.segments[2])"
-                    cell.textLabel!.font = .systemFont(ofSize: 20, weight: .semibold)
-                    cell.backgroundColor = UIColor(named: "BackgroundColor")
-                    cell.textLabel!.translatesAutoresizingMaskIntoConstraints = false
-                    cell.textLabel!.textAlignment = .left
-                    cell.textLabel!.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 0).isActive = true
-                    cell.textLabel!.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: 0).isActive = true
-                    cell.textLabel!.topAnchor.constraint(equalTo: cell.topAnchor, constant: 16).isActive = true
-                    return cell
-                } else {
-                    guard let cell = wishlistTableView.dequeueReusableCell(withIdentifier: "wishlistTableViewCell", for: indexPath) as? WishlistTableViewCell else {
-                        fatalError("no cell")
-                    }
-                    cell.newData = wishListViewModel.items[indexPath.row-tempCounter]
-                    return cell
-                }
-            } else {
-                // MARK: if no both array of item have no data
-                let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath as IndexPath)
-                cell.textLabel!.text = "No data available"
-                cell.textLabel!.font = .systemFont(ofSize: 20, weight: .semibold)
-                cell.backgroundColor = UIColor(named: "BackgroundColor")
-                cell.textLabel!.translatesAutoresizingMaskIntoConstraints = false
-                cell.textLabel!.textAlignment = .center
-                cell.textLabel!.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 0).isActive = true
-                cell.textLabel!.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: 0).isActive = true
-                cell.textLabel!.topAnchor.constraint(equalTo: cell.topAnchor, constant: 16).isActive = true
-                return cell
-            }
-        } else {
-            // MARK: if no both array of item have no data
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath as IndexPath)
-            cell.textLabel!.text = "No data available"
-            cell.textLabel!.font = .systemFont(ofSize: 20, weight: .semibold)
-            cell.backgroundColor = UIColor(named: "BackgroundColor")
-            cell.textLabel!.translatesAutoresizingMaskIntoConstraints = false
-            cell.textLabel!.textAlignment = .center
-            cell.textLabel!.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 0).isActive = true
-            cell.textLabel!.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: 0).isActive = true
-            cell.textLabel!.topAnchor.constraint(equalTo: cell.topAnchor, constant: 16).isActive = true
+            cell.newData = wishListViewModel.items[indexPath.row]
             return cell
+        } else if !wishListViewModel.hasItem && wishListViewModel.hasReadyToAcceptItems {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ReadyToAcceptTableViewCell.identifier, for: indexPath) as? ReadyToAcceptTableViewCell else {
+                    fatalError("no cell")
+                }
+                cell.wishListVCDelegate = self
+                cell.viewModel = wishListViewModel
+                return cell
+        } else {
+            switch indexPath.section {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ReadyToAcceptTableViewCell.identifier, for: indexPath) as? ReadyToAcceptTableViewCell else {
+                    fatalError("no cell")
+                }
+                cell.wishListVCDelegate = self
+                cell.viewModel = wishListViewModel
+                return cell
+            case 1:
+                guard let cell = wishlistTableView.dequeueReusableCell(withIdentifier: "wishlistTableViewCell", for: indexPath) as? WishlistTableViewCell else {
+                    fatalError("no cell")
+                }
+                cell.newData = wishListViewModel.items[indexPath.row]
+                return cell
+            default:
+                break
+            }
+        }
+        return UITableViewCell()
+    }
+    
+    // MARK: - NOT DONE YET, IN PROGRESS
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        if indexPath.section == 1 || indexPath.section == 0 && !wishListViewModel.hasReadyToAcceptItems {
+            self.pushView(itemData: wishListViewModel.items[indexPath.row])
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var tempCounter = 0
-        if wishListViewModel.hasReadyToAcceptItems {
-            tempCounter += 2
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else {
+            print("failed to get header")
+            return
         }
-        if wishListViewModel.hasItem {
-            tempCounter += 1
-        }
-        wishlistTableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row >= tempCounter {
-            self.pushView(itemData: wishListViewModel.items[indexPath.row-tempCounter])
-        }
+        header.textLabel!.font = .systemFont(ofSize: 20, weight: .semibold)
+        header.textLabel!.textColor = UIColor.black
+        header.backgroundColor = UIColor(named: "BackgroundColor")
+        header.textLabel!.translatesAutoresizingMaskIntoConstraints = false
+        header.textLabel!.textAlignment = .left
+        header.textLabel!.leadingAnchor.constraint(equalTo: header.leadingAnchor, constant: 0).isActive = true
+        header.textLabel!.trailingAnchor.constraint(equalTo: header.trailingAnchor, constant: 0).isActive = true
+        header.textLabel!.topAnchor.constraint(equalTo: header.topAnchor, constant: 0).isActive = true
+
+        
+//        if wishListViewModel.hasItem && !wishListViewModel.hasReadyToAcceptItems {
+//
+//        } else if !wishListViewModel.hasItem && wishListViewModel.hasReadyToAcceptItems {
+//            guard let header = view as? UITableViewHeaderFooterView else {
+//                print("failed to get header")
+//                return
+//            }
+//            header.textLabel!.font = .systemFont(ofSize: 20, weight: .semibold)
+//            header.textLabel!.textColor = UIColor.black
+//            header.backgroundColor = UIColor(named: "BackgroundColor")
+//            header.textLabel!.translatesAutoresizingMaskIntoConstraints = false
+//            header.textLabel!.textAlignment = .left
+//            header.textLabel!.leadingAnchor.constraint(equalTo: header.leadingAnchor, constant: 0).isActive = true
+//            header.textLabel!.trailingAnchor.constraint(equalTo: header.trailingAnchor, constant: 0).isActive = true
+//            header.textLabel!.topAnchor.constraint(equalTo: header.topAnchor, constant: 16).isActive = true
+//
+//        } else {
+//            switch section {
+//            case 0:
+//                break
+//            case 1:
+//                break
+//            default:
+//                break
+//            }
+//        }
     }
+    
+    
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        var tempCounter = 0
+//        if wishListViewModel.hasItem || wishListViewModel.hasReadyToAcceptItems {
+//            if wishListViewModel.hasReadyToAcceptItems {
+//                tempCounter+=2
+//                if indexPath.row == 0 {
+//                    let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath as IndexPath)
+//                    cell.textLabel!.text = "\(self.segments[0])"
+//                    cell.textLabel!.font = .systemFont(ofSize: 20, weight: .semibold)
+//                    cell.backgroundColor = UIColor(named: "BackgroundColor")
+//                    cell.textLabel!.translatesAutoresizingMaskIntoConstraints = false
+//                    cell.textLabel!.textAlignment = .left
+//                    cell.textLabel!.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 0).isActive = true
+//                    cell.textLabel!.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: 0).isActive = true
+//                    cell.textLabel!.topAnchor.constraint(equalTo: cell.topAnchor, constant: 16).isActive = true
+//                    return cell
+//                } else if indexPath.row == 1 {
+//                    guard let cell = tableView.dequeueReusableCell(withIdentifier: ReadyToAcceptTableViewCell.identifier, for: indexPath) as? ReadyToAcceptTableViewCell else {
+//                        fatalError("no cell")
+//                    }
+//                    cell.wishListVCDelegate = self
+//                    cell.viewModel = wishListViewModel
+//                    return cell
+//                }
+//            }
+//            if wishListViewModel.hasItem {
+//                tempCounter+=1
+//                if indexPath.row == tempCounter-1 {
+//                    let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath as IndexPath)
+//                    cell.textLabel!.text = "\(self.segments[2])"
+//                    cell.textLabel!.font = .systemFont(ofSize: 20, weight: .semibold)
+//                    cell.backgroundColor = UIColor(named: "BackgroundColor")
+//                    cell.textLabel!.translatesAutoresizingMaskIntoConstraints = false
+//                    cell.textLabel!.textAlignment = .left
+//                    cell.textLabel!.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 0).isActive = true
+//                    cell.textLabel!.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: 0).isActive = true
+//                    cell.textLabel!.topAnchor.constraint(equalTo: cell.topAnchor, constant: 16).isActive = true
+//                    return cell
+//                } else {
+//                    guard let cell = wishlistTableView.dequeueReusableCell(withIdentifier: "wishlistTableViewCell", for: indexPath) as? WishlistTableViewCell else {
+//                        fatalError("no cell")
+//                    }
+//                    cell.newData = wishListViewModel.items[indexPath.row-tempCounter]
+//                    return cell
+//                }
+//            } else {
+//                // MARK: if no both array of item have no data
+//                let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath as IndexPath)
+//                cell.textLabel!.text = "No data available"
+//                cell.textLabel!.font = .systemFont(ofSize: 20, weight: .semibold)
+//                cell.backgroundColor = UIColor(named: "BackgroundColor")
+//                cell.textLabel!.translatesAutoresizingMaskIntoConstraints = false
+//                cell.textLabel!.textAlignment = .center
+//                cell.textLabel!.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 0).isActive = true
+//                cell.textLabel!.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: 0).isActive = true
+//                cell.textLabel!.topAnchor.constraint(equalTo: cell.topAnchor, constant: 16).isActive = true
+//                return cell
+//            }
+//        } else {
+//            // MARK: if no both array of item have no data
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath as IndexPath)
+//            cell.textLabel!.text = "No data available"
+//            cell.textLabel!.font = .systemFont(ofSize: 20, weight: .semibold)
+//            cell.backgroundColor = UIColor(named: "BackgroundColor")
+//            cell.textLabel!.translatesAutoresizingMaskIntoConstraints = false
+//            cell.textLabel!.textAlignment = .center
+//            cell.textLabel!.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 0).isActive = true
+//            cell.textLabel!.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: 0).isActive = true
+//            cell.textLabel!.topAnchor.constraint(equalTo: cell.topAnchor, constant: 16).isActive = true
+//            return cell
+//        }
+//    }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        var tempCounter = 0
+//        if wishListViewModel.hasReadyToAcceptItems {
+//            tempCounter += 2
+//        }
+//        if wishListViewModel.hasItem {
+//            tempCounter += 1
+//        }
+//        wishlistTableView.deselectRow(at: indexPath, animated: true)
+//        if indexPath.row >= tempCounter {
+//            self.pushView(itemData: wishListViewModel.items[indexPath.row-tempCounter])
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
