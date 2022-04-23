@@ -386,7 +386,7 @@ class ReadyToAcceptTableViewCell: UITableViewCell {
         
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.collectionView.heightAnchor.constraint(equalToConstant: 135),
+            self.collectionView.heightAnchor.constraint(equalToConstant: 110),
             self.collectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             self.collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
             self.collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
