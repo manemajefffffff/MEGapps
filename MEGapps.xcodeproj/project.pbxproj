@@ -1291,6 +1291,7 @@
 				DEVELOPMENT_TEAM = 282R274LXF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sabby Money Manager";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = WishlistOverview;
@@ -1322,6 +1323,7 @@
 				DEVELOPMENT_TEAM = 282R274LXF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MEGapps/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sabby Money Manager";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = WishlistOverview;
