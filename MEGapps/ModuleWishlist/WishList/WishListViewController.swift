@@ -178,7 +178,8 @@ extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
                     fatalError("no cell")
                 }
                 cell.wishListVCDelegate = self
-                cell.viewModel = wishListViewModel
+//                cell.viewModel = wishListViewModel
+                cell.readyToAcceptItems = wishListViewModel.readyToAcceptItems
                 return cell
         } else {
             switch indexPath.section {
@@ -187,7 +188,8 @@ extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
                     fatalError("no cell")
                 }
                 cell.wishListVCDelegate = self
-                cell.viewModel = wishListViewModel
+//                cell.viewModel = wishListViewModel
+                cell.readyToAcceptItems = wishListViewModel.readyToAcceptItems
                 return cell
             case 1:
                 guard let cell = wishlistTableView.dequeueReusableCell(withIdentifier: "wishlistTableViewCell", for: indexPath) as? WishlistTableViewCell else {
@@ -365,7 +367,9 @@ extension WishListViewController: WishListDetailProtocol {
 class ReadyToAcceptTableViewCell: UITableViewCell {
     static let identifier = "ReadyToAcceptTableViewCell"
     var collectionView: UICollectionView!
-    var viewModel: WishListViewModel?
+    // MARK: - GANTI KE [Items] JANGAN INJECT VM NYA
+//    var viewModel: WishListViewModel?
+    var readyToAcceptItems: [Items]?
     weak var wishListVCDelegate: WishListViewController?
     
     // MARK: - Func init
@@ -401,14 +405,14 @@ class ReadyToAcceptTableViewCell: UITableViewCell {
 
 extension ReadyToAcceptTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel?.readyToAcceptItems.count ?? 0
+        return readyToAcceptItems?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: ReadyToAcceptCollectionViewCell.identifier, for: indexPath) as? ReadyToAcceptCollectionViewCell else {
             fatalError("no view")
         }
-        cell.data = self.viewModel?.readyToAcceptItems[indexPath.row]
+        cell.data = readyToAcceptItems![indexPath.row]
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapCollectionView)))
         return cell
     }
@@ -426,7 +430,7 @@ extension ReadyToAcceptTableViewCell: UICollectionViewDelegate, UICollectionView
         guard let indexPath = self.collectionView.indexPathForItem(at: location) else {
             return
         }
-        guard let item = self.viewModel?.readyToAcceptItems[indexPath.row] else {
+        guard let item = readyToAcceptItems?[indexPath.row] else {
             return
         }
         wishListVCDelegate?.pushView(itemData: item)
