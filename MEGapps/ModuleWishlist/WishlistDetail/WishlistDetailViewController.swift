@@ -33,8 +33,16 @@ class WishlistDetailViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: {(_)in
             print("User click Approve button")
             self.viewModel.acceptWishlist()
-            self.tabBarController?.selectedIndex = 0
+//            self.tabBarController?.selectedIndex = 0
             self.navigationController?.popToRootViewController(animated: true)
+            
+//            let tabIndex = 0
+//            let tab = self.tabBarController
+//            tab?.selectedIndex = tabIndex
+//            let view = tab?.viewControllers?[tabIndex]
+//            if let current = view?.navigationController {
+//                current.popToRootViewController(animated: true)
+//            }
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
