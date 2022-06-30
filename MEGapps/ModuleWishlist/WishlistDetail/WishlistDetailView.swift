@@ -91,7 +91,7 @@ class WishlistDetailView: UIView {
         }
     }
     
-    func formatNumber(price: Int64) -> String{
+    func formatNumber(price: Int64) -> String {
             let formatter = NumberFormatter()
             formatter.groupingSeparator = "."
             formatter.numberStyle = .decimal

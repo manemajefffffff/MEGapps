@@ -13,7 +13,7 @@ class CustomProgressBar: UIView {
     @IBInspectable var color: UIColor? = .gray {
         didSet {setNeedsDisplay()}
     }
-    var progress: CGFloat = 0.5 {
+    var progress: CGFloat = 0.0 {
         didSet {setNeedsDisplay()}
     }
 
