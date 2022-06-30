@@ -38,7 +38,7 @@ class OtherBudgetTableViewCell: UITableViewCell {
         labelBudgetUsed.text = formatNumber(price: total)
     }
     
-    func formatNumber(price: Int64) -> String{
+    func formatNumber(price: Int64) -> String {
         let formatter = NumberFormatter()
         formatter.groupingSeparator = "."
         formatter.numberStyle = .decimal
@@ -49,34 +49,54 @@ class OtherBudgetTableViewCell: UITableViewCell {
         return "Rp. 0"
     }
     
-    func calculateData() {
-        total = 0
-        var percent: Double = 0.0
-        if let budgetUsed = otherBudget?.trItemBudget?.allObjects as? [TrItemBudget] {
-            for object in budgetUsed {
-                total = object.amount + total
-            }
-        }
-        
-        if let budgetPrice = otherBudget?.amount {
-            
-            print("budgetPrice", budgetPrice)
-            if budgetPrice > 0 {
-                percent = Double(total)/Double(budgetPrice)
-            }
-            progressBar.progress = CGFloat(percent)
-        }
-    }
-    
-    
-    override func awakeFromNib() {
+    override class func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    
+    func calculateData() {
+        let currentMonth = Calendar.current.component(.month, from: Date())
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.total = 0
+            var percent: Double = 0.0
+            if let budgetUsed = (self.otherBudget?.trItemBudget?.allObjects as? [TrItemBudget])?.filter({ budget in
+                Calendar.current.component(.month, from: budget.createdAt!) == currentMonth
+            }) {
+                for object in budgetUsed {
+                    self.total = object.amount + self.total
+                }
+            }
 
+            if let budgetPrice = self.otherBudget?.amount {
+                print("budgetPrice", budgetPrice)
+                if budgetPrice > 0 {
+                    percent = Double(self.total)/Double(budgetPrice)
+                }
+                DispatchQueue.main.async {
+                    self.progressBar.progress = CGFloat(percent)
+                }
+            }
+
+        }
+//
+//        total = 0
+//        var percent: Double = 0.0
+//        if let budgetUsed = otherBudget?.trItemBudget?.allObjects as? [TrItemBudget] {
+//            for object in budgetUsed {
+//                total = object.amount + total
+//            }
+//        }
+//
+//        if let budgetPrice = otherBudget?.amount {
+//
+//            print("budgetPrice", budgetPrice)
+//            if budgetPrice > 0 {
+//                percent = Double(total)/Double(budgetPrice)
+//            }
+//            progressBar.progress = CGFloat(percent)
+        }
 }
