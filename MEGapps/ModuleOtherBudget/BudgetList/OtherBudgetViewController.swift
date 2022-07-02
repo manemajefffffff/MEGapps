@@ -30,6 +30,7 @@ class OtherBudgetViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
