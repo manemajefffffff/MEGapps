@@ -38,7 +38,7 @@
                                 <rect key="frame" x="16" y="55" width="311" height="20"/>
                                 <color key="backgroundColor" name="PrimaryHSgradient"/>
                             </view>
-                            <view contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="s0m-K1-sc5">
+                            <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="s0m-K1-sc5">
                                 <rect key="frame" x="0.0" y="91" width="343" height="123"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initial Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEb-zx-zyd">
@@ -184,6 +184,7 @@
                                     <constraint firstAttribute="trailing" secondItem="SBk-je-5eO" secondAttribute="trailing" constant="16" id="Efq-Gm-sYf"/>
                                     <constraint firstItem="bOT-o6-bwV" firstAttribute="leading" secondItem="s0m-K1-sc5" secondAttribute="leading" constant="16" id="FvE-Mk-Q5f"/>
                                     <constraint firstItem="SBk-je-5eO" firstAttribute="leading" secondItem="kfh-Pe-lfA" secondAttribute="trailing" constant="18" id="JmN-WT-v0D"/>
+                                    <constraint firstAttribute="bottom" secondItem="kfh-Pe-lfA" secondAttribute="bottom" constant="16.5" id="Mor-VO-Gp1"/>
                                     <constraint firstItem="bOT-o6-bwV" firstAttribute="top" secondItem="HEb-zx-zyd" secondAttribute="bottom" constant="1" id="aev-lJ-quU"/>
                                     <constraint firstItem="kfh-Pe-lfA" firstAttribute="top" secondItem="KL9-QO-fu8" secondAttribute="bottom" constant="4" id="eOt-t4-lrm"/>
                                     <constraint firstItem="KL9-QO-fu8" firstAttribute="top" secondItem="bOT-o6-bwV" secondAttribute="bottom" constant="8" id="hgu-bx-qRq"/>
