@@ -17,10 +17,11 @@ class OtherBudgetViewModel: NSObject {
     // MARK: - Functions
     override init() {
         super.init()
-        self.fetchData()
+//        self.fetchData()
     }
     
     func fetchData() {
+        print("fetch data for other budget...")
         OtherBudgetCoreDataManager.shared.get { budgets in
             if budgets.count > 0 {
                 self.otherBudget = budgets
@@ -28,6 +29,7 @@ class OtherBudgetViewModel: NSObject {
             } else {
                 self.hasItem = false
             }
+            print("fetch finished for other budget")
         }
     }
     
