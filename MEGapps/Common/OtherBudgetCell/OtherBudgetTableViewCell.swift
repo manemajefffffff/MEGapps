@@ -18,9 +18,12 @@ class OtherBudgetTableViewCell: UITableViewCell {
     @IBOutlet weak var labelBudgetLeft: UILabel!
     @IBOutlet weak var progressBar: CustomProgressBar!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var budgetUsageTitleLabel: UILabel!
+    
     
     var otherBudget: Budget? {
         didSet {
+            setBudgetUsedTitle()
             setData()
         }
     }
@@ -49,12 +52,24 @@ class OtherBudgetTableViewCell: UITableViewCell {
         return "Rp. 0"
     }
     
+    
+    
     override class func awakeFromNib() {
         super.awakeFromNib()
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    fileprivate func setBudgetUsedTitle() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM YYYY"
+        
+        let date = formatter.string(from: Date())
+        
+        budgetUsageTitleLabel.text = "\(date) usage"
     }
     
     func calculateData() {
